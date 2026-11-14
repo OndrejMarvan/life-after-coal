@@ -1,0 +1,170 @@
+import { useEffect, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useAuth } from '../lib/auth'
+import { isDemo } from '../lib/supabase'
+import { Headframe, useLang } from './ui'
+
+const MAIN = [
+  { to: '/check', key: 'nav.check' },
+  { to: '/programmes', key: 'nav.programmes' },
+  { to: '/map', key: 'nav.map' },
+  { to: '/calendar', key: 'nav.calendar' },
+]
+const MORE = [
+  { to: '/assistant', key: 'nav.assistant' },
+  { to: '/forum', key: 'nav.forum' },
+  { to: '/stories', key: 'nav.stories' },
+  { to: '/children', key: 'nav.children' },
+  { to: '/newsletter', key: 'nav.newsletter' },
+  { to: '/portals', key: 'nav.portals' },
+  { to: '/gaps', key: 'nav.gaps' },
+  { to: '/about', key: 'nav.about' },
+]
+
+function LangSwitch() {
+  const { i18n, t } = useTranslation()
+  const lang = useLang()
+  return (
+    <div role="group" aria-label={t('nav.language')} className="flex rounded-lg border-2 border-white/30 overflow-hidden">
+      {(['cs', 'pl', 'en'] as const).map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => void i18n.changeLanguage(l)}
+          aria-pressed={lang === l}
+          className={`display px-2.5 py-1.5 text-sm font-bold ${lang === l ? 'bg-orange text-coal' : 'text-white hover:bg-white/10'}`}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+export default function Layout() {
+  const { t } = useTranslation()
+  const { user } = useAuth()
+  const [open, setOpen] = useState(false)
+  const [moreOpen, setMoreOpen] = useState(false)
+  const loc = useLocation()
+
+  useEffect(() => {
+    setOpen(false)
+    setMoreOpen(false)
+    window.scrollTo(0, 0)
+  }, [loc.pathname])
+
+  const linkCls = ({ isActive }: { isActive: boolean }) =>
+    `display px-3 py-2 rounded-md text-[15px] font-semibold ${isActive ? 'bg-orange text-coal' : 'text-white hover:bg-white/10'}`
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-orange focus:p-3">
+        {t('common.skipToContent')}
+      </a>
+      {isDemo && <div className="no-print bg-orange-pale text-coal text-center text-sm py-1.5 px-3 border-b border-orange">{t('common.demoBanner')}</div>}
+      <header className="bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
+        <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-orange">
+              <Headframe className="h-8 w-8" />
+            </span>
+            <span className="display text-lg sm:text-xl font-bold leading-none hidden min-[420px]:inline">{t('appName')}</span>
+          </Link>
+          <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label="main">
+            {MAIN.map((m) => (
+              <NavLink key={m.to} to={m.to} className={linkCls}>
+                {t(m.key)}
+              </NavLink>
+            ))}
+            <div className="relative">
+              <button type="button" onClick={() => setMoreOpen((v) => !v)} aria-expanded={moreOpen} className="display px-3 py-2 rounded-md text-[15px] font-semibold hover:bg-white/10">
+                {t('nav.more')} ▾
+              </button>
+              {moreOpen && (
+                <div className="absolute right-0 mt-2 w-64 rounded-xl bg-coal border-2 border-orange p-2 shadow-xl">
+                  {MORE.map((m) => (
+                    <NavLink key={m.to} to={m.to} className={({ isActive }) => `block rounded-md px-3 py-2 ${isActive ? 'bg-orange text-coal' : 'hover:bg-white/10'}`}>
+                      {t(m.key)}
+                    </NavLink>
+                  ))}
+                </div>
+              )}
+            </div>
+          </nav>
+          <div className="ml-auto flex items-center gap-2">
+            <LangSwitch />
+            <div className="hidden lg:flex items-center gap-1">
+              {user?.isAdmin && (
+                <NavLink to="/admin" className={linkCls}>
+                  {t('nav.admin')}
+                </NavLink>
+              )}
+              <NavLink to="/account" className={linkCls}>
+                {user ? t('nav.account') : t('nav.login')}
+              </NavLink>
+            </div>
+            <button type="button" className="lg:hidden btn btn-primary !min-h-10 !px-3" onClick={() => setOpen((v) => !v)} aria-expanded={open}>
+              {t('nav.menu')}
+            </button>
+          </div>
+        </div>
+        {open && (
+          <nav className="lg:hidden bg-coal border-t border-white/10 px-4 pb-4" aria-label="mobile">
+            {[...MAIN, ...MORE].map((m) => (
+              <NavLink key={m.to} to={m.to} className={({ isActive }) => `block rounded-md px-3 py-3 text-lg ${isActive ? 'bg-orange text-coal' : 'hover:bg-white/10'}`}>
+                {t(m.key)}
+              </NavLink>
+            ))}
+            <NavLink to="/help" className="block rounded-md px-3 py-3 text-lg font-bold text-orange">
+              {t('nav.help')}
+            </NavLink>
+            {user?.isAdmin && (
+              <NavLink to="/admin" className="block rounded-md px-3 py-3 text-lg">
+                {t('nav.admin')}
+              </NavLink>
+            )}
+            <NavLink to="/account" className="block rounded-md px-3 py-3 text-lg">
+              {user ? t('nav.account') : t('nav.login')}
+            </NavLink>
+          </nav>
+        )}
+      </header>
+
+      <main id="main" className="flex-1">
+        <Outlet />
+      </main>
+
+      <Link
+        to="/help"
+        className="need-to-talk no-print fixed bottom-4 right-4 z-40 btn btn-primary shadow-xl border-2 border-coal !rounded-full !px-5"
+      >
+        <span aria-hidden="true">☎</span> <span className="hidden sm:inline">{t('nav.help')}</span>
+        <span className="sr-only sm:hidden">{t('nav.help')}</span>
+      </Link>
+
+      <footer className="bg-coal text-white mt-12">
+        <div className="kit-stripes h-3" aria-hidden="true" />
+        <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-3">
+          <div>
+            <p className="display text-2xl font-bold text-orange">{t('greeting')}</p>
+            <p className="mt-2 text-white/80">{t('footer.madeFor')}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-white/90">
+            {[...MAIN, ...MORE].map((m) => (
+              <Link key={m.to} to={m.to} className="hover:text-orange">
+                {t(m.key)}
+              </Link>
+            ))}
+          </div>
+          <div className="text-sm text-white/70 space-y-2">
+            <p>{t('about.disclaimer')}</p>
+            <p>{t('footer.sources')}</p>
+            <p>{t('hotline.emergency')}</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}

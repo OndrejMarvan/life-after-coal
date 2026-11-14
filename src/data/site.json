@@ -1,0 +1,966 @@
+{
+ "history": [
+  {
+   "country": "PL",
+   "years": "2026–",
+   "title": "Act of 4 Dec 2025 package (N01–N03, N09)",
+   "what": "Leave up to 5/4 years, PLN 170,000 severance, paid by the companies themselves, for all staff of support-system companies",
+   "funders": "State budget; about PLN 2bn in 2026",
+   "results": "~1,750 PGG staff on benefits by mid-May 2026; 526 JSW severances by 28 May 2026",
+   "outcome": "Current"
+  },
+  {
+   "country": "PL",
+   "years": "2023–",
+   "title": "Shield act for power and lignite workers (N11)",
+   "what": "Leave up to 4 years, 12× pay severance",
+   "funders": "State budget, limit PLN 1.27bn",
+   "results": "Not found",
+   "outcome": "Current"
+  },
+  {
+   "country": "PL",
+   "years": "2021–2022",
+   "title": "\"Energia\" outplacement (R09)",
+   "what": "310 mining and mining-related workers: action plans, courses, placement, subsidised jobs",
+   "funders": "ESF, RPO WSL 2014–2020, ~PLN 10m",
+   "results": "Results not found",
+   "outcome": "Programme period ended; replaced by FST 10.19"
+  },
+  {
+   "country": "PL",
+   "years": "2021",
+   "title": "Social Agreement and Aug 2021 amendment",
+   "what": "Closure schedule to 2049; PLN 120,000 severance; SRK transfers allowed until 31 Dec 2023 (Pokój, Jastrzębie III)",
+   "funders": "State budget",
+   "results": "Not found",
+   "outcome": "SRK transfer window closed 31 Dec 2023"
+  },
+  {
+   "country": "PL",
+   "years": "2015–2023",
+   "title": "SRK model (after the 2015 Kompania Węglowa recovery plan and Feb 2015 amendment)",
+   "what": "Mines handed to SRK; staff got mining leave or severance",
+   "funders": "State budget via SRK",
+   "results": "9,022 applications and 7,650 benefits by May 2017, incl. 4,962 on leave. NIK (2021): restructuring programmes did not make the sector viable",
+   "outcome": "Replaced by company-run model in 2026. Media report that many who took severance later returned to mining, which led to the 2026 return ban"
+  },
+  {
+   "country": "PL",
+   "years": "2014–2020",
+   "title": "RPO WSL outplacement (Measure 7.4.2), e.g. PUP Rybnik (L01)",
+   "what": "Outplacement projects across Silesia",
+   "funders": "ESF",
+   "results": "Not found per project",
+   "outcome": "EU programme period ended"
+  },
+  {
+   "country": "PL",
+   "years": "2004–2006",
+   "title": "Act of 28 Nov 2003 on hard-coal restructuring 2003–2006",
+   "what": "\"Świadczenie górnicze\" for underground staff at most 3 years from pension before 1 Jan 2007; retraining stipends; plan: 12,000 people",
+   "funders": "State budget, PLN 165.8m for benefits",
+   "results": "NIK audit (2007) of public funds used",
+   "outcome": "Act expired 2006"
+  },
+  {
+   "country": "PL",
+   "years": "2003–2006",
+   "title": "Regional programmes to soften mining restructuring (Silesia; integrated Małopolska programme for mining, steel and chemicals)",
+   "what": "Regional labour-market and enterprise measures, first outplacement in coal",
+   "funders": "Regional and state funds",
+   "results": "Not found",
+   "outcome": "Expired with the programming period"
+  },
+  {
+   "country": "PL",
+   "years": "1999–2001",
+   "title": "PHARE \"INICJATYWA\"",
+   "what": "Mitigation of social and regional costs of mining and steel restructuring",
+   "funders": "EU PHARE",
+   "results": "Evaluated by PARP in 2004",
+   "outcome": "Pre-accession aid ended"
+  },
+  {
+   "country": "PL",
+   "years": "1998–2002",
+   "title": "Górniczy Pakiet Socjalny (Mining Social Package) under the 1998–2002 reform",
+   "what": "5-year mining leave, lump-sum severance, social allowances, retraining; voluntary departures",
+   "funders": "State budget plus company funds; PLN 5,383.9m in 1998–2002",
+   "results": "About 67,000 people left mining. Demand exceeded the budget. NIK found the 1999 subsidy was not settled",
+   "outcome": "Reform period ended"
+  },
+  {
+   "country": "PL",
+   "years": "1990s",
+   "title": "Liquidation of the Lower Silesian coal basin (Wałbrzych)",
+   "what": "Severance payments as mines closed from the end of 1990",
+   "funders": "State",
+   "results": "Severance money was spent quickly; long-term unemployment and illegal \"biedaszyby\" pits followed",
+   "outcome": "Basin closed"
+  },
+  {
+   "country": "CZ",
+   "years": "2025–2026",
+   "title": "ČSM closure: mining ended 31 Jan 2026, preparation plant 28 Feb 2026",
+   "what": "~400 core staff + 260 contractor staff left in 2025; 750 + 150 left in Jan–Feb 2026; ~670 kept for liquidation",
+   "funders": "OKD (severance CZK 1.3 bn); state (Labour Office, allowance)",
+   "results": "~1/3 of the 900 had found work by the 2026 report, mostly as drivers, locksmiths or warehouse staff, at lower pay (TN.cz)",
+   "outcome": "Repeats the 2021 toolkit; adds the pension hardship waiver"
+  },
+  {
+   "country": "CZ",
+   "years": "2024–2028",
+   "title": "Outplacement II",
+   "what": "Nationwide; redundant employees and new employers",
+   "funders": "ESF+ (OPZ+) and state",
+   "results": "Not yet published",
+   "outcome": "Replaced Outplacement I"
+  },
+  {
+   "country": "CZ",
+   "years": "2022",
+   "title": "ČSA open-pit mine closure, Most (Severní energetická)",
+   "what": "~485–500 laid off",
+   "funders": "Company; state allowance (NV 342/2016)",
+   "results": "~1/4 found work at once; 271 of 289 eligible applied for the allowance",
+   "outcome": "Ended; allowance continues for long-duration recipients"
+  },
+  {
+   "country": "CZ",
+   "years": "2020–2021",
+   "title": "Darkov and ČSA (Karviná) closures; OKD mines transferred to Diamo",
+   "what": "~2,500 moved to Diamo, ~700 kept; ~1,770 left by end Feb 2021",
+   "funders": "OKD, Diamo, MPO, Labour Office",
+   "results": "Labour Office mobile centres at ČSM, Darkov and ČSA from Nov 2020; Nová šichta with 80+ partner firms; Burza práce app; 1,296 allowance applicants by Jun 2021",
+   "outcome": "Toolkit reused for ČSM"
+  },
+  {
+   "country": "CZ",
+   "years": "2020",
+   "title": "NV 415/2020 reinstates the allowance for OKD leavers",
+   "what": "Surface rate cut from CZK 7,000 to 5,300 for new claims",
+   "funders": "State (MPO); MPO estimated up to CZK 820 m to 2031",
+   "results": "2016–2020: 1,340 applicants, CZK 236.4 m paid",
+   "outcome": "Amended, still in force"
+  },
+  {
+   "country": "CZ",
+   "years": "2020",
+   "title": "Sokolovská uhelná wind-down (pressure gasification plant Vřesová closed)",
+   "what": "~700 left in 2020; Outplacement and the allowance (NV 342/2016, amended by NV 491/2020)",
+   "funders": "Company, ESF (OPZ), state",
+   "results": "48 people in Outplacement by Sep 2020 (45 from Sokolovská uhelná)",
+   "outcome": "Firm now SUAS Group; smaller cuts in 2025–26"
+  },
+  {
+   "country": "CZ",
+   "years": "2020–? (end date not found)",
+   "title": "Outplacement I",
+   "what": "Nationwide",
+   "funders": "ESF (OPZ), EU share EUR 28.6 m (Kohesio)",
+   "results": "2,103 participants reported",
+   "outcome": "Replaced by Outplacement II"
+  },
+  {
+   "country": "CZ",
+   "years": "2019",
+   "title": "Lazy mine (Orlová) closure, Nov 2019",
+   "what": "OKD staff",
+   "funders": "OKD",
+   "results": "Not found",
+   "outcome": "Ended"
+  },
+  {
+   "country": "CZ",
+   "years": "2017",
+   "title": "Paskov mine closure, 31 Mar 2017",
+   "what": "~1,350 staff, ~300 kept for liquidation; up to CZK 80,000 bonus to transfer to Karviná mines",
+   "funders": "OKD, Labour Office, Diamo",
+   "results": "Mobile office at Staříč and Chlebovice: 744 contacts; Nová šichta 330+ registered; \"Razíme cestu\" IT retraining (LMC + VŠB-TUO): 29 miners tried programming",
+   "outcome": "Transfer bonus not repeated (no mines left)"
+  },
+  {
+   "country": "CZ",
+   "years": "2016",
+   "title": "NV 167/2016 (OKD in insolvency) and NV 342/2016 (other firms)",
+   "what": "OKD; then Diamo GEAM, Slezská důlní díla, OKD HBZS and North Bohemian firms",
+   "funders": "State (MPO), via Diamo and PK Ústí",
+   "results": "CZK 8,000 / 7,000 per month",
+   "outcome": "OKD claims stopped May 2018 when insolvency ended; restored 2020"
+  },
+  {
+   "country": "CZ",
+   "years": "2016",
+   "title": "Act 213/2016: early retirement for deep miners",
+   "what": "Underground miners with 3,300 shifts",
+   "funders": "Pension insurance",
+   "results": "Retirement 7 years early, about age 56",
+   "outcome": "In force"
+  },
+  {
+   "country": "CZ",
+   "years": "2016",
+   "title": "EU Globalisation Adjustment Fund for OKD discussed",
+   "what": "Planned for OKD",
+   "funders": "EU",
+   "results": "No application found",
+   "outcome": "Apparently never used"
+  },
+  {
+   "country": "CZ",
+   "years": "2016–2017",
+   "title": "Labour Office mobile workplace at OKD",
+   "what": "OKD staff",
+   "funders": "State",
+   "results": "Retraining most wanted: driving licences C, D, T",
+   "outcome": "Repeated 2020 and 2025"
+  },
+  {
+   "country": "CZ",
+   "years": "2014",
+   "title": "Nová šichta launched",
+   "what": "OKD staff",
+   "funders": "OKD",
+   "results": "~1,000 users by 2025 (Seznam Zprávy)",
+   "outcome": "Relaunched 2020 and May 2025"
+  }
+ ],
+ "historyLessons": {
+  "PL": [
+   "Working: voluntary departures avoided forced lay-offs on a large scale (1998-2002; 2015-2017).",
+   "Not working: cash-only exits in Wałbrzych left long-term poverty; severance without a return ban let workers come back to mines; restructuring did not make the sector viable (NIK 2021)."
+  ],
+  "CZ": [
+   "Working: help on the mine site (it saves trips to Havířov or Karviná), early retraining for driving licences, and direct contact with employers.",
+   "Not working: the 2017 transfer bonus attracted too few people, and new jobs pay well below the ~CZK 50,000 miners earned."
+  ]
+ },
+ "exclusions": {
+  "PL": {
+   "columns": [
+    "N01 Mining leave",
+    "N02 Processing leave",
+    "N03 PLN 170k",
+    "R01 Outplacement",
+    "R02 Start-up grant",
+    "R03 Adult learning",
+    "R04 Social inclusion",
+    "N14 Labour office",
+    "N08 Miners' pension"
+   ],
+   "rows": [
+    {
+     "group": "Underground miners",
+     "cells": [
+      "E (≤5 yrs to pension)",
+      "N",
+      "E (if no leave right)",
+      "E (priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E (if conditions met)"
+     ]
+    },
+    {
+     "group": "Surface workers",
+     "cells": [
+      "N",
+      "N",
+      "E",
+      "E (priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "? (only some posts count)"
+     ]
+    },
+    {
+     "group": "Administrative and HQ staff",
+     "cells": [
+      "N",
+      "N",
+      "E",
+      "E (priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "N"
+     ]
+    },
+    {
+     "group": "Processing-plant workers",
+     "cells": [
+      "N",
+      "E (≤4 yrs)",
+      "E (if no leave right)",
+      "E (priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "?"
+     ]
+    },
+    {
+     "group": "Contractors working in mines",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E (mining-related priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "? (depends on work type)"
+     ]
+    },
+    {
+     "group": "Supplier (\"okołogórnicze\") firms",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E (priority)",
+      "E",
+      "E",
+      "E",
+      "E",
+      "N"
+     ]
+    },
+    {
+     "group": "Under 3 years' service",
+     "cells": [
+      "? (no tenure rule found)",
+      "?",
+      "N",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E",
+      "N"
+     ]
+    },
+    {
+     "group": "Former miners already laid off",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E (if dismissed after 28 May 2021)",
+      "E (same)",
+      "E",
+      "E",
+      "E",
+      "E (if conditions met)"
+     ]
+    },
+    {
+     "group": "Family members",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E (only unemployed family of a participant)",
+      "?",
+      "E",
+      "E",
+      "E",
+      "N"
+     ]
+    },
+    {
+     "group": "Private-mine staff (PG Silesia)",
+     "cells": [
+      "N (UD377 pending)",
+      "N",
+      "N",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E (if conditions met)"
+     ]
+    },
+    {
+     "group": "Hired after 1 Jan 2026",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E",
+      "—"
+     ]
+    },
+    {
+     "group": "Got a similar benefit since 1994",
+     "cells": [
+      "N",
+      "N",
+      "N",
+      "E",
+      "E",
+      "E",
+      "E",
+      "E",
+      "—"
+     ]
+    },
+    {
+     "group": "Staff of Bogdanka (Lubelskie)",
+     "cells": [
+      "? (not yet in the system)",
+      "?",
+      "?",
+      "N (outside FST area)",
+      "N",
+      "N",
+      "N",
+      "E",
+      "E"
+     ]
+    }
+   ]
+  },
+  "CZ": {
+   "columns": [
+    "P01 Severance",
+    "P02 Nová šichta",
+    "P06/P07 State allowance",
+    "P08 Early pension",
+    "P11 Outplacement II",
+    "P13 Labour Office tools",
+    "P17 TRAUTOM",
+    "P19 Úvěr Transformace"
+   ],
+   "rows": [
+    {
+     "group": "Underground miners (OKD)",
+     "cells": [
+      "Eligible",
+      "Eligible",
+      "Eligible (CZK 8,000)",
+      "Eligible with 3,300 shifts and start before 1 Oct 2016",
+      "Eligible",
+      "Eligible",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "Surface workers (OKD)",
+     "cells": [
+      "Eligible",
+      "Eligible",
+      "Eligible (CZK 5,300)",
+      "Not eligible",
+      "Eligible",
+      "Eligible",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "Administrative staff (OKD)",
+     "cells": [
+      "Eligible",
+      "Eligible",
+      "Eligible (surface rate)",
+      "Not eligible",
+      "Eligible",
+      "Eligible",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "Supplier and contractor employees",
+     "cells": [
+      "Not eligible (own employer's terms)",
+      "Unclear",
+      "Not eligible unless the employer is listed (e.g. OKD HBZS)",
+      "Unclear (depends on recorded underground shifts)",
+      "Eligible",
+      "Eligible",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "People at or near pension age",
+     "cells": [
+      "Eligible",
+      "Not eligible at pension age",
+      "Eligible until the old-age pension starts",
+      "Main beneficiaries",
+      "Unclear",
+      "Unclear",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "People not registered with the Labour Office",
+     "cells": [
+      "Eligible",
+      "Eligible, but only within 6 months of leaving",
+      "Eligible (6-month claim deadline)",
+      "Eligible",
+      "Not eligible",
+      "Not eligible",
+      "Unclear",
+      "Eligible"
+     ]
+    },
+    {
+     "group": "Workers of coal-fired power plants",
+     "cells": [
+      "Not eligible",
+      "Not eligible",
+      "Not eligible unless the firm is listed (e.g. Czech Coal Power)",
+      "Not eligible",
+      "Eligible",
+      "Eligible",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    },
+    {
+     "group": "Family members",
+     "cells": [
+      "Not eligible",
+      "Not eligible",
+      "Not eligible",
+      "Not eligible",
+      "Only if they are redundant themselves",
+      "Eligible as any job seeker",
+      "Unclear",
+      "Only as self-employed or SME"
+     ]
+    }
+   ]
+  }
+ },
+ "portals": [
+  {
+   "country": "PL",
+   "channel": "FE Śląskie portal and WUP information point",
+   "owner": "WUP Katowice",
+   "covers": "FST calls 10.16–10.21, project lists",
+   "contact": "funduszeue.slaskie.pl; ul. Sokolska 29, 40-086 Katowice; tel. 32 757 33 11; funduszeue@wup-katowice.pl",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "transformacja.slaskie.pl (ROPT 2.0)",
+   "owner": "Silesian Marshal's Office, Dept. of Regional Development and Transformation",
+   "covers": "Transition news, studies, council papers",
+   "contact": "transformacja@slaskie.pl",
+   "status": "Active to 31 Dec 2026"
+  },
+  {
+   "country": "PL",
+   "channel": "Regional Council for Just Transition",
+   "owner": "Silesian Marshal's Office",
+   "covers": "Stakeholder body; first met 26 May 2023",
+   "contact": "Via transformacja.slaskie.pl",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "PGG consultation points and staff-portal module",
+   "owner": "PGG",
+   "covers": "Leave, severance, procedures; departure statistics",
+   "contact": "At each PGG plant; internal portal",
+   "status": "Active since Oct 2025"
+  },
+  {
+   "country": "PL",
+   "channel": "JSW benefit information",
+   "owner": "JSW",
+   "covers": "JSW programme (N09)",
+   "contact": "jsw.pl (no dedicated helpline found)",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "ZUS miners'-pension pages",
+   "owner": "ZUS",
+   "covers": "Pension conditions, documents",
+   "contact": "zus.pl",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "County labour offices (PUP)",
+   "owner": "Starosta of each county",
+   "covers": "N14 instruments",
+   "contact": "[county].praca.gov.pl, e.g. rybnik.praca.gov.pl",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "Zielona Linia",
+   "owner": "Labour-market services portal",
+   "covers": "Labour-office news and events",
+   "contact": "zielonalinia.gov.pl (phone not checked)",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "mapadotacji.gov.pl",
+   "owner": "Ministry of Funds and Regional Policy",
+   "covers": "Search of EU-funded projects by place",
+   "contact": "mapadotacji.gov.pl",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "MARR S.A.",
+   "owner": "Małopolska Regional Development Agency",
+   "covers": "Western Małopolska FST labour projects",
+   "contact": "ul. Kordylewskiego 11, Kraków",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "DWUP",
+   "owner": "Lower Silesian Labour Office",
+   "covers": "Wałbrzych subregion FST projects",
+   "contact": "dwup.pl (not checked)",
+   "status": "Active"
+  },
+  {
+   "country": "PL",
+   "channel": "SRK",
+   "owner": "Spółka Restrukturyzacji Kopalń, Bytom",
+   "covers": "Legacy benefits, wind-training recruitment",
+   "contact": "srk.com.pl",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "Horník newsletter + leaver handbook",
+   "owner": "OKD",
+   "covers": "Severance, termination FAQ, Nová šichta",
+   "contact": "Monthly PDF on okd.cz; handbook internal",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "Nová šichta offices",
+   "owner": "OKD HR",
+   "covers": "Personal job-search help",
+   "contact": "At the mine site; no public phone or email found",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "Outplacement II page + call centre",
+   "owner": "Labour Office / MPSV",
+   "covers": "Outplacement II, employer contributions",
+   "contact": "800 77 99 00 (free); out@up.gov.cz",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "Labour Office mobile workplace at ČSM",
+   "owner": "Labour Office, Ostrava branch",
+   "covers": "Registration, benefits, retraining, vacancies",
+   "contact": "On site; dates not published",
+   "status": "Active 2025–2026"
+  },
+  {
+   "country": "CZ",
+   "channel": "Labour Office contact points",
+   "owner": "Labour Office",
+   "covers": "All job-seeker services",
+   "contact": "Karviná, Havířov, Orlová, Bohumín, Frýdek-Místek, Ostrava, Ústí, Most, Sokolov; list on up.gov.cz",
+   "status": "Active (closed to the public on Thursdays in Nov 2026)"
+  },
+  {
+   "country": "CZ",
+   "channel": "Diamo social centre",
+   "owner": "Diamo, Ostrava-Vítkovice (Sirotčí, former Jeremenko mine building)",
+   "covers": "Restructuring allowance applications",
+   "contact": "In person; address reported in 2017, current contact not found",
+   "status": "Unclear"
+  },
+  {
+   "country": "CZ",
+   "channel": "ČSSZ ePortál",
+   "owner": "ČSSZ",
+   "covers": "Pension account statement, including recorded risk shifts",
+   "contact": "Online with eID",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "opst.cz",
+   "owner": "MZP / SFZP",
+   "covers": "All OPST calls",
+   "contact": "spravedlivatransformace@mzp.cz",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "hrajemskrajem.msk.cz",
+   "owner": "Moravian-Silesian Region",
+   "covers": "Regional OPST calls and vouchers",
+   "contact": "Online",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "menimekraj.cz / rskuk.cz",
+   "owner": "Karlovy Vary Region / Ústí Region",
+   "covers": "Regional OPST information",
+   "contact": "Online",
+   "status": "Active (not opened)"
+  },
+  {
+   "country": "CZ",
+   "channel": "trautom.cz",
+   "owner": "MS Pakt zaměstnanosti",
+   "covers": "TRAUTOM counselling and firm support",
+   "contact": "Online; Varenská 1414/1, Ostrava",
+   "status": "Active (portal content not checked)"
+  },
+  {
+   "country": "CZ",
+   "channel": "NRB Transformace",
+   "owner": "Národní rozvojová banka",
+   "covers": "Interest-free business loans",
+   "contact": "255 721 111; info@nrb.cz",
+   "status": "Active to 31 Dec 2026"
+  },
+  {
+   "country": "CZ",
+   "channel": "Unions: OS PHGN, Sdružení hornických odborů OKD",
+   "owner": "Unions",
+   "covers": "Collective bargaining, legal advice for members (pensions, annuities)",
+   "contact": "Members only; no public helpline found",
+   "status": "Active"
+  },
+  {
+   "country": "CZ",
+   "channel": "mobilita.msk.cz",
+   "owner": "ARR",
+   "covers": "Zaměstnanecká mobilita",
+   "contact": "mobilita@arr.cz",
+   "status": "Unclear (2017)"
+  }
+ ],
+ "notFound": [
+  {
+   "country": "PL",
+   "item": "\"Jobs After Coal\" employer subsidy up to PLN 150,000",
+   "why": "Project exists but is ZE PAK's lignite programme in Konin, not Silesia; the PLN 150,000 figure appears on no official page found",
+   "confirm": "WUP Poznań (project leader); ZE PAK"
+  },
+  {
+   "country": "PL",
+   "item": "Contents of FESL 10.21",
+   "why": "Resolved: it trains social-assistance and labour-office staff, not miners",
+   "confirm": "WUP Katowice"
+  },
+  {
+   "country": "PL",
+   "item": "\"Mosty współpracy\"",
+   "why": "No project of that name found",
+   "confirm": "Silesian Marshal's Office (transformacja@slaskie.pl)"
+  },
+  {
+   "country": "PL",
+   "item": "President's initiative to extend benefits to all miners",
+   "why": "Announced only; no bill text found",
+   "confirm": "Chancellery of the President"
+  },
+  {
+   "country": "PL",
+   "item": "UD377 current status",
+   "why": "Planned for Q1 2026; adoption not confirmed",
+   "confirm": "Ministry of Energy; RCL legislation portal"
+  },
+  {
+   "country": "PL",
+   "item": "Bogdanka in the support system",
+   "why": "Law allows it; latest official answer says not yet included; some media say it was added",
+   "confirm": "Ministry of Energy; LW Bogdanka"
+  },
+  {
+   "country": "PL",
+   "item": "\"Renta wyrównawcza\" in mines liquidated 2026–2049",
+   "why": "Rule and amounts not found in the parts of the act read",
+   "confirm": "Ministry of Energy"
+  },
+  {
+   "country": "PL",
+   "item": "Social-contribution (ZUS) exemption of the PLN 170,000",
+   "why": "Only the health-contribution exclusion and PIT exemption were found",
+   "confirm": "ZUS; Ministry of Energy"
+  },
+  {
+   "country": "PL",
+   "item": "PGG own retraining offer beyond rail (aptitude tests, courses)",
+   "why": "Only \"Nowa perspektywa\" (rail) documented",
+   "confirm": "PGG HR"
+  },
+  {
+   "country": "PL",
+   "item": "JSW, Węglokoks Kraj and PKW retraining programmes",
+   "why": "Statutory benefits only; no retraining programme found",
+   "confirm": "Each company's HR"
+  },
+  {
+   "country": "PL",
+   "item": "Union helplines (Solidarność, ZZG, Sierpień 80, Kadra)",
+   "why": "No helpline or info point found",
+   "confirm": "Each union's mine-level office"
+  },
+  {
+   "country": "PL",
+   "item": "Health, housing and psychological programmes for miners",
+   "why": "Only psychological help inside 10.19 projects found",
+   "confirm": "WUP Katowice; Marshal's Office"
+  },
+  {
+   "country": "PL",
+   "item": "Take-up results of \"Energia\" and 10.19/10.20 projects",
+   "why": "No published results per project",
+   "confirm": "WUP Katowice (evaluation unit)"
+  },
+  {
+   "country": "PL",
+   "item": "Coal allowance (ekwiwalent) current rules",
+   "why": "Out of time in this pass",
+   "confirm": "ZUS; Ministry of Energy"
+  },
+  {
+   "country": "CZ",
+   "item": "2026 payments of the state allowance to ČSM leavers via Diamo",
+   "why": "No 2026 media or official report; latest take-up data is from Jun 2021",
+   "confirm": "Diamo social centre; MPO"
+  },
+  {
+   "country": "CZ",
+   "item": "\"Nadace Nová šichta\"",
+   "why": "OKD calls it a programme; the real foundation is Nadace OKD, which funds municipalities (L1)",
+   "confirm": "OKD HR"
+  },
+  {
+   "country": "CZ",
+   "item": "TRAUTOM information portal and counselling app",
+   "why": "Portal named but content not checked; no app found",
+   "confirm": "MS Pakt zaměstnanosti"
+  },
+  {
+   "country": "CZ",
+   "item": "Names of employers at the ČSM Labour Office point and the Dec 2025 Burza práce",
+   "why": "Only Škoda Group and Moravskoslezské drátovny named, Aug 2025 (ČT24)",
+   "confirm": "OKD HR; Labour Office Ostrava"
+  },
+  {
+   "country": "CZ",
+   "item": "List of the 80+ firms that cooperated with Nová šichta (2021)",
+   "why": "Never published",
+   "confirm": "OKD HR"
+  },
+  {
+   "country": "CZ",
+   "item": "Official text and take-up of the Feb 2026 pension hardship waiver",
+   "why": "No MPSV press release found; kurzy.cz page could not be opened",
+   "confirm": "MPSV; ČSSZ"
+  },
+  {
+   "country": "CZ",
+   "item": "EU Globalisation Adjustment Fund application for OKD",
+   "why": "Discussed, no application found",
+   "confirm": "MPSV, European funds department"
+  },
+  {
+   "country": "CZ",
+   "item": "Bridging \"výsluhové příspěvky\" for all coal and power workers",
+   "why": "Not adopted; only firm-listed allowances exist",
+   "confirm": "MPO"
+  },
+  {
+   "country": "CZ",
+   "item": "Nová šichta take-up and placement results 2025–2026",
+   "why": "No figures published",
+   "confirm": "OKD HR"
+  },
+  {
+   "country": "CZ",
+   "item": "Labour Office statistics on ex-OKD job seekers in 2026",
+   "why": "Only an estimate quoted in media",
+   "confirm": "Labour Office Ostrava branch"
+  },
+  {
+   "country": "CZ",
+   "item": "Current status of Zaměstnanecká mobilita",
+   "why": "Only the 2017 rules found",
+   "confirm": "ARR; Moravian-Silesian Region"
+  },
+  {
+   "country": "CZ",
+   "item": "NÚK audits of OPST or of miner support",
+   "why": "None found on these topics",
+   "confirm": "NÚK"
+  },
+  {
+   "country": "CZ",
+   "item": "Municipal programmes for miners (Karviná, Havířov, Orlová, Bohumín, Stonava)",
+   "why": "None found",
+   "confirm": "Each city hall's social department"
+  },
+  {
+   "country": "CZ",
+   "item": "Health, psychological or debt counselling aimed at miners",
+   "why": "None found",
+   "confirm": "Karviná Social Department; Labour Office"
+  },
+  {
+   "country": "CZ",
+   "item": "Whether supplier and contractor staff can use Nová šichta",
+   "why": "No source states it",
+   "confirm": "OKD HR"
+  },
+  {
+   "country": "CZ",
+   "item": "ESF projects named \"RESTART\" or \"Nový začátek\" for miners",
+   "why": "Not found",
+   "confirm": "MPSV"
+  },
+  {
+   "country": "CZ",
+   "item": "Contacts for Nová šichta and the ČSM Labour Office point",
+   "why": "Not published online",
+   "confirm": "OKD; Labour Office"
+  },
+  {
+   "country": "CZ",
+   "item": "Current status of POVEZ II and OPST call 33",
+   "why": "Call pages not opened; dates not found",
+   "confirm": "Labour Office; SFZP"
+  },
+  {
+   "country": "CZ",
+   "item": "Results of Sokolovská uhelná outplacement 2020 beyond the first 48 participants",
+   "why": "No later figures",
+   "confirm": "Labour Office Karlovy Vary branch"
+  }
+ ]
+}

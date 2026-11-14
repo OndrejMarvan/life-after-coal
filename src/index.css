@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coal: #0d0d0d;
+  --color-charcoal: #1c1c1c;
+  --color-ash: #2a2a2a;
+  --color-orange: #f47b20;
+  --color-orange-deep: #c85a12;
+  --color-orange-pale: #fff1e6;
+  --color-paper: #faf8f5;
+  --color-stone: #8a8a8a;
+  --color-alarm: #d93025;
+  --color-ok: #2f7d32;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+html {
+  font-size: 18px;
+  background: var(--color-paper);
+  color: var(--color-coal);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.55;
+}
+
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+}
+
+@layer components {
+/* Football-shirt stripes: black and orange */
+.kit-stripes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-coal) 0 56px,
+    var(--color-orange) 56px 112px
+  );
+}
+.kit-stripes-soft {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-coal) 0 56px,
+    #24160c 56px 112px
+  );
+}
+
+/* Safety tape for warnings */
+.safety-tape {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-coal) 0 14px,
+    var(--color-orange) 14px 28px
+  );
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn-primary { background: var(--color-orange); color: var(--color-coal); }
+.btn-primary:hover { background: var(--color-orange-deep); color: #fff; }
+.btn-dark { background: var(--color-coal); color: #fff; }
+.btn-dark:hover { background: var(--color-ash); }
+.btn-outline { border-color: var(--color-coal); color: var(--color-coal); background: transparent; }
+.btn-outline:hover { background: var(--color-coal); color: #fff; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e7e2da;
+  border-radius: 0.75rem;
+}
+
+.field {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #d6d0c6;
+  border-radius: 0.5rem;
+  background: #fff;
+  font: inherit;
+}
+.field:focus { border-color: var(--color-orange); outline: none; }
+
+.label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+
+.prose-plain p { margin: 0.4rem 0; }
+
+}
+
+/* Leaflet */
+.leaflet-container { font-family: var(--font-sans); font-size: 15px; }
+
+@media print {
+  header, footer, .no-print, .need-to-talk { display: none !important; }
+  html { font-size: 12pt; background: #fff; }
+  .card { border: 1px solid #999; break-inside: avoid; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  .print-only { display: block !important; }
+}
+.print-only { display: none; }
