@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Field, PageHeader, Section, StatusBadge, useLang } from '../components/ui'
 import { useAuth } from '../lib/auth'
 import { insert, list, update, upsert, type Row } from '../lib/store'
-import { displayName, fmtDate, useEvents, useProgrammes } from '../lib/content'
+import { displayName, fmtDate, localize, useEvents, useProgrammes } from '../lib/content'
 import type { Evidence, Lang, Programme, Status } from '../data/types'
 import site from '../data/site.json'
 import { buildDigest, digestHtml } from './Digest'
@@ -189,7 +189,7 @@ function ProgrammesTab() {
           ))}
         </div>
         <details className="card p-4" open>
-          <summary className="display font-bold cursor-pointer">English fields</summary>
+          <summary className="display font-bold cursor-pointer">{t('admin.englishFields')}</summary>
           <div className="mt-3 grid gap-3">
             {TEXT_FIELDS.map((k) => (
               <Field key={k} label={k}>
@@ -595,12 +595,15 @@ function RecheckTab() {
         ))}
       </ul>
       <h2 className="text-2xl font-bold">{t('portals.notFoundTitle')}</h2>
-      <ul className="space-y-2" lang="en">
-        {site.notFound.map((n, i) => (
-          <li key={i} className="card p-3">
-            <b>{n.country}</b> · {n.item} · <span className="text-coal/70">{n.confirm}</span>
-          </li>
-        ))}
+      <ul className="space-y-2">
+        {site.notFound.map((x, i) => {
+          const n = localize(x, lang)
+          return (
+            <li key={i} className="card p-3" lang={n.translated ? lang : 'en'}>
+              <b>{n.country}</b> · {n.item} · <span className="text-coal/70">{n.confirm}</span>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )

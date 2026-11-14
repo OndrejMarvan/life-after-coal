@@ -25,6 +25,8 @@ html {
 body {
   font-family: var(--font-sans);
   line-height: 1.55;
+  /* Long e-mail addresses and links must wrap on phones instead of widening the page. */
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, .display {

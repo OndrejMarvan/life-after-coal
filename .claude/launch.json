@@ -6,6 +6,12 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "[ -s \"$HOME/.nvm/nvm.sh\" ] && . \"$HOME/.nvm/nvm.sh\"; npm run dev -- --port 5173 --strictPort"],
       "port": 5173
+    },
+    {
+      "name": "pages-preview",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "[ -s \"$HOME/.nvm/nvm.sh\" ] && . \"$HOME/.nvm/nvm.sh\"; export BASE_PATH=/life-after-coal/; npm run build && cp dist/index.html dist/404.html && npx vite preview --port 4173 --strictPort"],
+      "port": 4173
     }
   ]
 }

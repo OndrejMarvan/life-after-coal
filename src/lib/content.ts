@@ -19,6 +19,12 @@ export function pickField(p: Programme, field: keyof Programme, lang: Lang): { t
   return { text: String(p[field] ?? ''), translated: lang === 'en' }
 }
 
+/** A site.json item in the reader's language: fields in `i18n[lang]` replace the English source fields. */
+export function localize<T extends { i18n?: object }>(item: T, lang: Lang): Omit<T, 'i18n'> & { translated: boolean } {
+  const tr = lang === 'en' ? undefined : (item.i18n as Partial<Record<Lang, object>> | undefined)?.[lang]
+  return { ...item, ...tr, translated: Boolean(tr) } as Omit<T, 'i18n'> & { translated: boolean }
+}
+
 /** Official local name for Czech and Polish readers, English name for English readers. */
 export function displayName(p: Programme, lang: Lang): string {
   return lang === 'en' ? p.name_en : p.name_local

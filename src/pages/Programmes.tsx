@@ -79,7 +79,7 @@ export default function Programmes() {
     <>
       <PageHeader title={t('programmes.title')} intro={t('programmes.intro', { count: programmes.length })} />
       <Section>
-        <div className="grid gap-6 lg:grid-cols-[300px_1fr]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[300px_1fr]">
           <aside className="space-y-4 no-print" aria-label={t('programmes.filters')}>
             <label className="block">
               <span className="label">{t('common.search')}</span>

@@ -27,7 +27,10 @@ export interface Profile {
   age: Age
   czShifts?: 'yes' | 'almost' | 'no' | 'unknown'
   czStartBefore2016?: YesNo
+  /** Region the person lives in ('' when they live outside Czechia and Poland). */
   region: string
+  /** Region of the mine or workplace, asked only when it is in another country than home. */
+  workRegion?: string
   needs: Need[]
 }
 
@@ -46,6 +49,9 @@ export const PL_REGIONS = [...SUB7, 'malopolska', 'walbrzych', 'elsewhere_pl']
 export const CZ_REGIONS = ['msk', 'usti', 'kv', 'elsewhere_cz']
 const EMPLOYEE_GROUPS: Group[] = ['underground', 'surface', 'processing', 'office']
 
+/** Regions offered in the wizard for one country. */
+export const regionsOf = (c: string | undefined): string[] => (c === 'PL' ? PL_REGIONS : c === 'CZ' ? CZ_REGIONS : [])
+
 type Rule = (p: Profile) => { verdict: Verdict; reason?: string } | null
 
 const stillEmployed = (p: Profile) => p.situation === 'working' || p.situation === 'leaving'
@@ -53,6 +59,9 @@ const hasLeft = (p: Profile) => p.situation === 'left_lt6' || p.situation === 'l
 const isEmployee = (p: Profile) => EMPLOYEE_GROUPS.includes(p.group)
 const near = (p: Profile, max: 4 | 5) =>
   p.yearsToPension === 'lt1' || p.yearsToPension === '1to4' || (max === 5 && p.yearsToPension === '5')
+/** For rules open to people who live or work in the area. */
+const livesOrWorksIn = (p: Profile, regions: string[]) =>
+  regions.includes(p.region) || (!!p.workRegion && regions.includes(p.workRegion))
 const serviceAtLeast = (p: Profile, years: number) => {
   const min: Record<Service, number> = { lt2: 0, '2to3': 2, '3to5': 3, '5to15': 5, '16to24': 16, '25plus': 25 }
   return min[p.service] >= years
@@ -125,20 +134,21 @@ const RULES: Record<string, Rule> = {
   'PL-N14': (p) => (p.liveCountry === 'PL' ? { verdict: 'likely', reason: 'registerWhereYouLive' } : null),
   'PL-N16': (p) => (p.group === 'retired' ? { verdict: 'check', reason: 'rulesNotChecked' } : null),
   'PL-R01': (p) => {
-    if (!SUB7.includes(p.region)) return p.region === 'malopolska' || p.region === 'walbrzych' ? null : { verdict: 'no', reason: 'outsideSubregions' }
+    if (!livesOrWorksIn(p, SUB7))
+      return livesOrWorksIn(p, ['malopolska', 'walbrzych']) ? null : { verdict: 'no', reason: 'outsideSubregions' }
     if (p.group === 'family') return { verdict: 'check', reason: 'familyOfParticipant' }
     if (p.group === 'retired') return null
     if (hasLeft(p) && p.plLeftWhen === 'before2021') return { verdict: 'no', reason: 'dismissedBefore2021' }
     return { verdict: 'likely', reason: 'recruitsFrom2027' }
   },
   'PL-R02': (p) => {
-    if (!SUB7.includes(p.region) || p.group === 'family' || p.group === 'retired') return null
+    if (!livesOrWorksIn(p, SUB7) || p.group === 'family' || p.group === 'retired') return null
     if (hasLeft(p) && p.plLeftWhen === 'before2021') return { verdict: 'no', reason: 'dismissedBefore2021' }
     return { verdict: 'check', reason: 'callClosedAskProjects' }
   },
   'PL-R03': (p) => (SUB7.includes(p.region) && p.group !== 'retired' ? { verdict: 'likely', reason: 'adultsInSubregions' } : null),
   'PL-R04': (p) => (SUB7.includes(p.region) ? { verdict: 'check', reason: 'askYourGmina' } : null),
-  'PL-R07': (p) => (SUB7.includes(p.region) && p.group === 'supplier' ? { verdict: 'check', reason: 'forFirms' } : null),
+  'PL-R07': (p) => (livesOrWorksIn(p, SUB7) && p.group === 'supplier' ? { verdict: 'check', reason: 'forFirms' } : null),
   'PL-R08': (p) => (SUB7.includes(p.region) && p.needs.includes('children') ? { verdict: 'check', reason: 'forSchools' } : null),
   'PL-R10': (p) => (p.region === 'malopolska' ? { verdict: 'likely', reason: 'residentsOfCounties' } : null),
   'PL-R11': (p) => (p.region === 'walbrzych' ? { verdict: 'likely', reason: 'residentsOfCounties' } : null),
@@ -149,7 +159,7 @@ const RULES: Record<string, Rule> = {
   'PL-O02': (p) => (p.employer === 'BOGDANKA' ? { verdict: 'check', reason: 'caseByCase' } : null),
   'PL-L02': (p) => (p.region === 'rybnik' ? { verdict: 'likely', reason: 'localOffice' } : null),
   'PL-L05': (p) => (p.region === 'rybnik' && p.group !== 'retired' ? { verdict: 'check', reason: 'datesNotFound' } : null),
-  'PL-L09': (p) => (p.employer === 'PGG' && p.region === 'katowice' && stillEmployed(p) ? { verdict: 'check', reason: 'pggStaff' } : null),
+  'PL-L09': (p) => (p.employer === 'PGG' && livesOrWorksIn(p, ['katowice']) && stillEmployed(p) ? { verdict: 'check', reason: 'pggStaff' } : null),
   'PL-L11': (p) => (p.region === 'malopolska' || p.employer === 'PKW' ? { verdict: 'likely', reason: 'residentsOfCounties' } : null),
 
   // ---------------- Czechia ----------------
@@ -198,7 +208,7 @@ const RULES: Record<string, Rule> = {
     if (p.liveCountry === 'CZ') return { verdict: 'likely', reason: 'registerAtLabourOffice' }
     return { verdict: 'check', reason: 'crossBorderResidence' }
   },
-  'CZ-P17': (p) => (p.region === 'msk' && p.group !== 'retired' ? { verdict: 'likely', reason: 'freeCounselling' } : null),
+  'CZ-P17': (p) => (livesOrWorksIn(p, ['msk']) && p.group !== 'retired' ? { verdict: 'likely', reason: 'freeCounselling' } : null),
   'CZ-P19': (p) => (['msk', 'usti', 'kv'].includes(p.region) && p.needs.includes('business') ? { verdict: 'check', reason: 'loanMinimum' } : null),
   'CZ-P21': (p) => (p.region === 'msk' && p.needs.includes('job') ? { verdict: 'check', reason: 'rules2017' } : null),
   'CZ-P25': (p) => (p.employer === 'SU' && isEmployee(p) ? { verdict: 'likely', reason: 'throughEmployer' } : null),

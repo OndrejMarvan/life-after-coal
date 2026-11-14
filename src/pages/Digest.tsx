@@ -25,7 +25,7 @@ export function buildDigest(programmes: Programme[], events: CalEvent[], lang: L
 
 export function digestHtml(d: ReturnType<typeof buildDigest>, lang: Lang, labels: { app: string; deadlines: string; programmes: string; help: string }) {
   const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!)
-  const origin = typeof window !== 'undefined' ? window.location.origin : ''
+  const origin = typeof window !== 'undefined' ? window.location.origin + import.meta.env.BASE_URL.replace(/\/$/, '') : ''
   return `<div style="font-family:Arial,sans-serif;max-width:640px;margin:auto;color:#0D0D0D">
 <div style="background:#0D0D0D;color:#fff;padding:16px;border-bottom:6px solid #F47B20"><h1 style="margin:0;font-size:24px">${esc(labels.app)} · ${esc(d.title)}</h1></div>
 <h2 style="color:#C85A12">${esc(labels.deadlines)}</h2><ul>${d.deadlines.map((e) => `<li><b>${esc(e.dateLabel ? t3(e.dateLabel, lang) : fmtDate(e.date, lang))}</b>: ${esc(t3(e.title, lang))}</li>`).join('')}</ul>
@@ -49,9 +49,7 @@ export default function Digest() {
         </button>
       </div>
       <header className="bg-coal text-white p-6 flex items-center gap-4 border-b-8 border-orange">
-        <div className="w-16 rounded-lg bg-orange p-2">
-          <Headframe />
-        </div>
+        <Headframe className="w-16 shrink-0" />
         <div>
           <p className="display text-3xl font-bold">{t('appName')}</p>
           <p className="display text-orange text-xl">

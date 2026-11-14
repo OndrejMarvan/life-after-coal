@@ -20,6 +20,7 @@ import Gaps from './pages/Gaps'
 import About from './pages/About'
 import Account from './pages/Account'
 import NotFound from './pages/NotFound'
+import Support from './pages/Support'
 
 const MapPage = lazy(() => import('./pages/MapPage'))
 const Admin = lazy(() => import('./pages/Admin'))
@@ -33,7 +34,7 @@ function Loading() {
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route element={<Layout />}>
@@ -54,6 +55,7 @@ export default function App() {
               <Route path="portals" element={<Portals />} />
               <Route path="gaps" element={<Gaps />} />
               <Route path="about" element={<About />} />
+              <Route path="support" element={<Support />} />
               <Route path="account" element={<Account />} />
               <Route path="admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />

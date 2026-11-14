@@ -4,7 +4,7 @@ import { Field, PageHeader, SafetyBox, Section, useLang } from '../components/ui
 import site from '../data/site.json'
 import { insert, list, type Row } from '../lib/store'
 import { useAuth } from '../lib/auth'
-import { fmtDate } from '../lib/content'
+import { fmtDate, localize } from '../lib/content'
 
 interface Story extends Row {
   title: string
@@ -29,6 +29,7 @@ export default function Stories() {
   }, [])
 
   const hist = site.history.filter((h) => country === 'ALL' || h.country === country)
+  const lessons = localize(site.historyLessons, lang)
 
   return (
     <>
@@ -40,8 +41,8 @@ export default function Stories() {
               <p className="display text-xl font-bold mb-2">
                 {c === 'CZ' ? '🇨🇿' : '🇵🇱'} {t(`countries.${c}`)}
               </p>
-              <ul className="space-y-2 list-disc pl-5" lang="en">
-                {site.historyLessons[c].map((l, i) => (
+              <ul className="space-y-2 list-disc pl-5" lang={lessons.translated ? lang : 'en'}>
+                {lessons[c].map((l, i) => (
                   <li key={i}>{l}</li>
                 ))}
               </ul>
@@ -58,28 +59,30 @@ export default function Stories() {
             </button>
           ))}
         </div>
-        {lang !== 'en' && <p className="mb-3 rounded-lg bg-orange-pale px-3 py-2 text-sm font-semibold">{t('common.detailsInEnglish')}</p>}
-        <ol className="relative border-l-4 border-orange ml-3 space-y-6" lang="en">
-          {hist.map((h, i) => (
-            <li key={i} className="ml-6">
-              <span className="absolute -left-[13px] mt-1.5 h-5 w-5 rounded-full border-4 border-coal bg-orange" aria-hidden="true" />
-              <p className="display text-lg font-bold text-orange-deep">
-                {h.country === 'CZ' ? '🇨🇿' : '🇵🇱'} {h.years}
-              </p>
-              <p className="text-xl font-bold">{h.title}</p>
-              <p>{h.what}</p>
-              {h.results && h.results !== 'Not found' && (
-                <p className="mt-1">
-                  <b>{t('stories.results')}:</b> {h.results}
+        <ol className="relative border-l-4 border-orange ml-3 space-y-6">
+          {hist.map((h, i) => {
+            const l = localize(h, lang)
+            return (
+              <li key={i} className="ml-6" lang={l.translated ? lang : 'en'}>
+                <span className="absolute -left-[13px] mt-1.5 h-5 w-5 rounded-full border-4 border-coal bg-orange" aria-hidden="true" />
+                <p className="display text-lg font-bold text-orange-deep">
+                  {h.country === 'CZ' ? '🇨🇿' : '🇵🇱'} {l.years}
                 </p>
-              )}
-              {h.outcome && (
-                <p>
-                  <b>{t('stories.outcome')}:</b> {h.outcome}
-                </p>
-              )}
-            </li>
-          ))}
+                <p className="text-xl font-bold">{l.title}</p>
+                <p>{l.what}</p>
+                {h.results && h.results !== 'Not found' && (
+                  <p className="mt-1">
+                    <b>{t('stories.results')}:</b> {l.results}
+                  </p>
+                )}
+                {l.outcome && (
+                  <p>
+                    <b>{t('stories.outcome')}:</b> {l.outcome}
+                  </p>
+                )}
+              </li>
+            )
+          })}
         </ol>
       </Section>
 

@@ -44,9 +44,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="mx-auto w-56 sm:w-72 rounded-3xl bg-orange p-6 shadow-2xl rotate-2">
-            <Headframe className="w-full h-auto" />
-          </div>
+          <Headframe className="mx-auto block w-64 sm:w-80 rotate-2 drop-shadow-2xl" />
         </div>
       </section>
 
@@ -74,12 +72,12 @@ export default function Home() {
             <Link
               key={d.need}
               to={`/programmes?need=${d.need}`}
-              className="card flex items-center gap-3 p-5 text-lg font-bold hover:border-orange hover:bg-orange-pale border-2"
+              className="card flex flex-col items-start gap-1 p-4 text-base sm:text-lg md:flex-row md:items-center md:gap-3 md:p-5 font-bold hover:border-orange hover:bg-orange-pale border-2"
             >
               <span className="text-3xl" aria-hidden="true">
                 {d.icon}
               </span>
-              {t(`needs.${d.need}`)}
+              <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{t(`needs.${d.need}`)}</span>
             </Link>
           ))}
           <Link to="/portals" className="card flex items-center gap-3 p-5 text-lg font-bold hover:border-orange hover:bg-orange-pale border-2">

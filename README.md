@@ -22,8 +22,9 @@ Built for the Club Alpbach Design Thinking Hackathon, "Life Beyond Coal" challen
 | Accounts, dashboard (saved programmes, route, deadlines, application tracker) | `src/pages/Account.tsx` |
 | Admin: edit programmes and translations, CSV/JSON import, events, callbacks, subscribers, digest, moderation, re-check list, suggestions | `src/pages/Admin.tsx` |
 | Official portals, "mentioned but not confirmed" list, gaps page with exclusion tables | `src/pages/Portals.tsx`, `src/pages/Gaps.tsx` |
+| "Buy us a coffee" crowdfunding page and footer button (placeholder: no payment method connected yet) | `src/pages/Support.tsx` |
 
-Languages: Czech, Polish and English for the whole interface (`src/i18n`). Programme summaries are in the programme's own language plus English; the full details are in English for now and admins can add translations per field.
+Languages: Czech, Polish and English for the whole interface (`src/i18n`). Programme summaries are in all three languages; the full details are in English for now and admins can add translations per field.
 
 Design: black and orange, kit stripes, safety tape for warnings, Oswald and Inter, 18px base text, print views.
 
@@ -42,7 +43,23 @@ npm run dev        # http://localhost:5173
 
 Without any configuration the site runs in **demo mode**: everything works, and forum posts, sign-ups and accounts are saved only in your browser. The AI assistant falls back to a keyword search of the database when the server function is not available (as in `npm run dev`). Use `vercel dev` to run the assistant function locally.
 
-## Deploy
+## Share it on GitHub Pages (free, static)
+
+The workflow `.github/workflows/pages.yml` builds the site and publishes it at `https://<user>.github.io/<repo>/` on every push to `main`.
+
+1. On GitHub open **Settings → Pages** and set **Source** to **GitHub Actions** (once).
+2. Push to `main`, or run the workflow by hand from the **Actions** tab.
+
+GitHub Pages only serves files, so the site runs in demo mode there and the AI assistant uses its keyword-search fallback. To leave demo mode, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` as repository variables (Settings → Secrets and variables → Actions → Variables). For the AI assistant, deploy to Vercel instead (below).
+
+To try the Pages build locally:
+
+```bash
+export BASE_PATH=/life-after-coal/
+npm run build && npx vite preview   # http://localhost:4173/life-after-coal/
+```
+
+## Deploy to Vercel (full version with the AI assistant)
 
 1. **Supabase** (optional, for shared data and real accounts): create a project, open the SQL editor and run `supabase/migrations/0001_init.sql`. Then make yourself an admin:
    ```sql

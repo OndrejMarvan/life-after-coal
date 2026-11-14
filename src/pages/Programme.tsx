@@ -74,7 +74,7 @@ export default function ProgrammePage() {
     <>
       <section className="bg-coal text-white">
         <div className="kit-stripes h-2" aria-hidden="true" />
-        <div className="mx-auto max-w-6xl px-4 py-8 grid gap-6 md:grid-cols-[1fr_auto] items-start">
+        <div className="mx-auto max-w-6xl px-4 py-8 grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_auto] items-start">
           <div>
             <Link to="/programmes" className="text-white/80 underline underline-offset-4 no-print">
               ← {t('programme.backToList')}
@@ -91,9 +91,7 @@ export default function ProgrammePage() {
             {lang !== 'en' && p.name_en !== p.name_local && <p className="mt-1 text-white/70">{p.name_en}</p>}
             <p className="mt-4 text-xl max-w-3xl">{pickSummary(p, lang)}</p>
           </div>
-          <div className="hidden md:block w-32 rounded-2xl bg-orange p-3">
-            <Headframe />
-          </div>
+          <Headframe className="hidden md:block w-36 shrink-0" />
         </div>
       </section>
 
@@ -120,7 +118,7 @@ export default function ProgrammePage() {
           </div>
         )}
 
-        <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
           <div className="space-y-4">
             {p.intro && (
               <div className="card p-5 text-lg leading-relaxed">
@@ -146,22 +144,28 @@ export default function ProgrammePage() {
               <dl className="mt-4 grid gap-4">
                 {(
                   [
-                    ['programme.operator', p.operator],
-                    ['programme.funder', p.funder ?? ''],
-                    ['programme.territory', p.territory],
-                    ['programme.dates', p.dates],
-                    ['programme.status', p.status_text],
-                    ['programme.legal', p.legal_basis],
-                    ['programme.takeUp', p.take_up],
-                    ['programme.problems', p.known_problems],
-                    ['programme.evidenceNote', [p.evidence_note, p.source_note].filter(Boolean).join(' · ')],
-                  ] as [string, string][]
+                    ['programme.operator', field('operator')],
+                    ['programme.funder', field('funder')],
+                    ['programme.territory', field('territory')],
+                    ['programme.dates', field('dates')],
+                    ['programme.status', field('status_text')],
+                    ['programme.legal', field('legal_basis')],
+                    ['programme.takeUp', field('take_up')],
+                    ['programme.problems', field('known_problems')],
+                    [
+                      'programme.evidenceNote',
+                      {
+                        text: [field('evidence_note').text, field('source_note').text].filter(Boolean).join(' · '),
+                        translated: field('evidence_note').translated,
+                      },
+                    ],
+                  ] as [string, { text: string; translated: boolean }][]
                 )
-                  .filter(([, v]) => v)
+                  .filter(([, v]) => v.text)
                   .map(([k, v]) => (
                     <div key={k}>
                       <dt className="font-bold">{t(k)}</dt>
-                      <dd lang="en">{v}</dd>
+                      <dd lang={v.translated ? lang : 'en'}>{v.text}</dd>
                     </div>
                   ))}
               </dl>

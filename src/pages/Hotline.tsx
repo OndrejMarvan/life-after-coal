@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Field, PageHeader, SafetyBox, Section, useLang } from '../components/ui'
 import { insert } from '../lib/store'
+import { isDemo } from '../lib/supabase'
 
 const LINES = [
   { key: 'line_up', phone: '800 77 99 00', country: '🇨🇿' },
@@ -29,8 +30,11 @@ export default function Hotline() {
       <Section>
         <div className="grid gap-6 lg:grid-cols-2">
           <div>
-            <h2 className="text-2xl font-bold mb-4">{t('hotline.callbackTitle')}</h2>
-            {sent ? (
+            {!isDemo && <h2 className="text-2xl font-bold mb-4">{t('hotline.callbackTitle')}</h2>}
+            {isDemo ? (
+              // Without a database nobody would receive the request, so do not offer it.
+              <SafetyBox title={t('hotline.demoTitle')}>{t('hotline.demoText')}</SafetyBox>
+            ) : sent ? (
               <SafetyBox title={t('common.thanks')}>{t('hotline.sent')}</SafetyBox>
             ) : (
               <form

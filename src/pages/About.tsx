@@ -23,9 +23,9 @@ export default function About() {
               </Link>
             </div>
           </div>
-          <div className="rounded-3xl bg-orange p-6">
-            <Headframe />
-            <p className="display mt-3 text-center font-bold">{t('greeting')}</p>
+          <div className="mx-auto w-full max-w-72 rounded-3xl bg-coal p-4">
+            <Headframe className="block w-full" />
+            <p className="display mt-3 text-center font-bold text-orange">{t('greeting')}</p>
           </div>
         </div>
       </Section>

@@ -7,7 +7,23 @@
    "what": "Leave up to 5/4 years, PLN 170,000 severance, paid by the companies themselves, for all staff of support-system companies",
    "funders": "State budget; about PLN 2bn in 2026",
    "results": "~1,750 PGG staff on benefits by mid-May 2026; 526 JSW severances by 28 May 2026",
-   "outcome": "Current"
+   "outcome": "Current",
+   "i18n": {
+    "cs": {
+     "title": "Balíček zákona ze dne 4. 12. 2025 (N01–N03, N09)",
+     "what": "Dovolená až 5/4 roky, odstupné 170 000 PLN, vyplácejí je samy společnosti, pro všechny zaměstnance společností zapojených do systému podpory",
+     "funders": "Státní rozpočet; asi 2 mld. PLN v roce 2026",
+     "results": "~1 750 zaměstnanců PGG pobíralo dávky do poloviny května 2026; 526 odstupných v JSW do 28. 5. 2026",
+     "outcome": "Aktuální"
+    },
+    "pl": {
+     "title": "Pakiet ustawy z dnia 4 grudnia 2025 r. (N01–N03, N09)",
+     "what": "Urlop do 5/4 lat, odprawa 170 000 zł, wypłacane przez same spółki, dla wszystkich pracowników spółek objętych systemem wsparcia",
+     "funders": "Budżet państwa; ok. 2 mld zł w 2026 r.",
+     "results": "~1750 pracowników PGG na świadczeniach do połowy maja 2026; 526 odpraw w JSW do 28.05.2026",
+     "outcome": "Obowiązuje"
+    }
+   }
   },
   {
    "country": "PL",
@@ -16,7 +32,23 @@
    "what": "Leave up to 4 years, 12× pay severance",
    "funders": "State budget, limit PLN 1.27bn",
    "results": "Not found",
-   "outcome": "Current"
+   "outcome": "Current",
+   "i18n": {
+    "cs": {
+     "title": "Zákon o sociální ochraně pro pracovníky energetiky a hnědého uhlí (N11)",
+     "what": "Dovolená až 4 roky, odstupné ve výši 12násobku mzdy",
+     "funders": "Státní rozpočet, limit 1,27 mld. PLN",
+     "results": "Nenalezeno",
+     "outcome": "Aktuální"
+    },
+    "pl": {
+     "title": "Ustawa o osłonach socjalnych dla pracowników energetyki i węgla brunatnego (N11)",
+     "what": "Urlop do 4 lat, odprawa w wysokości 12-krotności wynagrodzenia",
+     "funders": "Budżet państwa, limit 1,27 mld zł",
+     "results": "Nie znaleziono",
+     "outcome": "Obowiązuje"
+    }
+   }
   },
   {
    "country": "PL",
@@ -25,7 +57,23 @@
    "what": "310 mining and mining-related workers: action plans, courses, placement, subsidised jobs",
    "funders": "ESF, RPO WSL 2014–2020, ~PLN 10m",
    "results": "Results not found",
-   "outcome": "Programme period ended; replaced by FST 10.19"
+   "outcome": "Programme period ended; replaced by FST 10.19",
+   "i18n": {
+    "cs": {
+     "title": "Outplacement „Energia“ (R09)",
+     "what": "310 pracovníků hornictví a firem navázaných na hornictví: akční plány, kurzy, zprostředkování práce, dotovaná místa",
+     "funders": "ESF, RPO WSL 2014–2020, ~10 mil. PLN",
+     "results": "Výsledky nenalezeny",
+     "outcome": "Programové období skončilo; nahrazeno FST 10.19"
+    },
+    "pl": {
+     "title": "Outplacement „Energia” (R09)",
+     "what": "310 pracowników górnictwa i firm okołogórniczych: plany działania, szkolenia, pośrednictwo pracy, subsydiowane zatrudnienie",
+     "funders": "EFS, RPO WSL 2014–2020, ~10 mln zł",
+     "results": "Nie znaleziono wyników",
+     "outcome": "Okres programowania się zakończył; zastąpiony przez FST 10.19"
+    }
+   }
   },
   {
    "country": "PL",
@@ -34,7 +82,23 @@
    "what": "Closure schedule to 2049; PLN 120,000 severance; SRK transfers allowed until 31 Dec 2023 (Pokój, Jastrzębie III)",
    "funders": "State budget",
    "results": "Not found",
-   "outcome": "SRK transfer window closed 31 Dec 2023"
+   "outcome": "SRK transfer window closed 31 Dec 2023",
+   "i18n": {
+    "cs": {
+     "title": "Společenská dohoda a novela ze srpna 2021",
+     "what": "Harmonogram uzavírání do roku 2049; odstupné 120 000 PLN; převody do SRK povoleny do 31. 12. 2023 (Pokój, Jastrzębie III)",
+     "funders": "Státní rozpočet",
+     "results": "Nenalezeno",
+     "outcome": "Okno pro převody do SRK se uzavřelo 31. 12. 2023"
+    },
+    "pl": {
+     "title": "Umowa społeczna i nowelizacja z sierpnia 2021",
+     "what": "Harmonogram zamknięć do 2049 r.; odprawa 120 000 zł; przekazania do SRK dozwolone do 31.12.2023 (Pokój, Jastrzębie III)",
+     "funders": "Budżet państwa",
+     "results": "Nie znaleziono",
+     "outcome": "Okno przekazań do SRK zamknięto 31.12.2023"
+    }
+   }
   },
   {
    "country": "PL",
@@ -43,7 +107,23 @@
    "what": "Mines handed to SRK; staff got mining leave or severance",
    "funders": "State budget via SRK",
    "results": "9,022 applications and 7,650 benefits by May 2017, incl. 4,962 on leave. NIK (2021): restructuring programmes did not make the sector viable",
-   "outcome": "Replaced by company-run model in 2026. Media report that many who took severance later returned to mining, which led to the 2026 return ban"
+   "outcome": "Replaced by company-run model in 2026. Media report that many who took severance later returned to mining, which led to the 2026 return ban",
+   "i18n": {
+    "cs": {
+     "title": "Model SRK (po ozdravném plánu Kompanie Węglowa z roku 2015 a novele z února 2015)",
+     "what": "Doly předány SRK; zaměstnanci dostali hornickou dovolenou nebo odstupné",
+     "funders": "Státní rozpočet přes SRK",
+     "results": "9 022 žádostí a 7 650 dávek do května 2017, z toho 4 962 na dovolené. NIK (2021): restrukturalizační programy neudělaly odvětví životaschopným",
+     "outcome": "V roce 2026 nahrazen modelem, který provozují samy společnosti. Média uvádějí, že mnoho lidí, kteří vzali odstupné, se později vrátilo do hornictví, což vedlo k zákazu návratu z roku 2026"
+    },
+    "pl": {
+     "title": "Model SRK (po planie naprawczym Kompanii Węglowej z 2015 r. i nowelizacji z lutego 2015)",
+     "what": "Kopalnie przekazane do SRK; pracownicy dostali urlopy górnicze lub odprawy",
+     "funders": "Budżet państwa przez SRK",
+     "results": "9022 wnioski i 7650 świadczeń do maja 2017, w tym 4962 osoby na urlopie. NIK (2021): programy restrukturyzacji nie zapewniły sektorowi rentowności",
+     "outcome": "W 2026 r. zastąpiony modelem prowadzonym przez same spółki. Media podają, że wiele osób, które wzięły odprawę, wróciło potem do górnictwa, co doprowadziło do zakazu powrotu z 2026 r."
+    }
+   }
   },
   {
    "country": "PL",
@@ -52,7 +132,23 @@
    "what": "Outplacement projects across Silesia",
    "funders": "ESF",
    "results": "Not found per project",
-   "outcome": "EU programme period ended"
+   "outcome": "EU programme period ended",
+   "i18n": {
+    "cs": {
+     "title": "Outplacement z RPO WSL (opatření 7.4.2), např. PUP Rybnik (L01)",
+     "what": "Outplacementové projekty po celém Slezsku",
+     "funders": "ESF",
+     "results": "Nenalezeno pro jednotlivé projekty",
+     "outcome": "Programové období EU skončilo"
+    },
+    "pl": {
+     "title": "Outplacement z RPO WSL (działanie 7.4.2), np. PUP Rybnik (L01)",
+     "what": "Projekty outplacementowe na całym Śląsku",
+     "funders": "EFS",
+     "results": "Nie znaleziono dla poszczególnych projektów",
+     "outcome": "Okres programowania UE się zakończył"
+    }
+   }
   },
   {
    "country": "PL",
@@ -61,7 +157,23 @@
    "what": "\"Świadczenie górnicze\" for underground staff at most 3 years from pension before 1 Jan 2007; retraining stipends; plan: 12,000 people",
    "funders": "State budget, PLN 165.8m for benefits",
    "results": "NIK audit (2007) of public funds used",
-   "outcome": "Act expired 2006"
+   "outcome": "Act expired 2006",
+   "i18n": {
+    "cs": {
+     "title": "Zákon ze dne 28. 11. 2003 o restrukturalizaci černouhelného hornictví v letech 2003–2006",
+     "what": "„Świadczenie górnicze“ (hornická dávka) pro zaměstnance v podzemí, kteří byli nejvýše 3 roky před důchodem, před 1. 1. 2007; stipendia na rekvalifikaci; plán: 12 000 lidí",
+     "funders": "Státní rozpočet, 165,8 mil. PLN na dávky",
+     "results": "Audit NIK (2007) využití veřejných prostředků",
+     "outcome": "Platnost zákona skončila v roce 2006"
+    },
+    "pl": {
+     "title": "Ustawa z dnia 28 listopada 2003 r. o restrukturyzacji górnictwa węgla kamiennego w latach 2003–2006",
+     "what": "„Świadczenie górnicze” dla pracowników dołowych, którym do emerytury brakowało najwyżej 3 lat, przed 1.01.2007; stypendia na przekwalifikowanie; plan: 12 000 osób",
+     "funders": "Budżet państwa, 165,8 mln zł na świadczenia",
+     "results": "Kontrola NIK (2007) wykorzystania środków publicznych",
+     "outcome": "Ustawa wygasła w 2006 r."
+    }
+   }
   },
   {
    "country": "PL",
@@ -70,7 +182,23 @@
    "what": "Regional labour-market and enterprise measures, first outplacement in coal",
    "funders": "Regional and state funds",
    "results": "Not found",
-   "outcome": "Expired with the programming period"
+   "outcome": "Expired with the programming period",
+   "i18n": {
+    "cs": {
+     "title": "Regionální programy zmírňující restrukturalizaci hornictví (Slezsko; integrovaný malopolský program pro hornictví, hutnictví a chemii)",
+     "what": "Regionální opatření na trhu práce a pro podniky, první outplacement v uhelném průmyslu",
+     "funders": "Regionální a státní prostředky",
+     "results": "Nenalezeno",
+     "outcome": "Skončily s programovým obdobím"
+    },
+    "pl": {
+     "title": "Regionalne programy łagodzenia restrukturyzacji górnictwa (Śląsk; zintegrowany program małopolski dla górnictwa, hutnictwa i chemii)",
+     "what": "Regionalne działania na rynku pracy i dla przedsiębiorstw, pierwszy outplacement w górnictwie węglowym",
+     "funders": "Środki regionalne i państwowe",
+     "results": "Nie znaleziono",
+     "outcome": "Wygasły wraz z okresem programowania"
+    }
+   }
   },
   {
    "country": "PL",
@@ -79,7 +207,23 @@
    "what": "Mitigation of social and regional costs of mining and steel restructuring",
    "funders": "EU PHARE",
    "results": "Evaluated by PARP in 2004",
-   "outcome": "Pre-accession aid ended"
+   "outcome": "Pre-accession aid ended",
+   "i18n": {
+    "cs": {
+     "title": "PHARE „INICJATYWA“",
+     "what": "Zmírnění sociálních a regionálních nákladů restrukturalizace hornictví a hutnictví",
+     "funders": "EU PHARE",
+     "results": "Vyhodnoceno agenturou PARP v roce 2004",
+     "outcome": "Předvstupní pomoc skončila"
+    },
+    "pl": {
+     "title": "PHARE „INICJATYWA”",
+     "what": "Łagodzenie społecznych i regionalnych kosztów restrukturyzacji górnictwa i hutnictwa",
+     "funders": "PHARE UE",
+     "results": "Oceniony przez PARP w 2004 r.",
+     "outcome": "Pomoc przedakcesyjna się zakończyła"
+    }
+   }
   },
   {
    "country": "PL",
@@ -88,7 +232,23 @@
    "what": "5-year mining leave, lump-sum severance, social allowances, retraining; voluntary departures",
    "funders": "State budget plus company funds; PLN 5,383.9m in 1998–2002",
    "results": "About 67,000 people left mining. Demand exceeded the budget. NIK found the 1999 subsidy was not settled",
-   "outcome": "Reform period ended"
+   "outcome": "Reform period ended",
+   "i18n": {
+    "cs": {
+     "title": "Górniczy Pakiet Socjalny (Hornický sociální balíček) v rámci reformy 1998–2002",
+     "what": "5letá hornická dovolená, jednorázové odstupné, sociální příspěvky, rekvalifikace; dobrovolné odchody",
+     "funders": "Státní rozpočet a prostředky společností; 5 383,9 mil. PLN v letech 1998–2002",
+     "results": "Z hornictví odešlo asi 67 000 lidí. Zájem převýšil rozpočet. NIK zjistil, že dotace z roku 1999 nebyla vyúčtována",
+     "outcome": "Období reformy skončilo"
+    },
+    "pl": {
+     "title": "Górniczy Pakiet Socjalny w ramach reformy 1998–2002",
+     "what": "5-letni urlop górniczy, jednorazowa odprawa, zasiłki socjalne, przekwalifikowanie; dobrowolne odejścia",
+     "funders": "Budżet państwa i środki spółek; 5383,9 mln zł w latach 1998–2002",
+     "results": "Z górnictwa odeszło ok. 67 000 osób. Chętnych było więcej, niż pozwalał budżet. NIK stwierdziła, że dotacja z 1999 r. nie została rozliczona",
+     "outcome": "Okres reformy się zakończył"
+    }
+   }
   },
   {
    "country": "PL",
@@ -97,7 +257,25 @@
    "what": "Severance payments as mines closed from the end of 1990",
    "funders": "State",
    "results": "Severance money was spent quickly; long-term unemployment and illegal \"biedaszyby\" pits followed",
-   "outcome": "Basin closed"
+   "outcome": "Basin closed",
+   "i18n": {
+    "cs": {
+     "years": "90. léta",
+     "title": "Likvidace Dolnoslezské uhelné pánve (Wałbrzych)",
+     "what": "Odstupné při zavírání dolů od konce roku 1990",
+     "funders": "Stát",
+     "results": "Peníze z odstupného se rychle utratily; následovala dlouhodobá nezaměstnanost a nelegální šachty „biedaszyby“",
+     "outcome": "Pánev uzavřena"
+    },
+    "pl": {
+     "years": "Lata 90.",
+     "title": "Likwidacja Dolnośląskiego Zagłębia Węglowego (Wałbrzych)",
+     "what": "Odprawy przy zamykaniu kopalń od końca 1990 r.",
+     "funders": "Państwo",
+     "results": "Pieniądze z odpraw szybko się rozeszły; potem przyszło długotrwałe bezrobocie i nielegalne „biedaszyby”",
+     "outcome": "Zagłębie zamknięte"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -106,7 +284,23 @@
    "what": "~400 core staff + 260 contractor staff left in 2025; 750 + 150 left in Jan–Feb 2026; ~670 kept for liquidation",
    "funders": "OKD (severance CZK 1.3 bn); state (Labour Office, allowance)",
    "results": "~1/3 of the 900 had found work by the 2026 report, mostly as drivers, locksmiths or warehouse staff, at lower pay (TN.cz)",
-   "outcome": "Repeats the 2021 toolkit; adds the pension hardship waiver"
+   "outcome": "Repeats the 2021 toolkit; adds the pension hardship waiver",
+   "i18n": {
+    "cs": {
+     "title": "Uzavření Dolu ČSM: těžba skončila 31. 1. 2026, úpravna 28. 2. 2026",
+     "what": "~400 kmenových zaměstnanců + 260 zaměstnanců dodavatelů odešlo v roce 2025; 750 + 150 odešlo v lednu–únoru 2026; ~670 ponecháno na likvidaci",
+     "funders": "OKD (odstupné 1,3 mld. Kč); stát (Úřad práce, příspěvek)",
+     "results": "~1/3 z 900 lidí našla práci do zprávy z roku 2026, většinou jako řidiči, zámečníci nebo skladníci, za nižší mzdu (TN.cz)",
+     "outcome": "Opakuje nástroje z roku 2021; přidává odstranění tvrdosti zákona u důchodu"
+    },
+    "pl": {
+     "title": "Zamknięcie kopalni ČSM: wydobycie zakończone 31.01.2026, zakład przeróbczy 28.02.2026",
+     "what": "~400 pracowników własnych + 260 pracowników firm wykonawczych odeszło w 2025 r.; 750 + 150 odeszło w styczniu–lutym 2026; ~670 zostało do likwidacji",
+     "funders": "OKD (odprawy 1,3 mld CZK); państwo (Úřad práce, zasiłek)",
+     "results": "~1/3 z 900 osób znalazła pracę do czasu raportu z 2026 r., głównie jako kierowcy, ślusarze lub magazynierzy, za niższe wynagrodzenie (TN.cz)",
+     "outcome": "Powtarza zestaw narzędzi z 2021 r.; dodaje usunięcie surowości prawa przy emeryturze"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -115,7 +309,23 @@
    "what": "Nationwide; redundant employees and new employers",
    "funders": "ESF+ (OPZ+) and state",
    "results": "Not yet published",
-   "outcome": "Replaced Outplacement I"
+   "outcome": "Replaced Outplacement I",
+   "i18n": {
+    "cs": {
+     "title": "Outplacement II",
+     "what": "Celostátní; propouštění zaměstnanci a noví zaměstnavatelé",
+     "funders": "ESF+ (OPZ+) a stát",
+     "results": "Zatím nezveřejněno",
+     "outcome": "Nahradil Outplacement I"
+    },
+    "pl": {
+     "title": "Outplacement II",
+     "what": "Ogólnokrajowy; zwalniani pracownicy i nowi pracodawcy",
+     "funders": "EFS+ (OPZ+) i państwo",
+     "results": "Jeszcze nie opublikowano",
+     "outcome": "Zastąpił Outplacement I"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -124,7 +334,23 @@
    "what": "~485–500 laid off",
    "funders": "Company; state allowance (NV 342/2016)",
    "results": "~1/4 found work at once; 271 of 289 eligible applied for the allowance",
-   "outcome": "Ended; allowance continues for long-duration recipients"
+   "outcome": "Ended; allowance continues for long-duration recipients",
+   "i18n": {
+    "cs": {
+     "title": "Uzavření lomu ČSA, Most (Severní energetická)",
+     "what": "~485–500 propuštěných",
+     "funders": "Firma; státní příspěvek (NV 342/2016)",
+     "results": "~1/4 našla práci hned; o příspěvek požádalo 271 z 289 oprávněných",
+     "outcome": "Ukončeno; lidem s dlouhou dobou výplaty příspěvek pokračuje"
+    },
+    "pl": {
+     "title": "Zamknięcie odkrywki ČSA, Most (Severní energetická)",
+     "what": "~485–500 zwolnionych",
+     "funders": "Firma; zasiłek państwowy (NV 342/2016)",
+     "results": "~1/4 od razu znalazła pracę; o zasiłek wystąpiło 271 z 289 uprawnionych",
+     "outcome": "Zakończone; zasiłek trwa dla osób z długim okresem pobierania"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -133,7 +359,23 @@
    "what": "~2,500 moved to Diamo, ~700 kept; ~1,770 left by end Feb 2021",
    "funders": "OKD, Diamo, MPO, Labour Office",
    "results": "Labour Office mobile centres at ČSM, Darkov and ČSA from Nov 2020; Nová šichta with 80+ partner firms; Burza práce app; 1,296 allowance applicants by Jun 2021",
-   "outcome": "Toolkit reused for ČSM"
+   "outcome": "Toolkit reused for ČSM",
+   "i18n": {
+    "cs": {
+     "title": "Uzavření Dolů Darkov a ČSA (Karviná); doly OKD převedeny na Diamo",
+     "what": "~2 500 lidí přešlo do Diamo, ~700 ponecháno; ~1 770 odešlo do konce února 2021",
+     "funders": "OKD, Diamo, MPO, Úřad práce",
+     "results": "Mobilní pracoviště Úřadu práce na ČSM, Darkově a ČSA od listopadu 2020; Nová šichta s 80+ partnerskými firmami; aplikace Burza práce; 1 296 žadatelů o příspěvek do června 2021",
+     "outcome": "Nástroje znovu použity pro ČSM"
+    },
+    "pl": {
+     "title": "Zamknięcie kopalń Darkov i ČSA (Karwina); kopalnie OKD przekazane do Diamo",
+     "what": "~2500 osób przeszło do Diamo, ~700 zostało; ~1770 odeszło do końca lutego 2021",
+     "funders": "OKD, Diamo, MPO, Úřad práce",
+     "results": "Mobilne stanowiska Úřadu práce w kopalniach ČSM, Darkov i ČSA od listopada 2020; Nová šichta z ponad 80 firmami partnerskimi; aplikacja Burza práce; 1296 wnioskodawców o zasiłek do czerwca 2021",
+     "outcome": "Narzędzia wykorzystane ponownie przy ČSM"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -142,7 +384,23 @@
    "what": "Surface rate cut from CZK 7,000 to 5,300 for new claims",
    "funders": "State (MPO); MPO estimated up to CZK 820 m to 2031",
    "results": "2016–2020: 1,340 applicants, CZK 236.4 m paid",
-   "outcome": "Amended, still in force"
+   "outcome": "Amended, still in force",
+   "i18n": {
+    "cs": {
+     "title": "NV 415/2020 obnovuje příspěvek pro odcházející z OKD",
+     "what": "Sazba pro povrch u nových žádostí snížena ze 7 000 na 5 300 Kč",
+     "funders": "Stát (MPO); MPO odhadlo až 820 mil. Kč do roku 2031",
+     "results": "2016–2020: 1 340 žadatelů, vyplaceno 236,4 mil. Kč",
+     "outcome": "Novelizováno, stále platí"
+    },
+    "pl": {
+     "title": "NV 415/2020 przywraca zasiłek dla odchodzących z OKD",
+     "what": "Stawka dla pracowników powierzchni przy nowych wnioskach obniżona z 7000 do 5300 CZK",
+     "funders": "Państwo (MPO); MPO szacowało do 820 mln CZK do 2031 r.",
+     "results": "2016–2020: 1340 wnioskodawców, wypłacono 236,4 mln CZK",
+     "outcome": "Zmienione, nadal obowiązuje"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -151,7 +409,23 @@
    "what": "~700 left in 2020; Outplacement and the allowance (NV 342/2016, amended by NV 491/2020)",
    "funders": "Company, ESF (OPZ), state",
    "results": "48 people in Outplacement by Sep 2020 (45 from Sokolovská uhelná)",
-   "outcome": "Firm now SUAS Group; smaller cuts in 2025–26"
+   "outcome": "Firm now SUAS Group; smaller cuts in 2025–26",
+   "i18n": {
+    "cs": {
+     "title": "Útlum Sokolovské uhelné (uzavřena tlaková plynárna Vřesová)",
+     "what": "~700 lidí odešlo v roce 2020; Outplacement a příspěvek (NV 342/2016, novelizované NV 491/2020)",
+     "funders": "Firma, ESF (OPZ), stát",
+     "results": "48 lidí v Outplacementu do září 2020 (45 ze Sokolovské uhelné)",
+     "outcome": "Firma je dnes SUAS Group; menší redukce v letech 2025–26"
+    },
+    "pl": {
+     "title": "Wygaszanie Sokolovská uhelná (zamknięto ciśnieniową gazownię Vřesová)",
+     "what": "~700 osób odeszło w 2020 r.; Outplacement i zasiłek (NV 342/2016, zmienione NV 491/2020)",
+     "funders": "Firma, EFS (OPZ), państwo",
+     "results": "48 osób w Outplacement do września 2020 (45 z Sokolovská uhelná)",
+     "outcome": "Firma działa dziś jako SUAS Group; mniejsze redukcje w latach 2025–26"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -160,7 +434,25 @@
    "what": "Nationwide",
    "funders": "ESF (OPZ), EU share EUR 28.6 m (Kohesio)",
    "results": "2,103 participants reported",
-   "outcome": "Replaced by Outplacement II"
+   "outcome": "Replaced by Outplacement II",
+   "i18n": {
+    "cs": {
+     "years": "2020–? (datum konce nenalezeno)",
+     "title": "Outplacement I",
+     "what": "Celostátní",
+     "funders": "ESF (OPZ), podíl EU 28,6 mil. EUR (Kohesio)",
+     "results": "Vykázáno 2 103 účastníků",
+     "outcome": "Nahrazen Outplacementem II"
+    },
+    "pl": {
+     "years": "2020–? (nie znaleziono daty zakończenia)",
+     "title": "Outplacement I",
+     "what": "Ogólnokrajowy",
+     "funders": "EFS (OPZ), udział UE 28,6 mln EUR (Kohesio)",
+     "results": "Zgłoszono 2103 uczestników",
+     "outcome": "Zastąpiony przez Outplacement II"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -169,7 +461,23 @@
    "what": "OKD staff",
    "funders": "OKD",
    "results": "Not found",
-   "outcome": "Ended"
+   "outcome": "Ended",
+   "i18n": {
+    "cs": {
+     "title": "Uzavření Dolu Lazy (Orlová), listopad 2019",
+     "what": "Zaměstnanci OKD",
+     "funders": "OKD",
+     "results": "Nenalezeno",
+     "outcome": "Ukončeno"
+    },
+    "pl": {
+     "title": "Zamknięcie kopalni Lazy (Orłowa), listopad 2019",
+     "what": "Pracownicy OKD",
+     "funders": "OKD",
+     "results": "Nie znaleziono",
+     "outcome": "Zakończone"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -178,7 +486,23 @@
    "what": "~1,350 staff, ~300 kept for liquidation; up to CZK 80,000 bonus to transfer to Karviná mines",
    "funders": "OKD, Labour Office, Diamo",
    "results": "Mobile office at Staříč and Chlebovice: 744 contacts; Nová šichta 330+ registered; \"Razíme cestu\" IT retraining (LMC + VŠB-TUO): 29 miners tried programming",
-   "outcome": "Transfer bonus not repeated (no mines left)"
+   "outcome": "Transfer bonus not repeated (no mines left)",
+   "i18n": {
+    "cs": {
+     "title": "Uzavření Dolu Paskov, 31. 3. 2017",
+     "what": "~1 350 zaměstnanců, ~300 ponecháno na likvidaci; bonus až 80 000 Kč za přechod na karvinské doly",
+     "funders": "OKD, Úřad práce, Diamo",
+     "results": "Mobilní pracoviště na Staříči a v Chlebovicích: 744 kontaktů; Nová šichta: 330+ registrovaných; IT rekvalifikace „Razíme cestu“ (LMC + VŠB-TUO): programování si vyzkoušelo 29 horníků",
+     "outcome": "Bonus za přechod se neopakoval (nezbyly doly)"
+    },
+    "pl": {
+     "title": "Zamknięcie kopalni Paskov, 31.03.2017",
+     "what": "~1350 pracowników, ~300 zostało do likwidacji; premia do 80 000 CZK za przejście do kopalń karwińskich",
+     "funders": "OKD, Úřad práce, Diamo",
+     "results": "Mobilne biuro w Staříču i Chlebovicach: 744 kontakty; Nová šichta: ponad 330 zarejestrowanych; przekwalifikowanie IT „Razíme cestu” (LMC + VŠB-TUO): 29 górników spróbowało programowania",
+     "outcome": "Premii za przejście nie powtórzono (nie zostały kopalnie)"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -187,7 +511,23 @@
    "what": "OKD; then Diamo GEAM, Slezská důlní díla, OKD HBZS and North Bohemian firms",
    "funders": "State (MPO), via Diamo and PK Ústí",
    "results": "CZK 8,000 / 7,000 per month",
-   "outcome": "OKD claims stopped May 2018 when insolvency ended; restored 2020"
+   "outcome": "OKD claims stopped May 2018 when insolvency ended; restored 2020",
+   "i18n": {
+    "cs": {
+     "title": "NV 167/2016 (OKD v insolvenci) a NV 342/2016 (další firmy)",
+     "what": "OKD; potom Diamo GEAM, Slezská důlní díla, OKD HBZS a severočeské firmy",
+     "funders": "Stát (MPO), přes Diamo a PK Ústí",
+     "results": "8 000 / 7 000 Kč měsíčně",
+     "outcome": "Žádosti od lidí z OKD skončily v květnu 2018 s koncem insolvence; obnoveno 2020"
+    },
+    "pl": {
+     "title": "NV 167/2016 (OKD w insolwencji) i NV 342/2016 (inne firmy)",
+     "what": "OKD; potem Diamo GEAM, Slezská důlní díla, OKD HBZS i firmy północnoczeskie",
+     "funders": "Państwo (MPO), przez Diamo i PK Ústí",
+     "results": "8000 / 7000 CZK miesięcznie",
+     "outcome": "Wnioski osób z OKD ustały w maju 2018 r. wraz z końcem insolwencji; przywrócone w 2020"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -196,7 +536,23 @@
    "what": "Underground miners with 3,300 shifts",
    "funders": "Pension insurance",
    "results": "Retirement 7 years early, about age 56",
-   "outcome": "In force"
+   "outcome": "In force",
+   "i18n": {
+    "cs": {
+     "title": "Zákon 213/2016: předčasný důchod pro horníky z hlubinných dolů",
+     "what": "Horníci v podzemí s 3 300 směnami",
+     "funders": "Důchodové pojištění",
+     "results": "Důchod o 7 let dříve, zhruba v 56 letech",
+     "outcome": "Platí"
+    },
+    "pl": {
+     "title": "Ustawa 213/2016: wcześniejsza emerytura dla górników kopalń głębinowych",
+     "what": "Górnicy dołowi z 3300 zmianami",
+     "funders": "Ubezpieczenie emerytalne",
+     "results": "Emerytura 7 lat wcześniej, w wieku ok. 56 lat",
+     "outcome": "Obowiązuje"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -205,7 +561,23 @@
    "what": "Planned for OKD",
    "funders": "EU",
    "results": "No application found",
-   "outcome": "Apparently never used"
+   "outcome": "Apparently never used",
+   "i18n": {
+    "cs": {
+     "title": "Diskuse o Evropském fondu pro přizpůsobení se globalizaci pro OKD",
+     "what": "Plánováno pro OKD",
+     "funders": "EU",
+     "results": "Žádost nenalezena",
+     "outcome": "Zřejmě nikdy nevyužit"
+    },
+    "pl": {
+     "title": "Dyskusja o Europejskim Funduszu Dostosowania do Globalizacji dla OKD",
+     "what": "Planowany dla OKD",
+     "funders": "UE",
+     "results": "Nie znaleziono wniosku",
+     "outcome": "Najwyraźniej nigdy nie wykorzystany"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -214,7 +586,23 @@
    "what": "OKD staff",
    "funders": "State",
    "results": "Retraining most wanted: driving licences C, D, T",
-   "outcome": "Repeated 2020 and 2025"
+   "outcome": "Repeated 2020 and 2025",
+   "i18n": {
+    "cs": {
+     "title": "Mobilní pracoviště Úřadu práce v OKD",
+     "what": "Zaměstnanci OKD",
+     "funders": "Stát",
+     "results": "Nejžádanější rekvalifikace: řidičská oprávnění C, D, T",
+     "outcome": "Zopakováno v letech 2020 a 2025"
+    },
+    "pl": {
+     "title": "Mobilne stanowisko Úřadu práce w OKD",
+     "what": "Pracownicy OKD",
+     "funders": "Państwo",
+     "results": "Najczęściej wybierane przekwalifikowanie: prawo jazdy kat. C, D, T",
+     "outcome": "Powtórzone w 2020 i 2025 r."
+    }
+   }
   },
   {
    "country": "CZ",
@@ -223,7 +611,23 @@
    "what": "OKD staff",
    "funders": "OKD",
    "results": "~1,000 users by 2025 (Seznam Zprávy)",
-   "outcome": "Relaunched 2020 and May 2025"
+   "outcome": "Relaunched 2020 and May 2025",
+   "i18n": {
+    "cs": {
+     "title": "Spuštění Nové šichty",
+     "what": "Zaměstnanci OKD",
+     "funders": "OKD",
+     "results": "~1 000 uživatelů do roku 2025 (Seznam Zprávy)",
+     "outcome": "Znovu spuštěno v roce 2020 a v květnu 2025"
+    },
+    "pl": {
+     "title": "Uruchomienie Nová šichta",
+     "what": "Pracownicy OKD",
+     "funders": "OKD",
+     "results": "~1000 użytkowników do 2025 r. (Seznam Zprávy)",
+     "outcome": "Ponownie uruchomiona w 2020 r. i w maju 2025"
+    }
+   }
   }
  ],
  "historyLessons": {
@@ -234,7 +638,29 @@
   "CZ": [
    "Working: help on the mine site (it saves trips to Havířov or Karviná), early retraining for driving licences, and direct contact with employers.",
    "Not working: the 2017 transfer bonus attracted too few people, and new jobs pay well below the ~CZK 50,000 miners earned."
-  ]
+  ],
+  "i18n": {
+   "cs": {
+    "PL": [
+     "Fungovalo: dobrovolné odchody zabránily nucenému propouštění ve velkém rozsahu (1998–2002; 2015–2017).",
+     "Nefungovalo: odchody jen za peníze ve Wałbrzychu zanechaly dlouhodobou chudobu; odstupné bez zákazu návratu umožnilo lidem vrátit se do dolů; restrukturalizace neudělala odvětví životaschopným (NIK 2021)."
+    ],
+    "CZ": [
+     "Fungovalo: pomoc přímo v areálu dolu (ušetří cesty do Havířova nebo Karviné), včasné rekvalifikace na řidičská oprávnění a přímý kontakt se zaměstnavateli.",
+     "Nefungovalo: bonus za přechod z roku 2017 přilákal příliš málo lidí a nová místa platí výrazně méně než ~50 000 Kč, které horníci vydělávali."
+    ]
+   },
+   "pl": {
+    "PL": [
+     "Zadziałało: dobrowolne odejścia pozwoliły uniknąć przymusowych zwolnień na dużą skalę (1998–2002; 2015–2017).",
+     "Nie zadziałało: odejścia wyłącznie za gotówkę w Wałbrzychu zostawiły długotrwałą biedę; odprawy bez zakazu powrotu pozwalały wracać do kopalń; restrukturyzacja nie zapewniła sektorowi rentowności (NIK 2021)."
+    ],
+    "CZ": [
+     "Zadziałało: pomoc na terenie kopalni (oszczędza dojazdy do Hawierzowa czy Karwiny), wczesne przekwalifikowanie na prawo jazdy i bezpośredni kontakt z pracodawcami.",
+     "Nie zadziałało: premia za przejście z 2017 r. przyciągnęła zbyt mało osób, a nowe miejsca pracy płacą znacznie mniej niż ~50 000 CZK, które zarabiali górnicy."
+    ]
+   }
+  }
  },
  "exclusions": {
   "PL": {
@@ -262,7 +688,37 @@
       "E",
       "E",
       "E (if conditions met)"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Horníci v podzemí",
+       "cells": [
+        "E (≤5 let do důchodu)",
+        "N",
+        "E (pokud nemá nárok na dovolenou)",
+        "E (přednost)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E (při splnění podmínek)"
+       ]
+      },
+      "pl": {
+       "group": "Górnicy dołowi",
+       "cells": [
+        "E (≤5 lat do emerytury)",
+        "N",
+        "E (jeśli nie ma prawa do urlopu)",
+        "E (pierwszeństwo)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E (jeśli spełnia warunki)"
+       ]
+      }
+     }
     },
     {
      "group": "Surface workers",
@@ -276,7 +732,37 @@
       "E",
       "E",
       "? (only some posts count)"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Pracovníci na povrchu",
+       "cells": [
+        "N",
+        "N",
+        "E",
+        "E (přednost)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "? (počítají se jen některé pozice)"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy powierzchni",
+       "cells": [
+        "N",
+        "N",
+        "E",
+        "E (pierwszeństwo)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "? (liczą się tylko niektóre stanowiska)"
+       ]
+      }
+     }
     },
     {
      "group": "Administrative and HQ staff",
@@ -290,7 +776,37 @@
       "E",
       "E",
       "N"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Administrativa a centrála",
+       "cells": [
+        "N",
+        "N",
+        "E",
+        "E (přednost)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy administracji i centrali",
+       "cells": [
+        "N",
+        "N",
+        "E",
+        "E (pierwszeństwo)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      }
+     }
     },
     {
      "group": "Processing-plant workers",
@@ -304,7 +820,37 @@
       "E",
       "E",
       "?"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Pracovníci úpravny",
+       "cells": [
+        "N",
+        "E (≤4 roky)",
+        "E (pokud nemá nárok na dovolenou)",
+        "E (přednost)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "?"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy zakładu przeróbki",
+       "cells": [
+        "N",
+        "E (≤4 lata)",
+        "E (jeśli nie ma prawa do urlopu)",
+        "E (pierwszeństwo)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "?"
+       ]
+      }
+     }
     },
     {
      "group": "Contractors working in mines",
@@ -318,7 +864,37 @@
       "E",
       "E",
       "? (depends on work type)"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Dodavatelské firmy pracující v dolech",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (přednost pro navázané na hornictví)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "? (záleží na druhu práce)"
+       ]
+      },
+      "pl": {
+       "group": "Firmy wykonawcze pracujące w kopalniach",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (pierwszeństwo dla okołogórniczych)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "? (zależy od rodzaju pracy)"
+       ]
+      }
+     }
     },
     {
      "group": "Supplier (\"okołogórnicze\") firms",
@@ -332,7 +908,37 @@
       "E",
       "E",
       "N"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Firmy navázané na hornictví („okołogórnicze“)",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (přednost)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      },
+      "pl": {
+       "group": "Firmy okołogórnicze",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (pierwszeństwo)",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      }
+     }
     },
     {
      "group": "Under 3 years' service",
@@ -346,7 +952,37 @@
       "E",
       "E",
       "N"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Méně než 3 roky praxe",
+       "cells": [
+        "? (pravidlo o délce praxe nenalezeno)",
+        "?",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      },
+      "pl": {
+       "group": "Staż poniżej 3 lat",
+       "cells": [
+        "? (nie znaleziono zasady o stażu)",
+        "?",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      }
+     }
     },
     {
      "group": "Former miners already laid off",
@@ -360,7 +996,37 @@
       "E",
       "E",
       "E (if conditions met)"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Bývalí horníci, kteří už byli propuštěni",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (pokud propuštěni po 28. 5. 2021)",
+        "E (totéž)",
+        "E",
+        "E",
+        "E",
+        "E (při splnění podmínek)"
+       ]
+      },
+      "pl": {
+       "group": "Byli górnicy już zwolnieni",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (jeśli zwolnieni po 28.05.2021)",
+        "E (to samo)",
+        "E",
+        "E",
+        "E",
+        "E (jeśli spełnia warunki)"
+       ]
+      }
+     }
     },
     {
      "group": "Family members",
@@ -374,7 +1040,37 @@
       "E",
       "E",
       "N"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Členové rodiny",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (jen nezaměstnaní členové rodiny účastníka)",
+        "?",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      },
+      "pl": {
+       "group": "Członkowie rodziny",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E (tylko bezrobotni członkowie rodziny uczestnika)",
+        "?",
+        "E",
+        "E",
+        "E",
+        "N"
+       ]
+      }
+     }
     },
     {
      "group": "Private-mine staff (PG Silesia)",
@@ -388,7 +1084,37 @@
       "E",
       "E",
       "E (if conditions met)"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Zaměstnanci soukromého dolu (PG Silesia)",
+       "cells": [
+        "N (UD377 v přípravě)",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E (při splnění podmínek)"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy kopalni prywatnej (PG Silesia)",
+       "cells": [
+        "N (UD377 w toku)",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E (jeśli spełnia warunki)"
+       ]
+      }
+     }
     },
     {
      "group": "Hired after 1 Jan 2026",
@@ -402,7 +1128,37 @@
       "E",
       "E",
       "—"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Přijatí po 1. 1. 2026",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "—"
+       ]
+      },
+      "pl": {
+       "group": "Zatrudnieni po 1.01.2026",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "—"
+       ]
+      }
+     }
     },
     {
      "group": "Got a similar benefit since 1994",
@@ -416,7 +1172,37 @@
       "E",
       "E",
       "—"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Podobnou dávku dostali od roku 1994",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "—"
+       ]
+      },
+      "pl": {
+       "group": "Otrzymali podobne świadczenie od 1994 r.",
+       "cells": [
+        "N",
+        "N",
+        "N",
+        "E",
+        "E",
+        "E",
+        "E",
+        "E",
+        "—"
+       ]
+      }
+     }
     },
     {
      "group": "Staff of Bogdanka (Lubelskie)",
@@ -430,9 +1216,67 @@
       "N",
       "E",
       "E"
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Zaměstnanci Bogdanky (Lublinské vojvodství)",
+       "cells": [
+        "? (zatím není v systému)",
+        "?",
+        "?",
+        "N (mimo území FST)",
+        "N",
+        "N",
+        "N",
+        "E",
+        "E"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy Bogdanki (Lubelskie)",
+       "cells": [
+        "? (jeszcze nie w systemie)",
+        "?",
+        "?",
+        "N (poza obszarem FST)",
+        "N",
+        "N",
+        "N",
+        "E",
+        "E"
+       ]
+      }
+     }
+    }
+   ],
+   "i18n": {
+    "cs": {
+     "columns": [
+      "N01 Hornická dovolená",
+      "N02 Dovolená v úpravně",
+      "N03 170 tis. PLN",
+      "R01 Outplacement",
+      "R02 Dotace na podnikání",
+      "R03 Vzdělávání dospělých",
+      "R04 Sociální začleňování",
+      "N14 Úřad práce",
+      "N08 Hornický důchod"
+     ]
+    },
+    "pl": {
+     "columns": [
+      "N01 Urlop górniczy",
+      "N02 Urlop w przeróbce",
+      "N03 170 tys. zł",
+      "R01 Outplacement",
+      "R02 Dotacja na firmę",
+      "R03 Kształcenie dorosłych",
+      "R04 Włączenie społeczne",
+      "N14 Urząd pracy",
+      "N08 Emerytura górnicza"
      ]
     }
-   ]
+   }
   },
   "CZ": {
    "columns": [
@@ -457,7 +1301,35 @@
       "Eligible",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Horníci v podzemí (OKD)",
+       "cells": [
+        "Má nárok",
+        "Má nárok",
+        "Má nárok (8 000 Kč)",
+        "Má nárok při 3 300 směnách a nástupu před 1. 10. 2016",
+        "Má nárok",
+        "Má nárok",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Górnicy dołowi (OKD)",
+       "cells": [
+        "Przysługuje",
+        "Przysługuje",
+        "Przysługuje (8000 CZK)",
+        "Przysługuje przy 3300 zmianach i rozpoczęciu pracy przed 1.10.2016",
+        "Przysługuje",
+        "Przysługuje",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "Surface workers (OKD)",
@@ -470,7 +1342,35 @@
       "Eligible",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Pracovníci na povrchu (OKD)",
+       "cells": [
+        "Má nárok",
+        "Má nárok",
+        "Má nárok (5 300 Kč)",
+        "Nemá nárok",
+        "Má nárok",
+        "Má nárok",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy powierzchni (OKD)",
+       "cells": [
+        "Przysługuje",
+        "Przysługuje",
+        "Przysługuje (5300 CZK)",
+        "Nie przysługuje",
+        "Przysługuje",
+        "Przysługuje",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "Administrative staff (OKD)",
@@ -483,7 +1383,35 @@
       "Eligible",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Administrativa (OKD)",
+       "cells": [
+        "Má nárok",
+        "Má nárok",
+        "Má nárok (sazba pro povrch)",
+        "Nemá nárok",
+        "Má nárok",
+        "Má nárok",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy administracji (OKD)",
+       "cells": [
+        "Przysługuje",
+        "Przysługuje",
+        "Przysługuje (stawka dla powierzchni)",
+        "Nie przysługuje",
+        "Przysługuje",
+        "Przysługuje",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "Supplier and contractor employees",
@@ -496,7 +1424,35 @@
       "Eligible",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Zaměstnanci dodavatelských a smluvních firem",
+       "cells": [
+        "Nemá nárok (podmínky vlastního zaměstnavatele)",
+        "Nejasné",
+        "Nemá nárok, pokud zaměstnavatel není na seznamu (např. OKD HBZS)",
+        "Nejasné (záleží na evidovaných směnách v podzemí)",
+        "Má nárok",
+        "Má nárok",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy firm okołogórniczych i wykonawczych",
+       "cells": [
+        "Nie przysługuje (warunki własnego pracodawcy)",
+        "Niejasne",
+        "Nie przysługuje, chyba że pracodawca jest na liście (np. OKD HBZS)",
+        "Niejasne (zależy od zarejestrowanych zmian pod ziemią)",
+        "Przysługuje",
+        "Przysługuje",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "People at or near pension age",
@@ -509,7 +1465,35 @@
       "Unclear",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Lidé v důchodovém věku nebo těsně před ním",
+       "cells": [
+        "Má nárok",
+        "Nemá nárok v důchodovém věku",
+        "Má nárok do začátku starobního důchodu",
+        "Hlavní příjemci",
+        "Nejasné",
+        "Nejasné",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Osoby w wieku emerytalnym lub blisko niego",
+       "cells": [
+        "Przysługuje",
+        "Nie przysługuje w wieku emerytalnym",
+        "Przysługuje do rozpoczęcia emerytury",
+        "Główni beneficjenci",
+        "Niejasne",
+        "Niejasne",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "People not registered with the Labour Office",
@@ -522,7 +1506,35 @@
       "Not eligible",
       "Unclear",
       "Eligible"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Lidé neregistrovaní na Úřadu práce",
+       "cells": [
+        "Má nárok",
+        "Má nárok, ale jen do 6 měsíců od odchodu",
+        "Má nárok (lhůta 6 měsíců na žádost)",
+        "Má nárok",
+        "Nemá nárok",
+        "Nemá nárok",
+        "Nejasné",
+        "Má nárok"
+       ]
+      },
+      "pl": {
+       "group": "Osoby niezarejestrowane w urzędzie pracy",
+       "cells": [
+        "Przysługuje",
+        "Przysługuje, ale tylko w ciągu 6 miesięcy od odejścia",
+        "Przysługuje (6-miesięczny termin na wniosek)",
+        "Przysługuje",
+        "Nie przysługuje",
+        "Nie przysługuje",
+        "Niejasne",
+        "Przysługuje"
+       ]
+      }
+     }
     },
     {
      "group": "Workers of coal-fired power plants",
@@ -535,7 +1547,35 @@
       "Eligible",
       "Unclear",
       "Only as self-employed or SME"
-     ]
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Pracovníci uhelných elektráren",
+       "cells": [
+        "Nemá nárok",
+        "Nemá nárok",
+        "Nemá nárok, pokud firma není na seznamu (např. Czech Coal Power)",
+        "Nemá nárok",
+        "Má nárok",
+        "Má nárok",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Pracownicy elektrowni węglowych",
+       "cells": [
+        "Nie przysługuje",
+        "Nie przysługuje",
+        "Nie przysługuje, chyba że firma jest na liście (np. Czech Coal Power)",
+        "Nie przysługuje",
+        "Przysługuje",
+        "Przysługuje",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
     },
     {
      "group": "Family members",
@@ -548,9 +1588,63 @@
       "Eligible as any job seeker",
       "Unclear",
       "Only as self-employed or SME"
+     ],
+     "i18n": {
+      "cs": {
+       "group": "Členové rodiny",
+       "cells": [
+        "Nemá nárok",
+        "Nemá nárok",
+        "Nemá nárok",
+        "Nemá nárok",
+        "Jen pokud jsou sami propouštěni",
+        "Má nárok jako každý uchazeč",
+        "Nejasné",
+        "Jen jako OSVČ nebo MSP"
+       ]
+      },
+      "pl": {
+       "group": "Członkowie rodziny",
+       "cells": [
+        "Nie przysługuje",
+        "Nie przysługuje",
+        "Nie przysługuje",
+        "Nie przysługuje",
+        "Tylko jeśli sami są zwalniani",
+        "Przysługuje jak każdemu szukającemu pracy",
+        "Niejasne",
+        "Tylko jako samozatrudniony lub MŚP"
+       ]
+      }
+     }
+    }
+   ],
+   "i18n": {
+    "cs": {
+     "columns": [
+      "P01 Odstupné",
+      "P02 Nová šichta",
+      "P06/P07 Státní příspěvek",
+      "P08 Předčasný důchod",
+      "P11 Outplacement II",
+      "P13 Nástroje Úřadu práce",
+      "P17 TRAUTOM",
+      "P19 Úvěr Transformace"
+     ]
+    },
+    "pl": {
+     "columns": [
+      "P01 Odprawa",
+      "P02 Nová šichta",
+      "P06/P07 Zasiłek państwowy",
+      "P08 Wcześniejsza emerytura",
+      "P11 Outplacement II",
+      "P13 Narzędzia urzędu pracy",
+      "P17 TRAUTOM",
+      "P19 Úvěr Transformace"
      ]
     }
-   ]
+   }
   }
  },
  "portals": [
@@ -560,7 +1654,23 @@
    "owner": "WUP Katowice",
    "covers": "FST calls 10.16–10.21, project lists",
    "contact": "funduszeue.slaskie.pl; ul. Sokolska 29, 40-086 Katowice; tel. 32 757 33 11; funduszeue@wup-katowice.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Portál FE Śląskie a informační místo WUP",
+     "owner": "WUP Katowice",
+     "covers": "Výzvy FST 10.16–10.21, seznamy projektů",
+     "contact": "funduszeue.slaskie.pl; ul. Sokolska 29, 40-086 Katowice; tel. 32 757 33 11; funduszeue@wup-katowice.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Portal FE Śląskie i punkt informacyjny WUP",
+     "owner": "WUP Katowice",
+     "covers": "Nabory FST 10.16–10.21, listy projektów",
+     "contact": "funduszeue.slaskie.pl; ul. Sokolska 29, 40-086 Katowice; tel. 32 757 33 11; funduszeue@wup-katowice.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -568,7 +1678,23 @@
    "owner": "Silesian Marshal's Office, Dept. of Regional Development and Transformation",
    "covers": "Transition news, studies, council papers",
    "contact": "transformacja@slaskie.pl",
-   "status": "Active to 31 Dec 2026"
+   "status": "Active to 31 Dec 2026",
+   "i18n": {
+    "cs": {
+     "channel": "transformacja.slaskie.pl (ROPT 2.0)",
+     "owner": "Slezský maršálkovský úřad, odbor regionálního rozvoje a transformace",
+     "covers": "Novinky o transformaci, studie, podklady rady",
+     "contact": "transformacja@slaskie.pl",
+     "status": "Aktivní do 31. 12. 2026"
+    },
+    "pl": {
+     "channel": "transformacja.slaskie.pl (ROPT 2.0)",
+     "owner": "Urząd Marszałkowski Województwa Śląskiego, Departament Rozwoju Regionalnego i Transformacji",
+     "covers": "Aktualności o transformacji, badania, dokumenty rady",
+     "contact": "transformacja@slaskie.pl",
+     "status": "Aktywny do 31.12.2026"
+    }
+   }
   },
   {
    "country": "PL",
@@ -576,7 +1702,23 @@
    "owner": "Silesian Marshal's Office",
    "covers": "Stakeholder body; first met 26 May 2023",
    "contact": "Via transformacja.slaskie.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Regionální rada pro spravedlivou transformaci",
+     "owner": "Slezský maršálkovský úřad",
+     "covers": "Orgán zainteresovaných stran; poprvé zasedala 26. 5. 2023",
+     "contact": "Přes transformacja.slaskie.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Regionalna Rada ds. Sprawiedliwej Transformacji",
+     "owner": "Urząd Marszałkowski Województwa Śląskiego",
+     "covers": "Ciało złożone z interesariuszy; pierwsze posiedzenie 26.05.2023",
+     "contact": "Przez transformacja.slaskie.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -584,7 +1726,23 @@
    "owner": "PGG",
    "covers": "Leave, severance, procedures; departure statistics",
    "contact": "At each PGG plant; internal portal",
-   "status": "Active since Oct 2025"
+   "status": "Active since Oct 2025",
+   "i18n": {
+    "cs": {
+     "channel": "Konzultační místa PGG a modul zaměstnaneckého portálu",
+     "owner": "PGG",
+     "covers": "Dovolená, odstupné, postupy; statistiky odchodů",
+     "contact": "V každém závodě PGG; interní portál",
+     "status": "Aktivní od října 2025"
+    },
+    "pl": {
+     "channel": "Punkty konsultacyjne PGG i moduł portalu pracowniczego",
+     "owner": "PGG",
+     "covers": "Urlopy, odprawy, procedury; statystyki odejść",
+     "contact": "W każdym zakładzie PGG; portal wewnętrzny",
+     "status": "Aktywny od października 2025"
+    }
+   }
   },
   {
    "country": "PL",
@@ -592,7 +1750,23 @@
    "owner": "JSW",
    "covers": "JSW programme (N09)",
    "contact": "jsw.pl (no dedicated helpline found)",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Informace JSW o dávkách",
+     "owner": "JSW",
+     "covers": "Program JSW (N09)",
+     "contact": "jsw.pl (samostatná linka pomoci nenalezena)",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Informacje JSW o świadczeniach",
+     "owner": "JSW",
+     "covers": "Program JSW (N09)",
+     "contact": "jsw.pl (nie znaleziono osobnej infolinii)",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -600,7 +1774,23 @@
    "owner": "ZUS",
    "covers": "Pension conditions, documents",
    "contact": "zus.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Stránky ZUS o hornickém důchodu",
+     "owner": "ZUS",
+     "covers": "Podmínky důchodu, dokumenty",
+     "contact": "zus.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Strony ZUS o emeryturze górniczej",
+     "owner": "ZUS",
+     "covers": "Warunki emerytury, dokumenty",
+     "contact": "zus.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -608,7 +1798,23 @@
    "owner": "Starosta of each county",
    "covers": "N14 instruments",
    "contact": "[county].praca.gov.pl, e.g. rybnik.praca.gov.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Okresní úřady práce (PUP)",
+     "owner": "Starosta každého okresu (powiatu)",
+     "covers": "Nástroje N14",
+     "contact": "[okres].praca.gov.pl, např. rybnik.praca.gov.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Powiatowe urzędy pracy (PUP)",
+     "owner": "Starosta każdego powiatu",
+     "covers": "Instrumenty N14",
+     "contact": "[powiat].praca.gov.pl, np. rybnik.praca.gov.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -616,7 +1822,23 @@
    "owner": "Labour-market services portal",
    "covers": "Labour-office news and events",
    "contact": "zielonalinia.gov.pl (phone not checked)",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Zielona Linia",
+     "owner": "Portál služeb trhu práce",
+     "covers": "Novinky a akce úřadů práce",
+     "contact": "zielonalinia.gov.pl (telefon neověřen)",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Zielona Linia",
+     "owner": "Portal usług rynku pracy",
+     "covers": "Aktualności i wydarzenia urzędów pracy",
+     "contact": "zielonalinia.gov.pl (telefonu nie sprawdzono)",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -624,7 +1846,23 @@
    "owner": "Ministry of Funds and Regional Policy",
    "covers": "Search of EU-funded projects by place",
    "contact": "mapadotacji.gov.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "mapadotacji.gov.pl",
+     "owner": "Ministerstvo fondů a regionální politiky",
+     "covers": "Vyhledávání projektů financovaných EU podle místa",
+     "contact": "mapadotacji.gov.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "mapadotacji.gov.pl",
+     "owner": "Ministerstwo Funduszy i Polityki Regionalnej",
+     "covers": "Wyszukiwarka projektów z funduszy UE według miejsca",
+     "contact": "mapadotacji.gov.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -632,7 +1870,23 @@
    "owner": "Małopolska Regional Development Agency",
    "covers": "Western Małopolska FST labour projects",
    "contact": "ul. Kordylewskiego 11, Kraków",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "MARR S.A.",
+     "owner": "Malopolská agentura regionálního rozvoje",
+     "covers": "Projekty trhu práce FST v západním Malopolsku",
+     "contact": "ul. Kordylewskiego 11, Kraków",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "MARR S.A.",
+     "owner": "Małopolska Agencja Rozwoju Regionalnego",
+     "covers": "Projekty rynku pracy FST w Małopolsce Zachodniej",
+     "contact": "ul. Kordylewskiego 11, Kraków",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -640,7 +1894,23 @@
    "owner": "Lower Silesian Labour Office",
    "covers": "Wałbrzych subregion FST projects",
    "contact": "dwup.pl (not checked)",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "DWUP",
+     "owner": "Dolnoslezský úřad práce",
+     "covers": "Projekty FST v podregionu Wałbrzych",
+     "contact": "dwup.pl (neověřeno)",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "DWUP",
+     "owner": "Dolnośląski Wojewódzki Urząd Pracy",
+     "covers": "Projekty FST w subregionie wałbrzyskim",
+     "contact": "dwup.pl (nie sprawdzono)",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "PL",
@@ -648,7 +1918,23 @@
    "owner": "Spółka Restrukturyzacji Kopalń, Bytom",
    "covers": "Legacy benefits, wind-training recruitment",
    "contact": "srk.com.pl",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "SRK",
+     "owner": "Spółka Restrukturyzacji Kopalń, Bytom",
+     "covers": "Dávky ze starších programů, nábor na školení pro větrnou energetiku",
+     "contact": "srk.com.pl",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "SRK",
+     "owner": "Spółka Restrukturyzacji Kopalń, Bytom",
+     "covers": "Świadczenia ze starszych programów, rekrutacja na szkolenia wiatrowe",
+     "contact": "srk.com.pl",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -656,7 +1942,23 @@
    "owner": "OKD",
    "covers": "Severance, termination FAQ, Nová šichta",
    "contact": "Monthly PDF on okd.cz; handbook internal",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Zpravodaj Horník + příručka pro odcházející",
+     "owner": "OKD",
+     "covers": "Odstupné, časté dotazy k ukončení pracovního poměru, Nová šichta",
+     "contact": "Měsíční PDF na okd.cz; příručka je interní",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Biuletyn Horník + poradnik dla odchodzących",
+     "owner": "OKD",
+     "covers": "Odprawy, częste pytania o zakończenie zatrudnienia, Nová šichta",
+     "contact": "Miesięczny PDF na okd.cz; poradnik wewnętrzny",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -664,7 +1966,23 @@
    "owner": "OKD HR",
    "covers": "Personal job-search help",
    "contact": "At the mine site; no public phone or email found",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Kanceláře Nové šichty",
+     "owner": "Personální oddělení OKD",
+     "covers": "Osobní pomoc s hledáním práce",
+     "contact": "V areálu dolu; veřejný telefon ani e-mail nenalezeny",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Biura Nová šichta",
+     "owner": "Dział kadr OKD",
+     "covers": "Indywidualna pomoc w szukaniu pracy",
+     "contact": "Na terenie kopalni; nie znaleziono publicznego telefonu ani e-maila",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -672,7 +1990,23 @@
    "owner": "Labour Office / MPSV",
    "covers": "Outplacement II, employer contributions",
    "contact": "800 77 99 00 (free); out@up.gov.cz",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Stránka Outplacementu II + call centrum",
+     "owner": "Úřad práce / MPSV",
+     "covers": "Outplacement II, příspěvky zaměstnavatelům",
+     "contact": "800 77 99 00 (zdarma); out@up.gov.cz",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Strona Outplacement II + infolinia",
+     "owner": "Úřad práce / MPSV",
+     "covers": "Outplacement II, dopłaty dla pracodawców",
+     "contact": "800 77 99 00 (bezpłatnie); out@up.gov.cz",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -680,7 +2014,23 @@
    "owner": "Labour Office, Ostrava branch",
    "covers": "Registration, benefits, retraining, vacancies",
    "contact": "On site; dates not published",
-   "status": "Active 2025–2026"
+   "status": "Active 2025–2026",
+   "i18n": {
+    "cs": {
+     "channel": "Mobilní pracoviště Úřadu práce na Dole ČSM",
+     "owner": "Úřad práce, pobočka Ostrava",
+     "covers": "Registrace, dávky, rekvalifikace, volná místa",
+     "contact": "Na místě; termíny nezveřejněny",
+     "status": "Aktivní 2025–2026"
+    },
+    "pl": {
+     "channel": "Mobilne stanowisko Úřadu práce w kopalni ČSM",
+     "owner": "Úřad práce, oddział w Ostrawie",
+     "covers": "Rejestracja, zasiłki, przekwalifikowanie, wolne miejsca pracy",
+     "contact": "Na miejscu; terminów nie opublikowano",
+     "status": "Aktywny 2025–2026"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -688,7 +2038,23 @@
    "owner": "Labour Office",
    "covers": "All job-seeker services",
    "contact": "Karviná, Havířov, Orlová, Bohumín, Frýdek-Místek, Ostrava, Ústí, Most, Sokolov; list on up.gov.cz",
-   "status": "Active (closed to the public on Thursdays in Nov 2026)"
+   "status": "Active (closed to the public on Thursdays in Nov 2026)",
+   "i18n": {
+    "cs": {
+     "channel": "Kontaktní pracoviště Úřadu práce",
+     "owner": "Úřad práce",
+     "covers": "Všechny služby pro uchazeče o zaměstnání",
+     "contact": "Karviná, Havířov, Orlová, Bohumín, Frýdek-Místek, Ostrava, Ústí, Most, Sokolov; seznam na up.gov.cz",
+     "status": "Aktivní (v listopadu 2026 ve čtvrtky zavřeno pro veřejnost)"
+    },
+    "pl": {
+     "channel": "Punkty kontaktowe Úřadu práce",
+     "owner": "Úřad práce",
+     "covers": "Wszystkie usługi dla szukających pracy",
+     "contact": "Karviná, Havířov, Orlová, Bohumín, Frýdek-Místek, Ostrava, Ústí, Most, Sokolov; lista na up.gov.cz",
+     "status": "Aktywny (w listopadzie 2026 w czwartki zamknięte dla klientów)"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -696,7 +2062,23 @@
    "owner": "Diamo, Ostrava-Vítkovice (Sirotčí, former Jeremenko mine building)",
    "covers": "Restructuring allowance applications",
    "contact": "In person; address reported in 2017, current contact not found",
-   "status": "Unclear"
+   "status": "Unclear",
+   "i18n": {
+    "cs": {
+     "channel": "Sociální centrum Diamo",
+     "owner": "Diamo, Ostrava-Vítkovice (Sirotčí, bývalá budova Dolu Jeremenko)",
+     "covers": "Žádosti o příspěvek při restrukturalizaci",
+     "contact": "Osobně; adresa uvedena v roce 2017, aktuální kontakt nenalezen",
+     "status": "Nejasné"
+    },
+    "pl": {
+     "channel": "Centrum socjalne Diamo",
+     "owner": "Diamo, Ostrava-Vítkovice (Sirotčí, dawny budynek kopalni Jeremenko)",
+     "covers": "Wnioski o zasiłek restrukturyzacyjny",
+     "contact": "Osobiście; adres podany w 2017 r., aktualnego kontaktu nie znaleziono",
+     "status": "Niejasny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -704,7 +2086,23 @@
    "owner": "ČSSZ",
    "covers": "Pension account statement, including recorded risk shifts",
    "contact": "Online with eID",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "ePortál ČSSZ",
+     "owner": "ČSSZ",
+     "covers": "Výpis z důchodového pojištění včetně evidovaných rizikových směn",
+     "contact": "Online s eID",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "ePortál ČSSZ",
+     "owner": "ČSSZ",
+     "covers": "Wyciąg z konta emerytalnego, w tym zarejestrowane zmiany ryzykowne",
+     "contact": "Online z eID",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -712,7 +2110,23 @@
    "owner": "MZP / SFZP",
    "covers": "All OPST calls",
    "contact": "spravedlivatransformace@mzp.cz",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "opst.cz",
+     "owner": "MZP / SFZP",
+     "covers": "Všechny výzvy OPST",
+     "contact": "spravedlivatransformace@mzp.cz",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "opst.cz",
+     "owner": "MZP / SFZP",
+     "covers": "Wszystkie nabory OPST",
+     "contact": "spravedlivatransformace@mzp.cz",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -720,7 +2134,23 @@
    "owner": "Moravian-Silesian Region",
    "covers": "Regional OPST calls and vouchers",
    "contact": "Online",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "hrajemskrajem.msk.cz",
+     "owner": "Moravskoslezský kraj",
+     "covers": "Krajské výzvy OPST a vouchery",
+     "contact": "Online",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "hrajemskrajem.msk.cz",
+     "owner": "Kraj morawsko-śląski",
+     "covers": "Regionalne nabory OPST i bony",
+     "contact": "Online",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -728,7 +2158,23 @@
    "owner": "Karlovy Vary Region / Ústí Region",
    "covers": "Regional OPST information",
    "contact": "Online",
-   "status": "Active (not opened)"
+   "status": "Active (not opened)",
+   "i18n": {
+    "cs": {
+     "channel": "menimekraj.cz / rskuk.cz",
+     "owner": "Karlovarský kraj / Ústecký kraj",
+     "covers": "Krajské informace o OPST",
+     "contact": "Online",
+     "status": "Aktivní (stránky nebyly otevřeny)"
+    },
+    "pl": {
+     "channel": "menimekraj.cz / rskuk.cz",
+     "owner": "Kraj karlowarski / Kraj ustecki",
+     "covers": "Regionalne informacje o OPST",
+     "contact": "Online",
+     "status": "Aktywny (stron nie otwierano)"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -736,7 +2182,23 @@
    "owner": "MS Pakt zaměstnanosti",
    "covers": "TRAUTOM counselling and firm support",
    "contact": "Online; Varenská 1414/1, Ostrava",
-   "status": "Active (portal content not checked)"
+   "status": "Active (portal content not checked)",
+   "i18n": {
+    "cs": {
+     "channel": "trautom.cz",
+     "owner": "MS Pakt zaměstnanosti",
+     "covers": "Poradenství TRAUTOM a podpora firem",
+     "contact": "Online; Varenská 1414/1, Ostrava",
+     "status": "Aktivní (obsah portálu neověřen)"
+    },
+    "pl": {
+     "channel": "trautom.cz",
+     "owner": "MS Pakt zaměstnanosti",
+     "covers": "Doradztwo TRAUTOM i wsparcie firm",
+     "contact": "Online; Varenská 1414/1, Ostrava",
+     "status": "Aktywny (treści portalu nie sprawdzono)"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -744,7 +2206,23 @@
    "owner": "Národní rozvojová banka",
    "covers": "Interest-free business loans",
    "contact": "255 721 111; info@nrb.cz",
-   "status": "Active to 31 Dec 2026"
+   "status": "Active to 31 Dec 2026",
+   "i18n": {
+    "cs": {
+     "channel": "NRB Transformace",
+     "owner": "Národní rozvojová banka",
+     "covers": "Bezúročné úvěry pro podnikání",
+     "contact": "255 721 111; info@nrb.cz",
+     "status": "Aktivní do 31. 12. 2026"
+    },
+    "pl": {
+     "channel": "NRB Transformace",
+     "owner": "Národní rozvojová banka",
+     "covers": "Nieoprocentowane kredyty dla firm",
+     "contact": "255 721 111; info@nrb.cz",
+     "status": "Aktywny do 31.12.2026"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -752,7 +2230,23 @@
    "owner": "Unions",
    "covers": "Collective bargaining, legal advice for members (pensions, annuities)",
    "contact": "Members only; no public helpline found",
-   "status": "Active"
+   "status": "Active",
+   "i18n": {
+    "cs": {
+     "channel": "Odbory: OS PHGN, Sdružení hornických odborů OKD",
+     "owner": "Odbory",
+     "covers": "Kolektivní vyjednávání, právní poradenství pro členy (důchody, renty)",
+     "contact": "Jen pro členy; veřejná linka pomoci nenalezena",
+     "status": "Aktivní"
+    },
+    "pl": {
+     "channel": "Związki zawodowe: OS PHGN, Sdružení hornických odborů OKD",
+     "owner": "Związki zawodowe",
+     "covers": "Rokowania zbiorowe, porady prawne dla członków (emerytury, renty)",
+     "contact": "Tylko dla członków; nie znaleziono publicznej infolinii",
+     "status": "Aktywny"
+    }
+   }
   },
   {
    "country": "CZ",
@@ -760,7 +2254,23 @@
    "owner": "ARR",
    "covers": "Zaměstnanecká mobilita",
    "contact": "mobilita@arr.cz",
-   "status": "Unclear (2017)"
+   "status": "Unclear (2017)",
+   "i18n": {
+    "cs": {
+     "channel": "mobilita.msk.cz",
+     "owner": "ARR",
+     "covers": "Zaměstnanecká mobilita",
+     "contact": "mobilita@arr.cz",
+     "status": "Nejasné (2017)"
+    },
+    "pl": {
+     "channel": "mobilita.msk.cz",
+     "owner": "ARR",
+     "covers": "Zaměstnanecká mobilita (mobilność pracowników)",
+     "contact": "mobilita@arr.cz",
+     "status": "Niejasny (2017)"
+    }
+   }
   }
  ],
  "notFound": [
@@ -768,199 +2278,595 @@
    "country": "PL",
    "item": "\"Jobs After Coal\" employer subsidy up to PLN 150,000",
    "why": "Project exists but is ZE PAK's lignite programme in Konin, not Silesia; the PLN 150,000 figure appears on no official page found",
-   "confirm": "WUP Poznań (project leader); ZE PAK"
+   "confirm": "WUP Poznań (project leader); ZE PAK",
+   "i18n": {
+    "cs": {
+     "item": "Příspěvek zaměstnavatelům „Jobs After Coal“ až 150 000 PLN",
+     "why": "Projekt existuje, ale jde o hnědouhelný program ZE PAK v Koninu, ne ve Slezsku; částka 150 000 PLN se neobjevuje na žádné nalezené oficiální stránce",
+     "confirm": "WUP Poznań (vedoucí projektu); ZE PAK"
+    },
+    "pl": {
+     "item": "Dopłata dla pracodawców „Jobs After Coal” do 150 000 zł",
+     "why": "Projekt istnieje, ale to program ZE PAK dla węgla brunatnego w Koninie, a nie na Śląsku; kwota 150 000 zł nie pojawia się na żadnej znalezionej stronie oficjalnej",
+     "confirm": "WUP Poznań (lider projektu); ZE PAK"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Contents of FESL 10.21",
    "why": "Resolved: it trains social-assistance and labour-office staff, not miners",
-   "confirm": "WUP Katowice"
+   "confirm": "WUP Katowice",
+   "i18n": {
+    "cs": {
+     "item": "Obsah FESL 10.21",
+     "why": "Vyřešeno: školí pracovníky sociální pomoci a úřadů práce, ne horníky",
+     "confirm": "WUP Katowice"
+    },
+    "pl": {
+     "item": "Zawartość FESL 10.21",
+     "why": "Wyjaśnione: szkoli pracowników pomocy społecznej i urzędów pracy, nie górników",
+     "confirm": "WUP Katowice"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "\"Mosty współpracy\"",
    "why": "No project of that name found",
-   "confirm": "Silesian Marshal's Office (transformacja@slaskie.pl)"
+   "confirm": "Silesian Marshal's Office (transformacja@slaskie.pl)",
+   "i18n": {
+    "cs": {
+     "item": "„Mosty współpracy“",
+     "why": "Projekt tohoto názvu nebyl nalezen",
+     "confirm": "Slezský maršálkovský úřad (transformacja@slaskie.pl)"
+    },
+    "pl": {
+     "item": "„Mosty współpracy”",
+     "why": "Nie znaleziono projektu o tej nazwie",
+     "confirm": "Urząd Marszałkowski Województwa Śląskiego (transformacja@slaskie.pl)"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "President's initiative to extend benefits to all miners",
    "why": "Announced only; no bill text found",
-   "confirm": "Chancellery of the President"
+   "confirm": "Chancellery of the President",
+   "i18n": {
+    "cs": {
+     "item": "Iniciativa prezidenta rozšířit dávky na všechny horníky",
+     "why": "Jen ohlášeno; text návrhu zákona nenalezen",
+     "confirm": "Kancelář prezidenta"
+    },
+    "pl": {
+     "item": "Inicjatywa prezydenta rozszerzenia świadczeń na wszystkich górników",
+     "why": "Tylko zapowiedziana; nie znaleziono tekstu projektu ustawy",
+     "confirm": "Kancelaria Prezydenta"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "UD377 current status",
    "why": "Planned for Q1 2026; adoption not confirmed",
-   "confirm": "Ministry of Energy; RCL legislation portal"
+   "confirm": "Ministry of Energy; RCL legislation portal",
+   "i18n": {
+    "cs": {
+     "item": "Současný stav UD377",
+     "why": "Plánováno na 1. čtvrtletí 2026; přijetí nepotvrzeno",
+     "confirm": "Ministerstvo energetiky; legislativní portál RCL"
+    },
+    "pl": {
+     "item": "Obecny status UD377",
+     "why": "Planowany na I kwartał 2026; przyjęcia nie potwierdzono",
+     "confirm": "Ministerstwo Energii; portal legislacyjny RCL"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Bogdanka in the support system",
    "why": "Law allows it; latest official answer says not yet included; some media say it was added",
-   "confirm": "Ministry of Energy; LW Bogdanka"
+   "confirm": "Ministry of Energy; LW Bogdanka",
+   "i18n": {
+    "cs": {
+     "item": "Bogdanka v systému podpory",
+     "why": "Zákon to umožňuje; poslední oficiální odpověď říká, že zatím zahrnuta není; některá média uvádějí, že byla přidána",
+     "confirm": "Ministerstvo energetiky; LW Bogdanka"
+    },
+    "pl": {
+     "item": "Bogdanka w systemie wsparcia",
+     "why": "Ustawa na to pozwala; najnowsza oficjalna odpowiedź mówi, że jeszcze jej nie włączono; część mediów podaje, że została dodana",
+     "confirm": "Ministerstwo Energii; LW Bogdanka"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "\"Renta wyrównawcza\" in mines liquidated 2026–2049",
    "why": "Rule and amounts not found in the parts of the act read",
-   "confirm": "Ministry of Energy"
+   "confirm": "Ministry of Energy",
+   "i18n": {
+    "cs": {
+     "item": "„Renta wyrównawcza“ (vyrovnávací renta) v dolech likvidovaných v letech 2026–2049",
+     "why": "Pravidlo ani částky se v přečtených částech zákona nenašly",
+     "confirm": "Ministerstvo energetiky"
+    },
+    "pl": {
+     "item": "Renta wyrównawcza w kopalniach likwidowanych w latach 2026–2049",
+     "why": "Nie znaleziono zasady ani kwot w przeczytanych częściach ustawy",
+     "confirm": "Ministerstwo Energii"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Social-contribution (ZUS) exemption of the PLN 170,000",
    "why": "Only the health-contribution exclusion and PIT exemption were found",
-   "confirm": "ZUS; Ministry of Energy"
+   "confirm": "ZUS; Ministry of Energy",
+   "i18n": {
+    "cs": {
+     "item": "Osvobození 170 000 PLN od sociálních odvodů (ZUS)",
+     "why": "Nalezeno bylo jen vynětí ze zdravotního pojištění a osvobození od daně PIT",
+     "confirm": "ZUS; Ministerstvo energetiky"
+    },
+    "pl": {
+     "item": "Zwolnienie 170 000 zł ze składek na ubezpieczenia społeczne (ZUS)",
+     "why": "Znaleziono tylko wyłączenie ze składki zdrowotnej i zwolnienie z PIT",
+     "confirm": "ZUS; Ministerstwo Energii"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "PGG own retraining offer beyond rail (aptitude tests, courses)",
    "why": "Only \"Nowa perspektywa\" (rail) documented",
-   "confirm": "PGG HR"
+   "confirm": "PGG HR",
+   "i18n": {
+    "cs": {
+     "item": "Vlastní nabídka rekvalifikací PGG mimo železnici (testy předpokladů, kurzy)",
+     "why": "Doložena je jen „Nowa perspektywa“ (železnice)",
+     "confirm": "Personální oddělení PGG"
+    },
+    "pl": {
+     "item": "Własna oferta przekwalifikowania PGG poza koleją (testy predyspozycji, kursy)",
+     "why": "Udokumentowano tylko „Nowa perspektywa” (kolej)",
+     "confirm": "Dział kadr PGG"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "JSW, Węglokoks Kraj and PKW retraining programmes",
    "why": "Statutory benefits only; no retraining programme found",
-   "confirm": "Each company's HR"
+   "confirm": "Each company's HR",
+   "i18n": {
+    "cs": {
+     "item": "Rekvalifikační programy JSW, Węglokoks Kraj a PKW",
+     "why": "Jen zákonné dávky; žádný rekvalifikační program nenalezen",
+     "confirm": "Personální oddělení každé společnosti"
+    },
+    "pl": {
+     "item": "Programy przekwalifikowania JSW, Węglokoks Kraj i PKW",
+     "why": "Tylko świadczenia ustawowe; nie znaleziono programu przekwalifikowania",
+     "confirm": "Dział kadr każdej spółki"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Union helplines (Solidarność, ZZG, Sierpień 80, Kadra)",
    "why": "No helpline or info point found",
-   "confirm": "Each union's mine-level office"
+   "confirm": "Each union's mine-level office",
+   "i18n": {
+    "cs": {
+     "item": "Linky pomoci odborů (Solidarność, ZZG, Sierpień 80, Kadra)",
+     "why": "Linka pomoci ani informační místo nenalezeny",
+     "confirm": "Kancelář každé odborové organizace na dole"
+    },
+    "pl": {
+     "item": "Infolinie związków zawodowych (Solidarność, ZZG, Sierpień 80, Kadra)",
+     "why": "Nie znaleziono infolinii ani punktu informacyjnego",
+     "confirm": "Biuro każdego związku na poziomie kopalni"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Health, housing and psychological programmes for miners",
    "why": "Only psychological help inside 10.19 projects found",
-   "confirm": "WUP Katowice; Marshal's Office"
+   "confirm": "WUP Katowice; Marshal's Office",
+   "i18n": {
+    "cs": {
+     "item": "Zdravotní, bytové a psychologické programy pro horníky",
+     "why": "Nalezena jen psychologická pomoc v rámci projektů 10.19",
+     "confirm": "WUP Katowice; maršálkovský úřad"
+    },
+    "pl": {
+     "item": "Programy zdrowotne, mieszkaniowe i psychologiczne dla górników",
+     "why": "Znaleziono tylko pomoc psychologiczną w projektach 10.19",
+     "confirm": "WUP Katowice; Urząd Marszałkowski"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Take-up results of \"Energia\" and 10.19/10.20 projects",
    "why": "No published results per project",
-   "confirm": "WUP Katowice (evaluation unit)"
+   "confirm": "WUP Katowice (evaluation unit)",
+   "i18n": {
+    "cs": {
+     "item": "Výsledky využití projektů „Energia“ a 10.19/10.20",
+     "why": "Žádné zveřejněné výsledky za jednotlivé projekty",
+     "confirm": "WUP Katowice (oddělení evaluace)"
+    },
+    "pl": {
+     "item": "Wyniki projektów „Energia” i 10.19/10.20",
+     "why": "Brak opublikowanych wyników poszczególnych projektów",
+     "confirm": "WUP Katowice (jednostka ewaluacyjna)"
+    }
+   }
   },
   {
    "country": "PL",
    "item": "Coal allowance (ekwiwalent) current rules",
    "why": "Out of time in this pass",
-   "confirm": "ZUS; Ministry of Energy"
+   "confirm": "ZUS; Ministry of Energy",
+   "i18n": {
+    "cs": {
+     "item": "Současná pravidla peněžní náhrady za uhlí (ekwiwalent)",
+     "why": "V této fázi rešerše na to nezbyl čas",
+     "confirm": "ZUS; Ministerstvo energetiky"
+    },
+    "pl": {
+     "item": "Obecne zasady ekwiwalentu pieniężnego za węgiel",
+     "why": "Zabrakło czasu na tym etapie badań",
+     "confirm": "ZUS; Ministerstwo Energii"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "2026 payments of the state allowance to ČSM leavers via Diamo",
    "why": "No 2026 media or official report; latest take-up data is from Jun 2021",
-   "confirm": "Diamo social centre; MPO"
+   "confirm": "Diamo social centre; MPO",
+   "i18n": {
+    "cs": {
+     "item": "Výplaty státního příspěvku lidem odcházejícím z Dolu ČSM přes Diamo v roce 2026",
+     "why": "Žádná mediální ani oficiální zpráva z roku 2026; nejnovější údaje o využití jsou z června 2021",
+     "confirm": "Sociální centrum Diamo; MPO"
+    },
+    "pl": {
+     "item": "Wypłaty zasiłku państwowego dla odchodzących z kopalni ČSM przez Diamo w 2026 r.",
+     "why": "Brak doniesień medialnych i oficjalnych raportów z 2026 r.; najnowsze dane o wykorzystaniu pochodzą z czerwca 2021",
+     "confirm": "Centrum socjalne Diamo; MPO"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "\"Nadace Nová šichta\"",
    "why": "OKD calls it a programme; the real foundation is Nadace OKD, which funds municipalities (L1)",
-   "confirm": "OKD HR"
+   "confirm": "OKD HR",
+   "i18n": {
+    "cs": {
+     "item": "„Nadace Nová šichta“",
+     "why": "OKD ji označuje za program; skutečnou nadací je Nadace OKD, která financuje obce (L1)",
+     "confirm": "Personální oddělení OKD"
+    },
+    "pl": {
+     "item": "„Nadace Nová šichta”",
+     "why": "OKD nazywa ją programem; prawdziwą fundacją jest Nadace OKD, która finansuje gminy (L1)",
+     "confirm": "Dział kadr OKD"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "TRAUTOM information portal and counselling app",
    "why": "Portal named but content not checked; no app found",
-   "confirm": "MS Pakt zaměstnanosti"
+   "confirm": "MS Pakt zaměstnanosti",
+   "i18n": {
+    "cs": {
+     "item": "Informační portál TRAUTOM a poradenská aplikace",
+     "why": "Portál je zmíněn, ale obsah neověřen; aplikace nenalezena",
+     "confirm": "MS Pakt zaměstnanosti"
+    },
+    "pl": {
+     "item": "Portal informacyjny TRAUTOM i aplikacja doradcza",
+     "why": "Portal jest wymieniony, ale treści nie sprawdzono; nie znaleziono aplikacji",
+     "confirm": "MS Pakt zaměstnanosti"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Names of employers at the ČSM Labour Office point and the Dec 2025 Burza práce",
    "why": "Only Škoda Group and Moravskoslezské drátovny named, Aug 2025 (ČT24)",
-   "confirm": "OKD HR; Labour Office Ostrava"
+   "confirm": "OKD HR; Labour Office Ostrava",
+   "i18n": {
+    "cs": {
+     "item": "Jména zaměstnavatelů na místě Úřadu práce na Dole ČSM a na Burze práce v prosinci 2025",
+     "why": "Jmenovány jen Škoda Group a Moravskoslezské drátovny, srpen 2025 (ČT24)",
+     "confirm": "Personální oddělení OKD; Úřad práce Ostrava"
+    },
+    "pl": {
+     "item": "Nazwy pracodawców w punkcie Úřadu práce w kopalni ČSM i na Burza práce w grudniu 2025",
+     "why": "Wymieniono tylko Škoda Group i Moravskoslezské drátovny, sierpień 2025 (ČT24)",
+     "confirm": "Dział kadr OKD; Úřad práce Ostrava"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "List of the 80+ firms that cooperated with Nová šichta (2021)",
    "why": "Never published",
-   "confirm": "OKD HR"
+   "confirm": "OKD HR",
+   "i18n": {
+    "cs": {
+     "item": "Seznam 80+ firem, které spolupracovaly s Novou šichtou (2021)",
+     "why": "Nikdy nezveřejněn",
+     "confirm": "Personální oddělení OKD"
+    },
+    "pl": {
+     "item": "Lista ponad 80 firm współpracujących z Nová šichta (2021)",
+     "why": "Nigdy nie opublikowana",
+     "confirm": "Dział kadr OKD"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Official text and take-up of the Feb 2026 pension hardship waiver",
    "why": "No MPSV press release found; kurzy.cz page could not be opened",
-   "confirm": "MPSV; ČSSZ"
+   "confirm": "MPSV; ČSSZ",
+   "i18n": {
+    "cs": {
+     "item": "Oficiální text a využití odstranění tvrdosti zákona u důchodů z února 2026",
+     "why": "Tisková zpráva MPSV nenalezena; stránku kurzy.cz se nepodařilo otevřít",
+     "confirm": "MPSV; ČSSZ"
+    },
+    "pl": {
+     "item": "Oficjalny tekst i wykorzystanie usunięcia surowości prawa przy emeryturach z lutego 2026",
+     "why": "Nie znaleziono komunikatu prasowego MPSV; strony kurzy.cz nie udało się otworzyć",
+     "confirm": "MPSV; ČSSZ"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "EU Globalisation Adjustment Fund application for OKD",
    "why": "Discussed, no application found",
-   "confirm": "MPSV, European funds department"
+   "confirm": "MPSV, European funds department",
+   "i18n": {
+    "cs": {
+     "item": "Žádost do Evropského fondu pro přizpůsobení se globalizaci pro OKD",
+     "why": "Diskutováno, žádost nenalezena",
+     "confirm": "MPSV, odbor evropských fondů"
+    },
+    "pl": {
+     "item": "Wniosek do Europejskiego Funduszu Dostosowania do Globalizacji dla OKD",
+     "why": "Dyskutowany, nie znaleziono wniosku",
+     "confirm": "MPSV, departament funduszy europejskich"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Bridging \"výsluhové příspěvky\" for all coal and power workers",
    "why": "Not adopted; only firm-listed allowances exist",
-   "confirm": "MPO"
+   "confirm": "MPO",
+   "i18n": {
+    "cs": {
+     "item": "Překlenovací „výsluhové příspěvky“ pro všechny pracovníky uhlí a energetiky",
+     "why": "Nepřijato; existují jen příspěvky pro vyjmenované firmy",
+     "confirm": "MPO"
+    },
+    "pl": {
+     "item": "Pomostowe „výsluhové příspěvky” dla wszystkich pracowników węgla i energetyki",
+     "why": "Nie przyjęto; istnieją tylko zasiłki dla wymienionych firm",
+     "confirm": "MPO"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Nová šichta take-up and placement results 2025–2026",
    "why": "No figures published",
-   "confirm": "OKD HR"
+   "confirm": "OKD HR",
+   "i18n": {
+    "cs": {
+     "item": "Využití Nové šichty a výsledky umístění 2025–2026",
+     "why": "Žádná čísla nebyla zveřejněna",
+     "confirm": "Personální oddělení OKD"
+    },
+    "pl": {
+     "item": "Wykorzystanie Nová šichta i wyniki zatrudnienia 2025–2026",
+     "why": "Nie opublikowano żadnych liczb",
+     "confirm": "Dział kadr OKD"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Labour Office statistics on ex-OKD job seekers in 2026",
    "why": "Only an estimate quoted in media",
-   "confirm": "Labour Office Ostrava branch"
+   "confirm": "Labour Office Ostrava branch",
+   "i18n": {
+    "cs": {
+     "item": "Statistiky Úřadu práce o uchazečích z bývalé OKD v roce 2026",
+     "why": "Jen odhad citovaný v médiích",
+     "confirm": "Úřad práce, pobočka Ostrava"
+    },
+    "pl": {
+     "item": "Statystyki Úřadu práce o szukających pracy byłych pracownikach OKD w 2026 r.",
+     "why": "Tylko szacunek cytowany w mediach",
+     "confirm": "Úřad práce, oddział w Ostrawie"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Current status of Zaměstnanecká mobilita",
    "why": "Only the 2017 rules found",
-   "confirm": "ARR; Moravian-Silesian Region"
+   "confirm": "ARR; Moravian-Silesian Region",
+   "i18n": {
+    "cs": {
+     "item": "Současný stav Zaměstnanecké mobility",
+     "why": "Nalezena jen pravidla z roku 2017",
+     "confirm": "ARR; Moravskoslezský kraj"
+    },
+    "pl": {
+     "item": "Obecny status Zaměstnanecká mobilita",
+     "why": "Znaleziono tylko zasady z 2017 r.",
+     "confirm": "ARR; Kraj morawsko-śląski"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "NÚK audits of OPST or of miner support",
    "why": "None found on these topics",
-   "confirm": "NÚK"
+   "confirm": "NÚK",
+   "i18n": {
+    "cs": {
+     "item": "Audity NÚK k OPST nebo k podpoře horníků",
+     "why": "K těmto tématům nebyly nalezeny",
+     "confirm": "NÚK"
+    },
+    "pl": {
+     "item": "Kontrole NÚK dotyczące OPST lub wsparcia górników",
+     "why": "Nie znaleziono żadnych w tych tematach",
+     "confirm": "NÚK"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Municipal programmes for miners (Karviná, Havířov, Orlová, Bohumín, Stonava)",
    "why": "None found",
-   "confirm": "Each city hall's social department"
+   "confirm": "Each city hall's social department",
+   "i18n": {
+    "cs": {
+     "item": "Obecní programy pro horníky (Karviná, Havířov, Orlová, Bohumín, Stonava)",
+     "why": "Žádné nenalezeny",
+     "confirm": "Sociální odbor každé radnice"
+    },
+    "pl": {
+     "item": "Gminne programy dla górników (Karwina, Hawierzów, Orłowa, Bogumin, Stonawa)",
+     "why": "Nie znaleziono",
+     "confirm": "Wydział społeczny każdego urzędu miasta"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Health, psychological or debt counselling aimed at miners",
    "why": "None found",
-   "confirm": "Karviná Social Department; Labour Office"
+   "confirm": "Karviná Social Department; Labour Office",
+   "i18n": {
+    "cs": {
+     "item": "Zdravotní, psychologické nebo dluhové poradenství pro horníky",
+     "why": "Žádné nenalezeno",
+     "confirm": "Sociální odbor Karviná; Úřad práce"
+    },
+    "pl": {
+     "item": "Poradnictwo zdrowotne, psychologiczne lub dłużne dla górników",
+     "why": "Nie znaleziono",
+     "confirm": "Wydział Społeczny w Karwinie; Úřad práce"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Whether supplier and contractor staff can use Nová šichta",
    "why": "No source states it",
-   "confirm": "OKD HR"
+   "confirm": "OKD HR",
+   "i18n": {
+    "cs": {
+     "item": "Zda mohou Novou šichtu využít zaměstnanci dodavatelských a smluvních firem",
+     "why": "Žádný zdroj to neuvádí",
+     "confirm": "Personální oddělení OKD"
+    },
+    "pl": {
+     "item": "Czy pracownicy firm okołogórniczych i wykonawczych mogą korzystać z Nová šichta",
+     "why": "Żadne źródło tego nie podaje",
+     "confirm": "Dział kadr OKD"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "ESF projects named \"RESTART\" or \"Nový začátek\" for miners",
    "why": "Not found",
-   "confirm": "MPSV"
+   "confirm": "MPSV",
+   "i18n": {
+    "cs": {
+     "item": "Projekty ESF s názvem „RESTART“ nebo „Nový začátek“ pro horníky",
+     "why": "Nenalezeny",
+     "confirm": "MPSV"
+    },
+    "pl": {
+     "item": "Projekty EFS o nazwie „RESTART” lub „Nový začátek” dla górników",
+     "why": "Nie znaleziono",
+     "confirm": "MPSV"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Contacts for Nová šichta and the ČSM Labour Office point",
    "why": "Not published online",
-   "confirm": "OKD; Labour Office"
+   "confirm": "OKD; Labour Office",
+   "i18n": {
+    "cs": {
+     "item": "Kontakty na Novou šichtu a místo Úřadu práce na Dole ČSM",
+     "why": "Nezveřejněny online",
+     "confirm": "OKD; Úřad práce"
+    },
+    "pl": {
+     "item": "Kontakty do Nová šichta i punktu Úřadu práce w kopalni ČSM",
+     "why": "Nie opublikowano w internecie",
+     "confirm": "OKD; Úřad práce"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Current status of POVEZ II and OPST call 33",
    "why": "Call pages not opened; dates not found",
-   "confirm": "Labour Office; SFZP"
+   "confirm": "Labour Office; SFZP",
+   "i18n": {
+    "cs": {
+     "item": "Současný stav POVEZ II a výzvy OPST 33",
+     "why": "Stránky výzev neotevřeny; termíny nenalezeny",
+     "confirm": "Úřad práce; SFZP"
+    },
+    "pl": {
+     "item": "Obecny status POVEZ II i naboru OPST 33",
+     "why": "Nie otwierano stron naborów; nie znaleziono terminów",
+     "confirm": "Úřad práce; SFZP"
+    }
+   }
   },
   {
    "country": "CZ",
    "item": "Results of Sokolovská uhelná outplacement 2020 beyond the first 48 participants",
    "why": "No later figures",
-   "confirm": "Labour Office Karlovy Vary branch"
+   "confirm": "Labour Office Karlovy Vary branch",
+   "i18n": {
+    "cs": {
+     "item": "Výsledky outplacementu Sokolovské uhelné z roku 2020 nad rámec prvních 48 účastníků",
+     "why": "Žádná pozdější čísla",
+     "confirm": "Úřad práce, pobočka Karlovy Vary"
+    },
+    "pl": {
+     "item": "Wyniki outplacementu Sokolovská uhelná z 2020 r. poza pierwszymi 48 uczestnikami",
+     "why": "Brak późniejszych danych",
+     "confirm": "Úřad práce, oddział w Karlowych Warach"
+    }
+   }
   }
  ]
 }

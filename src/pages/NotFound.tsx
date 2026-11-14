@@ -7,9 +7,7 @@ export default function NotFound() {
   return (
     <Section>
       <div className="mx-auto max-w-md text-center">
-        <div className="mx-auto w-32 rounded-2xl bg-orange p-3">
-          <Headframe />
-        </div>
+        <Headframe className="mx-auto block w-40" />
         <p className="display mt-4 text-6xl font-bold">404</p>
         <Link to="/" className="btn btn-primary mt-6">
           {t('nav.home')}

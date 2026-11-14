@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { PageHeader, SafetyBox, Section, useLang } from '../components/ui'
 import site from '../data/site.json'
-import type { Text3 } from '../data/types'
-import { t3 } from '../lib/content'
+import type { Lang, Text3 } from '../data/types'
+import { localize, t3 } from '../lib/content'
 
 interface Gap {
   who: Text3
@@ -75,14 +75,29 @@ const GAPS: Gap[] = [
   },
 ]
 
-function Matrix({ data }: { data: { columns: string[]; rows: { group: string; cells: string[] }[] } }) {
+type Translations<T> = Partial<Record<Lang, Partial<T>>>
+interface MatrixRow {
+  group: string
+  cells: string[]
+  i18n?: Translations<{ group: string; cells: string[] }>
+}
+interface MatrixData {
+  columns: string[]
+  rows: MatrixRow[]
+  i18n?: Translations<{ columns: string[] }>
+}
+
+function Matrix({ data }: { data: MatrixData }) {
+  const { t } = useTranslation()
+  const lang = useLang()
+  const table = localize(data, lang)
   return (
-    <div className="overflow-x-auto card" lang="en">
+    <div className="overflow-x-auto card" lang={table.translated ? lang : 'en'}>
       <table className="w-full text-sm">
         <thead className="bg-coal text-white">
           <tr>
-            <th className="p-2 text-left sticky left-0 bg-coal">Group</th>
-            {data.columns.map((c) => (
+            <th className="p-2 text-left sticky left-0 bg-coal">{t('gaps.group')}</th>
+            {table.columns.map((c) => (
               <th key={c} className="p-2 text-left whitespace-nowrap">
                 {c}
               </th>
@@ -90,20 +105,24 @@ function Matrix({ data }: { data: { columns: string[]; rows: { group: string; ce
           </tr>
         </thead>
         <tbody>
-          {data.rows.map((r) => (
-            <tr key={r.group} className="border-t border-coal/10 align-top">
-              <th className="p-2 text-left font-semibold sticky left-0 bg-white">{r.group}</th>
-              {r.cells.map((c, i) => {
-                const head = c.trim().charAt(0)
-                const cls = head === 'E' ? 'bg-orange-pale' : head === 'N' ? 'bg-stone/15' : ''
-                return (
-                  <td key={i} className={`p-2 min-w-32 ${cls}`}>
-                    {c}
-                  </td>
-                )
-              })}
-            </tr>
-          ))}
+          {data.rows.map((r) => {
+            const row = localize(r, lang)
+            return (
+              <tr key={r.group} className="border-t border-coal/10 align-top">
+                <th className="p-2 text-left font-semibold sticky left-0 bg-white">{row.group}</th>
+                {r.cells.map((en, i) => {
+                  // Colour from the English source, which always starts with E(ligible) or N(ot)
+                  const head = en.trim().charAt(0)
+                  const cls = head === 'E' ? 'bg-orange-pale' : head === 'N' ? 'bg-stone/15' : ''
+                  return (
+                    <td key={i} className={`p-2 min-w-32 ${cls}`}>
+                      {row.cells[i]}
+                    </td>
+                  )
+                })}
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

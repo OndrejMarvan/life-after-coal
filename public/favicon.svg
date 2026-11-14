@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0D0D0D"/><path d="M14 54 L32 10 L50 54 M20 40 H44 M23 32 H41 M27 22 H37" stroke="#F47B20" stroke-width="4" fill="none" stroke-linejoin="round"/><circle cx="32" cy="10" r="4" fill="#F47B20"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffa04d"/><stop offset="1" stop-color="#e86e16"/></linearGradient>
+    <clipPath id="c"><rect width="64" height="64" rx="12"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="64" height="64" fill="url(#s)"/>
+    <path d="M27 5L70 21" stroke="#0d0d0d" stroke-width="1.4"/>
+    <path d="M30 19L54 58M29 27L48 58" stroke="#0d0d0d" stroke-width="3"/>
+    <path d="M29 27L35 26L36 36L41 37L41 46L46 48" stroke="#0d0d0d" stroke-width="1.6"/>
+    <path d="M17 15L15 46M28 15L30 46" stroke="#0d0d0d" stroke-width="3.2"/>
+    <path d="M16 25H29M15.5 35H29.5M17 15L29 25M28 15L16 25M16 25L29.5 35M29 25L15.5 35" stroke="#0d0d0d" stroke-width="1.6"/>
+    <path d="M13 15H32" stroke="#0d0d0d" stroke-width="2.6"/>
+    <circle cx="22.5" cy="8.5" r="6.5" stroke="#0d0d0d" stroke-width="2.6"/>
+    <path d="M22.5 3V14M17 8.5H28" stroke="#0d0d0d" stroke-width="1.2"/>
+    <rect x="5" y="40" width="23" height="18" fill="#7a2f12"/>
+    <path d="M28 40L31 38V58H28Z" fill="#4a1b09"/>
+    <path d="M5 40H28L31 38H8Z" fill="#262626"/>
+    <path d="M9 52V47A2 2 0 0 1 13 47V52ZM20 52V47A2 2 0 0 1 24 47V52Z" fill="#1d130e"/>
+    <rect y="58" width="64" height="6" fill="#0d0d0d"/>
+  </g>
+</svg>

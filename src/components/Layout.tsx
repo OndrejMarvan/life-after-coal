@@ -20,6 +20,7 @@ const MORE = [
   { to: '/portals', key: 'nav.portals' },
   { to: '/gaps', key: 'nav.gaps' },
   { to: '/about', key: 'nav.about' },
+  { to: '/support', key: 'nav.support' },
 ]
 
 function LangSwitch() {
@@ -67,12 +68,10 @@ export default function Layout() {
       <header className="bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
-            <span className="grid h-10 w-10 place-items-center rounded-lg bg-orange">
-              <Headframe className="h-8 w-8" />
-            </span>
+            <Headframe className="h-14 w-14 shrink-0" />
             <span className="display text-lg sm:text-xl font-bold leading-none hidden min-[420px]:inline">{t('appName')}</span>
           </Link>
-          <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label="main">
+          <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label={t('nav.menu')}>
             {MAIN.map((m) => (
               <NavLink key={m.to} to={m.to} className={linkCls}>
                 {t(m.key)}
@@ -111,7 +110,7 @@ export default function Layout() {
           </div>
         </div>
         {open && (
-          <nav className="lg:hidden bg-coal border-t border-white/10 px-4 pb-4" aria-label="mobile">
+          <nav className="lg:hidden bg-coal border-t border-white/10 px-4 pb-4" aria-label={t('nav.menu')}>
             {[...MAIN, ...MORE].map((m) => (
               <NavLink key={m.to} to={m.to} className={({ isActive }) => `block rounded-md px-3 py-3 text-lg ${isActive ? 'bg-orange text-coal' : 'hover:bg-white/10'}`}>
                 {t(m.key)}
@@ -150,6 +149,9 @@ export default function Layout() {
           <div>
             <p className="display text-2xl font-bold text-orange">{t('greeting')}</p>
             <p className="mt-2 text-white/80">{t('footer.madeFor')}</p>
+            <Link to="/support" className="btn btn-primary mt-5">
+              <span aria-hidden="true">☕</span> {t('nav.support')}
+            </Link>
           </div>
           <div className="grid grid-cols-2 gap-2 text-white/90">
             {[...MAIN, ...MORE].map((m) => (

@@ -10,21 +10,7 @@ export function useLang(): Lang {
   return (l === 'pl' || l === 'en' ? l : 'cs') as Lang
 }
 
-/** Black line-art mine headframe (shaft tower) with a winding wheel. */
-export function Headframe({ className = '', color = '#0D0D0D' }: { className?: string; color?: string }) {
-  return (
-    <svg viewBox="0 0 200 220" className={className} aria-hidden="true" fill="none" stroke={color} strokeWidth="6" strokeLinejoin="round" strokeLinecap="round">
-      <path d="M40 210 L100 40 L160 210" />
-      <path d="M60 155 H140 M72 120 H128 M84 85 H116" />
-      <path d="M60 155 L128 120 M140 155 L72 120 M72 120 L116 85 M128 120 L84 85" strokeWidth="4" />
-      <circle cx="100" cy="34" r="24" />
-      <circle cx="100" cy="34" r="5" fill={color} />
-      <path d="M100 10 V58 M76 34 H124 M83 17 L117 51 M117 17 L83 51" strokeWidth="3" />
-      <path d="M100 58 V210" strokeWidth="3" strokeDasharray="8 6" />
-      <path d="M20 210 H180" />
-    </svg>
-  )
-}
+export { Headframe } from './Headframe'
 
 export function PageHeader({ title, intro, children }: { title: string; intro?: string; children?: ReactNode }) {
   return (
@@ -98,7 +84,7 @@ export function ProgrammeCard({ p, reason, tone = 'default' }: { p: Programme; r
   const border =
     tone === 'likely' ? 'border-orange border-4' : tone === 'check' ? 'border-coal border-2' : tone === 'no' ? 'border-stone/40 border-2 opacity-90' : 'border-[#e7e2da] border'
   return (
-    <article className={`relative rounded-2xl bg-white ${border} p-5 pl-12 shadow-sm`}>
+    <article className={`relative min-w-0 rounded-2xl bg-white ${border} p-5 pl-12 shadow-sm [overflow-wrap:anywhere]`}>
       <span aria-hidden="true" className="absolute left-4 top-6 h-4 w-4 rounded-full border-4 border-orange bg-paper" />
       <div className="flex flex-wrap items-center gap-2 mb-2">
         <CountryTag c={p.country} />

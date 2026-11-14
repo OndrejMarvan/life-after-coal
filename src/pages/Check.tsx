@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Choice, MineLift, PageHeader, ProgrammeCard, SafetyBox, Section, useLang } from '../components/ui'
 import {
-  CZ_EMPLOYERS, CZ_REGIONS, PL_EMPLOYERS, PL_REGIONS, STEP_ORDER, addMonths, czAllowanceEstimate, evaluate,
+  CZ_EMPLOYERS, PL_EMPLOYERS, STEP_ORDER, addMonths, czAllowanceEstimate, evaluate, regionsOf,
   type Profile, type Result,
 } from '../data/rules'
 import type { Group, Need } from '../data/types'
@@ -17,7 +17,10 @@ const NEEDS: Need[] = ['money', 'pension', 'job', 'training', 'business', 'famil
 type Draft = Partial<Profile>
 type StepId =
   | 'workCountry' | 'liveCountry' | 'group' | 'employer' | 'situation' | 'plEmployed' | 'plLeftWhen'
-  | 'yearsToPension' | 'service' | 'age' | 'czShifts' | 'region' | 'needs'
+  | 'yearsToPension' | 'service' | 'age' | 'czShifts' | 'region' | 'workRegion' | 'needs'
+
+/** The workplace region is asked only when the mine is in another country than home. */
+const asksWorkRegion = (d: Draft) => d.liveCountry !== d.workCountry && d.group !== 'family' && d.group !== 'retired'
 
 function stepsFor(d: Draft): StepId[] {
   const s: StepId[] = ['workCountry', 'liveCountry', 'group']
@@ -32,7 +35,9 @@ function stepsFor(d: Draft): StepId[] {
   if (!fam && !ret) s.push('yearsToPension')
   if (!fam) s.push('service', 'age')
   if (d.workCountry === 'CZ' && (d.group === 'underground' || ret)) s.push('czShifts')
-  s.push('region', 'needs')
+  if (regionsOf(d.liveCountry).length) s.push('region')
+  if (asksWorkRegion(d)) s.push('workRegion')
+  s.push('needs')
   return s
 }
 
@@ -49,7 +54,8 @@ function answered(id: StepId, d: Draft): boolean {
     case 'service': return !!d.service
     case 'age': return !!d.age
     case 'czShifts': return !!d.czShifts && !!d.czStartBefore2016
-    case 'region': return !!d.region
+    case 'region': return regionsOf(d.liveCountry).includes(d.region ?? '')
+    case 'workRegion': return regionsOf(d.workCountry).includes(d.workRegion ?? '')
     case 'needs': return true
   }
 }
@@ -71,7 +77,8 @@ function complete(d: Draft): Profile {
     age: d.age ?? 'lt50',
     czShifts: d.czShifts,
     czStartBefore2016: d.czStartBefore2016,
-    region: d.region ?? '',
+    region: regionsOf(d.liveCountry).includes(d.region ?? '') ? d.region! : '',
+    workRegion: asksWorkRegion(d) && regionsOf(d.workCountry).includes(d.workRegion ?? '') ? d.workRegion : undefined,
     needs: d.needs ?? [],
   }
 }
@@ -92,7 +99,9 @@ export default function Check() {
   const go = (delta: number) => setI((x) => Math.max(0, Math.min(steps.length - 1, x + delta)))
   const pick = (patch: Draft) => {
     set(patch)
-    setTimeout(() => setI((x) => x + 1), 150)
+    // Advance to the step after this one, so a double tap or a quick "Next" cannot skip a question.
+    const from = i
+    setTimeout(() => setI(from + 1), 150)
   }
 
   if (showResults) {
@@ -108,12 +117,6 @@ export default function Check() {
     )
   }
 
-  const regions =
-    draft.workCountry === 'PL' || draft.liveCountry === 'PL'
-      ? draft.workCountry === 'CZ' || draft.liveCountry === 'CZ'
-        ? [...PL_REGIONS, ...CZ_REGIONS]
-        : PL_REGIONS
-      : CZ_REGIONS
   const employers = draft.workCountry === 'PL' ? PL_EMPLOYERS : CZ_EMPLOYERS
 
   const q = (key: string) => <h2 className="text-3xl sm:text-4xl font-bold mb-6">{t(key)}</h2>
@@ -136,7 +139,7 @@ export default function Check() {
               {q('check.q_workCountry')}
               <div className={grid}>
                 {(['CZ', 'PL'] as const).map((c) => (
-                  <Choice key={c} selected={draft.workCountry === c} onClick={() => pick({ workCountry: c, employer: undefined, region: undefined })}>
+                  <Choice key={c} selected={draft.workCountry === c} onClick={() => pick({ workCountry: c, employer: undefined, workRegion: undefined })}>
                     {c === 'CZ' ? '🇨🇿' : '🇵🇱'} {t(`countries.${c}`)}
                   </Choice>
                 ))}
@@ -289,8 +292,20 @@ export default function Check() {
             <div>
               {q('check.q_region')}
               <div className={grid}>
-                {regions.map((r) => (
+                {regionsOf(draft.liveCountry).map((r) => (
                   <Choice key={r} selected={draft.region === r} onClick={() => pick({ region: r })}>
+                    {t(`regions.${r}`)}
+                  </Choice>
+                ))}
+              </div>
+            </div>
+          )}
+          {step === 'workRegion' && (
+            <div>
+              {q('check.q_workRegion')}
+              <div className={grid}>
+                {regionsOf(draft.workCountry).map((r) => (
+                  <Choice key={r} selected={draft.workRegion === r} onClick={() => pick({ workRegion: r })}>
                     {t(`regions.${r}`)}
                   </Choice>
                 ))}
