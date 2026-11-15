@@ -6,8 +6,7 @@ import { isDemo } from '../lib/supabase'
 import { fmtDate } from '../lib/content'
 import { applyTheme, savedTheme, type Theme } from '../lib/theme'
 import { AssistantChat } from './AssistantChat'
-import { HeadframeLogo } from './HeadframeLogo'
-import { useLang } from './ui'
+import { Headframe, useLang } from './ui'
 
 const GameModal = lazy(() => import('./GameModal'))
 
@@ -188,7 +187,7 @@ export default function Layout() {
       <header className="chrome bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
           <Link to="/" onClick={game.onLogoClick} className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
-            <HeadframeLogo className="h-14 w-14 shrink-0" wheelDeg={game.wheelDeg} />
+            <Headframe className="h-14 w-14 shrink-0" wheelDeg={game.wheelDeg} />
             <span className="display text-lg sm:text-xl font-bold leading-none hidden min-[420px]:inline">{t('appName')}</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label={t('nav.menu')}>
