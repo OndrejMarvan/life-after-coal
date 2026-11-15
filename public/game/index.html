@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Last Shift</title>
+<!-- Hidden easter egg of Life After Coal: click the header logo 5 times, or type the Konami code.
+     Language comes from ?lang=cs|pl|en, then the site's saved language, then the browser. -->
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<style>
+/* Self-hosted fonts (the same Oswald and Inter the site uses), so the game makes no third-party requests. */
+@font-face { font-family: 'Oswald'; font-weight: 500; font-display: swap; src: url(fonts/oswald-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Oswald'; font-weight: 500; font-display: swap; src: url(fonts/oswald-latin-ext-500-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Oswald'; font-weight: 700; font-display: swap; src: url(fonts/oswald-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Oswald'; font-weight: 700; font-display: swap; src: url(fonts/oswald-latin-ext-700-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url(fonts/inter-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-weight: 400; font-display: swap; src: url(fonts/inter-latin-ext-400-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url(fonts/inter-latin-600-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-weight: 600; font-display: swap; src: url(fonts/inter-latin-ext-600-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+/* Layout: one centered column. Title strip, stat row, the mine canvas with overlays on top, touch pad, help line.
+   Single committed look: a lamp-lit underground in warm black, ember for action, gold for money, ice for the surface. */
+:root {
+  --bg: #120f0d;
+  --panel: #1d1815;
+  --panel-2: #29221d;
+  --line: #3b322b;
+  --fg: #efe6d8;
+  --muted: #a89c8d;
+  --ember: #ee8a3c;
+  --gold: #e8bf50;
+  --ice: #93b8cd;
+  --blood: #c9492f;
+  --good: #7cc27f;
+  --display: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+  --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); }
+body {
+  color: var(--fg);
+  font: 15px/1.45 var(--body);
+  padding-block: 16px 28px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-tap-highlight-color: transparent;
+}
+button { font: inherit; color: inherit; }
+.game { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.top h1 { margin: 0; font: 700 clamp(22px, 5vw, 30px)/1.1 var(--display); letter-spacing: .06em; text-transform: uppercase; text-wrap: balance; }
+.top h1 span { color: var(--ember); }
+.top .meta { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.rank { font: 500 13px var(--display); letter-spacing: .08em; color: var(--ice); }
+.icon-btn { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px; cursor: pointer; font-size: 13px; color: var(--muted); }
+.icon-btn:hover { color: var(--fg); border-color: var(--muted); }
+
+.hud { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+.stat .k { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.stat .v { font: 600 19px/1.2 var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.stat .v small { font-size: 12px; color: var(--muted); font-weight: 500; }
+.stat.cash .v { color: var(--gold); }
+.bar { height: 5px; border-radius: 3px; background: #0c0a09; margin-top: 5px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: var(--good); transition: width .1s linear; }
+.bar.warn i { background: var(--blood); }
+.bar.pack i { background: var(--ice); }
+.bar.pack.full i { background: var(--ember); }
+
+.stage { position: relative; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #0b0908; }
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; image-rendering: pixelated; touch-action: none; }
+.toast { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); max-width: 92%; background: rgba(18,15,13,.92); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; font-size: 13px; text-align: center; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.on { opacity: 1; }
+.toast.bad { border-color: var(--blood); color: #ffb7a6; }
+.toast.good { border-color: var(--gold); color: var(--gold); }
+.prompt { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); background: var(--ember); color: #1a0f07; border: 0; border-radius: 6px; padding: 8px 14px; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,.5); }
+.prompt kbd { background: rgba(0,0,0,.2); border-radius: 4px; padding: 1px 6px; margin-right: 6px; font: 600 12px var(--body); }
+
+.overlay { position: absolute; inset: 0; background: rgba(12,10,9,.88); overflow-y: auto; display: flex; padding: 16px; }
+.overlay[hidden] { display: none; }
+.card { margin: auto; width: 100%; max-width: 520px; }
+.card h2 { margin: 0 0 4px; font: 700 clamp(22px, 5vw, 30px)/1.15 var(--display); letter-spacing: .05em; text-wrap: balance; }
+.card p { margin: 0 0 12px; color: var(--muted); }
+.card .tag { color: var(--ice); font: 500 13px var(--display); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+.field { display: grid; gap: 4px; margin: 14px 0; }
+.field label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.field input { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; color: var(--fg); font: 500 16px var(--body); width: 100%; }
+.field input:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; }
+.btn { background: var(--ember); color: #1a0f07; border: 0; border-radius: 6px; padding: 10px 18px; font-weight: 600; cursor: pointer; }
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+.btn.ghost:hover { color: var(--fg); border-color: var(--muted); }
+.btn:disabled { opacity: .35; cursor: not-allowed; filter: none; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.shop { width: 100%; max-width: 600px; margin: 0 auto; }
+.shop-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.shop-head h2 { margin: 0; font: 700 22px var(--display); letter-spacing: .06em; }
+.shop-head .cash { font: 600 20px var(--body); color: var(--gold); font-variant-numeric: tabular-nums; }
+.sect { margin: 14px 0 6px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.cargo { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: grid; gap: 8px; }
+.cargo ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; }
+.cargo li { display: flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+.up { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; padding: 9px 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; }
+.up b { font-weight: 600; }
+.up .d { font-size: 13px; color: var(--muted); grid-column: 1; min-width: 0; }
+.up .btn { grid-column: 2; grid-row: 1 / span 2; padding: 8px 12px; font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.up.throne { border-color: var(--gold); }
+.up.throne b { color: var(--gold); font-family: var(--display); letter-spacing: .05em; }
+
+.pad { display: none; gap: 12px; align-items: center; justify-content: space-between; }
+.dpad { display: grid; grid-template-columns: repeat(3, 56px); grid-template-rows: repeat(3, 56px); gap: 4px; }
+.dpad button, .acts button { background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; font-size: 20px; touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer; }
+.dpad button:active, .acts button:active { background: var(--ember); color: #1a0f07; }
+.dpad .u { grid-area: 1 / 2; } .dpad .l { grid-area: 2 / 1; } .dpad .r { grid-area: 2 / 3; } .dpad .d { grid-area: 3 / 2; }
+.acts { display: grid; gap: 8px; }
+.acts button { padding: 14px 22px; font-size: 15px; font-weight: 600; }
+@media (hover: none), (max-width: 700px) { .pad { display: flex; } }
+/* Phones: everything (stats, mine, controls) has to fit one screen without scrolling. */
+@media (max-width: 560px) {
+  body { padding-block: 6px 10px; }
+  .game { gap: 8px; }
+  .top { gap: 4px 10px; }
+  .top h1 { font-size: 20px; }
+  .top .meta { gap: 6px; }
+  .rank { font-size: 12px; }
+  .icon-btn { padding: 3px 8px; font-size: 12px; }
+  .hud { grid-template-columns: 1.15fr 1.45fr 1fr 1fr 1fr; gap: 5px; }
+  .stat { padding: 4px 6px; border-radius: 6px; }
+  .stat .k { font-size: 9px; letter-spacing: .03em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* the bars already show "out of how many", so the "/ max" and "best" parts go */
+  .stat .k [data-i="drains"], .stat .v small { display: none; }
+  .stat .v { font-size: 14px; }
+  /* start screen, shop and ending take the whole screen instead of the small mine window */
+  .overlay { position: fixed; z-index: 10; background: rgba(12,10,9,.97); }
+  .bar { height: 4px; margin-top: 3px; }
+  .dpad { grid-template-columns: repeat(3, 50px); grid-template-rows: repeat(3, 50px); }
+  .acts button { padding: 12px 16px; }
+}
+/* The keyboard help means nothing on a touch screen. */
+@media (hover: none) { .help { display: none; } }
+
+.help { margin: 0; font-size: 13px; color: var(--muted); }
+.help kbd { background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font: 500 12px var(--body); color: var(--fg); }
+@media (prefers-reduced-motion: reduce) { .toast, .bar i { transition: none; } }
+</style>
+
+<main class="game">
+  <header class="top">
+    <h1 data-i="h1">Last <span>Shift</span></h1>
+    <div class="meta">
+      <span class="rank" id="rank"></span>
+      <button class="icon-btn" id="restart" type="button" data-i="restart">Restart</button>
+      <button class="icon-btn" id="mute" type="button" data-ia="soundAria" aria-label="Toggle sound">Sound on</button>
+    </div>
+  </header>
+
+  <section class="hud" data-ia="status" aria-label="Status">
+    <div class="stat"><div class="k" data-i="depth">Depth</div><div class="v"><span id="depth">0</span> m <small><span data-i="best">best</span> <span id="best">0</span></small></div></div>
+    <div class="stat cash"><div class="k" data-i="gold">Pay</div><div class="v" id="cash">$0</div></div>
+    <div class="stat"><div class="k" data-i="pack">Load</div><div class="v"><span id="pack">0</span><small> / <span id="cap">12</span></small></div><div class="bar pack" id="packbar"><i></i></div></div>
+    <div class="stat"><div class="k"><span data-i="stamina">Strength</span> <span style="text-transform:none;letter-spacing:0" data-i="drains">(drains underground)</span></div><div class="v"><span id="sta">60</span><small> / <span id="stamax">60</span></small></div><div class="bar" id="stabar"><i></i></div></div>
+    <div class="stat"><div class="k" data-i="ravens">Cage rides</div><div class="v" id="ravens">0</div></div>
+  </section>
+
+  <div class="stage" id="stage">
+    <canvas id="c" width="640" height="520" data-ia="mine" aria-label="The mine"></canvas>
+    <div class="toast" id="toast" role="status"></div>
+    <button class="prompt" id="prompt" type="button" hidden><kbd>E</kbd><span data-i="enterHall">Enter the Miners’ Hall</span></button>
+
+    <div class="overlay" id="start">
+      <div class="card">
+        <div class="tag" data-i="tagStart">Glück auf!</div>
+        <h2 data-i="startH">Go deeper than any other miner.</h2>
+        <p data-i="startP"></p>
+        <div class="field"><label for="house" data-i="nameHouse">Your miner’s name</label><input id="house" maxlength="18" value="" autocomplete="off"></div>
+        <div class="row">
+          <button class="btn" id="begin" type="button" data-i="begin">Start the shift</button>
+          <button class="btn ghost" id="erase" type="button" hidden data-i="erase">Erase progress</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="shop" hidden></div>
+
+    <div class="overlay" id="end" hidden>
+      <div class="card">
+        <div class="tag" data-i="tagEnd">Shift’s over</div>
+        <h2 id="endTitle"></h2>
+        <p id="endText"></p>
+        <div class="row"><button class="btn" id="keep" type="button" data-i="keep">Keep digging</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad" data-ia="touch" aria-label="Touch controls">
+    <div class="dpad">
+      <button class="u" data-dir="up" data-ia="up" aria-label="Up">&#9650;</button>
+      <button class="l" data-dir="left" data-ia="left" aria-label="Left">&#9664;</button>
+      <button class="r" data-dir="right" data-ia="right" aria-label="Right">&#9654;</button>
+      <button class="d" data-dir="down" data-ia="down" aria-label="Down">&#9660;</button>
+    </div>
+    <div class="acts">
+      <button id="tShop" type="button" data-i="hall">Miners’ Hall</button>
+      <button id="tRaven" type="button" data-i="raven">Cage</button>
+    </div>
+  </div>
+
+  <p class="help" data-i="help"></p>
+</main>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- language ----------
+   A Silesian pit: the Miners' Hall (cechovna / cechownia) at the pithead, the cage (klec / szola) that
+   brings you up, burning seams, gifts from the mine spirit (Permoník / Skarbnik), and the old mine to buy
+   and give a life after coal. Czech and Polish texts avoid gendered past tenses on purpose. */
+const csN = (n, one, few, many) => n === 1 ? one : n >= 2 && n <= 4 ? few : many;
+const plN = (n, one, few, many) => n === 1 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? few : many;
+const ARROWS = '<kbd>&#8592;</kbd><kbd>&#8593;</kbd><kbd>&#8595;</kbd><kbd>&#8594;</kbd>';
+const I18N = {
+  en: {
+    money: n => '€' + n.toLocaleString('en-GB'),
+    title: 'Last Shift', h1: 'Last <span>Shift</span>',
+    restart: 'Restart', again: 'Click again to erase', soundOn: 'Sound on', soundOff: 'Sound off', soundAria: 'Toggle sound',
+    status: 'Status', depth: 'Depth', best: 'best', gold: 'Pay', pack: 'Load', stamina: 'Strength', drains: '(drains underground)', ravens: 'Cage rides',
+    mine: 'The mine', touch: 'Touch controls', up: 'Up', left: 'Left', right: 'Right', down: 'Down',
+    enterHall: 'Enter the Miners’ Hall', hall: 'Miners’ Hall', raven: 'Cage', sign: 'MINERS’ HALL',
+    tagStart: 'Glück auf!', startH: 'Go deeper than any other miner.',
+    startP: 'Dig under the Beskids, bring ore up to the Miners’ Hall and save enough to buy the old mine. Mind the burning seams, and mind your strength.',
+    nameHouse: 'Your miner’s name', defHouse: 'Pickman', begin: 'Start the shift', erase: 'Erase progress', cont: h => 'Continue as ' + h,
+    tagEnd: 'Shift’s over', keep: 'Keep digging',
+    help: ARROWS + ' or <kbd>WASD</kbd> walk and dig. Hold a direction to tunnel. <kbd>E</kbd> trades at the Miners’ Hall on the surface. Strength drains every second you spend underground, and faster when you dig. It comes back on the surface. If it hits zero you black out and lose your whole load. <kbd>R</kbd> rings for the cage to bring you up with your load. <kbd>M</kbd> mutes.',
+    ores: ['Coal', 'Zinc ore', 'Iron ore', 'Silver', 'Gold', 'Garnet', 'Diamond', 'Amethyst', 'Skarbnik’s gem'],
+    ups: {
+      pick: ['Pick', ['Iron pick', 'Steel pick', 'Hardened pick', 'Air pick', 'Drilling rig', 'Roadheader', 'Skarbnik’s pick']],
+      pack: ['Haulage', ['Satchel', 'Rucksack', 'Ore sack', 'Wheelbarrow', 'Pit pony', 'Mine cart', 'Train of carts']],
+      sta: ['Food', ['Bread and lard', 'Bread soup', 'Sour rye soup', 'Roulade and dumplings', 'Barbórka feast', 'St Barbara’s blessing']],
+      lamp: ['Lamp', ['Candle', 'Oil lamp', 'Carbide lamp', 'Cap lamp', 'LED headlamp']],
+      boots: ['Boots', ['Worn boots', 'Hobnail boots', 'Rubber boots', 'Seven-league boots']],
+    },
+    desc: {
+      pick: v => v.toLocaleString('en-GB') + '× dig speed',
+      pack: v => v + ' ore slots',
+      sta: v => v + ' strength',
+      lamp: v => v.toLocaleString('en-GB') + ' tiles of light',
+      boots: v => Math.round(1 / v) + ' steps per second',
+    },
+    ranks: ['Apprentice', 'Miner', 'Face foreman', 'Overman', 'Mine captain', 'Mine director'],
+    packFull: 'Load full', chest: 'Gift! +', gift: m => 'Skarbnik, the spirit of the mine, left you ' + m + '.',
+    collapsed: n => 'You blacked out from exhaustion. ' + (n ? 'Your whole load (' + n + ' ore) is lost.' : 'Your load was empty.'),
+    home: 'You are already on the surface.', noRides: 'No cage rides left. The Miners’ Hall sells them.', rideHome: 'The cage brought you up with your load.',
+    fire: 'Fire! -25', fireHint: 'A burning seam. Dig around it.', bedrock: 'Bedrock. The coal basin ends here.',
+    hallWhere: 'The Miners’ Hall is on the surface, on the left.', hint: 'Step off the snow and dig down. Your lamp shows the ore.',
+    haul: 'Your load', nothing: 'Nothing yet. Dig down and bring something up.', sellAll: 'Sell all', sellFor: m => ' for ' + m,
+    gear: 'Gear', maxed: 'Fully upgraded.', rideName: 'Cage ride', rideHold: n => 'you hold ' + n, rideDesc: 'Press R underground to ride up with your whole load.',
+    goal: 'The big goal', mineName: 'The old mine', mineOwned: h => h + ' already owns it.',
+    mineDesc: 'Its last shift is over. Buy it and give it a life after coal: a museum, a park, a place to meet.',
+    back: 'Back to the mine (Esc)',
+    endTitle: h => h + ' bought the old mine',
+    endText: (m, d) => 'You earned ' + m + ' in total and went ' + d + ' m below the snow. The headframe stays, and the mine becomes a museum and a park. There is still ore down there, if you want to keep going.',
+  },
+  cs: {
+    money: n => n.toLocaleString('cs-CZ') + ' Kč',
+    title: 'Poslední šichta', h1: 'Poslední <span>šichta</span>',
+    restart: 'Znovu', again: 'Klikni znovu a smaž', soundOn: 'Zvuk zap.', soundOff: 'Zvuk vyp.', soundAria: 'Zapnout nebo vypnout zvuk',
+    status: 'Stav', depth: 'Hloubka', best: 'rekord', gold: 'Výplata', pack: 'Náklad', stamina: 'Síla', drains: '(pod zemí ubývá)', ravens: 'Výjezdy',
+    mine: 'Důl', touch: 'Dotykové ovládání', up: 'Nahoru', left: 'Doleva', right: 'Doprava', down: 'Dolů',
+    enterHall: 'Vstoupit do cechovny', hall: 'Cechovna', raven: 'Klec', sign: 'CECHOVNA',
+    tagStart: 'Zdař Bůh!', startH: 'Dostaň se hlouběji než ostatní havíři.',
+    startP: 'Kopej pod Beskydy, vyvážej rudu do cechovny a našetři si na starý důl. Pozor na hořící sloje a na vlastní síly.',
+    nameHouse: 'Jméno havíře', defHouse: 'Franta', begin: 'Začít šichtu', erase: 'Smazat postup', cont: h => 'Pokračovat jako ' + h,
+    tagEnd: 'Šichta končí', keep: 'Kopat dál',
+    help: ARROWS + ' nebo <kbd>WASD</kbd>: chůze a kopání. Podržením směru raziš chodbu. <kbd>E</kbd>: obchod v cechovně na povrchu. Síla ubývá každou vteřinu pod zemí, a rychleji, když kopeš. Na povrchu se vrátí. Když klesne na nulu, omdlíš a přijdeš o celý náklad. <kbd>R</kbd>: zazvoníš na klec a ta tě i s nákladem vyveze nahoru. <kbd>M</kbd>: ztlumí zvuk.',
+    ores: ['Uhlí', 'Zinková ruda', 'Železná ruda', 'Stříbro', 'Zlato', 'Granát', 'Diamant', 'Ametyst', 'Permoníkův drahokam'],
+    ups: {
+      pick: ['Krumpáč', ['Železný krumpáč', 'Ocelový krumpáč', 'Kalený krumpáč', 'Sbíječka', 'Vrtací vůz', 'Razicí kombajn', 'Permoníkův krumpáč']],
+      pack: ['Odvoz', ['Brašna', 'Ruksak', 'Pytel na rudu', 'Kolečko', 'Důlní kůň', 'Důlní vozík', 'Vlak vozíků']],
+      sta: ['Svačina', ['Chleba se sádlem', 'Bramboračka', 'Kyselica', 'Vepřo knedlo zelo', 'Barborkové hody', 'Požehnání sv. Barbory']],
+      lamp: ['Lampa', ['Svíčka', 'Olejový kahan', 'Karbidka', 'Akumulátorová lampa', 'LED čelovka']],
+      boots: ['Boty', ['Ošoupané boty', 'Okované boty', 'Gumáky', 'Sedmimílové boty']],
+    },
+    desc: {
+      pick: v => 'rychlost kopání ' + v.toLocaleString('cs-CZ') + '×',
+      pack: v => v + ' ' + csN(v, 'místo', 'místa', 'míst') + ' na rudu',
+      sta: v => v + ' ' + csN(v, 'bod', 'body', 'bodů') + ' síly',
+      lamp: v => 'světlo na ' + v.toLocaleString('cs-CZ') + ' ' + (Number.isInteger(v) ? csN(v, 'pole', 'pole', 'polí') : 'pole'),
+      boots: v => { const n = Math.round(1 / v); return n + ' ' + csN(n, 'krok', 'kroky', 'kroků') + ' za sekundu'; },
+    },
+    ranks: ['Učeň', 'Havíř', 'Předák', 'Revírník', 'Závodní', 'Ředitel dolu'],
+    packFull: 'Náklad je plný', chest: 'Dárek! +', gift: m => 'Permoník, duch dolu, ti nechal ' + m + '.',
+    collapsed: n => 'Vyčerpání tě srazilo k zemi. ' + (n ? 'Celý náklad (' + n + ' ks rudy) je ztracený.' : 'Náklad byl prázdný.'),
+    home: 'Už jsi na povrchu.', noRides: 'Žádné výjezdy. Koupíš je v cechovně.', rideHome: 'Klec tě i s nákladem vyvezla nahoru. Vyfáráno!',
+    fire: 'Oheň! -25', fireHint: 'Hořící sloj. Obkopej ji.', bedrock: 'Skalní podloží. Tady pánev končí.',
+    hallWhere: 'Cechovna je na povrchu, vlevo.', hint: 'Sejdi ze sněhu a kopej dolů. Lampa ti ukáže rudu.',
+    haul: 'Tvůj náklad', nothing: 'Zatím nic. Kopej dolů a něco vyvez.', sellAll: 'Prodat vše', sellFor: m => ' za ' + m,
+    gear: 'Výbava', maxed: 'Plně vylepšeno.', rideName: 'Výjezd klecí', rideHold: n => 'máš ' + n, rideDesc: 'Pod zemí stiskni R a vyjeď nahoru s celým nákladem.',
+    goal: 'Velký cíl', mineName: 'Starý důl', mineOwned: () => 'Už je tvůj.',
+    mineDesc: 'Poslední šichta tu už skončila. Kup ho a dej mu život po uhlí: muzeum, park, místo k setkávání.',
+    back: 'Zpět do dolu (Esc)',
+    endTitle: h => 'Starý důl má nového majitele: ' + h,
+    endText: (m, d) => 'Celkový výdělek ' + m + ', nejhlubší místo ' + d + ' m pod sněhem. Těžní věž zůstane a z dolu bude muzeum a park. Dole je pořád ruda, jestli chceš kopat dál.',
+  },
+  pl: {
+    money: n => n.toLocaleString('pl-PL') + ' zł',
+    title: 'Ostatnia szychta', h1: 'Ostatnia <span>szychta</span>',
+    restart: 'Od nowa', again: 'Kliknij ponownie, aby usunąć', soundOn: 'Dźwięk wł.', soundOff: 'Dźwięk wył.', soundAria: 'Włącz lub wyłącz dźwięk',
+    status: 'Stan', depth: 'Głębokość', best: 'rekord', gold: 'Wypłata', pack: 'Urobek', stamina: 'Siły', drains: '(spadają pod ziemią)', ravens: 'Wyjazdy',
+    mine: 'Kopalnia', touch: 'Sterowanie dotykowe', up: 'W górę', left: 'W lewo', right: 'W prawo', down: 'W dół',
+    enterHall: 'Wejdź do cechowni', hall: 'Cechownia', raven: 'Szola', sign: 'CECHOWNIA',
+    tagStart: 'Szczęść Boże!', startH: 'Zjedź głębiej niż inni górnicy.',
+    startP: 'Kop pod Beskidami, wywoź rudę do cechowni i odłóż na starą kopalnię. Uważaj na płonące pokłady i na własne siły.',
+    nameHouse: 'Imię górnika', defHouse: 'Antek', begin: 'Zacznij szychtę', erase: 'Usuń postęp', cont: h => 'Graj dalej jako ' + h,
+    tagEnd: 'Koniec szychty', keep: 'Kop dalej',
+    help: ARROWS + ' lub <kbd>WASD</kbd>: chodzenie i kopanie. Przytrzymaj kierunek, aby drążyć chodnik. <kbd>E</kbd>: handel w cechowni na powierzchni. Siły spadają z każdą sekundą pod ziemią, a szybciej, gdy kopiesz. Na powierzchni wracają. Gdy spadną do zera, mdlejesz i tracisz cały urobek. <kbd>R</kbd>: dzwonisz po szolę, która wywiezie cię na górę razem z urobkiem. <kbd>M</kbd>: wycisza dźwięk.',
+    ores: ['Węgiel', 'Ruda cynku', 'Ruda żelaza', 'Srebro', 'Złoto', 'Granat', 'Diament', 'Ametyst', 'Klejnot Skarbnika'],
+    ups: {
+      pick: ['Kilof', ['Żelazny kilof', 'Stalowy kilof', 'Hartowany kilof', 'Młotek pneumatyczny', 'Wiertnica', 'Kombajn chodnikowy', 'Kilof Skarbnika']],
+      pack: ['Transport', ['Torba', 'Plecak', 'Worek na rudę', 'Taczka', 'Koń kopalniany', 'Hunt', 'Skład huntów']],
+      sta: ['Jedzenie', ['Chleb ze smalcem', 'Wodzionka', 'Żur', 'Rolada z kluskami', 'Biesiada barbórkowa', 'Błogosławieństwo św. Barbary']],
+      lamp: ['Lampa', ['Świeca', 'Kaganek olejowy', 'Karbidówka', 'Lampa akumulatorowa', 'Czołówka LED']],
+      boots: ['Buty', ['Znoszone buty', 'Podkute buty', 'Gumofilce', 'Buty siedmiomilowe']],
+    },
+    desc: {
+      pick: v => 'szybkość kopania ×' + v.toLocaleString('pl-PL'),
+      pack: v => v + ' ' + plN(v, 'miejsce', 'miejsca', 'miejsc') + ' na rudę',
+      sta: v => v + ' ' + plN(v, 'punkt', 'punkty', 'punktów') + ' sił',
+      lamp: v => 'światło na ' + v.toLocaleString('pl-PL') + ' ' + (Number.isInteger(v) ? plN(v, 'pole', 'pola', 'pól') : 'pola'),
+      boots: v => { const n = Math.round(1 / v); return n + ' ' + plN(n, 'krok', 'kroki', 'kroków') + ' na sekundę'; },
+    },
+    ranks: ['Uczeń', 'Górnik', 'Przodowy', 'Sztygar', 'Nadsztygar', 'Dyrektor kopalni'],
+    packFull: 'Brak miejsca', chest: 'Prezent! +', gift: m => 'Skarbnik, duch kopalni, zostawił ci ' + m + '.',
+    collapsed: n => 'Padasz z wyczerpania. ' + (n ? 'Cały urobek (' + n + ' szt. rudy) przepadł.' : 'Nie było czego stracić.'),
+    home: 'Już jesteś na powierzchni.', noRides: 'Brak wyjazdów. Kupisz je w cechowni.', rideHome: 'Szola wywiozła cię na górę razem z urobkiem.',
+    fire: 'Ogień! -25', fireHint: 'Płonący pokład. Obkop go.', bedrock: 'Skała podłoża. Tu kończy się zagłębie.',
+    hallWhere: 'Cechownia jest na powierzchni, po lewej.', hint: 'Zejdź ze śniegu i kop w dół. Lampa pokaże ci rudę.',
+    haul: 'Twój urobek', nothing: 'Na razie nic. Kop w dół i coś wywieź.', sellAll: 'Sprzedaj wszystko', sellFor: m => ' za ' + m,
+    gear: 'Sprzęt', maxed: 'W pełni ulepszone.', rideName: 'Wyjazd szolą', rideHold: n => 'masz ' + n, rideDesc: 'Pod ziemią naciśnij R, aby wyjechać na górę z całym urobkiem.',
+    goal: 'Wielki cel', mineName: 'Stara kopalnia', mineOwned: () => 'Już jest twoja.',
+    mineDesc: 'Ostatnia szychta już tu minęła. Kup ją i daj jej życie po węglu: muzeum, park, miejsce spotkań.',
+    back: 'Wróć do kopalni (Esc)',
+    endTitle: h => 'Stara kopalnia ma nowego właściciela: ' + h,
+    endText: (m, d) => 'Łączny zarobek: ' + m + ', największa głębokość: ' + d + ' m pod śniegiem. Wieża szybowa zostaje, a kopalnia staje się muzeum i parkiem. Na dole wciąż jest ruda, jeśli chcesz kopać dalej.',
+  },
+};
+const LANG = (() => {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q && q in I18N) return q;
+  try { const s = JSON.parse(localStorage.getItem('lac:pref:lang')); if (s && s in I18N) return s; } catch (e) {}
+  const n = (navigator.language || 'cs').slice(0, 2);
+  return n in I18N ? n : 'cs';
+})();
+const L = I18N[LANG];
+
+/* ---------- constants ---------- */
+const T = 40, COLS = 16, VROWS = 13, W = COLS * T, H = VROWS * T;
+const ROWS = 160, SURF = 3;               // rows 0-2 are sky, row 3 is the first dirt
+const AIR = 0, DIRT = 1, STONE = 2, LAVA = 3, CHEST = 4, BEDROCK = 5, ORE0 = 10;
+const SAVE_KEY = 'lac:game:save', MUTE_KEY = 'lac:game:mute';
+const THRONE_COST = 30000;
+
+const ORES = [
+  { id: 'coal',        name: 'Coal',          val: 6,    h: .6,  min: 1,   max: 75,  p: .036, cl: 3, col: '#33343a', hi: '#6b6c75' },
+  { id: 'zinc',        name: 'Zinc ore',      val: 15,   h: .8,  min: 7,   max: 85,  p: .030, cl: 3, col: '#c8794a', hi: '#efae83' },
+  { id: 'iron',        name: 'Iron ore',      val: 35,   h: 1.1, min: 18,  max: 115, p: .028, cl: 3, col: '#b9a99a', hi: '#e8dccf' },
+  { id: 'silver',      name: 'Silver',        val: 80,   h: 1.5, min: 32,  max: 140, p: .022, cl: 2, col: '#cfd8e0', hi: '#ffffff' },
+  { id: 'gold',        name: 'Gold',          val: 180,  h: 1.9, min: 48,  max: 160, p: .020, cl: 2, col: '#e8bf50', hi: '#fff0a8' },
+  { id: 'garnet',      name: 'Garnet',        val: 420,  h: 2.4, min: 68,  max: 160, p: .014, cl: 2, col: '#d1303e', hi: '#ff8a93' },
+  { id: 'diamond',     name: 'Diamond',       val: 900,  h: 3.0, min: 88,  max: 160, p: .011, cl: 2, col: '#7fe3ee', hi: '#e6ffff' },
+  { id: 'amethyst',    name: 'Amethyst',      val: 1800, h: 3.8, min: 108, max: 160, p: .009, cl: 2, col: '#5b4a8f', hi: '#a592e0' },
+  { id: 'gem',         name: 'Skarbnik gem',  val: 6000, h: 5.0, min: 124, max: 160, p: .007, cl: 1, col: '#9f2a22', hi: '#ff7b5a' },
+];
+
+// Gear: [name, value, price]. Names and descriptions are replaced from I18N below.
+const UPS = {
+  pick:  { name: 'Pick',     tiers: [['Iron pick', 1, 0], ['Steel pick', 1.6, 150], ['Hardened pick', 2.4, 500], ['Air pick', 3.5, 1500], ['Drilling rig', 5, 4500], ['Roadheader', 7, 12000], ['Skarbnik’s pick', 10, 30000]] },
+  pack:  { name: 'Haulage',  tiers: [['Satchel', 12, 0], ['Rucksack', 20, 80], ['Ore sack', 32, 300], ['Wheelbarrow', 50, 900], ['Pit pony', 80, 2600], ['Mine cart', 120, 7000], ['Train of carts', 200, 18000]] },
+  sta:   { name: 'Food',     tiers: [['Bread and lard', 60, 0], ['Bread soup', 90, 100], ['Sour rye soup', 130, 400], ['Roulade and dumplings', 180, 1200], ['Barbórka feast', 250, 3600], ['St Barbara’s blessing', 350, 10000]] },
+  lamp:  { name: 'Lamp',     tiers: [['Candle', 2.5, 0], ['Oil lamp', 3.5, 120], ['Carbide lamp', 4.5, 600], ['Cap lamp', 5.5, 2000], ['LED headlamp', 7, 6000]] },
+  boots: { name: 'Boots',    tiers: [['Worn boots', .16, 0], ['Hobnail boots', .125, 200], ['Rubber boots', .10, 900], ['Seven-league boots', .08, 3000]] },
+};
+const RAVEN_COST = 120;
+const RANKS = [[0, 'Apprentice'], [250, 'Miner'], [1500, 'Face foreman'], [6000, 'Overman'], [16000, 'Mine captain'], [30000, 'Mine director']];
+
+/* apply the chosen language to the page and the tables above */
+document.documentElement.lang = LANG; document.title = L.title;
+document.querySelectorAll('[data-i]').forEach(el => { el.innerHTML = L[el.dataset.i]; });
+document.querySelectorAll('[data-ia]').forEach(el => el.setAttribute('aria-label', L[el.dataset.ia]));
+ORES.forEach((o, n) => { o.name = L.ores[n]; });
+for (const k of Object.keys(UPS)) { const [name, names] = L.ups[k]; UPS[k].name = name; UPS[k].tiers.forEach((t, n) => { t[0] = names[n]; }); UPS[k].desc = L.desc[k]; }
+RANKS.forEach((r, n) => { r[1] = L.ranks[n]; });
+
+/* ---------- state ---------- */
+const $ = id => document.getElementById(id);
+const C = $('c'), ctx = C.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+
+let S, P, grid, seen, dirtLine, parts = [], floats = [], snow = [];
+let camY = 0, shake = 0, flash = 0, flashCol = '#fff', paused = true, started = false, clock = 0, hudT = 0, saveT = 0, bedT = 0;
+const dirStack = [];
+const DIRS = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
+
+function freshSave(house) {
+  return { house: house || L.defHouse, money: 0, total: 0, deepest: 0, ravens: 0, won: false, lv: { pick: 0, pack: 0, sta: 0, lamp: 0, boots: 0 } };
+}
+function loadSave() { try { const j = JSON.parse(localStorage.getItem(SAVE_KEY)); if (j && j.lv) return Object.assign(freshSave(), j, { lv: Object.assign(freshSave().lv, j.lv) }); } catch (e) {} return null; }
+function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
+
+const tier = k => UPS[k].tiers[S.lv[k]][1];
+const power = () => tier('pick'), cap = () => tier('pack'), maxSta = () => tier('sta'), lampR = () => tier('lamp'), stepT = () => tier('boots');
+const depthOf = r => Math.max(0, r - SURF + 1);
+const fmt = n => L.money(Math.round(n));
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const hash = (c, r, k) => (((c * 73856093) ^ (r * 19349663) ^ (k * 83492791)) >>> 0) % 1000 / 1000;
+const houseCol = () => { let h = 0; for (const ch of S.house) h = (h * 31 + ch.charCodeAt(0)) % 360; return `hsl(${h},55%,42%)`; };
+
+/* ---------- world ---------- */
+function genWorld() {
+  grid = new Uint8Array(COLS * ROWS); seen = new Uint8Array(COLS * ROWS);
+  dirtLine = [];
+  for (let c = 0; c < COLS; c++) dirtLine[c] = 18 + Math.round(Math.sin(c * .8) * 2 + Math.random() * 3);
+  for (let r = 0; r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const i = r * COLS + c, d = depthOf(r);
+    grid[i] = r < SURF ? AIR : r >= ROWS - 1 ? BEDROCK : d < dirtLine[c] ? DIRT : STONE;
+  }
+  const solid = i => grid[i] === DIRT || grid[i] === STONE;
+  const cluster = (c, r, id, size) => {
+    for (let k = 0; k < size; k++) {
+      if (c >= 0 && c < COLS && r >= SURF && r < ROWS - 1 && solid(r * COLS + c)) grid[r * COLS + c] = id;
+      const m = Math.floor(Math.random() * 4); c += [1, -1, 0, 0][m]; r += [0, 0, 1, -1][m];
+    }
+  };
+  ORES.forEach((o, n) => {
+    for (let r = SURF + o.min; r < Math.min(ROWS - 1, SURF + o.max); r++) for (let c = 0; c < COLS; c++)
+      if (Math.random() < o.p) cluster(c, r, ORE0 + n, 1 + Math.floor(Math.random() * o.cl));
+  });
+  for (let r = SURF + 34; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .011) cluster(c, r, LAVA, 1 + Math.floor(Math.random() * 3));
+  for (let r = SURF + 8; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .0045 && solid(r * COLS + c)) grid[r * COLS + c] = CHEST;
+  for (let c = 0; c < COLS; c++) seen[SURF * COLS + c] = 1;
+  snow = Array.from({ length: 36 }, () => ({ x: Math.random() * W, y: Math.random() * SURF * T, v: 8 + Math.random() * 14, s: 1 + Math.random() * 1.6, p: Math.random() * 6 }));
+}
+function resetPlayer(keepCargo) {
+  P = { x: 8, y: 2, px: 8, py: 2, stamina: maxSta(), cd: 0, dig: null, face: 1, burn: 0, swing: 0, cargo: keepCargo || {} };
+}
+const cargoCount = () => Object.values(P.cargo).reduce((a, b) => a + b, 0);
+const cargoValue = () => ORES.reduce((a, o) => a + (P.cargo[o.id] || 0) * o.val, 0);
+
+/* ---------- audio ---------- */
+let ac = null, muted = false;
+try { muted = localStorage.getItem(MUTE_KEY) === '1'; } catch (e) {}
+function audioInit() { if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} } if (ac && ac.state === 'suspended') ac.resume(); }
+function tone(f, d, type = 'square', v = .04, slide = 0, delay = 0) {
+  if (!ac || muted) return;
+  const t = ac.currentTime + delay, o = ac.createOscillator(), g = ac.createGain();
+  o.type = type; o.frequency.setValueAtTime(f, t);
+  if (slide) o.frequency.exponentialRampToValueAtTime(Math.max(30, f + slide), t + d);
+  g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+  o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + d);
+}
+const sfx = {
+  dig: () => tone(90 + Math.random() * 40, .07, 'square', .05, -30),
+  ore: () => { tone(660, .09, 'triangle', .06); tone(990, .12, 'triangle', .05, 0, .07); },
+  sell: () => [523, 659, 784, 1046].forEach((f, i) => tone(f, .14, 'triangle', .06, 0, i * .07)),
+  buy: () => { tone(440, .1, 'triangle', .06); tone(880, .18, 'triangle', .06, 0, .09); },
+  burn: () => tone(220, .35, 'sawtooth', .07, -150),
+  fall: () => tone(300, .5, 'sawtooth', .06, -240),
+  raven: () => { tone(900, .12, 'triangle', .05, 300); tone(700, .12, 'triangle', .05, 300, .12); },
+  nope: () => tone(120, .12, 'square', .05),
+};
+function syncMute() { $('mute').textContent = muted ? L.soundOff : L.soundOn; }
+
+/* ---------- feedback ---------- */
+let toastTimer = 0;
+function say(text, kind) {
+  const t = $('toast'); t.textContent = text; t.className = 'toast on ' + (kind || '');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('on'), 2400);
+}
+function burst(x, y, col, n, spd = 70) {
+  for (let i = 0; i < n; i++) { const a = Math.random() * 6.283, s = (.3 + Math.random()) * spd; parts.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s - 20, life: .45 + Math.random() * .3, col }); }
+}
+function floatText(x, y, text, col) { floats.push({ x, y, text, col, life: 1.1 }); }
+
+/* ---------- actions ---------- */
+const hardness = (id, r) => {
+  const d = depthOf(r);
+  if (id === DIRT) return .25 + d * .002;
+  if (id === STONE) return .5 + d * .006;
+  if (id === CHEST) return .4;
+  return ORES[id - ORE0].h;
+};
+function reveal() {
+  const R = lampR(), r0 = Math.max(SURF, Math.floor(P.py - R)), r1 = Math.min(ROWS - 1, Math.ceil(P.py + R));
+  for (let r = r0; r <= r1; r++) for (let c = Math.max(0, Math.floor(P.px - R)); c <= Math.min(COLS - 1, Math.ceil(P.px + R)); c++)
+    if (Math.hypot(c - P.px, r - P.py) <= R) seen[r * COLS + c] = 1;
+}
+function finishDig(tx, ty, id) {
+  const i = ty * COLS + tx, h = hardness(id, ty);
+  grid[i] = AIR;
+  P.stamina -= .5 + h * .35;
+  const cx = tx * T + T / 2, cy = ty * T + T / 2;
+  if (id >= ORE0) {
+    const o = ORES[id - ORE0];
+    if (cargoCount() < cap()) { P.cargo[o.id] = (P.cargo[o.id] || 0) + 1; floatText(cx, cy, '+1 ' + o.name, o.hi); sfx.ore(); }
+    else { floatText(cx, cy, L.packFull, '#ff9b7f'); sfx.nope(); }
+    burst(cx, cy, o.col, 9, 90);
+  } else if (id === CHEST) {
+    const win = Math.round((60 + depthOf(ty) * 7) * (.6 + Math.random() * .9));
+    S.money += win; S.total += win; save();
+    floatText(cx, cy, L.chest + fmt(win), '#ffe08a'); say(L.gift(fmt(win)), 'good'); sfx.sell();
+    burst(cx, cy, '#e8bf50', 16, 110);
+  } else {
+    burst(cx, cy, id === DIRT ? '#6b4a30' : '#6e655d', 6); sfx.dig();
+  }
+  if (P.stamina <= 0) collapse();
+}
+function collapse() {
+  const lost = cargoCount();
+  P.cargo = {};
+  P.y = 2; P.py = 2; P.dig = null; P.stamina = maxSta(); camY = 0;
+  flash = .8; flashCol = '#000'; sfx.fall();
+  say(L.collapsed(lost), 'bad');
+}
+function sendRaven() {
+  if (paused) return;
+  if (P.y <= 2) return say(L.home);
+  if (S.ravens < 1) { sfx.nope(); return say(L.noRides, 'bad'); }
+  S.ravens--; save(); P.y = 2; P.py = 2; P.dig = null; sfx.raven();
+  say(L.rideHome, 'good');
+}
+function burn() {
+  P.burn = .7; P.stamina -= 25; shake = .35; flash = .5; flashCol = '#e0501a'; sfx.burn();
+  floatText(P.x * T + T / 2, P.y * T, L.fire, '#ff8a5a');
+  say(L.fireHint, 'bad');
+  if (P.stamina <= 0) collapse();
+}
+
+function update(dt) {
+  P.cd -= dt; P.burn -= dt; bedT -= dt;
+  const k = 1 - Math.exp(-dt * 22);
+  P.px += (P.x - P.px) * k; P.py += (P.y - P.py) * k;
+  reveal();
+  if (P.y <= 2 && P.stamina < maxSta()) P.stamina = Math.min(maxSta(), P.stamina + dt * 90);
+  if (P.y > 2) { P.stamina -= dt * .6; if (P.stamina <= 0) { collapse(); return; } }
+  const d = dirStack[dirStack.length - 1];
+  if (!d) { P.dig = null; P.swing = 0; return; }
+  const [dx, dy] = DIRS[d]; P.dir = d; if (dx) P.face = dx;
+  const tx = P.x + dx, ty = P.y + dy;
+  if (tx < 0 || tx >= COLS || ty < 2 || ty >= ROWS || P.burn > 0) { P.dig = null; return; }
+  const id = grid[ty * COLS + tx];
+  if (id === AIR) {
+    P.dig = null;
+    if (P.cd <= 0) {
+      P.x = tx; P.y = ty; P.cd = stepT();
+      S.deepest = Math.max(S.deepest, depthOf(P.y));
+      if (P.stamina <= 0) collapse();
+    }
+    return;
+  }
+  if (id === LAVA) { burn(); return; }
+  if (id === BEDROCK) { if (bedT <= 0) { say(L.bedrock); bedT = 2; } return; }
+  if (!P.dig || P.dig.x !== tx || P.dig.y !== ty) P.dig = { x: tx, y: ty, prog: 0, chip: 0 };
+  const need = hardness(id, ty);
+  P.dig.prog += dt * power(); P.dig.chip += dt; P.swing += dt;
+  if (P.dig.chip > .09) { P.dig.chip = 0; burst(tx * T + T / 2, ty * T + T / 2, id === DIRT ? '#6b4a30' : '#6e655d', 2, 50); if (id < ORE0) tone(110 + Math.random() * 30, .04, 'square', .025); }
+  if (P.dig.prog >= need) { finishDig(tx, ty, id); P.dig = null; P.cd = .03; }
+}
+
+/* ---------- shop ---------- */
+const nearShop = () => started && P.y <= 2 && P.x >= 1 && P.x <= 4;
+function openShop() {
+  if (!nearShop() || paused) return;
+  paused = true; dirStack.length = 0; renderShop(); $('shop').hidden = false; $('prompt').hidden = true;
+}
+function closeShop() { $('shop').hidden = true; paused = false; save(); }
+function renderShop() {
+  const cv = cargoValue();
+  let h = `<div class="shop"><div class="shop-head"><h2>${L.hall}</h2><div class="cash">${fmt(S.money)}</div></div>`;
+  h += `<div class="sect">${L.haul}</div><div class="cargo">`;
+  const items = ORES.filter(o => P.cargo[o.id] > 0);
+  h += items.length ? '<ul>' + items.map(o => `<li><span class="dot" style="background:${o.col}"></span>${o.name} &times;${P.cargo[o.id]} <span style="color:var(--muted)">${fmt(P.cargo[o.id] * o.val)}</span></li>`).join('') + '</ul>' : `<span style="color:var(--muted)">${L.nothing}</span>`;
+  h += `<div class="row"><button class="btn" data-sell ${cv ? '' : 'disabled'}>${L.sellAll}${cv ? L.sellFor(fmt(cv)) : ''}</button></div></div>`;
+  h += `<div class="sect">${L.gear}</div>`;
+  for (const k of Object.keys(UPS)) {
+    const u = UPS[k], lv = S.lv[k], cur = u.tiers[lv], nxt = u.tiers[lv + 1];
+    h += `<div class="up"><div><b>${u.name}</b> &middot; ${cur[0]}</div><div class="d">${nxt ? u.desc(cur[1]) + ' &rarr; <b>' + nxt[0] + '</b>, ' + u.desc(nxt[1]) : u.desc(cur[1]) + '. ' + L.maxed}</div>` +
+      (nxt ? `<button class="btn" data-buy="${k}" ${S.money >= nxt[2] ? '' : 'disabled'}>${fmt(nxt[2])}</button>` : '') + '</div>';
+  }
+  h += `<div class="up"><div><b>${L.rideName}</b> &middot; ${L.rideHold(S.ravens)}</div><div class="d">${L.rideDesc}</div><button class="btn" data-raven ${S.money >= RAVEN_COST ? '' : 'disabled'}>${fmt(RAVEN_COST)}</button></div>`;
+  h += `<div class="sect">${L.goal}</div><div class="up throne"><div><b>${L.mineName}</b></div><div class="d">${S.won ? L.mineOwned(esc(S.house)) : L.mineDesc}</div>` +
+    (S.won ? '' : `<button class="btn" data-throne ${S.money >= THRONE_COST ? '' : 'disabled'}>${fmt(THRONE_COST)}</button>`) + '</div>';
+  h += `<div class="row" style="margin-top:12px"><button class="btn ghost" data-close>${L.back}</button></div></div>`;
+  $('shop').innerHTML = h;
+}
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+$('shop').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.disabled) return;
+  if (b.hasAttribute('data-close')) return closeShop();
+  if (b.hasAttribute('data-sell')) {
+    const v = cargoValue(); S.money += v; S.total += v; P.cargo = {}; sfx.sell(); save();
+  } else if (b.dataset.buy) {
+    const k = b.dataset.buy, nxt = UPS[k].tiers[S.lv[k] + 1];
+    if (nxt && S.money >= nxt[2]) { S.money -= nxt[2]; S.lv[k]++; sfx.buy(); save(); }
+  } else if (b.hasAttribute('data-raven')) {
+    if (S.money >= RAVEN_COST) { S.money -= RAVEN_COST; S.ravens++; sfx.buy(); save(); }
+  } else if (b.hasAttribute('data-throne')) {
+    if (S.money >= THRONE_COST) {
+      S.money -= THRONE_COST; S.won = true; save(); sfx.sell();
+      $('shop').hidden = true;
+      $('endTitle').textContent = L.endTitle(S.house);
+      $('endText').textContent = L.endText(fmt(S.total), S.deepest);
+      $('end').hidden = false; return;
+    }
+  }
+  renderShop();
+});
+$('keep').onclick = () => { $('end').hidden = true; paused = false; };
+
+/* ---------- input ---------- */
+const KEYMAP = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', w: 'up', s: 'down', a: 'left', d: 'right', W: 'up', S: 'down', A: 'left', D: 'right' };
+function press(d) { const i = dirStack.indexOf(d); if (i >= 0) dirStack.splice(i, 1); dirStack.push(d); }
+function release(d) { const i = dirStack.indexOf(d); if (i >= 0) dirStack.splice(i, 1); }
+addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') { if (e.key === 'Enter') $('begin').click(); return; }
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  if (e.key in KEYMAP) { e.preventDefault(); audioInit(); if (!paused) press(KEYMAP[e.key]); return; }
+  const k = e.key.toLowerCase();
+  if (k === 'e') { audioInit(); if ($('shop').hidden) openShop(); else closeShop(); }
+  else if (k === 'escape') {
+    if (!$('shop').hidden) closeShop();
+    // Inside the site's overlay: Esc closes the game, like any dialog.
+    else if (parent !== window) { if (started) save(); parent.postMessage({ lacGame: 'close' }, location.origin); }
+  }
+  else if (k === 'r') sendRaven();
+  else if (k === 'm') { muted = !muted; try { localStorage.setItem(MUTE_KEY, muted ? '1' : '0'); } catch (er) {} syncMute(); }
+});
+addEventListener('keyup', e => { if (e.key in KEYMAP) release(KEYMAP[e.key]); });
+addEventListener('blur', () => { dirStack.length = 0; });
+document.querySelectorAll('[data-dir]').forEach(b => {
+  const d = b.dataset.dir;
+  b.addEventListener('pointerdown', e => { e.preventDefault(); audioInit(); b.setPointerCapture(e.pointerId); if (!paused) press(d); });
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => b.addEventListener(ev, () => release(d)));
+});
+$('tShop').onclick = () => { audioInit(); if (nearShop()) openShop(); else say(L.hallWhere); };
+$('tRaven').onclick = () => { audioInit(); sendRaven(); };
+$('prompt').onclick = () => { audioInit(); openShop(); };
+$('mute').onclick = () => { muted = !muted; try { localStorage.setItem(MUTE_KEY, muted ? '1' : '0'); } catch (er) {} syncMute(); };
+
+/* ---------- rendering ---------- */
+const dshade = r => clamp(depthOf(r) / 150, 0, 1);
+function drawTile(id, c, r, sx, sy) {
+  const sh = dshade(r), n = hash(c, r, 1);
+  const stone = depthOf(r) >= dirtLine[c];
+  if (id === AIR) { ctx.fillStyle = `hsl(22,25%,${8 - sh * 3}%)`; ctx.fillRect(sx, sy, T, T); return; }
+  if (id === LAVA) {
+    const f = Math.sin(clock * 3 + c * 1.7 + r) * .5 + .5;
+    ctx.fillStyle = '#6e160a'; ctx.fillRect(sx, sy, T, T);
+    ctx.fillStyle = `hsl(${14 + f * 14},95%,${42 + f * 12}%)`; ctx.fillRect(sx + 3, sy + 3, T - 6, T - 6);
+    ctx.fillStyle = '#ffd36a'; ctx.fillRect(sx + 8 + f * 8, sy + 10, 8, 5); ctx.fillRect(sx + 22 - f * 6, sy + 24, 7, 5);
+    return;
+  }
+  if (id === BEDROCK) { ctx.fillStyle = '#0d0b0c'; ctx.fillRect(sx, sy, T, T); ctx.fillStyle = '#1b1719'; ctx.fillRect(sx + 4, sy + 6, 14, 8); ctx.fillRect(sx + 20, sy + 22, 14, 9); return; }
+  const base = (id === DIRT || (id >= ORE0 && !stone) || id === CHEST && !stone)
+    ? `hsl(26,${32 - sh * 8}%,${27 - sh * 8 + (n - .5) * 5}%)` : `hsl(24,8%,${31 - sh * 10 + (n - .5) * 5}%)`;
+  ctx.fillStyle = base; ctx.fillRect(sx, sy, T, T);
+  ctx.fillStyle = 'rgba(0,0,0,.16)';
+  for (let k = 0; k < 3; k++) ctx.fillRect(sx + Math.floor(hash(c, r, 2 + k) * 32) + 2, sy + Math.floor(hash(c, r, 6 + k) * 32) + 2, 3 + (k & 1) * 2, 3);
+  ctx.fillStyle = 'rgba(255,255,255,.05)'; ctx.fillRect(sx, sy, T, 2);
+  if (id >= ORE0) {
+    const o = ORES[id - ORE0], pat = PATS[Math.floor(n * PATS.length)];
+    for (const [a, b, w, h] of pat) { ctx.fillStyle = o.col; ctx.fillRect(sx + a, sy + b, w, h); ctx.fillStyle = o.hi; ctx.fillRect(sx + a, sy + b, w, 2); ctx.fillRect(sx + a, sy + b, 2, h); }
+  } else if (id === CHEST) {
+    ctx.fillStyle = '#6a3f1d'; ctx.fillRect(sx + 6, sy + 12, 28, 20);
+    ctx.fillStyle = '#8f5a2a'; ctx.fillRect(sx + 6, sy + 12, 28, 7);
+    ctx.fillStyle = '#e8bf50'; ctx.fillRect(sx + 6, sy + 19, 28, 2); ctx.fillRect(sx + 18, sy + 17, 5, 8);
+  }
+  ctx.fillStyle = 'rgba(0,0,0,.2)'; ctx.fillRect(sx, sy + T - 2, T, 2); ctx.fillRect(sx + T - 2, sy, 2, T);
+}
+const PATS = [
+  [[6, 8, 10, 8], [22, 18, 9, 9], [10, 26, 7, 6]],
+  [[8, 6, 9, 9], [24, 10, 8, 8], [14, 24, 11, 8]],
+  [[5, 18, 9, 9], [18, 6, 10, 8], [24, 24, 8, 8]],
+  [[10, 8, 8, 8], [20, 20, 10, 9], [6, 24, 8, 7]],
+  [[7, 12, 12, 9], [24, 8, 7, 8], [20, 26, 9, 7]],
+];
+
+function drawSky(dt) {
+  const g = ctx.createLinearGradient(0, 0, 0, SURF * T);
+  g.addColorStop(0, '#18202e'); g.addColorStop(.55, '#4b3f55'); g.addColorStop(1, '#c9764a');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, SURF * T);
+  ctx.fillStyle = '#e9eef2'; for (let i = 0; i < 22; i++) { const x = hash(i, 3, 9) * W, y = hash(i, 5, 9) * 60; ctx.globalAlpha = .35 + hash(i, 1, 9) * .5; ctx.fillRect(x, y, 2, 2); } ctx.globalAlpha = 1;
+  const peaks = (pts, col, snow) => {
+    ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(0, 120);
+    for (const [x, y] of pts) ctx.lineTo(x, y); ctx.lineTo(W, 120); ctx.closePath(); ctx.fill();
+    if (snow) { ctx.fillStyle = 'rgba(233,238,242,.55)'; for (const [x, y] of pts) if (y < 70) { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - 12, y + 14); ctx.lineTo(x + 12, y + 14); ctx.closePath(); ctx.fill(); } }
+  };
+  peaks([[0, 80], [70, 40], [140, 74], [230, 30], [310, 78], [390, 44], [470, 82], [560, 36], [640, 70]], '#2a2f42', true);
+  peaks([[0, 104], [90, 78], [170, 100], [260, 74], [350, 102], [440, 84], [540, 104], [640, 86]], '#1d2230', false);
+  // pit-head skyline: headframe with a turning winding wheel, engine house, chimney, a row of familoki
+  const ink = '#151a26';
+  ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineCap = 'round';
+  const legL = y => 456 + (120 - y) / 76 * 14, legR = y => 492 - (120 - y) / 76 * 10;
+  ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(456, 120); ctx.lineTo(470, 44); ctx.moveTo(492, 120); ctx.lineTo(482, 44); ctx.moveTo(524, 120); ctx.lineTo(482, 50); ctx.stroke();
+  ctx.lineWidth = 2; ctx.beginPath();
+  for (const [a, b] of [[104, 84], [84, 64], [64, 46]]) { ctx.moveTo(legL(a), a); ctx.lineTo(legR(b), b); ctx.moveTo(legR(a), a); ctx.lineTo(legL(b), b); ctx.moveTo(legL(b), b); ctx.lineTo(legR(b), b); }
+  ctx.stroke();
+  ctx.fillRect(466, 42, 20, 5);
+  ctx.lineWidth = 3; ctx.beginPath(); ctx.arc(476, 34, 10, 0, 6.283); ctx.stroke();
+  ctx.lineWidth = 1.5; ctx.beginPath();
+  for (let k = 0; k < 4; k++) { const a = clock * .9 + k * .785; ctx.moveTo(476 - Math.cos(a) * 10, 34 - Math.sin(a) * 10); ctx.lineTo(476 + Math.cos(a) * 10, 34 + Math.sin(a) * 10); }
+  ctx.moveTo(484, 38); ctx.lineTo(532, 92); ctx.stroke();
+  ctx.fillRect(528, 92, 44, 28); ctx.beginPath(); ctx.moveTo(524, 93); ctx.lineTo(550, 78); ctx.lineTo(576, 93); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(586, 120); ctx.lineTo(589, 28); ctx.lineTo(597, 28); ctx.lineTo(600, 120); ctx.closePath(); ctx.fill(); ctx.fillRect(587, 26, 12, 4);
+  ctx.fillRect(606, 98, 34, 22); ctx.beginPath(); ctx.moveTo(603, 99); ctx.lineTo(623, 88); ctx.lineTo(643, 99); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#ffcf7a'; ctx.fillRect(536, 100, 4, 6); ctx.fillRect(560, 100, 4, 6); ctx.fillRect(612, 104, 4, 5); ctx.fillRect(630, 104, 4, 5);
+  // Miners' Hall
+  ctx.fillStyle = '#3d342d'; ctx.fillRect(36, 58, 170, 62);
+  ctx.fillStyle = '#2f2823'; for (let i = 0; i < 6; i++) ctx.fillRect(36 + i * 28, 58, 3, 62);
+  ctx.fillStyle = '#1b1613'; ctx.beginPath(); ctx.moveTo(26, 62); ctx.lineTo(121, 20); ctx.lineTo(216, 62); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#e9eef2'; ctx.fillRect(26, 60, 190, 4);
+  ctx.fillStyle = '#0d0a08'; ctx.beginPath(); ctx.moveTo(98, 120); ctx.lineTo(98, 86); ctx.arc(121, 86, 23, Math.PI, 0); ctx.lineTo(144, 120); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = 'rgba(255,170,80,.35)'; ctx.fillRect(104, 90, 34, 30);
+  ctx.fillStyle = '#5a3b22'; ctx.fillRect(86, 64, 70, 14);
+  ctx.fillStyle = '#e8bf50'; ctx.font = '700 10px Oswald, "Arial Narrow", sans-serif'; ctx.textAlign = 'center'; ctx.fillText(L.sign, 121, 75, 64);
+  ctx.fillStyle = houseCol(); ctx.fillRect(48, 66, 14, 34); ctx.beginPath(); ctx.moveTo(48, 100); ctx.lineTo(55, 94); ctx.lineTo(62, 100); ctx.fill();
+  ctx.fillRect(180, 66, 14, 34); ctx.beginPath(); ctx.moveTo(180, 100); ctx.lineTo(187, 94); ctx.lineTo(194, 100); ctx.fill();
+  const fl = .6 + Math.sin(clock * 9) * .15;
+  ctx.fillStyle = `rgba(255,190,100,${fl})`; ctx.fillRect(78, 92, 5, 8); ctx.fillRect(159, 92, 5, 8);
+  // snow
+  ctx.fillStyle = '#eaf1f5';
+  for (const f of snow) { f.y += f.v * dt; f.x += Math.sin(clock + f.p) * 8 * dt; if (f.y > SURF * T) { f.y = -4; f.x = Math.random() * W; } ctx.fillRect(f.x, f.y, f.s, f.s); }
+}
+
+function drawMiner(x, y) {
+  const u = T / 16, moving = P.cd > 0 && !P.dig, bob = moving ? Math.sin(clock * 30) * 1 : 0;
+  ctx.save(); ctx.translate(Math.round(x + T / 2), Math.round(y + bob)); ctx.scale(P.face, 1); ctx.translate(-T / 2, 0);
+  const R = (a, b, w, h, c) => { ctx.fillStyle = c; ctx.fillRect(Math.round(a * u), Math.round(b * u), Math.ceil(w * u), Math.ceil(h * u)); };
+  R(4, 13, 3, 3, '#241912'); R(9, 13, 3, 3, '#241912'); R(4, 10, 3, 3, '#4a3a2e'); R(9, 10, 3, 3, '#4a3a2e');
+  R(3, 6, 10, 5, houseCol()); R(3, 9, 10, 1, '#2a1c12'); R(7, 9, 2, 1, '#e8bf50');
+  R(4, 2, 8, 5, '#e0b48a'); R(4, 5, 8, 4, '#c4562a'); R(5, 5, 6, 1, '#d9703a'); R(9, 3, 2, 1, '#14110f');
+  R(3, 0, 10, 3, '#8a8f98'); R(3, 2, 10, 1, '#585d66'); R(12, 1, 3, 2, '#ffd27a');
+  // pickaxe
+  const ang = { right: 0, left: 0, up: -Math.PI / 2, down: Math.PI / 2 }[P.dir || 'right'];
+  const sw = P.dig ? Math.sin(P.swing * 16) * .6 - .2 : -.9;
+  ctx.translate(Math.round(12 * u), Math.round(8 * u));
+  ctx.rotate(P.dig ? ang + sw : -.9);
+  ctx.fillStyle = '#6a4424'; ctx.fillRect(0, -1, Math.round(8 * u), Math.max(2, Math.round(1.2 * u)));
+  ctx.fillStyle = '#b9c0c8'; ctx.fillRect(Math.round(7 * u), Math.round(-3 * u), Math.max(3, Math.round(1.6 * u)), Math.round(6 * u));
+  ctx.restore();
+}
+
+function render(dt) {
+  clock += dt;
+  const target = clamp(P.py * T + T / 2 - H / 2, 0, ROWS * T - H);
+  camY += (target - camY) * (1 - Math.exp(-dt * 10));
+  const shx = shake > 0 ? (Math.random() - .5) * 8 * shake : 0, shy = shake > 0 ? (Math.random() - .5) * 8 * shake : 0;
+  shake = Math.max(0, shake - dt);
+  ctx.save(); ctx.translate(Math.round(shx), Math.round(shy - camY));
+  ctx.fillStyle = '#0b0908'; ctx.fillRect(0, camY - 10, W, H + 20);
+  if (camY < SURF * T) drawSky(dt);
+  const R = lampR(), r0 = Math.max(SURF, Math.floor(camY / T)), r1 = Math.min(ROWS - 1, r0 + VROWS + 1);
+  for (let r = r0; r <= r1; r++) for (let c = 0; c < COLS; c++) {
+    const i = r * COLS + c, sx = c * T, sy = r * T, dist = Math.hypot(c - P.px, r - P.py);
+    const light = r <= SURF ? 1 : clamp((R + .4 - dist) / 1.6, 0, 1);
+    if (!seen[i] && light <= 0) { ctx.fillStyle = '#050403'; ctx.fillRect(sx, sy, T, T); continue; }
+    drawTile(grid[i], c, r, sx, sy);
+    if (r === SURF && grid[i] !== AIR) { ctx.fillStyle = '#eaf1f5'; ctx.fillRect(sx, sy, T, 5); ctx.fillStyle = '#b6c8d3'; ctx.fillRect(sx, sy + 5, T, 2); }
+    const a = seen[i] ? .66 * (1 - light) : 1 - light;
+    if (a > 0) { ctx.fillStyle = `rgba(6,5,4,${a})`; ctx.fillRect(sx, sy, T, T); }
+  }
+  // dig progress
+  if (P.dig) {
+    const need = hardness(grid[P.dig.y * COLS + P.dig.x], P.dig.y), f = clamp(P.dig.prog / need, 0, 1);
+    ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(P.dig.x * T + 4, P.dig.y * T + T - 9, T - 8, 5);
+    ctx.fillStyle = '#ee8a3c'; ctx.fillRect(P.dig.x * T + 5, P.dig.y * T + T - 8, (T - 10) * f, 3);
+    ctx.fillStyle = `rgba(0,0,0,${f * .45})`; ctx.fillRect(P.dig.x * T, P.dig.y * T, T, T);
+  }
+  drawMiner(P.px * T, P.py * T);
+  // lamp glow around the miner
+  const gx = P.px * T + T / 2, gy = P.py * T + T / 2;
+  if (P.y > 2) { const g = ctx.createRadialGradient(gx, gy, 6, gx, gy, R * T); g.addColorStop(0, 'rgba(255,190,110,.16)'); g.addColorStop(1, 'rgba(255,190,110,0)'); ctx.fillStyle = g; ctx.fillRect(gx - R * T, gy - R * T, R * T * 2, R * T * 2); }
+  for (let i = parts.length - 1; i >= 0; i--) {
+    const p = parts[i]; p.life -= dt; if (p.life <= 0) { parts.splice(i, 1); continue; }
+    p.vy += 240 * dt; p.x += p.vx * dt; p.y += p.vy * dt; ctx.fillStyle = p.col; ctx.fillRect(Math.round(p.x), Math.round(p.y), 3, 3);
+  }
+  ctx.font = '600 12px Inter, system-ui, sans-serif'; ctx.textAlign = 'center';
+  for (let i = floats.length - 1; i >= 0; i--) {
+    const f = floats[i]; f.life -= dt; if (f.life <= 0) { floats.splice(i, 1); continue; }
+    f.y -= 26 * dt; ctx.globalAlpha = Math.min(1, f.life * 2); ctx.fillStyle = '#000'; ctx.fillText(f.text, f.x + 1, f.y + 1); ctx.fillStyle = f.col; ctx.fillText(f.text, f.x, f.y); ctx.globalAlpha = 1;
+  }
+  ctx.restore();
+  if (flash > 0) { ctx.globalAlpha = Math.min(1, flash) * .55; ctx.fillStyle = flashCol; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; flash -= dt * 1.4; }
+  if (P.stamina < maxSta() * .25 && P.y > 2) { ctx.globalAlpha = .12 + Math.sin(clock * 7) * .08; ctx.fillStyle = '#c9492f'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+}
+
+/* ---------- HUD ---------- */
+function hud() {
+  const d = depthOf(P.y), n = cargoCount(), c = cap(), ms = maxSta();
+  $('depth').textContent = d; $('best').textContent = S.deepest;
+  $('cash').textContent = fmt(S.money); $('pack').textContent = n; $('cap').textContent = c;
+  $('packbar').firstElementChild.style.width = (n / c * 100) + '%'; $('packbar').classList.toggle('full', n >= c);
+  $('sta').textContent = Math.max(0, Math.ceil(P.stamina)); $('stamax').textContent = ms;
+  $('stabar').firstElementChild.style.width = clamp(P.stamina / ms * 100, 0, 100) + '%'; $('stabar').classList.toggle('warn', P.stamina < ms * .25);
+  $('ravens').textContent = S.ravens;
+  let rank = RANKS[0][1]; for (const [t, n2] of RANKS) if (S.total >= t) rank = n2;
+  $('rank').textContent = S.house + ' · ' + rank;
+  $('prompt').hidden = !(nearShop() && !paused);
+}
+
+/* ---------- loop & start ---------- */
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now;
+  if (started && !paused) update(dt);
+  if (S) { render(dt); hudT += dt; saveT += dt; if (hudT > .05) { hudT = 0; hud(); } if (saveT > 8 && started) { saveT = 0; save(); } }
+  requestAnimationFrame(frame);
+}
+
+function boot() {
+  syncMute();
+  const saved = loadSave();
+  S = saved || freshSave();
+  genWorld(); resetPlayer();
+  $('house').value = S.house;
+  if (saved && (saved.total > 0 || saved.deepest > 0)) { $('begin').textContent = L.cont(S.house); $('erase').hidden = false; }
+  hud();
+  requestAnimationFrame(frame);
+}
+$('begin').onclick = () => {
+  audioInit();
+  const name = ($('house').value || '').trim().slice(0, 18) || L.defHouse;
+  S.house = name; save();
+  genWorld(); resetPlayer();
+  $('start').hidden = true; started = true; paused = false;
+  say(L.hint);
+};
+let eraseArm = false;
+$('erase').onclick = () => {
+  if (!eraseArm) { eraseArm = true; $('erase').textContent = L.again; return; }
+  S = freshSave($('house').value.trim()); save(); genWorld(); resetPlayer();
+  $('begin').textContent = L.begin; $('erase').hidden = true; $('erase').textContent = L.erase; eraseArm = false; hud();
+};
+// Closing the overlay on the site removes this page: keep the latest progress.
+addEventListener('pagehide', () => { if (started) save(); });
+let rsArm = 0;
+$('restart').onclick = () => {
+  const b = $('restart');
+  if (!rsArm) { rsArm = setTimeout(() => { rsArm = 0; b.textContent = L.restart; }, 3000); b.textContent = L.again; return; }
+  clearTimeout(rsArm); rsArm = 0; b.textContent = L.restart;
+  dirStack.length = 0; parts = []; floats = [];
+  S = freshSave(S.house); save(); genWorld(); resetPlayer(); camY = 0;
+  started = false; paused = true;
+  $('shop').hidden = true; $('end').hidden = true; $('start').hidden = false;
+  $('begin').textContent = L.begin; $('erase').hidden = true; $('house').value = S.house;
+  hud();
+};
+boot();
+})();
+</script>
