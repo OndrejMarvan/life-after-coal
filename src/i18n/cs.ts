@@ -387,6 +387,7 @@ const cs: Dict = {
     notOpenText: 'Teprve připravujeme průhledný způsob, jak podporu přijímat. Tato stránka zatím žádné peníze nevybírá.',
     notify: 'Přihlaste se k odběru zpravodaje a dáme vám vědět, až to spustíme',
   },
+  game: { title: 'Poslední šichta' },
   footer: { madeWithLove: 'Vytvořili s láskou', madeFor: 'Pro horníky, jejich rodiny a jejich města.', sources: 'Zdroje: dvě rešeršní databáze, 14. 11. 2026.' },
 }
 

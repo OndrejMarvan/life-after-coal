@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../lib/auth'
@@ -8,6 +8,53 @@ import { applyTheme, savedTheme, type Theme } from '../lib/theme'
 import { AssistantChat } from './AssistantChat'
 import { HeadframeLogo } from './HeadframeLogo'
 import { useLang } from './ui'
+
+const GameModal = lazy(() => import('./GameModal'))
+
+// Easter egg: 5 quick clicks on the header logo, or the Konami code, open the hidden game.
+const LOGO_TAPS = 5
+const TAP_GAP_MS = 1500
+const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a']
+
+function useHiddenGame() {
+  const [open, setOpen] = useState(false)
+  const [wheelDeg, setWheelDeg] = useState(0)
+  const taps = useRef({ n: 0, at: 0 })
+
+  const unlock = useCallback(() => {
+    taps.current.n = 0
+    setWheelDeg((d) => d + 720)
+    setOpen(true)
+  }, [])
+
+  const onLogoClick = useCallback(() => {
+    const now = Date.now()
+    const tp = taps.current
+    tp.n = now - tp.at < TAP_GAP_MS ? tp.n + 1 : 1
+    tp.at = now
+    if (tp.n >= LOGO_TAPS) unlock()
+    else setWheelDeg((d) => d + 90)
+  }, [unlock])
+
+  useEffect(() => {
+    let pos = 0
+    const onKey = (e: KeyboardEvent) => {
+      const el = e.target as HTMLElement | null
+      if (el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return
+      const k = e.key.toLowerCase()
+      pos = k === KONAMI[pos] ? pos + 1 : k === KONAMI[0] ? 1 : 0
+      if (pos === KONAMI.length) {
+        pos = 0
+        unlock()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [unlock])
+
+  const close = useCallback(() => setOpen(false), [])
+  return { open, close, wheelDeg, onLogoClick }
+}
 
 const MAIN = [
   { to: '/check', key: 'nav.check' },
@@ -117,6 +164,7 @@ export default function Layout() {
   const { user } = useAuth()
   const [open, setOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
+  const game = useHiddenGame()
   const loc = useLocation()
 
   useEffect(() => {
@@ -139,8 +187,8 @@ export default function Layout() {
       {isDemo && <div className="no-print bg-orange-pale text-coal text-center text-sm py-1.5 px-3 border-b border-orange">{t('common.demoBanner')}</div>}
       <header className="chrome bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
-            <HeadframeLogo className="h-14 w-14 shrink-0" />
+          <Link to="/" onClick={game.onLogoClick} className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
+            <HeadframeLogo className="h-14 w-14 shrink-0" wheelDeg={game.wheelDeg} />
             <span className="display text-lg sm:text-xl font-bold leading-none hidden min-[420px]:inline">{t('appName')}</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label={t('nav.menu')}>
@@ -261,6 +309,12 @@ export default function Layout() {
           </div>
         </div>
       </footer>
+
+      {game.open && (
+        <Suspense fallback={null}>
+          <GameModal onClose={game.close} />
+        </Suspense>
+      )}
     </div>
   )
 }

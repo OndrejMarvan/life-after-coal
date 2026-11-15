@@ -6,8 +6,9 @@ import { useId } from 'react'
  * brick shaft hall with a few lit windows and a spoil heap in the haze. Painted-steel colour and
  * edge highlights from the low sun on the left. Size it with className; corners are rounded inside.
  * Oblique projection with depth vector (11, -6). The flat Headframe is used everywhere else.
+ * `wheelDeg` turns the winding wheels (clicking the logo counts towards the hidden game).
  */
-export function HeadframeLogo({ className = '' }: { className?: string }) {
+export function HeadframeLogo({ className = '', wheelDeg = 0 }: { className?: string; wheelDeg?: number }) {
   const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '')
   const sky = `sky${uid}`
   const brick = `brick${uid}`
@@ -49,19 +50,23 @@ export function HeadframeLogo({ className = '' }: { className?: string }) {
         <path d="M52 46L82 46M50.8 64L83.2 64M49.6 82L84.4 82M48.4 100L85.6 100M47.2 118L86.8 118M46 136L88 136" stroke={steel} strokeWidth="2.4" />
         <path d="M52 46L46 136M82 46L88 136" stroke={steel} strokeWidth="4.4" />
         <path d="M50.7 47L44.7 136M80.7 47L86.7 136" stroke="#ffd9a0" strokeOpacity="0.55" strokeWidth="1.1" />
-        <circle cx="77.5" cy="19.3" r="20" fill="none" stroke={steel} strokeWidth="4.2" opacity="0.5" />
-        <circle cx="77.5" cy="19.3" r="17" fill="none" stroke={steel} strokeWidth="1" opacity="0.5" />
-        <path d="M80.1 19.7L94.9 21.9M79.4 21.1L90 31.7M77.9 21.9L80.4 36.7M76.3 21.6L69.6 35M75.2 20.5L61.9 27.4M74.9 18.9L60.1 16.7M75.6 17.5L65 6.9M77.1 16.7L74.6 1.9M78.7 17L85.4 3.6M79.8 18.1L93.1 11.2" stroke={steel} strokeWidth="1.2" opacity="0.5" />
-        <circle cx="77.5" cy="19.3" r="3.2" fill={steel} opacity="0.5" />
+        <g className="transition-transform duration-700 ease-out motion-reduce:transition-none" style={{ transform: `rotate(${-wheelDeg}deg)`, transformBox: 'fill-box', transformOrigin: 'center' }}>
+          <circle cx="77.5" cy="19.3" r="20" fill="none" stroke={steel} strokeWidth="4.2" opacity="0.5" />
+          <circle cx="77.5" cy="19.3" r="17" fill="none" stroke={steel} strokeWidth="1" opacity="0.5" />
+          <path d="M80.1 19.7L94.9 21.9M79.4 21.1L90 31.7M77.9 21.9L80.4 36.7M76.3 21.6L69.6 35M75.2 20.5L61.9 27.4M74.9 18.9L60.1 16.7M75.6 17.5L65 6.9M77.1 16.7L74.6 1.9M78.7 17L85.4 3.6M79.8 18.1L93.1 11.2" stroke={steel} strokeWidth="1.2" opacity="0.5" />
+          <circle cx="77.5" cy="19.3" r="3.2" fill={steel} opacity="0.5" />
+        </g>
         <path d="M42 46L94 46L105 40L53 40ZM44 82L92 82L103 76L55 76ZM42 118L94 118L105 112L53 112Z" fill="#3d3d3d" />
         <path d="M42 46L94 46L94 48.4L42 48.4ZM44 82L92 82L92 84.4L44 84.4ZM42 118L94 118L94 120.4L42 120.4Z" fill={steel} />
         <path d="M42 40L94 40L105 34M42 46L42 40M48.5 46L48.5 40M55 46L55 40M61.5 46L61.5 40M68 46L68 40M74.5 46L74.5 40M81 46L81 40M87.5 46L87.5 40M94 46L94 40M105 40L105 34M42 43L94 43M44 76L92 76L103 70M44 82L44 76M50 82L50 76M56 82L56 76M62 82L62 76M68 82L68 76M74 82L74 76M80 82L80 76M86 82L86 76M92 82L92 76M103 76L103 70M44 79L92 79M42 112L94 112L105 106M42 118L42 112M48.5 118L48.5 112M55 118L55 112M61.5 118L61.5 112M68 118L68 112M74.5 118L74.5 112M81 118L81 112M87.5 118L87.5 112M94 118L94 112M105 112L105 106M42 115L94 115" stroke={steel} strokeWidth="0.9" />
         <path d="M67 25L56 46M67 25L78 46M77.5 19.3L66.5 40.3M77.5 19.3L88.5 40.3" stroke={steel} strokeWidth="2.2" />
         <path d="M47 25L47 138M57.5 19.3L57.5 134" stroke={steel} strokeWidth="1" />
-        <circle cx="67" cy="25" r="20" fill="none" stroke={steel} strokeWidth="4.2" />
-        <circle cx="67" cy="25" r="17" fill="none" stroke={steel} strokeWidth="1" />
-        <path d="M69.6 25.4L84.4 27.6M68.9 26.8L79.5 37.4M67.4 27.6L69.9 42.4M65.8 27.3L59.1 40.7M64.7 26.2L51.4 33.1M64.4 24.6L49.6 22.4M65.1 23.2L54.5 12.6M66.6 22.4L64.1 7.6M68.2 22.7L74.9 9.3M69.3 23.8L82.6 16.9" stroke={steel} strokeWidth="1.2" />
-        <circle cx="67" cy="25" r="3.2" fill={steel} />
+        <g className="transition-transform duration-700 ease-out motion-reduce:transition-none" style={{ transform: `rotate(${wheelDeg}deg)`, transformBox: 'fill-box', transformOrigin: 'center' }}>
+          <circle cx="67" cy="25" r="20" fill="none" stroke={steel} strokeWidth="4.2" />
+          <circle cx="67" cy="25" r="17" fill="none" stroke={steel} strokeWidth="1" />
+          <path d="M69.6 25.4L84.4 27.6M68.9 26.8L79.5 37.4M67.4 27.6L69.9 42.4M65.8 27.3L59.1 40.7M64.7 26.2L51.4 33.1M64.4 24.6L49.6 22.4M65.1 23.2L54.5 12.6M66.6 22.4L64.1 7.6M68.2 22.7L74.9 9.3M69.3 23.8L82.6 16.9" stroke={steel} strokeWidth="1.2" />
+          <circle cx="67" cy="25" r="3.2" fill={steel} />
+        </g>
         <path d="M48.0 18.1A20.2 20.2 0 0 1 73.9 6.0" fill="none" stroke="#fff" strokeOpacity="0.45" strokeWidth="1.1" />
         <path d="M85 68L161 186L172 180L96 62Z" fill="#000" fillOpacity="0.16" />
         <path d="M87 52L98 46M85 68L96 62M99.6 70.9L110.6 64.9M95.9 84.9L106.9 78.9M112.1 89.7L123.1 83.7M106.7 101.7L117.7 95.7M124.7 108.6L135.7 102.6M117.6 118.6L128.6 112.6M137.3 127.4L148.3 121.4M128.4 135.4L139.4 129.4M149.9 146.3L160.9 140.3M139.3 152.3L150.3 146.3M162.4 165.1L173.4 159.1M150.1 169.1L161.1 163.1M175 184L186 178M161 186L172 180" stroke={steel} strokeOpacity="0.8" strokeWidth="1" />

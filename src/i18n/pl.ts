@@ -387,6 +387,7 @@ const pl: Dict = {
     notOpenText: 'Przygotowujemy przejrzysty sposób przyjmowania wsparcia. Na razie ta strona nie pobiera żadnych pieniędzy.',
     notify: 'Zapisz się do biuletynu, a damy znać, gdy ruszymy',
   },
+  game: { title: 'Ostatnia szychta' },
   footer: { madeWithLove: 'Z miłością stworzyli', madeFor: 'Dla górników, ich rodzin i ich miast.', sources: 'Źródła: dwie bazy danych, 14.11.2026.' },
 }
 

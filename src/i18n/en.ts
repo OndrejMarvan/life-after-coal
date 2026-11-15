@@ -385,6 +385,7 @@ const en = {
     notOpenText: 'We are still setting up a transparent way to accept support. Nothing on this page takes money for now.',
     notify: 'Subscribe to the newsletter to hear when it opens',
   },
+  game: { title: 'Last Shift' },
   footer: { madeWithLove: 'Made with love by', madeFor: 'For miners, their families and their towns.', sources: 'Sources: two research databases, 14 Nov 2026.' },
 }
 
