@@ -438,19 +438,19 @@ Object.assign(L, MUSEUM_TEXT[LANG]);
 const T = 40, COLS = 16, VROWS = 13, W = COLS * T, H = VROWS * T;
 const ROWS = 160, SURF = 3;               // rows 0-2 are sky, row 3 is the first dirt
 const AIR = 0, DIRT = 1, STONE = 2, LAVA = 3, CHEST = 4, BEDROCK = 5, SHAFT = 6, ORE0 = 10;
-const SAVE_KEY = 'lac:game:save', MUTE_KEY = 'lac:game:mute';
+const SAVE_KEY = 'lac:game:save', WORLD_KEY = 'lac:game:world', MUTE_KEY = 'lac:game:mute';
 const THRONE_COST = 30000;
 
 const ORES = [
   { id: 'coal',        name: 'Coal',          val: 6,    h: .6,  min: 1,   max: 75,  p: .036, cl: 3, col: '#33343a', hi: '#6b6c75' },
   { id: 'zinc',        name: 'Zinc ore',      val: 15,   h: .8,  min: 7,   max: 85,  p: .030, cl: 3, col: '#c8794a', hi: '#efae83' },
   { id: 'iron',        name: 'Iron ore',      val: 35,   h: 1.1, min: 18,  max: 115, p: .028, cl: 3, col: '#b9a99a', hi: '#e8dccf' },
-  { id: 'silver',      name: 'Silver',        val: 80,   h: 1.5, min: 32,  max: 140, p: .022, cl: 2, col: '#cfd8e0', hi: '#ffffff' },
-  { id: 'gold',        name: 'Gold',          val: 180,  h: 1.9, min: 48,  max: 160, p: .020, cl: 2, col: '#e8bf50', hi: '#fff0a8' },
-  { id: 'garnet',      name: 'Garnet',        val: 420,  h: 2.4, min: 68,  max: 160, p: .014, cl: 2, col: '#d1303e', hi: '#ff8a93' },
-  { id: 'diamond',     name: 'Diamond',       val: 900,  h: 3.0, min: 88,  max: 160, p: .011, cl: 2, col: '#7fe3ee', hi: '#e6ffff' },
-  { id: 'amethyst',    name: 'Amethyst',      val: 1800, h: 3.8, min: 108, max: 160, p: .009, cl: 2, col: '#5b4a8f', hi: '#a592e0' },
-  { id: 'gem',         name: 'Skarbnik gem',  val: 6000, h: 5.0, min: 124, max: 160, p: .007, cl: 1, col: '#9f2a22', hi: '#ff7b5a' },
+  { id: 'silver',      name: 'Silver',        val: 70,   h: 1.5, min: 32,  max: 140, p: .022, cl: 2, col: '#cfd8e0', hi: '#ffffff' },
+  { id: 'gold',        name: 'Gold',          val: 140,  h: 1.9, min: 48,  max: 160, p: .020, cl: 2, col: '#e8bf50', hi: '#fff0a8' },
+  { id: 'garnet',      name: 'Garnet',        val: 260,  h: 2.4, min: 68,  max: 160, p: .014, cl: 2, col: '#d1303e', hi: '#ff8a93' },
+  { id: 'diamond',     name: 'Diamond',       val: 450,  h: 3.0, min: 88,  max: 160, p: .011, cl: 2, col: '#7fe3ee', hi: '#e6ffff' },
+  { id: 'amethyst',    name: 'Amethyst',      val: 700,  h: 3.8, min: 108, max: 160, p: .009, cl: 2, col: '#5b4a8f', hi: '#a592e0' },
+  { id: 'gem',         name: 'Skarbnik gem',  val: 1000, h: 5.0, min: 124, max: 160, p: .007, cl: 1, col: '#9f2a22', hi: '#ff7b5a' },
 ];
 
 // Gear: [name, value, price]. Names and descriptions are replaced from I18N below.
@@ -486,7 +486,29 @@ function freshSave(house) {
   return { house: house || L.defHouse, money: 0, total: 0, deepest: 0, ravens: 0, won: false, pass: { ex: [], food: [] }, passDone: false, lv: { pick: 0, pack: 0, sta: 0, lamp: 0, boots: 0 } };
 }
 function loadSave() { try { const j = JSON.parse(localStorage.getItem(SAVE_KEY)); if (j && j.lv) return Object.assign(freshSave(), j, { lv: Object.assign(freshSave().lv, j.lv) }); } catch (e) {} return null; }
-function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
+function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} saveWorld(); }
+
+/* The mine itself is saved too (what is dug stays dug, what was seen stays seen), with the miner's
+   position and load. Otherwise leaving and coming back would refill the mine and carry you home for free. */
+const b64 = a => btoa(String.fromCharCode.apply(null, a));
+const unb64 = t => Uint8Array.from(atob(t), ch => ch.charCodeAt(0));
+let savedP = null;
+function saveWorld() {
+  if (!grid || !P) return;
+  if (!ride) savedP = { x: P.x, y: P.y, stamina: P.stamina, cargo: P.cargo };
+  try { localStorage.setItem(WORLD_KEY, JSON.stringify({ v: 1, cols: COLS, rows: ROWS, g: b64(grid), s: b64(seen), d: dirtLine, p: savedP })); } catch (e) {}
+}
+function loadWorld() {
+  try {
+    const w = JSON.parse(localStorage.getItem(WORLD_KEY));
+    if (!w || w.v !== 1 || w.cols !== COLS || w.rows !== ROWS) return false;
+    const g = unb64(w.g), sn = unb64(w.s);
+    if (g.length !== COLS * ROWS || sn.length !== COLS * ROWS) return false;
+    grid = g; seen = sn; dirtLine = w.d; savedP = w.p || null;
+    finishWorld();
+    return true;
+  } catch (e) { return false; }
+}
 
 const tier = k => UPS[k].tiers[S.lv[k]][1];
 const power = () => tier('pick'), cap = () => tier('pack'), maxSta = () => tier('sta'), lampR = () => tier('lamp'), stepT = () => tier('boots');
@@ -516,9 +538,13 @@ function genWorld() {
     for (let r = SURF + o.min; r < Math.min(ROWS - 1, SURF + o.max); r++) for (let c = 0; c < COLS; c++)
       if (Math.random() < o.p) cluster(c, r, ORE0 + n, 1 + Math.floor(Math.random() * o.cl));
   });
-  for (let r = SURF + 34; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .011) cluster(c, r, LAVA, 1 + Math.floor(Math.random() * 3));
+  for (let r = SURF + 34; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .016) cluster(c, r, LAVA, 1 + Math.floor(Math.random() * 3));
   for (let r = SURF + 8; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .0045 && solid(r * COLS + c)) grid[r * COLS + c] = CHEST;
   for (let c = 0; c < COLS; c++) seen[SURF * COLS + c] = 1;
+  savedP = null;
+  finishWorld();
+}
+function finishWorld() {
   if (S && S.won) { cutShaft(); if (!visitors.length) makeVisitors(); } else visitors = [];
   snow = Array.from({ length: 36 }, () => ({ x: Math.random() * W, y: Math.random() * SURF * T, v: 8 + Math.random() * 14, s: 1 + Math.random() * 1.6, p: Math.random() * 6 }));
 }
@@ -564,7 +590,9 @@ function burst(x, y, col, n, spd = 70) {
 function floatText(x, y, text, col) { floats.push({ x, y, text, col, life: 1.1 }); }
 
 /* ---------- actions ---------- */
+const LAVA_LIMIT = .9;   // seconds of pushing into lava before it burns you
 const hardness = (id, r) => {
+  if (id === LAVA) return LAVA_LIMIT;
   const d = depthOf(r);
   if (id === DIRT) return .25 + d * .002;
   if (id === STONE) return .5 + d * .006;
@@ -587,7 +615,7 @@ function finishDig(tx, ty, id) {
     else { floatText(cx, cy, L.packFull, '#ff9b7f'); sfx.nope(); }
     burst(cx, cy, o.col, 9, 90);
   } else if (id === CHEST) {
-    const win = Math.round((60 + depthOf(ty) * 7) * (.6 + Math.random() * .9));
+    const win = Math.round((40 + depthOf(ty) * 4) * (.6 + Math.random() * .9));
     S.money += win; S.total += win; save();
     floatText(cx, cy, L.chest + fmt(win), '#ffe08a'); say(L.gift(fmt(win)), 'good'); sfx.sell();
     burst(cx, cy, '#e8bf50', 16, 110);
@@ -642,7 +670,13 @@ function update(dt) {
     }
     return;
   }
-  if (id === LAVA) { burn(); return; }
+  if (id === LAVA) {
+    if (!P.dig || P.dig.x !== tx || P.dig.y !== ty) P.dig = { x: tx, y: ty, prog: 0, chip: 0 };
+    P.dig.prog += dt; P.dig.chip += dt;
+    if (P.dig.chip > .12) { P.dig.chip = 0; burst(tx * T + T / 2, ty * T + T / 2, '#ff8a3a', 2, 40); tone(180 + Math.random() * 60, .05, 'sawtooth', .02); }
+    if (P.dig.prog >= LAVA_LIMIT) { P.dig = null; burn(); }
+    return;
+  }
   if (id === BEDROCK) { if (bedT <= 0) { say(L.bedrock); bedT = 2; } return; }
   if (id === SHAFT) { P.dig = null; return; }
   if (!P.dig || P.dig.x !== tx || P.dig.y !== ty) P.dig = { x: tx, y: ty, prog: 0, chip: 0 };
@@ -871,7 +905,7 @@ function render(dt) {
   if (P.dig) {
     const need = hardness(grid[P.dig.y * COLS + P.dig.x], P.dig.y), f = clamp(P.dig.prog / need, 0, 1);
     ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(P.dig.x * T + 4, P.dig.y * T + T - 9, T - 8, 5);
-    ctx.fillStyle = '#ee8a3c'; ctx.fillRect(P.dig.x * T + 5, P.dig.y * T + T - 8, (T - 10) * f, 3);
+    ctx.fillStyle = grid[P.dig.y * COLS + P.dig.x] === LAVA ? '#ff3b1f' : '#ee8a3c'; ctx.fillRect(P.dig.x * T + 5, P.dig.y * T + T - 8, (T - 10) * f, 3);
     ctx.fillStyle = `rgba(0,0,0,${f * .45})`; ctx.fillRect(P.dig.x * T, P.dig.y * T, T, T);
   }
   if (S.won && camY + H > MUS_TOP * T) drawMuseum();
@@ -1191,7 +1225,9 @@ function boot() {
   syncMute();
   const saved = loadSave();
   S = saved || freshSave();
-  genWorld(); resetPlayer();
+  if (!saved || !loadWorld()) genWorld();
+  resetPlayer();
+  if (savedP) { Object.assign(P, { x: savedP.x, y: savedP.y, px: savedP.x, py: savedP.y, stamina: savedP.stamina, cargo: savedP.cargo || {} }); camY = Math.max(0, P.py * T + T / 2 - H / 2); }
   $('house').value = S.house;
   if (saved && (saved.total > 0 || saved.deepest > 0)) { $('begin').textContent = L.cont(S.house); $('erase').hidden = false; }
   hud();
@@ -1201,14 +1237,13 @@ $('begin').onclick = () => {
   audioInit();
   const name = ($('house').value || '').trim().slice(0, 18) || L.defHouse;
   S.house = name; save();
-  genWorld(); resetPlayer();
   $('start').hidden = true; started = true; paused = false;
-  say(L.hint);
+  if (P.y <= 2) say(L.hint);
 };
 let eraseArm = false;
 $('erase').onclick = () => {
   if (!eraseArm) { eraseArm = true; $('erase').textContent = L.again; return; }
-  S = freshSave($('house').value.trim()); save(); genWorld(); resetPlayer();
+  S = freshSave($('house').value.trim()); genWorld(); resetPlayer(); save();
   $('begin').textContent = L.begin; $('erase').hidden = true; $('erase').textContent = L.erase; eraseArm = false; hud();
 };
 // Closing the overlay on the site removes this page: keep the latest progress.
@@ -1219,7 +1254,7 @@ $('restart').onclick = () => {
   if (!rsArm) { rsArm = setTimeout(() => { rsArm = 0; b.textContent = L.restart; }, 3000); b.textContent = L.again; return; }
   clearTimeout(rsArm); rsArm = 0; b.textContent = L.restart;
   dirStack.length = 0; parts = []; floats = [];
-  S = freshSave(S.house); save(); genWorld(); resetPlayer(); camY = 0;
+  S = freshSave(S.house); genWorld(); resetPlayer(); save(); camY = 0;
   started = false; paused = true;
   $('shop').hidden = true; $('end').hidden = true; $('start').hidden = false;
   $('begin').textContent = L.begin; $('erase').hidden = true; $('house').value = S.house;
