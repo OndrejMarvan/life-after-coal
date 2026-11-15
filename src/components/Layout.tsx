@@ -5,6 +5,7 @@ import { useAuth } from '../lib/auth'
 import { isDemo } from '../lib/supabase'
 import { fmtDate } from '../lib/content'
 import { applyTheme, savedTheme, type Theme } from '../lib/theme'
+import { AssistantChat } from './AssistantChat'
 import { HeadframeLogo } from './HeadframeLogo'
 import { useLang } from './ui'
 
@@ -26,7 +27,7 @@ const MORE = [
   { to: '/support', key: 'nav.support' },
 ]
 /** The team, sorted alphabetically by surname. */
-const TEAM = ['Krištof Gregor', 'Dmytro Hrebeniuk', 'JanJakub Kolar', 'Ondřej Marvan', 'Olga Yurkova']
+const TEAM = ['Krištof Gregor', 'Dmytro Hrebeniuk', 'JánJakub Kola', 'Ondřej Marvan', 'Alexandra Obracajová', 'Olga Yurkova']
 
 function LangSwitch() {
   const { i18n, t } = useTranslation()
@@ -48,23 +49,74 @@ function LangSwitch() {
   )
 }
 
+/** Dark/light background switch, next to the language buttons. */
+function ThemeSwitch() {
+  const { t } = useTranslation()
+  const [theme, setTheme] = useState<Theme>(savedTheme)
+  const label = theme === 'dark' ? t('nav.themeLight') : t('nav.themeDark')
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        const next = theme === 'dark' ? 'light' : 'dark'
+        applyTheme(next)
+        setTheme(next)
+      }}
+      aria-label={label}
+      title={label}
+      className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border-2 border-white/30 text-lg text-white hover:bg-white/10"
+    >
+      <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+    </button>
+  )
+}
+
+/** Floating message button on the left that opens the assistant in a small window. */
+function ChatLauncher() {
+  const { t } = useTranslation()
+  const [open, setOpen] = useState(false)
+  const { pathname } = useLocation()
+  if (pathname === '/assistant') return null
+  return (
+    <>
+      {open && (
+        <div
+          role="dialog"
+          aria-label={t('nav.assistant')}
+          className="no-print fixed inset-x-2 top-28 bottom-20 z-50 flex flex-col overflow-hidden rounded-2xl border-2 border-coal bg-paper shadow-2xl sm:inset-x-auto sm:left-4 sm:top-auto sm:h-[min(620px,calc(100vh-11rem))] sm:w-[400px]"
+        >
+          <div className="chrome flex items-center justify-between gap-3 bg-coal px-4 py-3 text-white">
+            <p className="display font-bold">{t('nav.assistant')}</p>
+            <button type="button" onClick={() => setOpen(false)} aria-label={t('common.close')} className="grid h-9 w-9 place-items-center rounded-lg text-xl hover:bg-white/10">
+              ✕
+            </button>
+          </div>
+          <AssistantChat compact onNavigate={() => setOpen(false)} />
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-label={t('nav.assistant')}
+        className="no-print fixed bottom-4 left-4 z-40 btn btn-dark shadow-xl border-2 border-orange !rounded-full !px-4"
+      >
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden="true">
+          <path d="M4 5h16v11H9l-5 4z" />
+          <path d="M8 9.5h8M8 12.5h5" strokeLinecap="round" />
+        </svg>
+        <span className="hidden sm:inline">{t('chat.open')}</span>
+      </button>
+    </>
+  )
+}
+
 export default function Layout() {
   const { t } = useTranslation()
   const lang = useLang()
   const { user } = useAuth()
   const [open, setOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
-  const [theme, setTheme] = useState<Theme>(savedTheme)
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark'
-    applyTheme(next)
-    setTheme(next)
-  }
-  const themeLabel = (
-    <>
-      <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span> {theme === 'dark' ? t('nav.themeLight') : t('nav.themeDark')}
-    </>
-  )
   const loc = useLocation()
 
   useEffect(() => {
@@ -108,14 +160,12 @@ export default function Layout() {
                       {t(m.key)}
                     </NavLink>
                   ))}
-                  <button type="button" onClick={toggleTheme} className="mt-1 block w-full rounded-md border-t border-white/15 px-3 py-2 text-left hover:bg-white/10">
-                    {themeLabel}
-                  </button>
                 </div>
               )}
             </div>
           </nav>
           <div className="ml-auto flex items-center gap-2">
+            <ThemeSwitch />
             <LangSwitch />
             <div className="hidden lg:flex items-center gap-1">
               {user?.isAdmin && (
@@ -150,9 +200,6 @@ export default function Layout() {
             <NavLink to="/account" className="block rounded-md px-3 py-3 text-lg">
               {user ? t('nav.account') : t('nav.login')}
             </NavLink>
-            <button type="button" onClick={toggleTheme} className="block w-full rounded-md px-3 py-3 text-left text-lg hover:bg-white/10">
-              {themeLabel}
-            </button>
           </nav>
         )}
       </header>
@@ -161,6 +208,7 @@ export default function Layout() {
         <Outlet />
       </main>
 
+      <ChatLauncher />
       <Link
         to="/help"
         className="need-to-talk no-print fixed bottom-4 right-4 z-40 btn btn-primary shadow-xl border-2 border-coal !rounded-full !px-5"

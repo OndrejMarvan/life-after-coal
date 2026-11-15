@@ -263,6 +263,7 @@ const en = {
     rolling: 'Rolling deadline', suggest: 'Suggest an event', suggestTitle: 'Event title', suggestDate: 'Date', suggestPlace: 'Place',
     suggestSent: 'Thank you. A moderator will check the event before it appears.',
   },
+  chat: { open: 'Ask' },
   crisis: {
     title: 'Emergency and crisis lines',
     intro: 'If life or health is at risk, call an emergency number. If you need to talk to someone right now, call a crisis line. It is free and you do not have to give your name.',
@@ -319,6 +320,7 @@ const en = {
     title: 'Ask about your next step',
     intro: 'Ask in Czech, Polish or English. The assistant answers only from the programmes on this site and links the cards it used.',
     placeholder: 'For example: I worked underground at ČSM for 20 years and left in February. What can I still claim?',
+    inputLabel: 'Type your question',
     ask: 'Ask', thinking: 'Thinking...', sources: 'Programmes used',
     disclaimer: 'Not legal or financial advice. The office named on each card decides.',
     privacy: 'Questions are processed by Google Gemini. Do not include your name, ID number or other personal details.',

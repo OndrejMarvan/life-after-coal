@@ -265,6 +265,7 @@ const pl: Dict = {
     rolling: 'Termin ruchomy', suggest: 'Zaproponuj wydarzenie', suggestTitle: 'Nazwa wydarzenia', suggestDate: 'Data', suggestPlace: 'Miejsce',
     suggestSent: 'Dziękujemy. Moderator sprawdzi wydarzenie przed publikacją.',
   },
+  chat: { open: 'Zapytaj' },
   crisis: {
     title: 'Numery alarmowe i telefony zaufania',
     intro: 'Gdy chodzi o życie lub zdrowie, dzwoń pod numer alarmowy. Gdy potrzebujesz od razu z kimś porozmawiać, zadzwoń na telefon zaufania. Jest bezpłatny i nie musisz podawać nazwiska.',
@@ -321,6 +322,7 @@ const pl: Dict = {
     title: 'Zapytaj o następny krok',
     intro: 'Pytaj po polsku, czesku lub angielsku. Asystent odpowiada tylko na podstawie programów z tej strony i podaje karty, z których korzystał.',
     placeholder: 'Na przykład: Pracowałem 20 lat na dole w JSW i chcę odejść. Co mi przysługuje?',
+    inputLabel: 'Napisz swoje pytanie',
     ask: 'Zapytaj', thinking: 'Myślę...', sources: 'Użyte programy',
     disclaimer: 'To nie jest porada prawna ani finansowa. Decyduje urząd lub firma wskazana na karcie.',
     privacy: 'Pytania przetwarza usługa Google Gemini. Nie wpisuj w nich nazwiska, numeru PESEL ani innych danych osobowych.',

@@ -265,6 +265,7 @@ const cs: Dict = {
     rolling: 'Průběžná lhůta', suggest: 'Navrhnout akci', suggestTitle: 'Název akce', suggestDate: 'Datum', suggestPlace: 'Místo',
     suggestSent: 'Děkujeme. Moderátor akci zkontroluje, než se objeví.',
   },
+  chat: { open: 'Zeptat se' },
   crisis: {
     title: 'Tísňové a krizové linky',
     intro: 'Když jde o život nebo zdraví, volejte tísňovou linku. Když potřebujete hned s někým mluvit, zavolejte na krizovou linku. Je zdarma a nemusíte říkat své jméno.',
@@ -321,6 +322,7 @@ const cs: Dict = {
     title: 'Zeptejte se, co dál',
     intro: 'Ptejte se česky, polsky nebo anglicky. Asistent odpovídá jen z programů na tomto webu a odkazuje na karty, ze kterých vychází.',
     placeholder: 'Například: Pracoval jsem 20 let pod zemí na ČSM a v únoru jsem odešel. Na co mám ještě nárok?',
+    inputLabel: 'Napište svou otázku',
     ask: 'Zeptat se', thinking: 'Přemýšlím...', sources: 'Použité programy',
     disclaimer: 'Nejde o právní ani finanční poradenství. Rozhoduje úřad nebo firma uvedená na kartě.',
     privacy: 'Otázky zpracovává služba Google Gemini. Nepište do nich jméno, rodné číslo ani jiné osobní údaje.',
