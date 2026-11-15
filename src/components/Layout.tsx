@@ -8,6 +8,7 @@ import { Headframe, useLang } from './ui'
 const GameModal = lazy(() => import('./GameModal'))
 
 // Easter egg: 5 quick clicks on the header logo, or the Konami code, open the hidden game.
+// Desktop only: on touch screens (phones, tablets) the logo taps do nothing.
 const LOGO_TAPS = 5
 const TAP_GAP_MS = 1500
 const KONAMI = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a']
@@ -24,6 +25,7 @@ function useHiddenGame() {
   }, [])
 
   const onLogoClick = useCallback(() => {
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return
     const now = Date.now()
     const tp = taps.current
     tp.n = now - tp.at < TAP_GAP_MS ? tp.n + 1 : 1

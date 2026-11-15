@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useLang } from './ui'
 
@@ -10,6 +11,7 @@ import { useLang } from './ui'
 export default function GameModal({ onClose }: { onClose: () => void }) {
   const { t } = useTranslation()
   const lang = useLang()
+  const navigate = useNavigate()
   const frame = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
@@ -18,9 +20,16 @@ export default function GameModal({ onClose }: { onClose: () => void }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose()
     }
-    // Esc pressed inside the game arrives as a message (the iframe has the keyboard focus)
+    // Messages from the game: Esc pressed inside it (the iframe has the keyboard focus), or the
+    // full museum passport's link to a page of the site.
     const onMsg = (e: MessageEvent) => {
-      if (e.origin === window.location.origin && (e.data as { lacGame?: string } | null)?.lacGame === 'close') onClose()
+      if (e.origin !== window.location.origin) return
+      const d = e.data as { lacGame?: string; path?: string } | null
+      if (d?.lacGame === 'close') onClose()
+      else if (d?.lacGame === 'goto' && d.path?.startsWith('/')) {
+        onClose()
+        navigate(d.path)
+      }
     }
     window.addEventListener('keydown', onKey)
     window.addEventListener('message', onMsg)
@@ -29,7 +38,7 @@ export default function GameModal({ onClose }: { onClose: () => void }) {
       window.removeEventListener('keydown', onKey)
       window.removeEventListener('message', onMsg)
     }
-  }, [onClose])
+  }, [onClose, navigate])
 
   return (
     <div role="dialog" aria-modal="true" aria-label={t('game.title')} className="fixed inset-0 z-50 flex flex-col bg-[#120f0d]">

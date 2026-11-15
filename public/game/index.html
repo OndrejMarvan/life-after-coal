@@ -75,6 +75,8 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; ima
 .toast.bad { border-color: var(--blood); color: #ffb7a6; }
 .toast.good { border-color: var(--gold); color: var(--gold); }
 .prompt { position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%); background: var(--ember); color: #1a0f07; border: 0; border-radius: 6px; padding: 8px 14px; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,.5); }
+/* in the museum the hall is at the bottom of the view, so the prompt moves up onto the rock */
+.prompt.raised { bottom: auto; top: 30%; }
 .prompt kbd { background: rgba(0,0,0,.2); border-radius: 4px; padding: 1px 6px; margin-right: 6px; font: 600 12px var(--body); }
 
 .overlay { position: absolute; inset: 0; background: rgba(12,10,9,.88); overflow-y: auto; display: flex; padding: 16px; }
@@ -82,6 +84,7 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; ima
 .card { margin: auto; width: 100%; max-width: 520px; }
 .card h2 { margin: 0 0 4px; font: 700 clamp(22px, 5vw, 30px)/1.15 var(--display); letter-spacing: .05em; text-wrap: balance; }
 .card p { margin: 0 0 12px; color: var(--muted); }
+.card .pass { color: var(--gold); font-size: 13px; }
 .card .tag { color: var(--ice); font: 500 13px var(--display); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
 .field { display: grid; gap: 4px; margin: 14px 0; }
 .field label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
@@ -168,7 +171,7 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; ima
   <div class="stage" id="stage">
     <canvas id="c" width="640" height="520" data-ia="mine" aria-label="The mine"></canvas>
     <div class="toast" id="toast" role="status"></div>
-    <button class="prompt" id="prompt" type="button" hidden><kbd>E</kbd><span data-i="enterHall">Enter the Miners’ Hall</span></button>
+    <button class="prompt" id="prompt" type="button" hidden></button>
 
     <div class="overlay" id="start">
       <div class="card">
@@ -184,6 +187,7 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; ima
     </div>
 
     <div class="overlay" id="shop" hidden></div>
+    <div class="overlay" id="info" hidden></div>
 
     <div class="overlay" id="end" hidden>
       <div class="card">
@@ -203,7 +207,7 @@ canvas { display: block; width: 100%; height: auto; aspect-ratio: 640 / 520; ima
       <button class="d" data-dir="down" data-ia="down" aria-label="Down">&#9660;</button>
     </div>
     <div class="acts">
-      <button id="tShop" type="button" data-i="hall">Miners’ Hall</button>
+      <button id="tShop" type="button" data-i="use">Use</button>
       <button id="tRaven" type="button" data-i="raven">Cage</button>
     </div>
   </div>
@@ -356,10 +360,84 @@ const LANG = (() => {
 })();
 const L = I18N[LANG];
 
+/* ---------- museum texts ----------
+   The 12 plaques reuse the "Did you know?" facts from the site (src/data/facts.ts), in the same order as FACT_IDS. */
+const FACT_IDS = ["landek", "ostrava-1763", "one-basin", "greeting", "barbara", "chains", "michal", "nikiszowiec", "prezydent", "adit", "tarnowskie", "carbide"];
+const FACTS = {"landek": {"en": "Ice Age mammoth hunters burned coal on Landek hill in Ostrava. The finds from their hearths are considered the oldest known evidence of people using black coal.", "cs": "Lovci mamutů z doby ledové pálili uhlí na vrchu Landek v Ostravě. Nálezy z jejich ohnišť jsou považovány za nejstarší známý doklad toho, že lidé používali černé uhlí.", "pl": "Łowcy mamutów z epoki lodowcowej palili węgiel na wzgórzu Landek w Ostrawie. Znaleziska z ich palenisk uznaje się za najstarszy znany dowód używania węgla kamiennego przez ludzi."}, "ostrava-1763": {"en": "Ostrava's coal era began in 1763, when coal was found in the Burňa valley in today's Slezská Ostrava. Mining in the Ostrava-Karviná basin ended on 31 January 2026 at the ČSM mine in Stonava, more than 260 years later.", "cs": "Uhelná éra Ostravska začala v roce 1763 nálezem uhlí v údolí Burňa v dnešní Slezské Ostravě. Těžba v ostravsko-karvinském revíru skončila 31. 1. 2026 na Dole ČSM ve Stonavě, o více než 260 let později.", "pl": "Węglowa epoka Ostrawy zaczęła się w 1763 r., gdy znaleziono węgiel w dolinie Burňa w dzisiejszej Śląskiej Ostrawie. Wydobycie w zagłębiu ostrawsko-karwińskim zakończyło się 31.01.2026 w kopalni ČSM w Stonawie, ponad 260 lat później."}, "one-basin": {"en": "The Upper Silesian Coal Basin crosses the border. About five-sixths of it lies in Poland and one-sixth in Czechia, where it is called the Ostrava-Karviná basin.", "cs": "Hornoslezská uhelná pánev leží na obou stranách hranice. Asi pět šestin je v Polsku a jedna šestina v Česku, kde se jí říká ostravsko-karvinský revír.", "pl": "Górnośląskie Zagłębie Węglowe leży po obu stronach granicy. Ok. pięć szóstych znajduje się w Polsce, a jedna szósta w Czechach, gdzie nazywa się je zagłębiem ostrawsko-karwińskim."}, "greeting": {"en": "Miners greet each other with \"Zdař Bůh\" in Czech, \"Szczęść Boże\" in Polish and \"Glück auf\" in German. The German greeting wishes good luck, and is often read as a wish to come back up safely.", "cs": "Horníci se zdraví „Zdař Bůh“, polsky „Szczęść Boże“ a německy „Glück auf“. Německý pozdrav přeje štěstí a často se vykládá jako přání šťastného návratu nahoru.", "pl": "Górnicy pozdrawiają się „Szczęść Boże”, po czesku „Zdař Bůh”, a po niemiecku „Glück auf”. Niemieckie pozdrowienie życzy szczęścia i często rozumie się je jako życzenie bezpiecznego powrotu na powierzchnię."}, "barbara": {"en": "4 December, St Barbara's Day, is the miners' holiday: Barborka in Czechia, Barbórka in Poland. In Polish mining towns the day starts with a mass and a parade of miners' brass bands in dress uniforms with plumed hats.", "cs": "4. prosince, na svátek svaté Barbory, slaví horníci svůj den: v Česku Barborku, v Polsku Barbórku. V polských hornických městech začíná mší a průvodem hornických dechovek ve slavnostních uniformách s chocholy.", "pl": "4 grudnia, w dzień św. Barbary, górnicy obchodzą swoje święto: w Polsce Barbórkę, w Czechach Barborkę. W górniczych miastach dzień zaczyna się mszą i przemarszem orkiestr górniczych w galowych mundurach z czakami z pióropuszem."}, "chains": {"en": "In the miners' changing room, work clothes hung on hooks that were pulled up to the ceiling on chains to dry until the next shift. A chain room like this can still be seen at Michal Mine in Ostrava.", "cs": "V hornických šatnách visely pracovní oděvy na háčcích, které se na řetízcích vytahovaly ke stropu, aby do další směny uschly. Takovou řetízkovou šatnu dodnes uvidíte na Dole Michal v Ostravě.", "pl": "W górniczej łaźni ubrania robocze wisiały na hakach podciąganych na łańcuszkach pod sufit, gdzie schły do następnej zmiany. Taką łaźnię łańcuszkową można do dziś zobaczyć w kopalni Michal w Ostrawie."}, "michal": {"en": "Michal Mine in Ostrava closed in the early 1990s and was declared a national cultural monument in 1995. Visitors can walk the miners' route through the changing rooms, the lamp room and the machine hall.", "cs": "Důl Michal v Ostravě skončil na začátku 90. let a v roce 1995 byl prohlášen národní kulturní památkou. Návštěvníci mohou projít cestu horníků přes šatny, lampovnu a strojovnu.", "pl": "Kopalnia Michal w Ostrawie zakończyła pracę na początku lat 90., a w 1995 r. ogłoszono ją narodowym zabytkiem kultury. Zwiedzający mogą przejść drogą górników przez łaźnię, lampownię i maszynownię."}, "nikiszowiec": {"en": "Nikiszowiec in Katowice was built from 1908 for the miners of the Giesche company: red-brick blocks around courtyards, with their own church. Since 2011 it has been one of Poland's Historic Monuments.", "cs": "Nikiszowiec v Katovicích vznikal od roku 1908 pro horníky firmy Giesche: bloky z červených cihel kolem dvorů s vlastním kostelem. Od roku 2011 patří mezi polské Historické památky (Pomnik historii).", "pl": "Nikiszowiec w Katowicach powstawał od 1908 r. dla górników spółki Giesche: bloki z czerwonej cegły wokół podwórek, z własnym kościołem. Od 2011 r. jest Pomnikiem Historii."}, "prezydent": {"en": "The Prezydent shaft headframe in Chorzów, built in 1933, is a 42-metre reinforced-concrete tower, one of the most modern in Europe at the time. Coal was mined there until 1993.", "cs": "Těžní věž jámy Prezydent v Chořově z roku 1933 je 42 metrů vysoká železobetonová stavba, ve své době jedna z nejmodernějších v Evropě. Uhlí se tu těžilo do roku 1993.", "pl": "Wieża wyciągowa szybu Prezydent w Chorzowie z 1933 r. to żelbetowa budowla o wysokości 42 m, w swoim czasie jedna z najnowocześniejszych w Europie. Węgiel wydobywano tu do 1993 r."}, "adit": {"en": "Under Zabrze and Chorzów runs a drainage adit over 14 km long, dug between 1799 and 1863, the longest in European coal mining. Today you can ride a boat through part of it at the Queen Louise Adit in Zabrze.", "cs": "Pod Zabrzem a Chořovem vede přes 14 km dlouhá odvodňovací štola, ražená v letech 1799–1863, nejdelší v evropském uhelném hornictví. Část z ní dnes můžete projet lodí ve štole Královna Luisa v Zabrze.", "pl": "Pod Zabrzem i Chorzowem biegnie ponad 14-kilometrowa sztolnia odwadniająca, drążona w latach 1799–1863, najdłuższa w europejskim górnictwie węglowym. Dziś jej część można przepłynąć łodzią w Sztolni Królowa Luiza w Zabrzu."}, "tarnowskie": {"en": "The historic lead-silver-zinc mine in Tarnowskie Góry and its underground water system have been on the UNESCO World Heritage List since 2017.", "cs": "Historický důl na olovo, stříbro a zinek v Tarnowských Horách a jeho podzemní vodní systém jsou od roku 2017 na Seznamu světového dědictví UNESCO.", "pl": "Zabytkowa kopalnia rud ołowiu, srebra i cynku w Tarnowskich Górach wraz z podziemnym systemem gospodarowania wodą jest od 2017 r. na Liście światowego dziedzictwa UNESCO."}, "carbide": {"en": "Carbide lamps made light from acetylene gas: water dripped onto calcium carbide. An open flame is dangerous in gassy coal mines, so miners there used enclosed safety lamps until electric cap lamps took over.", "cs": "Karbidové lampy svítily acetylenem: na karbid vápníku kapala voda. Otevřený plamen je v plynujících uhelných dolech nebezpečný, a tak se v nich používaly uzavřené bezpečnostní kahany, dokud je nenahradily elektrické svítilny na přilbě.", "pl": "Lampy karbidowe świeciły acetylenem: na karbid wapnia kapała woda. Otwarty płomień jest niebezpieczny w gazowych kopalniach węgla, dlatego używano tam zamkniętych lamp bezpieczeństwa, aż zastąpiły je elektryczne lampy nahełmne."}};
+const MUSEUM_TEXT = {
+  en: {
+    use: 'Use', liftDown: 'Ride down to the museum', liftUp: 'Ride up',
+    liftLocked: 'The cage is idle. Buy the old mine and it will take you down to a museum.',
+    liftReady: 'The cage on the left now goes down to the museum.',
+    museumHello: 'Welcome to the museum! Look at the exhibits (E) and drop by the café.',
+    useLift: 'The cage runs from here: stand by the shaft on the left and press E.',
+    hallWhere: 'The Miners’ Hall is on the surface, on the right.',
+    exhibitTag: (n, t) => 'Exhibit ' + n + ' of ' + t, close: 'Back',
+    cafe: 'Café', cafeSub: 'Local food', yum: 'Yum!', ate: n => 'Tasted: ' + n + '.',
+    stamp: (n, t) => 'Passport stamp ' + n + '/' + t + '.', pass: 'Passport',
+    passTag: 'Passport full', passH: 'Life after coal',
+    passP: 'You have seen every exhibit and tasted all the food. The mines are closing, but the people stay. Did someone in your family work in a mine? See what support you can get.',
+    passBtn: 'Check what support you can get', passStay: 'Stay in the museum',
+    museumSign: 'MUSEUM', cafeSign: 'CAFÉ',
+    exNames: ['Mammoth tusk', 'Ostrava’s coal era', 'One basin, two countries', 'The miners’ greeting', 'St Barbara', 'Chain changing room', 'Michal Mine', 'Nikiszowiec', 'Prezydent headframe', 'Drainage adit', 'Tarnowskie Góry', 'Carbide lamp'],
+    foods: ['Kyselica soup', 'Krupniok', 'Kołocz cake', 'Raspberry soda'],
+    foodDesc: ['Sour cabbage soup with sausage and egg.', 'Silesian blood sausage with groats, fried with onion.', 'Silesian cake with cheese, poppy seeds and crumble.', 'Red fizzy lemonade, like in the old days.'],
+    kidLines: ['Mum, a canary!', 'I want a helmet too!', 'Where is the mammoth?', 'Can we ride the cage again?'],
+    adultLines: ['Grandad worked down here for thirty years.', 'We still have a carbide lamp in the attic.', 'Our mine had a chain room like that.', 'Kyselica in the café after this?', 'Glück auf!'],
+    guideLines: ['Glück auf, welcome to the mine!', 'Miners worked here for over a hundred years.', 'Mind your head, the roadway is low.', 'On St Barbara’s Day the whole town comes here.'],
+    endText: (m, d) => 'You earned ' + m + ' in total and went ' + d + ' m below the snow. The headframe stays, and the mine becomes a museum. Take the cage on the left down to visit it, or keep digging.',
+  },
+  cs: {
+    use: 'Akce', liftDown: 'Sjet do muzea', liftUp: 'Vyjet nahoru',
+    liftLocked: 'Klec stojí. Kup starý důl a klec tě sveze do muzea.',
+    liftReady: 'Klec vlevo teď sjíždí do muzea.',
+    museumHello: 'Vítej v muzeu! Prohlédni si exponáty (E) a zajdi na bufet.',
+    useLift: 'Odsud jezdí klec: stoupni si vlevo k šachtě a zmáčkni E.',
+    hallWhere: 'Cechovna je na povrchu, vpravo.',
+    exhibitTag: (n, t) => 'Exponát ' + n + ' z ' + t, close: 'Zpět',
+    cafe: 'Bufet', cafeSub: 'Místní dobroty', yum: 'Mňam!', ate: n => 'Ochutnáno: ' + n + '.',
+    stamp: (n, t) => 'Razítko do pasu ' + n + '/' + t + '.', pass: 'Pas',
+    passTag: 'Pas je plný', passH: 'Život po uhlí',
+    passP: 'Všechny exponáty prohlédnuté, všechny dobroty ochutnané. Doly se zavírají, ale lidé zůstávají. Pracoval někdo z tvé rodiny v dole? Zjisti, na jakou podporu máte nárok.',
+    passBtn: 'Zjistit, na co máme nárok', passStay: 'Zůstat v muzeu',
+    museumSign: 'MUZEUM', cafeSign: 'BUFET',
+    exNames: ['Mamutí kel', 'Uhelná éra Ostravska', 'Jedna pánev, dvě země', 'Hornický pozdrav', 'Svatá Barbora', 'Řetízková šatna', 'Důl Michal', 'Nikiszowiec', 'Těžní věž Prezydent', 'Dědičná štola', 'Tarnowskie Góry', 'Karbidka'],
+    foods: ['Kyselica', 'Vuřt s cibulí', 'Slezský koláč', 'Malinovka'],
+    foodDesc: ['Kyselá zelňačka s klobásou a vajíčkem.', 'Hornická svačina: vuřt, cibule a chleba.', 'S tvarohem, mákem a drobenkou.', 'Červená limonáda jako za starých časů.'],
+    kidLines: ['Mami, kanárek!', 'Já chci taky helmu!', 'Kde je ten mamut?', 'Pojedem klecí ještě jednou?'],
+    adultLines: ['Tady děda fáral třicet let.', 'Karbidku máme doma na půdě.', 'Takovou šatnu měli i u nás na dole.', 'Dáme si pak kyselicu?', 'Zdař Bůh!'],
+    guideLines: ['Zdař Bůh, vítejte v dole!', 'Fáralo se tu přes sto let.', 'Pozor na hlavu, chodba je nízká.', 'Na Barborku sem chodí celé město.'],
+    endText: (m, d) => 'Celkový výdělek ' + m + ', nejhlubší místo ' + d + ' m pod sněhem. Těžní věž zůstává a z dolu je muzeum. Sjeď klecí vlevo dolů a prohlédni si ho, nebo kopej dál.',
+  },
+  pl: {
+    use: 'Akcja', liftDown: 'Zjedź do muzeum', liftUp: 'Wyjedź na górę',
+    liftLocked: 'Szola stoi. Kup starą kopalnię, a szola zawiezie cię do muzeum.',
+    liftReady: 'Szola po lewej zjeżdża teraz do muzeum.',
+    museumHello: 'Witamy w muzeum! Obejrzyj eksponaty (E) i zajrzyj do bufetu.',
+    useLift: 'Stąd jeździ szola: stań po lewej przy szybie i naciśnij E.',
+    hallWhere: 'Cechownia jest na powierzchni, po prawej.',
+    exhibitTag: (n, t) => 'Eksponat ' + n + ' z ' + t, close: 'Wróć',
+    cafe: 'Bufet', cafeSub: 'Lokalne przysmaki', yum: 'Pycha!', ate: n => 'Spróbowane: ' + n + '.',
+    stamp: (n, t) => 'Pieczątka w paszporcie ' + n + '/' + t + '.', pass: 'Paszport',
+    passTag: 'Paszport pełny', passH: 'Życie po węglu',
+    passP: 'Wszystkie eksponaty obejrzane, wszystkie przysmaki spróbowane. Kopalnie się zamykają, ale ludzie zostają. Czy ktoś z twojej rodziny pracował w kopalni? Sprawdź, jakie wsparcie wam przysługuje.',
+    passBtn: 'Sprawdź, co wam przysługuje', passStay: 'Zostań w muzeum',
+    museumSign: 'MUZEUM', cafeSign: 'BUFET',
+    exNames: ['Cios mamuta', 'Węglowa epoka Ostrawy', 'Jedno zagłębie, dwa kraje', 'Górnicze pozdrowienie', 'Święta Barbara', 'Łaźnia łańcuszkowa', 'Kopalnia Michal', 'Nikiszowiec', 'Wieża szybu Prezydent', 'Sztolnia Dziedziczna', 'Tarnowskie Góry', 'Karbidówka'],
+    foods: ['Krupniok', 'Rolada z kluskami', 'Kołocz śląski', 'Oranżada'],
+    foodDesc: ['Śląska kaszanka z kaszą, podsmażona z cebulą.', 'Rolada wołowa, kluski śląskie i modra kapusta.', 'Placek z serem, makiem i kruszonką.', 'Słodka oranżada jak za dawnych lat.'],
+    kidLines: ['Mamo, kanarek!', 'Też chcę taki kask!', 'Gdzie jest ten mamut?', 'Zjedziemy szolą jeszcze raz?'],
+    adultLines: ['Tu dziadek fedrował trzydzieści lat.', 'Karbidówkę mamy jeszcze na strychu.', 'U nas na kopalni też była taka łaźnia.', 'Zjemy potem krupnioka?', 'Szczęść Boże!'],
+    guideLines: ['Szczęść Boże, witamy w kopalni!', 'Fedrowało się tu ponad sto lat.', 'Uwaga na głowę, chodnik jest niski.', 'Na Barbórkę przychodzi tu całe miasto.'],
+    endText: (m, d) => 'Łączny zarobek: ' + m + ', największa głębokość: ' + d + ' m pod śniegiem. Wieża szybowa zostaje, a kopalnia staje się muzeum. Zjedź szolą po lewej i je zwiedź albo kop dalej.',
+  },
+};
+Object.assign(L, MUSEUM_TEXT[LANG]);
+
 /* ---------- constants ---------- */
 const T = 40, COLS = 16, VROWS = 13, W = COLS * T, H = VROWS * T;
 const ROWS = 160, SURF = 3;               // rows 0-2 are sky, row 3 is the first dirt
-const AIR = 0, DIRT = 1, STONE = 2, LAVA = 3, CHEST = 4, BEDROCK = 5, ORE0 = 10;
+const AIR = 0, DIRT = 1, STONE = 2, LAVA = 3, CHEST = 4, BEDROCK = 5, SHAFT = 6, ORE0 = 10;
 const SAVE_KEY = 'lac:game:save', MUTE_KEY = 'lac:game:mute';
 const THRONE_COST = 30000;
 
@@ -405,7 +483,7 @@ const dirStack = [];
 const DIRS = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
 
 function freshSave(house) {
-  return { house: house || L.defHouse, money: 0, total: 0, deepest: 0, ravens: 0, won: false, lv: { pick: 0, pack: 0, sta: 0, lamp: 0, boots: 0 } };
+  return { house: house || L.defHouse, money: 0, total: 0, deepest: 0, ravens: 0, won: false, pass: { ex: [], food: [] }, passDone: false, lv: { pick: 0, pack: 0, sta: 0, lamp: 0, boots: 0 } };
 }
 function loadSave() { try { const j = JSON.parse(localStorage.getItem(SAVE_KEY)); if (j && j.lv) return Object.assign(freshSave(), j, { lv: Object.assign(freshSave().lv, j.lv) }); } catch (e) {} return null; }
 function save() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(S)); } catch (e) {} }
@@ -441,6 +519,7 @@ function genWorld() {
   for (let r = SURF + 34; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .011) cluster(c, r, LAVA, 1 + Math.floor(Math.random() * 3));
   for (let r = SURF + 8; r < ROWS - 1; r++) for (let c = 0; c < COLS; c++) if (Math.random() < .0045 && solid(r * COLS + c)) grid[r * COLS + c] = CHEST;
   for (let c = 0; c < COLS; c++) seen[SURF * COLS + c] = 1;
+  if (S && S.won) { cutShaft(); if (!visitors.length) makeVisitors(); } else visitors = [];
   snow = Array.from({ length: 36 }, () => ({ x: Math.random() * W, y: Math.random() * SURF * T, v: 8 + Math.random() * 14, s: 1 + Math.random() * 1.6, p: Math.random() * 6 }));
 }
 function resetPlayer(keepCargo) {
@@ -526,6 +605,8 @@ function collapse() {
 }
 function sendRaven() {
   if (paused) return;
+  if (ride) return;
+  if (inMuseum()) return say(L.useLift);
   if (P.y <= 2) return say(L.home);
   if (S.ravens < 1) { sfx.nope(); return say(L.noRides, 'bad'); }
   S.ravens--; save(); P.y = 2; P.py = 2; P.dig = null; sfx.raven();
@@ -543,6 +624,7 @@ function update(dt) {
   const k = 1 - Math.exp(-dt * 22);
   P.px += (P.x - P.px) * k; P.py += (P.y - P.py) * k;
   reveal();
+  if (inMuseum()) { P.dig = null; updateMuseum(); return; }
   if (P.y <= 2 && P.stamina < maxSta()) P.stamina = Math.min(maxSta(), P.stamina + dt * 90);
   if (P.y > 2) { P.stamina -= dt * .6; if (P.stamina <= 0) { collapse(); return; } }
   const d = dirStack[dirStack.length - 1];
@@ -562,6 +644,7 @@ function update(dt) {
   }
   if (id === LAVA) { burn(); return; }
   if (id === BEDROCK) { if (bedT <= 0) { say(L.bedrock); bedT = 2; } return; }
+  if (id === SHAFT) { P.dig = null; return; }
   if (!P.dig || P.dig.x !== tx || P.dig.y !== ty) P.dig = { x: tx, y: ty, prog: 0, chip: 0 };
   const need = hardness(id, ty);
   P.dig.prog += dt * power(); P.dig.chip += dt; P.swing += dt;
@@ -570,7 +653,7 @@ function update(dt) {
 }
 
 /* ---------- shop ---------- */
-const nearShop = () => started && P.y <= 2 && P.x >= 1 && P.x <= 4;
+const nearShop = () => started && !ride && P.y <= 2 && P.x >= 11 && P.x <= 14;
 function openShop() {
   if (!nearShop() || paused) return;
   paused = true; dirStack.length = 0; renderShop(); $('shop').hidden = false; $('prompt').hidden = true;
@@ -608,7 +691,7 @@ $('shop').addEventListener('click', e => {
     if (S.money >= RAVEN_COST) { S.money -= RAVEN_COST; S.ravens++; sfx.buy(); save(); }
   } else if (b.hasAttribute('data-throne')) {
     if (S.money >= THRONE_COST) {
-      S.money -= THRONE_COST; S.won = true; save(); sfx.sell();
+      S.money -= THRONE_COST; S.won = true; save(); sfx.sell(); cutShaft(); makeVisitors();
       $('shop').hidden = true;
       $('endTitle').textContent = L.endTitle(S.house);
       $('endText').textContent = L.endText(fmt(S.total), S.deepest);
@@ -617,7 +700,7 @@ $('shop').addEventListener('click', e => {
   }
   renderShop();
 });
-$('keep').onclick = () => { $('end').hidden = true; paused = false; };
+$('keep').onclick = () => { $('end').hidden = true; paused = false; say(L.liftReady, 'good'); };
 
 /* ---------- input ---------- */
 const KEYMAP = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', w: 'up', s: 'down', a: 'left', d: 'right', W: 'up', S: 'down', A: 'left', D: 'right' };
@@ -628,9 +711,10 @@ addEventListener('keydown', e => {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   if (e.key in KEYMAP) { e.preventDefault(); audioInit(); if (!paused) press(KEYMAP[e.key]); return; }
   const k = e.key.toLowerCase();
-  if (k === 'e') { audioInit(); if ($('shop').hidden) openShop(); else closeShop(); }
+  if (k === 'e') { audioInit(); if (!$('shop').hidden) closeShop(); else if (!$('info').hidden) closeInfo(); else interact(); }
   else if (k === 'escape') {
     if (!$('shop').hidden) closeShop();
+    else if (!$('info').hidden) closeInfo();
     // Inside the site's overlay: Esc closes the game, like any dialog.
     else if (parent !== window) { if (started) save(); parent.postMessage({ lacGame: 'close' }, location.origin); }
   }
@@ -644,9 +728,9 @@ document.querySelectorAll('[data-dir]').forEach(b => {
   b.addEventListener('pointerdown', e => { e.preventDefault(); audioInit(); b.setPointerCapture(e.pointerId); if (!paused) press(d); });
   ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(ev => b.addEventListener(ev, () => release(d)));
 });
-$('tShop').onclick = () => { audioInit(); if (nearShop()) openShop(); else say(L.hallWhere); };
+$('tShop').onclick = () => { audioInit(); interact(); };
 $('tRaven').onclick = () => { audioInit(); sendRaven(); };
-$('prompt').onclick = () => { audioInit(); openShop(); };
+$('prompt').onclick = () => { audioInit(); interact(); };
 $('mute').onclick = () => { muted = !muted; try { localStorage.setItem(MUTE_KEY, muted ? '1' : '0'); } catch (er) {} syncMute(); };
 
 /* ---------- rendering ---------- */
@@ -660,6 +744,12 @@ function drawTile(id, c, r, sx, sy) {
     ctx.fillStyle = '#6e160a'; ctx.fillRect(sx, sy, T, T);
     ctx.fillStyle = `hsl(${14 + f * 14},95%,${42 + f * 12}%)`; ctx.fillRect(sx + 3, sy + 3, T - 6, T - 6);
     ctx.fillStyle = '#ffd36a'; ctx.fillRect(sx + 8 + f * 8, sy + 10, 8, 5); ctx.fillRect(sx + 22 - f * 6, sy + 24, 7, 5);
+    return;
+  }
+  if (id === SHAFT) {
+    ctx.fillStyle = '#0c0a09'; ctx.fillRect(sx, sy, T, T);
+    ctx.fillStyle = '#4a4038'; ctx.fillRect(sx + 2, sy, 3, T); ctx.fillRect(sx + T - 5, sy, 3, T);
+    if (r % 3 === 0) { ctx.fillStyle = '#2a231d'; ctx.fillRect(sx, sy + 18, T, 4); }
     return;
   }
   if (id === BEDROCK) { ctx.fillStyle = '#0d0b0c'; ctx.fillRect(sx, sy, T, T); ctx.fillStyle = '#1b1719'; ctx.fillRect(sx + 4, sy + 6, 14, 8); ctx.fillRect(sx + 20, sy + 22, 14, 9); return; }
@@ -699,8 +789,10 @@ function drawSky(dt) {
   };
   peaks([[0, 80], [70, 40], [140, 74], [230, 30], [310, 78], [390, 44], [470, 82], [560, 36], [640, 70]], '#2a2f42', true);
   peaks([[0, 104], [90, 78], [170, 100], [260, 74], [350, 102], [440, 84], [540, 104], [640, 86]], '#1d2230', false);
-  // pit-head skyline: headframe with a turning winding wheel, engine house, chimney, a row of familoki
-  const ink = '#151a26';
+  // pit-head skyline on the left: the headframe stands over the shaft in column 0, then the engine house,
+  // a chimney and familoki. The Miners' Hall is on the right.
+  ctx.save(); ctx.translate(-456, 0);
+  const ink = '#232a3a';
   ctx.strokeStyle = ink; ctx.fillStyle = ink; ctx.lineCap = 'round';
   const legL = y => 456 + (120 - y) / 76 * 14, legR = y => 492 - (120 - y) / 76 * 10;
   ctx.lineWidth = 4; ctx.beginPath(); ctx.moveTo(456, 120); ctx.lineTo(470, 44); ctx.moveTo(492, 120); ctx.lineTo(482, 44); ctx.moveTo(524, 120); ctx.lineTo(482, 50); ctx.stroke();
@@ -715,8 +807,11 @@ function drawSky(dt) {
   ctx.fillRect(528, 92, 44, 28); ctx.beginPath(); ctx.moveTo(524, 93); ctx.lineTo(550, 78); ctx.lineTo(576, 93); ctx.closePath(); ctx.fill();
   ctx.beginPath(); ctx.moveTo(586, 120); ctx.lineTo(589, 28); ctx.lineTo(597, 28); ctx.lineTo(600, 120); ctx.closePath(); ctx.fill(); ctx.fillRect(587, 26, 12, 4);
   ctx.fillRect(606, 98, 34, 22); ctx.beginPath(); ctx.moveTo(603, 99); ctx.lineTo(623, 88); ctx.lineTo(643, 99); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = '#ffcf7a'; ctx.fillRect(536, 100, 4, 6); ctx.fillRect(560, 100, 4, 6); ctx.fillRect(612, 104, 4, 5); ctx.fillRect(630, 104, 4, 5);
-  // Miners' Hall
+  ctx.fillStyle = ink; ctx.fillRect(676, 100, 34, 20); ctx.beginPath(); ctx.moveTo(673, 101); ctx.lineTo(693, 90); ctx.lineTo(713, 101); ctx.closePath(); ctx.fill();
+  ctx.fillStyle = '#ffcf7a'; ctx.fillRect(536, 100, 4, 6); ctx.fillRect(560, 100, 4, 6); ctx.fillRect(612, 104, 4, 5); ctx.fillRect(630, 104, 4, 5); ctx.fillRect(684, 106, 4, 5);
+  ctx.restore();
+  // Miners' Hall (cols 11-14)
+  ctx.save(); ctx.translate(398, 0);
   ctx.fillStyle = '#3d342d'; ctx.fillRect(36, 58, 170, 62);
   ctx.fillStyle = '#2f2823'; for (let i = 0; i < 6; i++) ctx.fillRect(36 + i * 28, 58, 3, 62);
   ctx.fillStyle = '#1b1613'; ctx.beginPath(); ctx.moveTo(26, 62); ctx.lineTo(121, 20); ctx.lineTo(216, 62); ctx.closePath(); ctx.fill();
@@ -729,6 +824,7 @@ function drawSky(dt) {
   ctx.fillRect(180, 66, 14, 34); ctx.beginPath(); ctx.moveTo(180, 100); ctx.lineTo(187, 94); ctx.lineTo(194, 100); ctx.fill();
   const fl = .6 + Math.sin(clock * 9) * .15;
   ctx.fillStyle = `rgba(255,190,100,${fl})`; ctx.fillRect(78, 92, 5, 8); ctx.fillRect(159, 92, 5, 8);
+  ctx.restore();
   // snow
   ctx.fillStyle = '#eaf1f5';
   for (const f of snow) { f.y += f.v * dt; f.x += Math.sin(clock + f.p) * 8 * dt; if (f.y > SURF * T) { f.y = -4; f.x = Math.random() * W; } ctx.fillRect(f.x, f.y, f.s, f.s); }
@@ -754,8 +850,8 @@ function drawMiner(x, y) {
 
 function render(dt) {
   clock += dt;
-  const target = clamp(P.py * T + T / 2 - H / 2, 0, ROWS * T - H);
-  camY += (target - camY) * (1 - Math.exp(-dt * 10));
+  const target = clamp(P.py * T + T / 2 - H / 2, 0, (S.won ? WORLD_ROWS : ROWS) * T - H);
+  camY = ride ? target : camY + (target - camY) * (1 - Math.exp(-dt * 10));   // the camera rides with the cage
   const shx = shake > 0 ? (Math.random() - .5) * 8 * shake : 0, shy = shake > 0 ? (Math.random() - .5) * 8 * shake : 0;
   shake = Math.max(0, shake - dt);
   ctx.save(); ctx.translate(Math.round(shx), Math.round(shy - camY));
@@ -767,7 +863,7 @@ function render(dt) {
     const light = r <= SURF ? 1 : clamp((R + .4 - dist) / 1.6, 0, 1);
     if (!seen[i] && light <= 0) { ctx.fillStyle = '#050403'; ctx.fillRect(sx, sy, T, T); continue; }
     drawTile(grid[i], c, r, sx, sy);
-    if (r === SURF && grid[i] !== AIR) { ctx.fillStyle = '#eaf1f5'; ctx.fillRect(sx, sy, T, 5); ctx.fillStyle = '#b6c8d3'; ctx.fillRect(sx, sy + 5, T, 2); }
+    if (r === SURF && grid[i] !== AIR && grid[i] !== SHAFT) { ctx.fillStyle = '#eaf1f5'; ctx.fillRect(sx, sy, T, 5); ctx.fillStyle = '#b6c8d3'; ctx.fillRect(sx, sy + 5, T, 2); }
     const a = seen[i] ? .66 * (1 - light) : 1 - light;
     if (a > 0) { ctx.fillStyle = `rgba(6,5,4,${a})`; ctx.fillRect(sx, sy, T, T); }
   }
@@ -778,10 +874,12 @@ function render(dt) {
     ctx.fillStyle = '#ee8a3c'; ctx.fillRect(P.dig.x * T + 5, P.dig.y * T + T - 8, (T - 10) * f, 3);
     ctx.fillStyle = `rgba(0,0,0,${f * .45})`; ctx.fillRect(P.dig.x * T, P.dig.y * T, T, T);
   }
+  if (S.won && camY + H > MUS_TOP * T) drawMuseum();
   drawMiner(P.px * T, P.py * T);
+  if (S.won) drawCage(ride ? P.py * T : inMuseum() ? MUS_ROW * T : 2 * T);
   // lamp glow around the miner
   const gx = P.px * T + T / 2, gy = P.py * T + T / 2;
-  if (P.y > 2) { const g = ctx.createRadialGradient(gx, gy, 6, gx, gy, R * T); g.addColorStop(0, 'rgba(255,190,110,.16)'); g.addColorStop(1, 'rgba(255,190,110,0)'); ctx.fillStyle = g; ctx.fillRect(gx - R * T, gy - R * T, R * T * 2, R * T * 2); }
+  if (P.y > 2 && !inMuseum()) { const g = ctx.createRadialGradient(gx, gy, 6, gx, gy, R * T); g.addColorStop(0, 'rgba(255,190,110,.16)'); g.addColorStop(1, 'rgba(255,190,110,0)'); ctx.fillStyle = g; ctx.fillRect(gx - R * T, gy - R * T, R * T * 2, R * T * 2); }
   for (let i = parts.length - 1; i >= 0; i--) {
     const p = parts[i]; p.life -= dt; if (p.life <= 0) { parts.splice(i, 1); continue; }
     p.vy += 240 * dt; p.x += p.vx * dt; p.y += p.vy * dt; ctx.fillStyle = p.col; ctx.fillRect(Math.round(p.x), Math.round(p.y), 3, 3);
@@ -792,8 +890,274 @@ function render(dt) {
     f.y -= 26 * dt; ctx.globalAlpha = Math.min(1, f.life * 2); ctx.fillStyle = '#000'; ctx.fillText(f.text, f.x + 1, f.y + 1); ctx.fillStyle = f.col; ctx.fillText(f.text, f.x, f.y); ctx.globalAlpha = 1;
   }
   ctx.restore();
+  if (S.won && inMuseum() && !ride) passBadge();
   if (flash > 0) { ctx.globalAlpha = Math.min(1, flash) * .55; ctx.fillStyle = flashCol; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; flash -= dt * 1.4; }
   if (P.stamina < maxSta() * .25 && P.y > 2) { ctx.globalAlpha = .12 + Math.sin(clock * 7) * .08; ctx.fillStyle = '#c9492f'; ctx.fillRect(0, 0, W, H); ctx.globalAlpha = 1; }
+}
+
+
+/* ---------- museum ----------
+   Buying the old mine turns column 0 into a shaft with a cage. The cage goes down past the bedrock into a
+   museum hall: 12 exhibits with the site's mining facts, a café with local food, visitors walking around.
+   Seeing every exhibit and tasting every dish fills the passport, which ends with a link to the site's /check. */
+const MUS_TOP = ROWS, MUS_ROW = ROWS + 3, WORLD_ROWS = ROWS + 5;   // hall rows ROWS..ROWS+3, floor below
+const EX0 = 3, CAFE_X = 15, FOOD_PRICES = [35, 25, 20, 15];        // exhibits in columns 3-14, café in 15
+const PASS_TOTAL = FACT_IDS.length + FOOD_PRICES.length;
+let ride = null, visitors = [], talkT = 3, promptKey = '';
+const inMuseum = () => P.y >= ROWS;
+const nearLift = () => started && !ride && P.x <= 1 && (P.y <= 2 || inMuseum());
+const exhibitAt = () => inMuseum() && P.x >= EX0 && P.x < EX0 + FACT_IDS.length ? P.x - EX0 : -1;
+const nearCafe = () => inMuseum() && P.x === CAFE_X;
+const passCount = () => S.pass.ex.length + S.pass.food.length;
+sfx.bell = () => [0, .45, .9].forEach(d => { tone(1320, .5, 'triangle', .05, 0, d); tone(1980, .3, 'sine', .02, 0, d); });
+sfx.eat = () => [0, .14, .28].forEach(d => tone(260 + Math.random() * 90, .06, 'square', .03, 0, d));
+
+function cutShaft() { for (let r = SURF; r < ROWS; r++) { grid[r * COLS] = SHAFT; seen[r * COLS] = 1; } }
+
+function interact() {
+  if (!started || paused || ride) return;
+  if (nearShop()) return openShop();
+  if (nearLift()) {
+    if (!S.won) { sfx.nope(); return say(L.liftLocked, 'bad'); }
+    return startRide(!inMuseum());
+  }
+  const ex = exhibitAt();
+  if (ex >= 0) return openExhibit(ex);
+  if (nearCafe()) return openCafe();
+  if (!inMuseum()) say(L.hallWhere);
+}
+function promptHtml() {
+  if (!started || paused || ride) return '';
+  const k = '<kbd>E</kbd>';
+  if (nearShop()) return k + L.enterHall;
+  if (nearLift()) return k + (!S.won ? L.raven : inMuseum() ? L.liftUp : L.liftDown);
+  const ex = exhibitAt();
+  if (ex >= 0) return k + L.exNames[ex] + (S.pass.ex.includes(FACT_IDS[ex]) ? ' ✓' : '');
+  if (nearCafe()) return k + L.cafe;
+  return '';
+}
+
+/* the cage ride */
+function startRide(down) {
+  dirStack.length = 0; P.dig = null; P.x = 0; P.px = 0; P.face = 1;
+  ride = { from: P.py, to: down ? MUS_ROW : 2, t: 0, dur: 3.4, down };
+  sfx.bell(); tone(52, ride.dur, 'sawtooth', .02);
+}
+function updateRide(dt) {
+  ride.t += dt;
+  const k = clamp(ride.t / ride.dur, 0, 1), e = k < .5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+  P.py = ride.from + (ride.to - ride.from) * e; P.y = Math.round(P.py);
+  if (k < 1) return;
+  const down = ride.down; ride = null;
+  P.y = P.py = down ? MUS_ROW : 2; P.x = 1; P.cd = .25; P.stamina = maxSta();
+  tone(1320, .6, 'triangle', .05);
+  if (down) say(L.museumHello, 'good');
+}
+function updateMuseum() {
+  P.stamina = maxSta();
+  const d = dirStack[dirStack.length - 1];
+  if (!d || P.cd > 0) return;
+  const dx = DIRS[d][0]; if (!dx) return;
+  P.face = dx; P.dir = d;
+  if (P.x + dx >= 1 && P.x + dx < COLS) { P.x += dx; P.cd = stepT(); }
+}
+
+/* exhibits, café and the passport (all in the #info overlay) */
+function openInfo(html) { paused = true; dirStack.length = 0; $('info').innerHTML = html; $('info').hidden = false; $('prompt').hidden = true; }
+function closeInfo() { $('info').hidden = true; paused = false; save(); maybePassDone(); }
+function addStamp(kind, id) { if (S.pass[kind].includes(id)) return false; S.pass[kind].push(id); save(); return true; }
+function openExhibit(i) {
+  const id = FACT_IDS[i], isNew = addStamp('ex', id);
+  if (isNew) sfx.buy();
+  openInfo(`<div class="card"><div class="tag">${L.exhibitTag(i + 1, FACT_IDS.length)}</div><h2>${L.exNames[i]}</h2><p>${esc(FACTS[id][LANG])}</p>` +
+    `<p class="pass">${isNew ? '✓ ' : ''}${L.pass}: ${passCount()}/${PASS_TOTAL}</p><div class="row"><button class="btn" data-close>${L.close}</button></div></div>`);
+}
+function openCafe() {
+  let h = `<div class="shop"><div class="shop-head"><h2>${L.cafe}</h2><div class="cash">${fmt(S.money)}</div></div><div class="sect">${L.cafeSub}</div>`;
+  L.foods.forEach((f, i) => {
+    h += `<div class="up"><div><b>${f}</b>${S.pass.food.includes(i) ? ' ✓' : ''}</div><div class="d">${L.foodDesc[i]}</div>` +
+      `<button class="btn" data-eat="${i}" ${S.money >= FOOD_PRICES[i] ? '' : 'disabled'}>${fmt(FOOD_PRICES[i])}</button></div>`;
+  });
+  h += `<p class="pass">${L.pass}: ${passCount()}/${PASS_TOTAL}</p><div class="row"><button class="btn ghost" data-close>${L.close}</button></div></div>`;
+  openInfo(h);
+}
+function eat(i) {
+  if (S.money < FOOD_PRICES[i]) return;
+  S.money -= FOOD_PRICES[i];
+  const isNew = addStamp('food', i);
+  $('info').hidden = true; paused = false; save();
+  sfx.eat(); floatText(P.x * T + T / 2, P.y * T, L.yum, '#ffe08a'); burst(P.x * T + T / 2, P.y * T + 14, '#d9a066', 8, 40);
+  say(L.ate(L.foods[i]) + (isNew ? ' ' + L.stamp(passCount(), PASS_TOTAL) : ''), 'good');
+  setTimeout(maybePassDone, 1600);
+}
+function maybePassDone() {
+  if (S.passDone || passCount() < PASS_TOTAL || paused) return;
+  S.passDone = true; save(); sfx.sell();
+  openInfo(`<div class="card"><div class="tag">${L.passTag}</div><h2>${L.passH}</h2><p>${L.passP}</p>` +
+    `<div class="row"><button class="btn" data-check>${L.passBtn}</button><button class="btn ghost" data-close>${L.passStay}</button></div></div>`);
+}
+function goCheck() {
+  save();
+  if (parent !== window) parent.postMessage({ lacGame: 'goto', path: '/check' }, location.origin);
+  else location.href = '../check';
+}
+$('info').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || b.disabled) return;
+  if (b.hasAttribute('data-close')) closeInfo();
+  else if (b.dataset.eat !== undefined) eat(+b.dataset.eat);
+  else if (b.hasAttribute('data-check')) goCheck();
+});
+
+/* visitors: they walk, stop at exhibits and sometimes say something. You cannot talk to them. */
+function makeVisitors() {
+  const kinds = ['adult', 'kid', 'guide', 'adult', 'kid', 'adult'], shirts = ['#3a6ea5', '#c98a2b', '#15171c', '#9c3d54', '#7a8f3a', '#2f7f7a'];
+  visitors = kinds.map((kind, n) => ({ kind, shirt: shirts[n], x: 2.5 + n * 2.1, to: 2 + Math.random() * 12.5, v: kind === 'kid' ? 1.3 : .6 + Math.random() * .4, wait: Math.random() * 3, step: 0, say: '', sayT: 0 }));
+}
+function updateVisitors(dt) {
+  for (const v of visitors) {
+    if (v.sayT > 0) v.sayT -= dt;
+    if (v.wait > 0) { v.wait -= dt; continue; }
+    const d = v.to - v.x;
+    if (Math.abs(d) < .05) { v.wait = 1.5 + Math.random() * 4; v.to = 2 + Math.random() * 12.5; continue; }
+    v.x += Math.sign(d) * Math.min(Math.abs(d), v.v * dt); v.step += dt;
+  }
+  if (!inMuseum() || !visitors.length) return;
+  talkT -= dt;
+  if (talkT > 0) return;
+  talkT = 3.5 + Math.random() * 4;
+  const v = visitors[Math.floor(Math.random() * visitors.length)];
+  const pool = v.kind === 'kid' ? L.kidLines : v.kind === 'guide' ? L.guideLines : L.adultLines;
+  v.say = pool[Math.floor(Math.random() * pool.length)]; v.sayT = 3.2;
+}
+
+/* drawing */
+const RR = (x, y, w, h, c) => { ctx.fillStyle = c; ctx.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h)); };
+function board(cx, y, text, w) {
+  ctx.font = '700 10px Oswald, "Arial Narrow", sans-serif'; ctx.textAlign = 'center';
+  const bw = w || ctx.measureText(text).width + 12;
+  RR(cx - bw / 2, y, bw, 15, '#5a3b22'); RR(cx - bw / 2, y, bw, 2, '#7a5230');
+  ctx.fillStyle = '#e8bf50'; ctx.fillText(text, cx, y + 11.5, bw - 4);
+}
+function frameBoard(x, y) { RR(x + 2, y, 36, 30, '#7a5a30'); RR(x + 4, y + 2, 32, 26, '#221c17'); }
+function drawExhibit(i, x, yF) {
+  const top = yF - 4 * T;
+  const plinth = () => { RR(x + 8, yF - 14, 24, 14, '#6b5a4a'); RR(x + 8, yF - 14, 24, 2, '#8a7562'); };
+  switch (i) {
+    case 0: // mammoth tusk
+      plinth(); ctx.strokeStyle = '#efe4cc'; ctx.lineWidth = 5; ctx.lineCap = 'round';
+      ctx.beginPath(); ctx.arc(x + 26, yF - 16, 15, Math.PI * 1.05, Math.PI * 1.72); ctx.stroke(); break;
+    case 1: // 1763-2026 board
+      frameBoard(x, top + 40); ctx.font = '700 9px Oswald, sans-serif'; ctx.textAlign = 'center';
+      ctx.fillStyle = '#e8bf50'; ctx.fillText('1763', x + 20, top + 53); ctx.fillStyle = '#c9b8a2'; ctx.fillText('2026', x + 20, top + 65); break;
+    case 2: // one basin: PL 5/6, CZ 1/6
+      frameBoard(x, top + 40); RR(x + 6, top + 46, 23, 18, '#c9492f'); RR(x + 29, top + 46, 5, 18, '#3a6ea5');
+      ctx.font = '700 7px Oswald, sans-serif'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.fillText('PL', x + 17, top + 58); break;
+    case 3: // greeting banner with hammer and pick
+      RR(x + 19, top + 8, 2, 30, '#14100d'); RR(x + 7, top + 36, 26, 40, '#1d4d2b'); RR(x + 7, top + 74, 26, 3, '#e8bf50');
+      ctx.font = '18px system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.fillStyle = '#e8bf50'; ctx.fillText('⚒', x + 20, top + 62); break;
+    case 4: // St Barbara with her tower
+      RR(x + 6, yF - 14, 28, 14, '#7a6c5e');
+      ctx.fillStyle = '#d9cfc0'; ctx.beginPath(); ctx.moveTo(x + 18, yF - 50); ctx.lineTo(x + 9, yF - 14); ctx.lineTo(x + 27, yF - 14); ctx.closePath(); ctx.fill();
+      RR(x + 15, yF - 58, 7, 8, '#e8dccf'); RR(x + 14, yF - 61, 9, 3, '#e8bf50'); RR(x + 28, yF - 40, 6, 26, '#a89c8d'); RR(x + 27, yF - 43, 8, 3, '#8a7f72'); break;
+    case 5: // chain changing room: clothes pulled up to the ceiling
+      for (let k = 0; k < 3; k++) {
+        const hx = x + 8 + k * 12, hy = top + 34 + k * 8 + Math.sin(clock * 1.5 + k) * 1.5;
+        RR(hx, top + 6, 1, hy - top - 6, '#9aa3ad'); RR(hx - 5, hy, 11, 13, ['#2f4a6e', '#5d5a52', '#7a3a2a'][k]); RR(hx - 6, hy, 13, 3, '#14100d');
+      } break;
+    case 6: // Michal Mine lamp room
+      RR(x + 3, top + 52, 34, 3, '#6a4424'); RR(x + 3, top + 76, 34, 3, '#6a4424');
+      for (let k = 0; k < 4; k++) { RR(x + 6 + k * 8, top + 42, 5, 10, '#3d4552'); RR(x + 6 + k * 8, top + 42, 5, 2, '#ffd27a'); RR(x + 6 + k * 8, top + 66, 5, 10, '#3d4552'); RR(x + 6 + k * 8, top + 66, 5, 2, '#ffd27a'); } break;
+    case 7: // Nikiszowiec red-brick model
+      RR(x + 4, yF - 22, 32, 4, '#6a4424'); RR(x + 6, yF - 18, 3, 18, '#4a3020'); RR(x + 31, yF - 18, 3, 18, '#4a3020');
+      RR(x + 7, yF - 42, 26, 20, '#a9472f'); RR(x + 5, yF - 46, 30, 4, '#7a2f20');
+      for (let k = 0; k < 3; k++) { RR(x + 10 + k * 8, yF - 38, 4, 5, '#ffe0a0'); RR(x + 10 + k * 8, yF - 30, 4, 5, '#ffe0a0'); } break;
+    case 8: // Prezydent concrete headframe model
+      plinth(); RR(x + 13, yF - 92, 14, 78, '#b8b2a8');
+      for (let y = yF - 86; y < yF - 20; y += 10) RR(x + 16, y, 8, 3, '#7d776e');
+      ctx.strokeStyle = '#5a5650'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(x + 20, yF - 96, 5, 0, 6.283); ctx.stroke(); break;
+    case 9: // drainage adit with a boat
+      frameBoard(x, top + 40); ctx.fillStyle = '#0c0a09'; ctx.beginPath(); ctx.arc(x + 20, top + 58, 11, Math.PI, 0); ctx.fill(); RR(x + 9, top + 58, 22, 8, '#0c0a09');
+      RR(x + 9, top + 62, 22, 4, '#3a6ea5'); RR(x + 15, top + 59, 10, 3, '#8f5a2a'); break;
+    case 10: // Tarnowskie Góry silver ore in a case
+      RR(x + 10, yF - 18, 20, 18, '#6b5a4a'); RR(x + 8, yF - 42, 24, 24, 'rgba(160,210,235,.16)');
+      ctx.strokeStyle = 'rgba(200,230,245,.5)'; ctx.lineWidth = 1; ctx.strokeRect(x + 8.5, yF - 41.5, 23, 23);
+      RR(x + 13, yF - 28, 14, 9, '#7d858c'); RR(x + 15, yF - 27, 5, 3, '#e6edf2'); RR(x + 21, yF - 24, 4, 3, '#cfd8e0');
+      RR(x + 11, yF - 54, 18, 8, '#2a5d9c'); ctx.font = '700 6px Oswald, sans-serif'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.fillText('UNESCO', x + 20, yF - 48); break;
+    case 11: { // carbide lamp with a flickering flame
+      plinth(); RR(x + 14, yF - 36, 12, 22, '#c8a24a'); RR(x + 14, yF - 36, 12, 3, '#e8c870'); RR(x + 11, yF - 40, 18, 4, '#9a7a30');
+      const f = Math.sin(clock * 14) * 1.5;
+      RR(x + 18, yF - 48 - f, 4, 8 + f, '#ffd27a'); RR(x + 19, yF - 45, 2, 5, '#fff3c4'); break;
+    }
+  }
+}
+function drawCafe(x, yF) {
+  const top = yF - 4 * T;
+  RR(x + 4, top + 54, 32, 26, '#1f2a22'); ctx.fillStyle = '#d8e0d0'; for (let k = 0; k < 4; k++) ctx.fillRect(x + 8, top + 60 + k * 5, 14 + (k % 2) * 8, 2);
+  RR(x, yF - 28, 40, 4, '#8f5a2a'); RR(x + 2, yF - 24, 36, 24, '#6a3f1d');
+  RR(x + 22, yF - 44, 12, 16, '#9aa3ad'); RR(x + 24, yF - 40, 8, 3, '#3d4552');
+  RR(x + 6, yF - 34, 6, 6, '#efe6d8');
+  ctx.globalAlpha = .5; RR(x + 8 + Math.sin(clock * 3) * 1.5, yF - 42, 2, 6, '#efe6d8'); ctx.globalAlpha = 1;
+}
+function bubble(text, x, y) {
+  ctx.font = '600 13px Inter, system-ui, sans-serif'; ctx.textAlign = 'left';
+  const w = ctx.measureText(text).width + 12, bx = clamp(x - w / 2, 4, W - w - 4);
+  ctx.globalAlpha = .95; RR(bx, y - 22, w, 19, '#efe6d8');
+  ctx.beginPath(); ctx.moveTo(x - 4, y - 3); ctx.lineTo(x + 4, y - 3); ctx.lineTo(x, y + 2); ctx.fill();
+  ctx.fillStyle = '#1a140f'; ctx.fillText(text, bx + 6, y - 8); ctx.globalAlpha = 1;
+}
+function drawPerson(v, yF) {
+  const kid = v.kind === 'kid', guide = v.kind === 'guide', walking = v.wait <= 0;
+  const h = kid ? 24 : 34, x = Math.round(v.x * T + T / 2), lg = walking ? Math.round(Math.sin(v.step * 12) * 2) : 0;
+  const top = yF - h - (walking ? Math.abs(lg) * .5 : 0), legH = kid ? 8 : 12;
+  RR(x - 5 + lg, yF - legH, 4, legH, '#241912'); RR(x + 1 - lg, yF - legH, 4, legH, '#241912');
+  RR(x - 6, top + (kid ? 8 : 10), 12, kid ? 9 : 13, v.shirt);
+  RR(x - 4, top + (kid ? 1 : 2), 8, kid ? 7 : 8, '#e0b48a');
+  if (kid) RR(x - 5, top - 1, 10, 4, '#f2c230');
+  else if (guide) { RR(x - 4, top - 4, 8, 6, '#0d0d10'); RR(x - 1, top - 11, 3, 8, '#e9eef2'); RR(x - 1, top + 13, 2, 2, '#e8bf50'); RR(x - 1, top + 17, 2, 2, '#e8bf50'); }
+  else RR(x - 4, top, 8, 3, '#4a3a2e');
+  if (v.sayT > 0 && v.say) bubble(v.say, x, top - (guide ? 14 : 6));
+}
+function drawMuseum() {
+  const y0 = MUS_TOP * T, yF = (MUS_ROW + 1) * T;
+  // rock above the hall, with the shaft going up (plain stone: it does not give away ore)
+  for (let r = Math.max(SURF, Math.floor(camY / T)); r < ROWS; r++) for (let c = 0; c < COLS; c++) {
+    const sx = c * T, sy = r * T;
+    drawTile(c === 0 ? SHAFT : r === ROWS - 1 ? BEDROCK : STONE, c, r, sx, sy);
+    RR(sx, sy, T, T, `rgba(6,5,4,${.35 + (ROWS - r) * .07})`);
+  }
+  RR(0, y0, W, yF - y0, '#2e241d'); RR(0, yF - 46, W, 46, '#3a2d24'); RR(0, yF - 48, W, 3, '#4b3a2e');
+  RR(0, y0, W, 8, '#1c1612'); for (let x = 46; x < W; x += 80) RR(x, y0, 6, 22, '#1c1612');
+  RR(0, yF, W, T, '#5b4636'); for (let x = 0; x < W; x += 20) RR(x, yF, 2, T, '#4a3a2e'); RR(0, yF, W, 3, '#7a604a');
+  RR(0, yF + T, W, T, '#0b0908');
+  // the shaft comes down at the left edge
+  RR(0, y0, T, yF - y0, '#0c0a09'); RR(2, y0, 3, yF - y0, '#4a4038'); RR(T - 5, y0, 3, yF - y0, '#4a4038');
+  for (let c = 2; c < COLS; c += 2) {
+    const lx = c * T + 20, g = ctx.createRadialGradient(lx, y0 + 22, 2, lx, y0 + 22, 95);
+    g.addColorStop(0, 'rgba(255,200,120,.2)'); g.addColorStop(1, 'rgba(255,200,120,0)');
+    ctx.fillStyle = g; ctx.fillRect(lx - 95, y0, 190, yF - y0);
+    RR(lx - 1, y0 + 8, 2, 9, '#14100d'); RR(lx - 4, y0 + 17, 8, 5, '#ffd27a');
+  }
+  board(2 * T + 20, y0 + 30, L.museumSign);
+  board(CAFE_X * T + 20, y0 + 30, L.cafeSign, 38);
+  FACT_IDS.forEach((id, i) => {
+    const c = EX0 + i; drawExhibit(i, c * T, yF);
+    if (S.pass.ex.includes(id)) RR(c * T + 14, yF + 8, 12, 3, '#7cc27f');
+  });
+  drawCafe(CAFE_X * T, yF);
+  for (const v of visitors) drawPerson(v, yF);
+}
+function drawCage(cy) {
+  RR(19, 34, 2, Math.max(0, cy - 34), '#8a8f98');
+  RR(2, cy, 36, 4, '#3d4552'); RR(2, cy + T - 4, 36, 4, '#3d4552'); RR(2, cy, 3, T, '#3d4552'); RR(35, cy, 3, T, '#3d4552');
+  ctx.globalAlpha = .55; for (let x = 9; x < 35; x += 7) RR(x, cy + 4, 2, T - 8, '#a0aab4'); ctx.globalAlpha = 1;
+  RR(17, cy + 5, 6, 3, '#ffd27a');
+}
+function passBadge() {
+  const t = L.pass + ' ' + passCount() + '/' + PASS_TOTAL;
+  ctx.font = '700 14px Oswald, "Arial Narrow", sans-serif'; ctx.textAlign = 'left';
+  const w = ctx.measureText(t).width + 18;
+  RR(8, 8, w, 24, 'rgba(18,15,13,.85)'); RR(8, 8, 4, 24, '#e8bf50');
+  ctx.fillStyle = '#e8bf50'; ctx.fillText(t, 18, 25);
 }
 
 /* ---------- HUD ---------- */
@@ -807,14 +1171,18 @@ function hud() {
   $('ravens').textContent = S.ravens;
   let rank = RANKS[0][1]; for (const [t, n2] of RANKS) if (S.total >= t) rank = n2;
   $('rank').textContent = S.house + ' · ' + rank;
-  $('prompt').hidden = !(nearShop() && !paused);
+  const ph = promptHtml();
+  if (ph !== promptKey) { promptKey = ph; $('prompt').innerHTML = ph; }
+  $('prompt').hidden = !ph;
+  $('prompt').classList.toggle('raised', inMuseum());
 }
 
 /* ---------- loop & start ---------- */
 let last = performance.now();
 function frame(now) {
   const dt = Math.min(.05, (now - last) / 1000); last = now;
-  if (started && !paused) update(dt);
+  if (ride) updateRide(dt); else if (started && !paused) update(dt);
+  if (S && S.won) updateVisitors(dt);
   if (S) { render(dt); hudT += dt; saveT += dt; if (hudT > .05) { hudT = 0; hud(); } if (saveT > 8 && started) { saveT = 0; save(); } }
   requestAnimationFrame(frame);
 }
