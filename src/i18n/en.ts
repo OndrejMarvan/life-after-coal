@@ -8,6 +8,7 @@ const en = {
     newsletter: 'Newsletter', portals: 'Official portals', gaps: 'Not covered?', assistant: 'Ask about your next step',
     account: 'My account', login: 'Sign in', admin: 'Admin', about: 'About', menu: 'Menu', language: 'Language',
     support: 'Buy us a coffee',
+    themeLight: 'Light background', themeDark: 'Dark background',
   },
   common: {
     photo: 'Photo',
@@ -16,7 +17,7 @@ const en = {
     applyOnline: 'Apply online', helpInPerson: 'Get help in person', addToCalendar: 'Add to calendar', details: 'Details',
     lastChecked: 'Last checked', source: 'Source', readMore: 'Read more', startOver: 'Start over', edit: 'Edit', delete: 'Delete',
     thanks: 'Thank you.', required: 'Required', optional: 'optional', error: 'Something went wrong. Please try again.',
-    demoBanner: 'Demo mode: data is saved only in this browser. Connect Supabase to share it.',
+    demoBanner: 'Preview version: anything you enter stays in this browser only, and nobody else sees it.',
     approx: 'Approximate location', phone: 'Phone', email: 'Email', address: 'Address', website: 'Website',
     detailsInEnglish: 'The full details are in English for now. The summary above is in your language.',
     guideNotDecision: 'This is a guide, not a decision. The office named on each card decides.',
@@ -53,7 +54,7 @@ const en = {
     sosnowiec: 'Sosnowiec subregion (Sosnowiec, Dąbrowa Górnicza, Jaworzno, Będzin)', tychy: 'Tychy subregion (Tychy, Pszczyna, Mikołów, Bieruń, Lędziny)',
     malopolska: 'Western Małopolska (Libiąż, Brzeszcze, Chełmek)', walbrzych: 'Wałbrzych subregion (Wałbrzych, Świdnica, Nowa Ruda)', elsewhere_pl: 'Elsewhere in Poland', wielkopolska: 'Eastern Wielkopolska (Konin)',
     msk: 'Moravian-Silesian Region (Ostrava, Karviná, Havířov, Orlová, Třinec, Český Těšín, Frýdek-Místek)',
-    usti: 'Ústí Region (Most, Chomutov, Litvínov)', kv: 'Karlovy Vary Region (Sokolov)', elsewhere_cz: 'Elsewhere in Czechia',
+    usti: 'Ústí Region', kv: 'Karlovy Vary Region', elsewhere_cz: 'Elsewhere in Czechia',
   },
   home: {
     factsTitle: 'Did you know?', factsMore: 'More mining facts',
@@ -262,10 +263,15 @@ const en = {
     rolling: 'Rolling deadline', suggest: 'Suggest an event', suggestTitle: 'Event title', suggestDate: 'Date', suggestPlace: 'Place',
     suggestSent: 'Thank you. A moderator will check the event before it appears.',
   },
+  crisis: {
+    title: 'Emergency and crisis lines',
+    intro: 'If life or health is at risk, call an emergency number. If you need to talk to someone right now, call a crisis line. It is free and you do not have to give your name.',
+    checked: 'Checked on 15 Nov 2026:',
+    short: 'Emergency 112 · crisis line 116 123 (day and night, free)',
+  },
   hotline: {
     title: 'Need to talk?',
     intro: 'The research found no union helpline and no mental-health service aimed at miners in either country. So we listen, and we help you find the right office.',
-    emergency: 'In an emergency, call 112.',
     callbackTitle: 'Ask us to call you back', name: 'Your name', phone: 'Phone number', language: 'Language', bestTime: 'Best time to call',
     topic: 'Topic', topic_money: 'Money', topic_pension: 'Pension', topic_job: 'New job or training', topic_mental: 'How I feel', topic_family: 'Family',
     note: 'Anything you want us to know (optional)', consent: 'I agree that the Life After Coal team stores my number to call me back.',
@@ -315,6 +321,7 @@ const en = {
     placeholder: 'For example: I worked underground at ČSM for 20 years and left in February. What can I still claim?',
     ask: 'Ask', thinking: 'Thinking...', sources: 'Programmes used',
     disclaimer: 'Not legal or financial advice. The office named on each card decides.',
+    privacy: 'Questions are processed by Google Gemini. Do not include your name, ID number or other personal details.',
     fallback: 'The assistant is not connected right now. These programmes match your question:',
     feelings: 'If this is weighing on you, talk to a person:',
     examples: 'Try asking',
@@ -366,7 +373,7 @@ const en = {
     intro: 'Life After Coal is free and has no adverts. If it helped you or someone close to you, you can help us keep it running and up to date.',
     usesTitle: 'What your coffee would pay for',
     use1: 'Re-checking programmes, amounts, deadlines and contacts every month',
-    use2: 'Translating the full programme details into Czech and Polish',
+    use2: 'Expert review of the Czech and Polish translations',
     use3: 'Printed copies of the monthly digest for labour offices, libraries and union offices',
     use4: 'Hosting the site and running the assistant',
     free: 'Miners and their families never pay for anything on this site.',
@@ -376,7 +383,7 @@ const en = {
     notOpenText: 'We are still setting up a transparent way to accept support. Nothing on this page takes money for now.',
     notify: 'Subscribe to the newsletter to hear when it opens',
   },
-  footer: { madeFor: 'For miners, their families and their towns.', sources: 'Sources: two research databases, 14 Nov 2026.' },
+  footer: { madeWithLove: 'Made with love by', madeFor: 'For miners, their families and their towns.', sources: 'Sources: two research databases, 14 Nov 2026.' },
 }
 
 export default en

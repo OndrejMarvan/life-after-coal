@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-coal text-white">
+      <section className="chrome relative overflow-hidden bg-coal text-white">
         <PhotoImg photo={PHOTOS.karvina} sizes="100vw" decorative priority className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-coal/65 md:bg-transparent md:bg-linear-to-r md:from-coal md:via-coal/80 md:to-coal/5" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-28">
@@ -56,7 +56,7 @@ export default function Home() {
         <PhotoCredit photo={PHOTOS.karvina} className="absolute bottom-1.5 right-3 text-white/80 hover:text-white" />
       </section>
 
-      <section className="bg-charcoal text-white">
+      <section className="chrome bg-charcoal text-white">
         <div className="mx-auto max-w-6xl px-4 py-8 grid grid-cols-3 gap-3 sm:gap-6">
           {[
             { n: nPL, l: t('home.tilePL') },

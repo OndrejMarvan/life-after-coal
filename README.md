@@ -112,8 +112,8 @@ GitHub Pages only serves files, so the assistant there falls back to keyword sea
 
 1. Create a free account at <https://vercel.com> (sign in with GitHub).
 2. **Add New → Project**, import `life-after-coal`. Framework preset: **Vite**. Leave the build settings as they are.
-3. Get an API key at <https://console.anthropic.com> (pay per use; the default model `claude-haiku-5-5` is the cheapest; set a monthly spending limit there).
-4. In the Vercel project: **Settings → Environment Variables**, add `ANTHROPIC_API_KEY`. Optionally add `ANTHROPIC_MODEL` to use another model.
+3. Get a Gemini API key in Google AI Studio (<https://aistudio.google.com>, **Get API key**) and turn on billing for its Google Cloud project. Gemini's terms allow only the paid tier for apps used in the EU, and only on the paid tier are questions kept out of Google's model training. In Google Cloud **Billing → Budgets & alerts**, set a monthly budget so you get an e-mail before costs grow (a budget alerts, it does not stop spending).
+4. In the Vercel project: **Settings → Environment Variables**, add `GEMINI_API_KEY`. Optionally add `GEMINI_MODEL` (default `gemini-3.1-flash-lite`, the cheapest stable Gemini model: about $0.25 per million input and $1.50 per million output tokens, roughly $0.002 per question).
 5. **Deploy.** The site appears at `https://<project>.vercel.app`, with the assistant working. Every push to `main` redeploys it too.
 
 `vercel.json` sends every path except `/api/...` to the single-page app. The API key stays on the server; it is never sent to the browser. You can keep GitHub Pages as well, or point people to the Vercel address only.

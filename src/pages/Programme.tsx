@@ -74,7 +74,7 @@ export default function ProgrammePage() {
 
   return (
     <>
-      <section className="bg-coal text-white">
+      <section className="chrome bg-coal text-white">
         <div className="kit-stripes h-2" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-8 grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_auto] items-start">
           <div>

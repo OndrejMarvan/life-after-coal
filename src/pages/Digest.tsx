@@ -85,7 +85,7 @@ export default function Digest() {
         <section className="rounded-lg bg-orange-pale p-4 border-l-8 border-orange">
           <p className="font-bold">{t('home.talkTitle')}</p>
           <p>
-            {t('hotline.line_up')}: 800 77 99 00 · {t('hotline.line_wup')}: +48 32 757 33 11 · {t('hotline.emergency')}
+            {t('hotline.line_up')}: 800 77 99 00 · {t('hotline.line_wup')}: +48 32 757 33 11 · {t('crisis.short')}
           </p>
         </section>
         <p className="text-sm text-coal/60">{t('greeting')}</p>

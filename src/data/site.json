@@ -11,9 +11,9 @@
    "i18n": {
     "cs": {
      "title": "Balíček zákona ze dne 4. 12. 2025 (N01–N03, N09)",
-     "what": "Dovolená až 5 let (podzemí) nebo 4 roky (úpravna), nebo odstupné 170 000 PLN pro ostatní zaměstnance společností zapojených do systému podpory; vyplácejí je společnosti z dotace ze státního rozpočtu",
+     "what": "Dovolená až 5 let (podzemí) nebo 4 roky (úpravna), nebo odstupné 170 000 PLN pro ostatní zaměstnance firem ze státního programu podpory hornictví; vyplácejí je společnosti z dotace ze státního rozpočtu",
      "funders": "Státní rozpočet; asi 2 mld. PLN v roce 2026",
-     "results": "~1 750 zaměstnanců PGG pobíralo dávky do poloviny května 2026; 526 odstupných v JSW do 28. 5. 2026",
+     "results": "asi 1 750 zaměstnanců PGG pobíralo dávky do poloviny května 2026; 526 odstupných v JSW do 28. 5. 2026",
      "outcome": "Aktuální"
     },
     "pl": {
@@ -62,9 +62,9 @@
     "cs": {
      "title": "Outplacement „Energia“ (R09)",
      "what": "310 pracovníků hornictví a firem navázaných na hornictví: akční plány, kurzy, zprostředkování práce, dotovaná místa",
-     "funders": "ESF, RPO WSL 2014–2020, ~10 mil. PLN",
+     "funders": "ESF, RPO WSL 2014–2020, asi 10 mil. PLN",
      "results": "Výsledky nenalezeny",
-     "outcome": "Programové období skončilo; nahrazeno FST 10.19"
+     "outcome": "Programové období skončilo; nahradilo ho opatření 10.19 z FST"
     },
     "pl": {
      "title": "Outplacement „Energia” (R09)",
@@ -89,7 +89,7 @@
      "what": "Harmonogram uzavírání do roku 2049; odstupné 120 000 PLN; převody do SRK povoleny do 31. 12. 2023 (Pokój, Jastrzębie III)",
      "funders": "Státní rozpočet",
      "results": "Nenalezeno",
-     "outcome": "Okno pro převody do SRK se uzavřelo 31. 12. 2023"
+     "outcome": "Převody do SRK byly možné jen do 31. 12. 2023"
     },
     "pl": {
      "title": "Umowa społeczna i nowelizacja z sierpnia 2021",
@@ -288,9 +288,9 @@
    "i18n": {
     "cs": {
      "title": "Uzavření Dolu ČSM: těžba skončila 31. 1. 2026, úpravna 28. 2. 2026",
-     "what": "~400 kmenových zaměstnanců + 260 zaměstnanců dodavatelů odešlo v roce 2025; 750 + 150 odešlo v lednu–únoru 2026; ~670 ponecháno na likvidaci",
+     "what": "asi 400 kmenových zaměstnanců + 260 zaměstnanců dodavatelů odešlo v roce 2025; 750 + 150 odešlo v lednu–únoru 2026; asi 670 ponecháno na likvidaci",
      "funders": "OKD (odstupné 1,3 mld. Kč); stát (Úřad práce, příspěvek)",
-     "results": "~1/3 z 900 lidí našla práci do zprávy z roku 2026, většinou jako řidiči, zámečníci nebo skladníci, za nižší mzdu (TN.cz)",
+     "results": "asi třetina z 900 lidí našla práci do zprávy z roku 2026, většinou jako řidiči, zámečníci nebo skladníci, za nižší mzdu (TN.cz)",
      "outcome": "Opakuje nástroje z roku 2021; přidává odstranění tvrdosti zákona u důchodu"
     },
     "pl": {
@@ -338,9 +338,9 @@
    "i18n": {
     "cs": {
      "title": "Uzavření lomu ČSA, Most (Severní energetická)",
-     "what": "~485–500 propuštěných",
+     "what": "asi 485–500 propuštěných",
      "funders": "Firma; státní příspěvek (NV 342/2016)",
-     "results": "~1/4 našla práci hned; o příspěvek požádalo 271 z 289 oprávněných",
+     "results": "asi čtvrtina našla práci hned; o příspěvek požádalo 271 z 289 oprávněných",
      "outcome": "Ukončeno; lidem s dlouhou dobou výplaty příspěvek pokračuje"
     },
     "pl": {
@@ -363,9 +363,9 @@
    "i18n": {
     "cs": {
      "title": "Uzavření Dolů Darkov a ČSA (Karviná); doly OKD převedeny na Diamo",
-     "what": "~2 500 lidí přešlo do Diamo, ~700 ponecháno; ~1 770 odešlo do konce února 2021",
+     "what": "asi 2 500 lidí přešlo do Diamo, asi 700 ponecháno; asi 1 770 odešlo do konce února 2021",
      "funders": "OKD, Diamo, MPO, Úřad práce",
-     "results": "Mobilní pracoviště Úřadu práce na ČSM, Darkově a ČSA od listopadu 2020; Nová šichta s 80+ partnerskými firmami; aplikace Burza práce; 1 296 žadatelů o příspěvek do června 2021",
+     "results": "Mobilní pracoviště Úřadu práce na ČSM, Darkově a ČSA od listopadu 2020; Nová šichta s přes 80 partnerskými firmami; aplikace Burza práce; 1 296 žadatelů o příspěvek do června 2021",
      "outcome": "Nástroje znovu použity pro ČSM"
     },
     "pl": {
@@ -413,7 +413,7 @@
    "i18n": {
     "cs": {
      "title": "Útlum Sokolovské uhelné (uzavřena tlaková plynárna Vřesová)",
-     "what": "~700 lidí odešlo v roce 2020; Outplacement a příspěvek (NV 342/2016, novelizované NV 491/2020)",
+     "what": "asi 700 lidí odešlo v roce 2020; Outplacement a příspěvek (NV 342/2016, novelizované NV 491/2020)",
      "funders": "Firma, ESF (OPZ), stát",
      "results": "48 lidí v Outplacementu do září 2020 (45 ze Sokolovské uhelné)",
      "outcome": "Firma je dnes SUAS Group; menší redukce v letech 2025–26"
@@ -490,9 +490,9 @@
    "i18n": {
     "cs": {
      "title": "Uzavření Dolu Paskov, 31. 3. 2017",
-     "what": "~1 350 zaměstnanců, ~300 ponecháno na likvidaci; bonus až 80 000 Kč za přechod na karvinské doly",
+     "what": "asi 1 350 zaměstnanců, asi 300 ponecháno na likvidaci; bonus až 80 000 Kč za přechod na karvinské doly",
      "funders": "OKD, Úřad práce, Diamo",
-     "results": "Mobilní pracoviště na Staříči a v Chlebovicích: 744 kontaktů; Nová šichta: 330+ registrovaných; IT rekvalifikace „Razíme cestu“ (LMC + VŠB-TUO): programování si vyzkoušelo 29 horníků",
+     "results": "Mobilní pracoviště na Staříči a v Chlebovicích: 744 kontaktů; Nová šichta: přes 330 registrovaných; IT rekvalifikace „Razíme cestu“ (LMC + VŠB-TUO): programování si vyzkoušelo 29 horníků",
      "outcome": "Bonus za přechod se neopakoval (nezbyly doly)"
     },
     "pl": {
@@ -518,7 +518,7 @@
      "what": "OKD; potom Diamo GEAM, Slezská důlní díla, OKD HBZS a severočeské firmy",
      "funders": "Stát (MPO), přes Diamo a PK Ústí",
      "results": "8 000 / 7 000 Kč měsíčně",
-     "outcome": "Žádosti od lidí z OKD skončily v květnu 2018 s koncem insolvence; obnoveno 2020"
+     "outcome": "Žádosti od lidí z OKD skončily v květnu 2018 s koncem insolvence; obnoveno v roce 2020"
     },
     "pl": {
      "title": "NV 167/2016 (OKD w insolwencji) i NV 342/2016 (inne firmy)",
@@ -617,7 +617,7 @@
      "title": "Spuštění Nové šichty",
      "what": "Zaměstnanci OKD",
      "funders": "OKD",
-     "results": "~1 000 uživatelů do roku 2025 (Seznam Zprávy)",
+     "results": "asi 1 000 uživatelů do roku 2025 (Seznam Zprávy)",
      "outcome": "Znovu spuštěno v roce 2020 a v květnu 2025"
     },
     "pl": {
@@ -643,11 +643,11 @@
    "cs": {
     "PL": [
      "Fungovalo: dobrovolné odchody zabránily nucenému propouštění ve velkém rozsahu (1998–2002; 2015–2017).",
-     "Nefungovalo: odchody jen za peníze ve Wałbrzychu zanechaly dlouhodobou chudobu; odstupné bez zákazu návratu umožnilo lidem vrátit se do dolů; restrukturalizace neudělala odvětví životaschopným (NIK 2021)."
+     "Nefungovalo: odchody jen s penězi a bez další pomoci ve Wałbrzychu zanechaly dlouhodobou chudobu; odstupné bez zákazu návratu umožnilo lidem vrátit se do dolů; restrukturalizace neudělala odvětví životaschopným (NIK 2021)."
     ],
     "CZ": [
      "Fungovalo: pomoc přímo v areálu dolu (ušetří cesty do Havířova nebo Karviné), včasné rekvalifikace na řidičská oprávnění a přímý kontakt se zaměstnavateli.",
-     "Nefungovalo: bonus za přechod z roku 2017 přilákal příliš málo lidí a nová místa platí výrazně méně než ~50 000 Kč, které horníci vydělávali."
+     "Nefungovalo: bonus za přechod z roku 2017 přilákal příliš málo lidí a nová místa platí výrazně méně než asi 50 000 Kč, které horníci vydělávali."
     ]
    },
    "pl": {
@@ -1707,7 +1707,7 @@
     "cs": {
      "channel": "Regionální rada pro spravedlivou transformaci",
      "owner": "Slezský maršálkovský úřad",
-     "covers": "Orgán zainteresovaných stran; poprvé zasedala 26. 5. 2023",
+     "covers": "Poradní orgán kraje pro transformaci; poprvé zasedal 26. 5. 2023",
      "contact": "Přes transformacja.slaskie.pl",
      "status": "Aktivní"
     },
@@ -1729,7 +1729,7 @@
    "status": "Active since Oct 2025",
    "i18n": {
     "cs": {
-     "channel": "Konzultační místa PGG a modul zaměstnaneckého portálu",
+     "channel": "Poradny PGG a sekce na zaměstnaneckém portálu",
      "owner": "PGG",
      "covers": "Dovolená, odstupné, postupy; statistiky odchodů",
      "contact": "V každém závodě PGG; interní portál",
@@ -2114,7 +2114,7 @@
    "i18n": {
     "cs": {
      "channel": "opst.cz",
-     "owner": "MZP / SFZP",
+     "owner": "MŽP / SFŽP",
      "covers": "Všechny výzvy OPST",
      "contact": "spravedlivatransformace@mzp.cz",
      "status": "Aktivní"
@@ -2353,7 +2353,7 @@
    "confirm": "Ministry of Energy; LW Bogdanka",
    "i18n": {
     "cs": {
-     "item": "Bogdanka v systému podpory",
+     "item": "Bogdanka ve státním programu podpory hornictví",
      "why": "Zákon to umožňuje; poslední oficiální odpověď říká, že zatím zahrnuta není; některá média uvádějí, že byla přidána",
      "confirm": "Ministerstvo energetiky; LW Bogdanka"
     },
@@ -2587,7 +2587,7 @@
    "confirm": "OKD HR",
    "i18n": {
     "cs": {
-     "item": "Seznam 80+ firem, které spolupracovaly s Novou šichtou (2021)",
+     "item": "Seznam přes 80 firem, které spolupracovaly s Novou šichtou (2021)",
      "why": "Nikdy nezveřejněn",
      "confirm": "Personální oddělení OKD"
     },
@@ -2823,7 +2823,7 @@
     "cs": {
      "item": "Současný stav POVEZ II a výzvy OPST 33",
      "why": "Stránky výzev neotevřeny; termíny nenalezeny",
-     "confirm": "Úřad práce; SFZP"
+     "confirm": "Úřad práce; SFŽP"
     },
     "pl": {
      "item": "Obecny status POVEZ II i naboru OPST 33",

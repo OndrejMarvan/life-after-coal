@@ -14,7 +14,7 @@ interface Gap {
 
 const GAPS: Gap[] = [
   {
-    who: { en: 'Contractor and supplier-firm staff', cs: 'Zaměstnanci dodavatelů a dodavatelských firem', pl: 'Pracownicy firm wykonawczych i okołogórniczych' },
+    who: { en: 'Contractor and supplier-firm staff', cs: 'Zaměstnanci dodavatelských firem', pl: 'Pracownicy firm wykonawczych i okołogórniczych' },
     canUse: {
       en: 'Poland: outplacement (10.19) and start-up grants (10.20) give mining-related workers priority; labour-office help. Czechia: Outplacement II, Labour Office retraining, TRAUTOM.',
       cs: 'Polsko: outplacement (10.19) a dotace na podnikání (10.20) dávají přednost i pracovníkům navazujících firem; úřad práce. Česko: Outplacement II, rekvalifikace úřadu práce, TRAUTOM.',
@@ -27,7 +27,7 @@ const GAPS: Gap[] = [
     who: { en: 'Power-plant workers of firms not on the Czech list', cs: 'Pracovníci elektráren firem, které nejsou na seznamu', pl: 'Pracownicy elektrowni spoza czeskiej listy' },
     canUse: {
       en: 'Czechia: Outplacement II and Labour Office tools. Poland: the shield act for power and lignite workers, if your company is covered.',
-      cs: 'Česko: Outplacement II a nástroje úřadu práce. Polsko: zákon o sociálních ochranách pro energetiku a hnědé uhlí, pokud se týká vaší firmy.',
+      cs: 'Česko: Outplacement II a nástroje úřadu práce. Polsko: zákon o ochranném balíčku pro energetiku a hnědé uhlí, pokud se vztahuje na vaši firmu.',
       pl: 'Czechy: Outplacement II i narzędzia urzędu pracy. Polska: ustawa o osłonach socjalnych dla energetyki i węgla brunatnego, jeśli obejmuje twoją firmę.',
     },
     ask: { en: 'Your employer’s HR; the labour office.', cs: 'Personální oddělení zaměstnavatele; úřad práce.', pl: 'Dział kadr pracodawcy; urząd pracy.' },
@@ -37,10 +37,10 @@ const GAPS: Gap[] = [
     who: { en: 'Family members', cs: 'Členové rodiny', pl: 'Członkowie rodziny' },
     canUse: {
       en: 'Poland: unemployed family members can join a 10.19 outplacement project with a participant; 10.24 social projects in mining municipalities. Czechia: Labour Office as any job seeker; Karviná social services.',
-      cs: 'Polsko: nezaměstnaní členové rodiny se mohou připojit k účastníkovi projektu 10.19; sociální projekty 10.24 v hornických obcích. Česko: úřad práce jako každý uchazeč; sociální služby Karviná.',
+      cs: 'Polsko: nezaměstnaní členové rodiny se mohou zapojit spolu s účastníkem projektu 10.19; sociální projekty 10.24 v hornických obcích. Česko: úřad práce jako každý uchazeč; sociální služby Karviná.',
       pl: 'Polska: bezrobotni członkowie rodziny mogą dołączyć do projektu 10.19 z uczestnikiem; projekty społeczne 10.24 w gminach górniczych. Czechy: urząd pracy jak każdy szukający pracy; usługi społeczne w Karwinie.',
     },
-    ask: { en: 'Your gmina or social-assistance centre; Karviná social department.', cs: 'Sociální odbor města; v Polsku gmina nebo sociální centrum.', pl: 'Gmina lub ośrodek pomocy społecznej; wydział społeczny w Karwinie.' },
+    ask: { en: 'Your gmina or social-assistance centre; Karviná social department.', cs: 'Sociální odbor města; v Polsku obecní úřad (gmina) nebo centrum sociální pomoci.', pl: 'Gmina lub ośrodek pomocy społecznej; wydział społeczny w Karwinie.' },
     ids: ['PL-R01', 'PL-R04', 'CZ-P13', 'CZ-L3'],
   },
   {
@@ -57,14 +57,14 @@ const GAPS: Gap[] = [
     who: { en: 'People hired after 1 Jan 2026, or dismissed before 28 May 2021 (Poland)', cs: 'Lidé přijatí po 1. 1. 2026 nebo propuštění před 28. 5. 2021 (Polsko)', pl: 'Zatrudnieni po 1.01.2026 lub zwolnieni przed 28.05.2021 (Polska)' },
     canUse: {
       en: 'Hired after 1 Jan 2026: no statutory leave or severance, but outplacement, training and the labour office. Dismissed before 28 May 2021: adult learning (10.17) and the labour office.',
-      cs: 'Přijatí po 1. 1. 2026: bez zákonné dovolené a odstupného, ale outplacement, vzdělávání a úřad práce. Propuštění před 28. 5. 2021: vzdělávání dospělých (10.17) a úřad práce.',
+      cs: 'Přijatí po 1. 1. 2026 nemají nárok na zákonnou dovolenou ani odstupné, ale mohou využít outplacement, vzdělávání a úřad práce. Propuštění před 28. 5. 2021 mohou využít vzdělávání dospělých (10.17) a úřad práce.',
       pl: 'Zatrudnieni po 1.01.2026: bez ustawowego urlopu i odprawy, ale z outplacementem, szkoleniami i urzędem pracy. Zwolnieni przed 28.05.2021: kształcenie dorosłych (10.17) i urząd pracy.',
     },
     ask: { en: 'County labour office (PUP); WUP Katowice.', cs: 'Okresní úřad práce (PUP); WUP Katovice.', pl: 'Powiatowy urząd pracy; WUP Katowice.' },
     ids: ['PL-R03', 'PL-N14', 'PL-R01'],
   },
   {
-    who: { en: 'Past the 6-month window, or under 2 years of continuous service (Czechia)', cs: 'Po uplynutí 6 měsíců nebo méně než 2 roky nepřetržitě (Česko)', pl: 'Po upływie 6 miesięcy lub poniżej 2 lat ciągłej pracy (Czechy)' },
+    who: { en: 'Past the 6-month window, or under 2 years of continuous service (Czechia)', cs: 'Odešli před více než 6 měsíci nebo pracovali méně než 2 roky v kuse (Česko)', pl: 'Po upływie 6 miesięcy lub poniżej 2 lat ciągłej pracy (Czechy)' },
     canUse: {
       en: 'The state allowance and Nová šichta are closed to you, but the Labour Office, retraining, TRAUTOM and the business loan are open.',
       cs: 'Státní příspěvek a Nová šichta už nejsou možné, ale úřad práce, rekvalifikace, TRAUTOM a úvěr na podnikání ano.',

@@ -46,7 +46,7 @@ export const seedPlaces: Place[] = [
     id: 'hp-jastrzebie', kind: 'help', country: 'PL', name: 'Urząd Miasta Jastrzębie-Zdrój',
     address: 'al. Piłsudskiego 60, Jastrzębie-Zdrój', phone: '+48 32 47 85 100', email: 'miasto@um.jastrzebie.pl',
     lat: 49.9557, lng: 18.5795, approx: true, regions: ['rybnik'],
-    note: { en: 'City hall. No dedicated miners programme found; strategy 2035 under consultation.', cs: 'Městský úřad. Program pro horníky nebyl nalezen; strategie 2035 v konzultaci.', pl: 'Urząd miasta. Brak programu dla górników; strategia 2035 w konsultacjach.' },
+    note: { en: 'City hall. No dedicated miners programme found; strategy 2035 under consultation.', cs: 'Městský úřad. Program pro horníky nebyl nalezen; strategie 2035 v připomínkovém řízení.', pl: 'Urząd miasta. Brak programu dla górników; strategia 2035 w konsultacjach.' },
     programmeIds: ['PL-L08'],
   },
   {
@@ -77,7 +77,7 @@ export const seedPlaces: Place[] = [
   {
     id: 'hp-arr', kind: 'help', country: 'CZ', name: 'ARR (Agentura pro regionální rozvoj)',
     address: 'Na Jízdárně 7/1245, Ostrava', email: 'mobilita@arr.cz', lat: 49.8367, lng: 18.2876, approx: true, regions: ['msk'],
-    note: { en: 'Employee mobility (free ODISka card).', cs: 'Zaměstnanecká mobilita (bezplatná ODISka).', pl: 'Mobilność pracowników (darmowa karta ODISka).' },
+    note: { en: 'Employee mobility (free ODISka card).', cs: 'Zaměstnanecká mobilita (bezplatná roční jízdenka ODIS).', pl: 'Mobilność pracowników (darmowa karta ODISka).' },
     programmeIds: ['CZ-P21'],
   },
   {
@@ -123,7 +123,7 @@ export const seedPlaces: Place[] = [
   // ---------- Mines ----------
   {
     id: 'mine-csm', kind: 'mine', country: 'CZ', name: 'Důl ČSM (OKD), Stonava', lat: 49.8163, lng: 18.5279, approx: true, mineState: 'closing',
-    note: { en: 'Mining ended 31 Jan 2026, preparation plant 28 Feb 2026. Technical liquidation until about the turn of 2028/2029; ~670 staff kept, falling to ~70.', cs: 'Těžba skončila 31. 1. 2026, úpravna 28. 2. 2026. Technická likvidace zhruba do přelomu 2028/2029; ~670 lidí, postupně ~70.', pl: 'Wydobycie zakończone 31.01.2026, zakład przeróbki 28.02.2026. Likwidacja do przełomu 2028/2029.' },
+    note: { en: 'Mining ended 31 Jan 2026, preparation plant 28 Feb 2026. Technical liquidation until about the turn of 2028/2029; ~670 staff kept, falling to ~70.', cs: 'Těžba skončila 31. 1. 2026, úpravna 28. 2. 2026. Technická likvidace zhruba do přelomu 2028/2029; asi 670 lidí, postupně asi 70.', pl: 'Wydobycie zakończone 31.01.2026, zakład przeróbki 28.02.2026. Likwidacja do przełomu 2028/2029.' },
     programmeIds: ['CZ-P04', 'CZ-P12'],
   },
   {
@@ -140,16 +140,16 @@ export const seedPlaces: Place[] = [
   },
   {
     id: 'mine-paskov', kind: 'mine', country: 'CZ', name: 'Důl Paskov (OKD)', lat: 49.7050, lng: 18.2850, approx: true, mineState: 'closed',
-    note: { en: 'Closed 31 Mar 2017; ~1,350 staff, ~300 kept for liquidation.', cs: 'Uzavřen 31. 3. 2017; ~1 350 zaměstnanců, ~300 zůstalo na likvidaci.', pl: 'Zamknięta 31.03.2017.' },
+    note: { en: 'Closed 31 Mar 2017; ~1,350 staff, ~300 kept for liquidation.', cs: 'Uzavřen 31. 3. 2017; asi 1 350 zaměstnanců, asi 300 zůstalo na likvidaci.', pl: 'Zamknięta 31.03.2017.' },
   },
   {
     id: 'mine-ruda', kind: 'mine', country: 'PL', name: 'KWK Ruda (PGG), Bielszowice section, Ruda Śląska', lat: 50.2740, lng: 18.8390, approx: true, mineState: 'closing',
-    note: { en: 'Bielszowice section closing; PGG rail retraining aimed at its staff.', cs: 'Ruch Bielszowice se zavírá; přeškolení na železnici je pro jeho zaměstnance.', pl: 'Ruch Bielszowice w likwidacji; program kolejowy PGG dla jego pracowników.' },
+    note: { en: 'Bielszowice section closing; PGG rail retraining aimed at its staff.', cs: 'Úsek Bielszowice se zavírá; přeškolení na železnici je pro jeho zaměstnance.', pl: 'Ruch Bielszowice w likwidacji; program kolejowy PGG dla jego pracowników.' },
     programmeIds: ['PL-C01'],
   },
   {
     id: 'mine-wujek', kind: 'mine', country: 'PL', name: 'KWK Wujek (PGG), Katowice', lat: 50.2420, lng: 18.9900, approx: true, mineState: 'closing',
-    note: { en: 'Section being closed; PGG rail retraining aimed at its staff.', cs: 'Ruch se zavírá; přeškolení na železnici je pro jeho zaměstnance.', pl: 'Ruch w likwidacji; program kolejowy PGG dla jego pracowników.' },
+    note: { en: 'Section being closed; PGG rail retraining aimed at its staff.', cs: 'Úsek se zavírá; přeškolení na železnici je pro jeho zaměstnance.', pl: 'Ruch w likwidacji; program kolejowy PGG dla jego pracowników.' },
     programmeIds: ['PL-C01'],
   },
   {

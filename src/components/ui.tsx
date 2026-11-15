@@ -60,7 +60,7 @@ export function PageHeader({ title, intro, photo, children }: { title: string; i
   usePageTitle(title)
   const p: Photo | undefined = photo ? PHOTOS[photo] : undefined
   return (
-    <section className={`relative overflow-hidden text-white ${p ? 'bg-coal' : 'kit-stripes-soft'}`}>
+    <section className={`chrome relative overflow-hidden text-white ${p ? 'bg-coal' : 'kit-stripes-soft'}`}>
       {p && (
         <>
           <PhotoImg photo={p} sizes="100vw" decorative priority className="absolute inset-0 h-full w-full object-cover" />

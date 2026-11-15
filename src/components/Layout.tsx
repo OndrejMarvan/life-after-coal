@@ -3,7 +3,10 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../lib/auth'
 import { isDemo } from '../lib/supabase'
-import { Headframe, useLang } from './ui'
+import { fmtDate } from '../lib/content'
+import { applyTheme, savedTheme, type Theme } from '../lib/theme'
+import { HeadframeLogo } from './HeadframeLogo'
+import { useLang } from './ui'
 
 const MAIN = [
   { to: '/check', key: 'nav.check' },
@@ -22,6 +25,8 @@ const MORE = [
   { to: '/about', key: 'nav.about' },
   { to: '/support', key: 'nav.support' },
 ]
+/** The team, sorted alphabetically by surname. */
+const TEAM = ['Krištof Gregor', 'Dmytro Hrebeniuk', 'JanJakub Kolar', 'Ondřej Marvan', 'Olga Yurkova']
 
 function LangSwitch() {
   const { i18n, t } = useTranslation()
@@ -45,9 +50,21 @@ function LangSwitch() {
 
 export default function Layout() {
   const { t } = useTranslation()
+  const lang = useLang()
   const { user } = useAuth()
   const [open, setOpen] = useState(false)
   const [moreOpen, setMoreOpen] = useState(false)
+  const [theme, setTheme] = useState<Theme>(savedTheme)
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    applyTheme(next)
+    setTheme(next)
+  }
+  const themeLabel = (
+    <>
+      <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span> {theme === 'dark' ? t('nav.themeLight') : t('nav.themeDark')}
+    </>
+  )
   const loc = useLocation()
 
   useEffect(() => {
@@ -68,10 +85,10 @@ export default function Layout() {
         {t('common.skipToContent')}
       </a>
       {isDemo && <div className="no-print bg-orange-pale text-coal text-center text-sm py-1.5 px-3 border-b border-orange">{t('common.demoBanner')}</div>}
-      <header className="bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
+      <header className="chrome bg-coal text-white sticky top-0 z-40 border-b-4 border-orange">
         <div className="mx-auto max-w-6xl px-4 h-16 flex items-center gap-3">
           <Link to="/" className="flex items-center gap-2 shrink-0" aria-label={t('nav.home')}>
-            <Headframe className="h-14 w-14 shrink-0" />
+            <HeadframeLogo className="h-14 w-14 shrink-0" />
             <span className="display text-lg sm:text-xl font-bold leading-none hidden min-[420px]:inline">{t('appName')}</span>
           </Link>
           <nav className="hidden lg:flex items-center gap-1 ml-4" aria-label={t('nav.menu')}>
@@ -91,6 +108,9 @@ export default function Layout() {
                       {t(m.key)}
                     </NavLink>
                   ))}
+                  <button type="button" onClick={toggleTheme} className="mt-1 block w-full rounded-md border-t border-white/15 px-3 py-2 text-left hover:bg-white/10">
+                    {themeLabel}
+                  </button>
                 </div>
               )}
             </div>
@@ -130,6 +150,9 @@ export default function Layout() {
             <NavLink to="/account" className="block rounded-md px-3 py-3 text-lg">
               {user ? t('nav.account') : t('nav.login')}
             </NavLink>
+            <button type="button" onClick={toggleTheme} className="block w-full rounded-md px-3 py-3 text-left text-lg hover:bg-white/10">
+              {themeLabel}
+            </button>
           </nav>
         )}
       </header>
@@ -146,7 +169,7 @@ export default function Layout() {
         <span className="sr-only sm:hidden">{t('nav.help')}</span>
       </Link>
 
-      <footer className="bg-coal text-white mt-12">
+      <footer className="chrome bg-coal text-white mt-12">
         <div className="kit-stripes h-3" aria-hidden="true" />
         <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-3">
           <div>
@@ -171,7 +194,22 @@ export default function Layout() {
                 {t('credits.title')}
               </Link>
             </p>
-            <p>{t('hotline.emergency')}</p>
+            <p>
+              <Link to="/help" className="font-semibold text-white underline underline-offset-2 hover:text-orange">
+                {t('crisis.short')}
+              </Link>
+            </p>
+          </div>
+        </div>
+        {/* Extra bottom padding keeps the floating "Need to talk?" button off the text. */}
+        <div className="border-t border-white/15">
+          <div className="mx-auto max-w-6xl px-4 pt-5 pb-24 flex flex-col gap-2 text-sm text-white/70 md:flex-row md:justify-between md:gap-6">
+            <p>
+              © {t('appName')}, {fmtDate(__BUILD_DATE__, lang, { month: 'long', year: 'numeric' })}
+            </p>
+            <p>
+              <span className="text-orange" aria-hidden="true">♥</span> {t('footer.madeWithLove')} {TEAM.join(', ')}
+            </p>
           </div>
         </div>
       </footer>

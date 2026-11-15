@@ -131,7 +131,7 @@ export const FACTS: Fact[] = [
     source: 'https://en.wikipedia.org/wiki/Carbide_lamp',
     text: {
       en: 'Carbide lamps made light from acetylene gas: water dripped onto calcium carbide. An open flame is dangerous in gassy coal mines, so miners there used enclosed safety lamps until electric cap lamps took over.',
-      cs: 'Karbidové lampy svítily acetylenem: na karbid vápníku kapala voda. Otevřený plamen je v plynujících uhelných dolech nebezpečný, a tak se v nich používaly uzavřené bezpečnostní kahany, dokud je nenahradily elektrické svítilny na přilbě.',
+      cs: 'Karbidové lampy svítily acetylenem: na karbid vápníku kapala voda. V uhelných dolech, kde se uvolňuje metan, je ale otevřený plamen nebezpečný, a tak se v nich používaly uzavřené bezpečnostní kahany, dokud je nenahradily elektrické svítilny na přilbě.',
       pl: 'Lampy karbidowe świeciły acetylenem: na karbid wapnia kapała woda. Otwarty płomień jest niebezpieczny w gazowych kopalniach węgla, dlatego używano tam zamkniętych lamp bezpieczeństwa, aż zastąpiły je elektryczne lampy nahełmne.',
     },
   },

@@ -1,6 +1,8 @@
 // Vercel serverless function: POST /api/assistant
-// Answers questions only from the programme database, using Claude.
-// Set ANTHROPIC_API_KEY (and optionally ANTHROPIC_MODEL) in the Vercel project settings.
+// Answers questions only from the programme database, using Google Gemini (generateContent).
+// Set GEMINI_API_KEY (and optionally GEMINI_MODEL) in the Vercel project settings. Use a key
+// from a Google Cloud project with billing on: Gemini's terms allow only Paid Services for
+// apps used in the EEA, and only then are prompts kept out of Google's model training.
 // The few request/response members this function uses. Vercel's Node runtime provides the real
 // objects; declaring them here avoids the @vercel/node dev dependency and its audit warnings.
 interface VercelRequest {
@@ -17,7 +19,7 @@ import type { Programme } from '../src/data/types.js'
 // Retrieval is copied from src/lib/retrieve.ts so the function has no local imports.
 
 /** Simple keyword retrieval over the programme database. Used by the assistant
- *  (to pick the cards it sends to Claude) and as the offline fallback. */
+ *  (to pick the cards it sends to Gemini) and as the offline fallback. */
 
 const STOP = new Set(
   'a an the and or of to in on for is are was i my me we you it at by with from what how can do does if be have has this that there any ' +
@@ -108,7 +110,7 @@ function card(p: Programme): string {
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' })
-  const key = process.env.ANTHROPIC_API_KEY
+  const key = process.env.GEMINI_API_KEY
   if (!key) return res.status(501).json({ error: 'Assistant not configured' })
 
   const { question, lang = 'cs', history = [] } = (req.body ?? {}) as {
@@ -138,20 +140,31 @@ Keep the answer under 180 words. No markdown headings.
 PROGRAMME CARDS (research databases, 14 Nov 2026):
 ${[...picked.values()].map(card).join('\n\n')}`
 
-  const messages = [
-    ...history.slice(-6).map((h) => ({ role: h.role, content: h.text })),
-    { role: 'user' as const, content: question },
+  // Gemini calls the assistant's turns "model".
+  const contents = [
+    ...history.slice(-6).map((h) => ({ role: h.role === 'assistant' ? 'model' : 'user', parts: [{ text: h.text }] })),
+    { role: 'user', parts: [{ text: question }] },
   ]
+  const model = process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite'
+  // Gemini 3 and later think before answering; low keeps answers quick and cheap. Older models reject thinkingLevel.
+  const thinking = /^gemini-([3-9]|\d{2})/.test(model) ? { thinkingConfig: { thinkingLevel: 'LOW' } } : {}
 
   try {
-    const r = await fetch('https://api.anthropic.com/v1/messages', {
+    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: process.env.ANTHROPIC_MODEL || 'claude-haiku-5-5', max_tokens: 700, system, messages }),
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: system }] },
+        contents,
+        // Thinking tokens count towards the limit, so leave room for them.
+        generationConfig: { maxOutputTokens: 2048, ...thinking },
+      }),
     })
     if (!r.ok) return res.status(502).json({ error: `Upstream ${r.status}` })
-    const data = (await r.json()) as { content: { type: string; text?: string }[] }
-    const answer = data.content.filter((c) => c.type === 'text').map((c) => c.text).join('\n').trim()
+    const data = (await r.json()) as { candidates?: { content?: { parts?: { text?: string; thought?: boolean }[] } }[] }
+    const parts = data.candidates?.[0]?.content?.parts ?? []
+    const answer = parts.filter((p) => !p.thought).map((p) => p.text ?? '').join('').trim()
+    if (!answer) return res.status(502).json({ error: 'Empty answer' })
     const ids = [...new Set([...answer.matchAll(/\[((?:PL|CZ|XB)-[A-Z0-9]+)\]/g)].map((m) => m[1]))].filter((id) => picked.has(id))
     return res.status(200).json({ answer, ids })
   } catch {

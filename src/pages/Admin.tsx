@@ -454,7 +454,7 @@ function DigestTab() {
   const events = useEvents()
   const [copied, setCopied] = useState(false)
   const d = buildDigest(programmes, events, lang)
-  const html = digestHtml(d, lang, { app: t('appName'), deadlines: t('home.deadlinesTitle'), programmes: t('nav.programmes'), help: `${t('home.talkTitle')} ${t('hotline.emergency')}` })
+  const html = digestHtml(d, lang, { app: t('appName'), deadlines: t('home.deadlinesTitle'), programmes: t('nav.programmes'), help: `${t('home.talkTitle')} ${t('crisis.short')}` })
   return (
     <div className="space-y-4">
       <p>{t('admin.digestText')}</p>

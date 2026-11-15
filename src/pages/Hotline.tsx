@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Field, PageHeader, SafetyBox, Section, useLang } from '../components/ui'
 import { insert } from '../lib/store'
+import { CrisisLines } from '../components/CrisisLines'
 import { isDemo } from '../lib/supabase'
 
 const LINES = [
@@ -25,7 +26,7 @@ export default function Hotline() {
     <>
       <PageHeader title={t('hotline.title')} intro={t('hotline.intro')} />
       <Section>
-        <div className="rounded-2xl bg-alarm text-white p-5 text-2xl font-bold display">☎ {t('hotline.emergency')}</div>
+        <CrisisLines />
       </Section>
       <Section>
         <div className="grid gap-6 lg:grid-cols-2">

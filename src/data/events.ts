@@ -25,7 +25,7 @@ export const seedEvents: CalEvent[] = [
     dateLabel: { en: 'Nov 2026 (indicative)', cs: 'listopad 2026 (orientačně)', pl: 'listopad 2026 (orientacyjnie)' },
     title: {
       en: 'Decision on the 10.19 outplacement call (PLN 177.8m); chosen projects then start recruiting',
-      cs: 'Rozhodnutí o výzvě 10.19 na outplacement (177,8 mil. PLN); vybrané projekty pak začnou nabírat',
+      cs: 'Rozhodnutí o výzvě 10.19 na outplacement (177,8 mil. PLN); vybrané projekty pak začnou přijímat účastníky',
       pl: 'Rozstrzygnięcie naboru 10.19 na outplacement (177,8 mln zł); wybrane projekty zaczną rekrutację',
     },
     who: { en: 'Current and former mining and mining-related staff', cs: 'Současní i bývalí zaměstnanci těžby a navazujících firem', pl: 'Obecni i byli pracownicy górnictwa i firm okołogórniczych' },
@@ -55,7 +55,7 @@ export const seedEvents: CalEvent[] = [
   {
     id: 'ev-pl-ropt-end', date: '2026-12-31', country: 'PL', kind: 'call',
     title: { en: 'ROPT 2.0 transition observatory ends', cs: 'Končí observatoř transformace ROPT 2.0', pl: 'Koniec projektu ROPT 2.0' },
-    who: { en: 'Information users', cs: 'Uživatelé informací', pl: 'Odbiorcy informacji' },
+    who: { en: 'Information users', cs: 'Všichni, kdo hledají informace o transformaci', pl: 'Odbiorcy informacji' },
     programmeIds: ['PL-R06'], source: 'PL database, section 7',
   },
   {
@@ -80,7 +80,7 @@ export const seedEvents: CalEvent[] = [
     dateLabel: { en: 'Q4 2027', cs: '4. čtvrtletí 2027', pl: 'IV kwartał 2027' },
     title: {
       en: 'Shaft filling at ČSM ends; more OKD layoffs expected (towards ~70 staff)',
-      cs: 'Konec zasypávání jam na ČSM; očekává se další propouštění v OKD (až na ~70 lidí)',
+      cs: 'Konec zasypávání jam na ČSM; očekává se další propouštění v OKD (až na asi 70 lidí)',
       pl: 'Koniec zasypywania szybów ČSM; kolejne zwolnienia w OKD (do ok. 70 osób)',
     },
     who: { en: 'OKD liquidation staff', cs: 'Zaměstnanci OKD na likvidaci', pl: 'Pracownicy OKD przy likwidacji' },
@@ -118,19 +118,19 @@ export const seedEvents: CalEvent[] = [
   {
     id: 'ev-pl-paper', date: '2026-09-30', country: 'PL', kind: 'deadline',
     title: { en: 'End of paper-only filing for leave applications', cs: 'Konec období, kdy se žádosti o hornickou dovolenou podávaly jen na papíře', pl: 'Koniec okresu składania wniosków o urlop wyłącznie na papierze' },
-    who: { en: 'Staff of support-system companies', cs: 'Zaměstnanci firem v systému podpory', pl: 'Pracownicy spółek objętych systemem wsparcia' },
+    who: { en: 'Staff of support-system companies', cs: 'Zaměstnanci firem ze státního programu podpory hornictví', pl: 'Pracownicy spółek objętych systemem wsparcia' },
     programmeIds: ['PL-N01', 'PL-N02'], source: 'PL database, section 7',
   },
   {
     id: 'ev-pl-1019-closed', date: '2026-06-30', country: 'PL', kind: 'call',
     title: { en: '10.19 outplacement call 343/26 closed', cs: 'Uzavřena výzva 10.19 (343/26)', pl: 'Zamknięty nabór 10.19 (343/26)' },
-    who: { en: 'Project organisers', cs: 'Pořadatelé projektů', pl: 'Realizatorzy projektów' },
+    who: { en: 'Project organisers', cs: 'Organizace, které projekty vedou', pl: 'Realizatorzy projektów' },
     programmeIds: ['PL-R01'], source: 'PL database, section 7',
   },
   {
     id: 'ev-pl-1020-closed', date: '2026-04-30', country: 'PL', kind: 'call',
     title: { en: '10.20 start-up grant call 338/26 closed', cs: 'Uzavřena výzva 10.20 na dotace pro začínající podnikatele', pl: 'Zamknięty nabór 10.20 na dotacje na firmę' },
-    who: { en: 'Project organisers', cs: 'Pořadatelé projektů', pl: 'Realizatorzy projektów' },
+    who: { en: 'Project organisers', cs: 'Organizace, které projekty vedou', pl: 'Realizatorzy projektów' },
     programmeIds: ['PL-R02'], source: 'PL database, section 7',
   },
   {
@@ -142,7 +142,7 @@ export const seedEvents: CalEvent[] = [
   {
     id: 'ev-cz-csm-last', date: '2026-01-31', country: 'CZ', kind: 'mine',
     title: { en: 'Coal mining at ČSM ends: the last Czech hard-coal mine', cs: 'Konec těžby na Dole ČSM, posledním černouhelném dole v Česku', pl: 'Koniec wydobycia w ČSM, ostatniej czeskiej kopalni węgla kamiennego' },
-    who: { en: '~900 OKD staff left in Jan-Feb 2026', cs: '~900 zaměstnanců OKD odešlo v lednu a únoru 2026', pl: '~900 pracowników OKD odeszło w styczniu i lutym 2026' },
+    who: { en: '~900 OKD staff left in Jan-Feb 2026', cs: 'asi 900 zaměstnanců OKD odešlo v lednu a únoru 2026', pl: '~900 pracowników OKD odeszło w styczniu i lutym 2026' },
     place: 'Stonava', lat: 49.8163, lng: 18.5279, source: 'CZ database, history',
   },
 ]

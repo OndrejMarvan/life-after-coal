@@ -83,7 +83,7 @@ export default function Assistant() {
                       <Link to="/help" className="font-bold text-orange underline">
                         {t('nav.help')}
                       </Link>{' '}
-                      · {t('hotline.emergency')}
+                      · {t('crisis.short')}
                     </div>
                   )}
                   {m.cards && m.cards.length > 0 && (
@@ -131,6 +131,7 @@ export default function Assistant() {
             </button>
           </form>
           <p className="mt-3 text-sm text-coal/60">{t('assistant.disclaimer')}</p>
+          <p className="mt-1 text-sm text-coal/60">{t('assistant.privacy')}</p>
         </div>
       </Section>
     </>

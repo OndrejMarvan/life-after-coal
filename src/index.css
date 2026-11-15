@@ -130,3 +130,19 @@ a { color: inherit; }
   .print-only { display: block !important; }
 }
 .print-only { display: none; }
+
+/* Light background option (menu "More"): the dark "chrome" areas (header, footer, page headers)
+   turn white. Inside them coal and white swap, so bg-coal, text-white and their opacity
+   variants follow on their own; orange stays orange. */
+:root[data-theme="light"] .chrome {
+  --color-coal: #ffffff;
+  --color-white: #0d0d0d;
+  --color-charcoal: #f3eee7;
+}
+:root[data-theme="light"] .chrome .bg-orange,
+:root[data-theme="light"] .chrome .btn-primary { color: #0d0d0d; }
+:root[data-theme="light"] .chrome .text-orange { color: var(--color-orange-deep); }
+:root[data-theme="light"] .chrome .btn-dark { background: #0d0d0d; color: #fff; }
+:root[data-theme="light"] .kit-stripes-soft {
+  background-image: repeating-linear-gradient(90deg, #ffffff 0 56px, var(--color-orange-pale) 56px 112px);
+}

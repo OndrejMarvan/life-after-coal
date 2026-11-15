@@ -10,6 +10,7 @@ const pl: Dict = {
     newsletter: 'Biuletyn', portals: 'Oficjalne portale', gaps: 'Nic dla ciebie?', assistant: 'Zapytaj o następny krok',
     account: 'Moje konto', login: 'Zaloguj się', admin: 'Administracja', about: 'O projekcie', menu: 'Menu', language: 'Język',
     support: 'Postaw nam kawę',
+    themeLight: 'Jasne tło', themeDark: 'Ciemne tło',
   },
   common: {
     photo: 'Fot.',
@@ -18,7 +19,7 @@ const pl: Dict = {
     applyOnline: 'Złóż wniosek online', helpInPerson: 'Pomoc na miejscu', addToCalendar: 'Dodaj do kalendarza', details: 'Szczegóły',
     lastChecked: 'Ostatnio sprawdzono', source: 'Źródło', readMore: 'Więcej', startOver: 'Zacznij od nowa', edit: 'Edytuj', delete: 'Usuń',
     thanks: 'Dziękujemy.', required: 'Wymagane', optional: 'opcjonalnie', error: 'Coś poszło nie tak. Spróbuj ponownie.',
-    demoBanner: 'Tryb demo: dane zapisują się tylko w tej przeglądarce. Po podłączeniu Supabase będą wspólne.',
+    demoBanner: 'Wersja pokazowa: wszystko, co tu wpiszesz, zostaje tylko w tej przeglądarce i nikt inny tego nie zobaczy.',
     approx: 'Przybliżona lokalizacja', phone: 'Telefon', email: 'E-mail', address: 'Adres', website: 'Strona',
     detailsInEnglish: 'Pełne szczegóły są na razie po angielsku. Podsumowanie powyżej jest po polsku.',
     guideNotDecision: 'To jest przewodnik, a nie decyzja. Decyduje urząd lub firma wskazana na karcie.',
@@ -55,7 +56,7 @@ const pl: Dict = {
     sosnowiec: 'Podregion sosnowiecki (Sosnowiec, Dąbrowa Górnicza, Jaworzno, Będzin)', tychy: 'Podregion tyski (Tychy, Pszczyna, Mikołów, Bieruń, Lędziny)',
     malopolska: 'Małopolska Zachodnia (Libiąż, Brzeszcze, Chełmek)', walbrzych: 'Podregion wałbrzyski (Wałbrzych, Świdnica, Nowa Ruda)', elsewhere_pl: 'Gdzie indziej w Polsce', wielkopolska: 'Wielkopolska Wschodnia (Konin)',
     msk: 'Kraj morawsko-śląski (Ostrawa, Karwina, Hawierzów, Orłowa, Trzyniec, Czeski Cieszyn, Frydek-Mistek)',
-    usti: 'Kraj ustecki (Most, Chomutów, Litwinów)', kv: 'Kraj karlowarski (Sokolov)', elsewhere_cz: 'Gdzie indziej w Czechach',
+    usti: 'Kraj ustecki', kv: 'Kraj karlowarski', elsewhere_cz: 'Gdzie indziej w Czechach',
   },
   home: {
     factsTitle: 'Czy wiesz, że…?', factsMore: 'Więcej ciekawostek o górnictwie',
@@ -264,10 +265,15 @@ const pl: Dict = {
     rolling: 'Termin ruchomy', suggest: 'Zaproponuj wydarzenie', suggestTitle: 'Nazwa wydarzenia', suggestDate: 'Data', suggestPlace: 'Miejsce',
     suggestSent: 'Dziękujemy. Moderator sprawdzi wydarzenie przed publikacją.',
   },
+  crisis: {
+    title: 'Numery alarmowe i telefony zaufania',
+    intro: 'Gdy chodzi o życie lub zdrowie, dzwoń pod numer alarmowy. Gdy potrzebujesz od razu z kimś porozmawiać, zadzwoń na telefon zaufania. Jest bezpłatny i nie musisz podawać nazwiska.',
+    checked: 'Sprawdzono 15.11.2026:',
+    short: 'Numer alarmowy 112 · telefon zaufania 116 123 (całą dobę, bezpłatnie)',
+  },
   hotline: {
     title: 'Chcesz porozmawiać?',
     intro: 'Badanie nie znalazło w żadnym z krajów związkowej infolinii ani pomocy psychologicznej skierowanej do górników. Dlatego słuchamy i pomagamy znaleźć właściwy urząd.',
-    emergency: 'W nagłej sytuacji dzwoń pod 112.',
     callbackTitle: 'Oddzwonimy do ciebie', name: 'Imię', phone: 'Numer telefonu', language: 'Język', bestTime: 'Kiedy najlepiej dzwonić',
     topic: 'Temat', topic_money: 'Pieniądze', topic_pension: 'Emerytura', topic_job: 'Nowa praca lub szkolenie', topic_mental: 'Jak się czuję', topic_family: 'Rodzina',
     note: 'Co powinniśmy wiedzieć (opcjonalnie)', consent: 'Zgadzam się, aby zespół Życie po węglu zapisał mój numer, żeby oddzwonić.',
@@ -317,6 +323,7 @@ const pl: Dict = {
     placeholder: 'Na przykład: Pracowałem 20 lat na dole w JSW i chcę odejść. Co mi przysługuje?',
     ask: 'Zapytaj', thinking: 'Myślę...', sources: 'Użyte programy',
     disclaimer: 'To nie jest porada prawna ani finansowa. Decyduje urząd lub firma wskazana na karcie.',
+    privacy: 'Pytania przetwarza usługa Google Gemini. Nie wpisuj w nich nazwiska, numeru PESEL ani innych danych osobowych.',
     fallback: 'Asystent nie jest teraz podłączony. Do twojego pytania pasują te programy:',
     feelings: 'Jeśli cię to przytłacza, porozmawiaj z człowiekiem:',
     examples: 'Spróbuj zapytać',
@@ -368,7 +375,7 @@ const pl: Dict = {
     intro: 'Życie po węglu jest bezpłatne i bez reklam. Jeśli pomogło Tobie lub komuś bliskiemu, możesz pomóc nam utrzymać stronę i aktualne informacje.',
     usesTitle: 'Na co pójdzie Twoja kawa',
     use1: 'Comiesięczne sprawdzanie programów, kwot, terminów i kontaktów',
-    use2: 'Tłumaczenie pełnych opisów programów na czeski i polski',
+    use2: 'Fachowa korekta tłumaczeń na czeski i polski',
     use3: 'Drukowane egzemplarze miesięcznego biuletynu dla urzędów pracy, bibliotek i związków zawodowych',
     use4: 'Utrzymanie strony i asystenta',
     free: 'Górnicy i ich rodziny nigdy za nic na tej stronie nie płacą.',
@@ -378,7 +385,7 @@ const pl: Dict = {
     notOpenText: 'Przygotowujemy przejrzysty sposób przyjmowania wsparcia. Na razie ta strona nie pobiera żadnych pieniędzy.',
     notify: 'Zapisz się do biuletynu, a damy znać, gdy ruszymy',
   },
-  footer: { madeFor: 'Dla górników, ich rodzin i ich miast.', sources: 'Źródła: dwie bazy danych, 14.11.2026.' },
+  footer: { madeWithLove: 'Z miłością stworzyli', madeFor: 'Dla górników, ich rodzin i ich miast.', sources: 'Źródła: dwie bazy danych, 14.11.2026.' },
 }
 
 export default pl

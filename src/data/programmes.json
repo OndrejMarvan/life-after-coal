@@ -45,19 +45,19 @@
   "summary": {
    "en": "Mining leave lets an underground miner who is close to retirement stop working and still receive most of his pay until he reaches his miners' pension. During the leave he does not go to work at all.",
    "pl": "Do 5 lat płatnego urlopu (80% wynagrodzenia) bez pracy, jako pomost do emerytury górniczej. Dla pracowników dołowych spółek objętych systemem wsparcia.",
-   "cs": "Až 5 let placené dovolené (80 % mzdy) bez práce jako most k hornickému důchodu. Pro zaměstnance v podzemí ze společností zapojených do systému podpory."
+   "cs": "Až 5 let placené dovolené (80 % mzdy) bez práce, která přemostí dobu do hornického důchodu. Pro zaměstnance v podzemí ve firmách ze státního programu podpory hornictví (PGG, PKW, Węglokoks Kraj, JSW)."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
     "intro": "Hornická dovolená umožňuje horníkovi v podzemí, kterému zbývá málo do důchodu, přestat pracovat a přitom dál dostávat většinu mzdy, dokud nedosáhne na hornický důchod. Během dovolené vůbec nechodí do práce. Se zaměstnavatelem se předem dohodne, že jeho pracovní poměr skončí v den, kdy skončí dovolená, takže dovolená funguje jako placený most k důchodu. Je to hlavní nástroj, kterým stát zmenšuje počet zaměstnanců dolů bez nuceného propouštění.",
-    "who_for": "Zaměstnanec v podzemí ve společnosti zapojené do systému podpory, který tam byl zaměstnán k 1. 1. 2026 a do důchodu mu nezbývá víc než 5 let (počítá se věk i doba práce v hornictví). Dovolená musí skončit odchodem do důchodu nejpozději 31. 12. 2054.",
+    "who_for": "Zaměstnanec v podzemí ve firmě ze státního programu podpory hornictví, který tam byl zaměstnán k 1. 1. 2026 a do důchodu mu nezbývá víc než 5 let (počítá se věk i doba práce v hornictví). Dovolená musí skončit odchodem do důchodu nejpozději 31. 12. 2054.",
     "who_excluded": "Zaměstnanci na povrchu a v kancelářích; každý, kdo už dovolenou využil nebo dostal dřívější restrukturalizační dávky; zaměstnanci dodavatelských firem a soukromých dolů.",
     "what_you_get": "80 % měsíční mzdy, počítané jako náhrada mzdy za dovolenou (přesčasy z posledních 3 měsíců se započítávají až do 37,5 hodiny), až na 5 let, bez práce.",
     "conditions": "Zaměstnavatel musí souhlasit; využít ji lze jen jednou. Dovolená zaniká, pokud člověk nastoupí do práce v dole nebo u dodavatelské firmy, která dělá hornické práce, dělá hornické práce v rámci vlastního podnikání, nebo získá nárok na důchod.",
     "how_to_apply": "Písemná žádost na personální oddělení vašeho zaměstnavatele; zaměstnavatel si zajistí potvrzení od ZUS a kontrolu u ARP. Do 30. 9. 2026 se žádosti musely podávat na papíře.",
     "operator": "Dotace ze státního rozpočtu vyplácená přes zaměstnavatele.",
-    "dates": "1. 1. 2026 – bez stanoveného konce; běží. PGG přijala 2 744 žádostí; ~1 100 zaměstnanců JSW na dovolené",
+    "dates": "1. 1. 2026 – bez stanoveného konce; běží. PGG přijala 2 744 žádostí; asi 1 100 zaměstnanců JSW na dovolené",
     "status_text": "Běží od 1. 1. 2026.",
     "legal_basis": "Čl. 11aa, 11ba, 11ca, 11k polského zákona o černouhelném hornictví (Dz.U. 2026 poz. 520).",
     "take_up": "PGG přijala 2 744 žádostí; asi 1 100 zaměstnanců JSW už bylo na dovolené.",
@@ -129,13 +129,13 @@
   "summary": {
    "en": "This is the same idea as mining leave, but for people who work in the coal-processing plant (where coal is washed and sorted) rather than underground. It is shorter because processing workers reach their pension under different rules.",
    "pl": "Do 4 lat urlopu z 80% wynagrodzenia przed emeryturą, dla pracowników zakładu przeróbki mechanicznej węgla.",
-   "cs": "Až 4 roky dovolené s 80 % mzdy před důchodem pro zaměstnance úpravny uhlí."
+   "cs": "Až 4 roky placené dovolené (80 % mzdy) před důchodem pro zaměstnance úpraven uhlí."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
     "intro": "Jde o stejný princip jako u hornické dovolené, ale pro lidi, kteří pracují v úpravně uhlí (kde se uhlí pere a třídí), a ne v podzemí. Je kratší, protože pracovníci úpravny dosahují na důchod podle jiných pravidel.",
-    "who_for": "Zaměstnanci úpravny ve společnosti zapojené do systému podpory, zaměstnaní k 1. 1. 2026, kterým do důchodu nezbývá víc než 4 roky; důchod musí začít nejpozději 31. 12. 2053.",
+    "who_for": "Zaměstnanci úpravny ve firmě ze státního programu podpory hornictví, zaměstnaní k 1. 1. 2026, kterým do důchodu nezbývá víc než 4 roky; důchod musí začít nejpozději 31. 12. 2053.",
     "what_you_get": "80 % mzdy až na 4 roky, bez práce.",
     "conditions": "Zaměstnavatel musí souhlasit; využít ji lze jen jednou. Dovolená zaniká, pokud člověk nastoupí do práce v dole nebo u dodavatelské firmy, která dělá hornické práce, dělá hornické práce v rámci vlastního podnikání, nebo získá nárok na důchod.",
     "how_to_apply": "Písemná žádost na personální oddělení vašeho zaměstnavatele; zaměstnavatel si zajistí potvrzení od ZUS a kontrolu u ARP. Do 30. 9. 2026 se žádosti musely podávat na papíře.",
@@ -211,15 +211,15 @@
   "summary": {
    "en": "This is a single cash payment for employees who are too far from retirement to get a leave and who agree to leave the company. Unlike the leaves, it is open to everyone on the payroll of a support-system company, including office staff, secretaries and head-office employees.",
    "pl": "Jednorazowa odprawa 170 000 zł, wolna od podatku dochodowego, dla pracowników spółek objętych systemem wsparcia, którzy dobrowolnie odchodzą z górnictwa.",
-   "cs": "Jednorázové odstupné 170 000 PLN, osvobozené od daně z příjmu, pro zaměstnance společností zapojených do systému podpory, kteří dobrovolně odcházejí z hornictví."
+   "cs": "Jednorázové odstupné 170 000 PLN bez daně z příjmu pro zaměstnance firem ze státního programu podpory hornictví, kteří z hornictví odejdou dobrovolně."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Jde o jednorázovou peněžní platbu pro zaměstnance, kteří mají do důchodu příliš daleko na to, aby dostali dovolenou, a kteří souhlasí s odchodem ze společnosti. Na rozdíl od dovolených je otevřená všem zaměstnancům společnosti zapojené do systému podpory, včetně kancelářských pracovníků, sekretářek a zaměstnanců centrály. Výměnou za ni člověk slibuje, že se už nikdy nevrátí pracovat do hornictví.",
-    "who_for": "Každý zaměstnanec společnosti zapojené do systému podpory zaměstnaný k 1. 1. 2026, který tam odpracoval alespoň 3 roky, nemá nárok na hornickou dovolenou ani na dovolenou pro pracovníky úpravny a do důchodu mu zbývá alespoň 12 měsíců.",
+    "intro": "Jde o jednorázovou peněžní platbu pro zaměstnance, kteří mají do důchodu příliš daleko na to, aby dostali dovolenou, a kteří souhlasí s odchodem ze společnosti. Na rozdíl od dovolených je otevřená všem zaměstnancům firmy ze státního programu podpory hornictví, včetně kancelářských pracovníků, sekretářek a zaměstnanců centrály. Výměnou za ni člověk slibuje, že se už nikdy nevrátí pracovat do hornictví.",
+    "who_for": "Každý zaměstnanec firmy ze státního programu podpory hornictví zaměstnaný k 1. 1. 2026, který tam odpracoval alespoň 3 roky, nemá nárok na hornickou dovolenou ani na dovolenou pro pracovníky úpravny a do důchodu mu zbývá alespoň 12 měsíců.",
     "who_excluded": "Lidé, kteří ve společnosti odpracovali méně než 3 roky; lidé, kteří jsou do 12 měsíců před důchodem; každý, kdo už dostal podobné dávky (podle zpráv: od roku 1994); zaměstnanci dodavatelských firem, firem navázaných na hornictví a soukromých dolů.",
-    "what_you_get": "170 000 PLN, osvobozeno od daně z příjmu a nezapočítává se do zdravotního pojištění. Lze ji dostat navíc k běžnému odstupnému při propouštění (N05).",
+    "what_you_get": "170 000 PLN, osvobozeno od daně z příjmu a neplatí se z něj zdravotní pojištění. Lze ji dostat navíc k běžnému odstupnému při propouštění (N05).",
     "conditions": "Souhlas zaměstnavatele; ukončení pracovního poměru dohodou; podepsané prohlášení, že souhlasíte se ztrátou nebo vrácením peněz, pokud se vrátíte do hornictví. Doly nesmějí nikoho, kdo ji dostal, zaměstnat ani dovolit dodavatelským firmám, aby ho u nich nasadily.",
     "how_to_apply": "Písemná žádost na personální oddělení; ARP ověří, zda jste už dříve podobné dávky nedostali.",
     "operator": "Dotace ze státního rozpočtu vyplácená zaměstnavatelem.",
@@ -227,7 +227,7 @@
     "status_text": "Běží od 1. 1. 2026; zákon nestanoví datum ukončení.",
     "legal_basis": "Čl. 11da (Dz.U. 2026 poz. 520); osvobození od daně v čl. 52zd polského zákona o dani z příjmů fyzických osob (PIT).",
     "take_up": "JSW vyplatila do 28. 5. 2026 celkem 526 odstupných; PGG vyplatila 586 v první tranši a v roce 2026 plánuje až 738.",
-    "known_problems": "Média uvádějí, že je osvobozena i od odvodů na sociální pojištění; text zákona, který byl zde prostudován, potvrzuje jen body o dani a zdravotním pojištění. V minulosti mnoho lidí vzalo odstupné a později se do dolů vrátilo, a proto dnes platí zákaz návratu.",
+    "known_problems": "Média uvádějí, že je osvobozena i od odvodů na sociální pojištění; text zákona, který jsme prostudovali, potvrzuje jen osvobození od daně a od zdravotního pojištění. V minulosti mnoho lidí vzalo odstupné a později se do dolů vrátilo, a proto dnes platí zákaz návratu.",
     "evidence_note": "Ověřeno",
     "source_note": "[1][2][3][43] · Ověřeno"
    },
@@ -308,9 +308,9 @@
     "operator": "Státní rozpočet",
     "dates": "Běží, jen když se důl prodává",
     "status_text": "Běží, ale jen pokud se důl skutečně prodá.",
-    "legal_basis": "Čl. 11d (podle zpráv).",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[3] · Podle zpráv (neověřeno podle textu zákona)"
+    "legal_basis": "Čl. 11d (podle médií).",
+    "evidence_note": "Podle médií",
+    "source_note": "[3] · Podle médií (neověřeno podle textu zákona)"
    },
    "pl": {
     "intro": "Gdy spółka górnicza sprzedaje kopalnię innej spółce, pracownicy, którzy nie chcą przejść razem z nią, mogą odejść z odprawą. Jej wysokość zależy od tego, jak szybko po sprzedaży odejdą.",
@@ -379,11 +379,11 @@
     "who_for": "Každý zaměstnanec propuštěný v rámci hromadného nebo individuálního propouštění.",
     "what_you_get": "1 až 3 měsíční mzdy podle délky pracovního poměru; podléhá dani.",
     "operator": "Zaměstnavatel.",
-    "dates": "Trvale; běží",
-    "status_text": "Trvale; běží",
+    "dates": "Bez časového omezení; běží",
+    "status_text": "Bez časového omezení; běží",
     "legal_basis": "Polský zákon ze dne 13. 3. 2003 o hromadném propouštění, čl. 8.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[4] · Podle zpráv (částky odpovídají běžnému zákonnému pravidlu, v této rešerši znovu neověřeno)"
+    "evidence_note": "Podle médií",
+    "source_note": "[4] · Podle médií (částky odpovídají běžnému zákonnému pravidlu, v této rešerši znovu neověřeno)"
    },
    "pl": {
     "intro": "Każdy pracodawca w Polsce musi wypłacić odprawę, gdy zwalnia kogoś z przyczyn, które nie leżą po stronie pracownika. Górnicy też ją dostają i jest ona niezależna od finansowanych przez państwo 170 000 zł.",
@@ -447,7 +447,7 @@
   "summary": {
    "en": "Some miners receive a monthly equalisation annuity, usually awarded by a court after a work accident or illness. The new law makes sure these payments continue when a mine is liquidated between 2026 and 2049.",
    "pl": "Renta wyrównawcza jest wypłacana dalej także po likwidacji kopalni w latach 2026-2049.",
-   "cs": "Vyrovnávací renta se vyplácí dál i po likvidaci dolu v letech 2026-2049."
+   "cs": "Kdo už pobírá vyrovnávací rentu (renta wyrównawcza), dostává ji dál, i když jeho důl v letech 2026–2049 zanikne."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -460,8 +460,8 @@
     "status_text": "Běží",
     "legal_basis": "Novelizovaný zákon",
     "known_problems": "Podrobné pravidlo se v přečtených částech zákona nenašlo.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[56] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[56] · Podle médií"
    },
    "pl": {
     "intro": "Niektórzy górnicy otrzymują comiesięczną rentę wyrównawczą, zwykle przyznaną przez sąd po wypadku przy pracy lub chorobie. Nowa ustawa zapewnia, że te wypłaty będą kontynuowane, gdy kopalnia zostanie zlikwidowana w latach 2026–2049.",
@@ -525,13 +525,13 @@
   "summary": {
    "en": "Instead of leaving, a worker from a closing mine can be moved to a mine of another company. His years of service carry over.",
    "pl": "Przeniesienie do kopalni innej spółki z zachowaniem stażu pracy, zamiast odejścia.",
-   "cs": "Převedení do dolu jiné společnosti se zachováním odpracovaných let, místo odchodu."
+   "cs": "Místo odchodu přechod na důl jiné firmy, se započtením odpracovaných let."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
     "intro": "Místo odchodu může být pracovník z dolu, který se zavírá, převeden do dolu jiné společnosti. Odpracované roky se mu započítávají dál.",
-    "who_for": "Zaměstnanci společností zapojených do systému podpory, na základě dohody mezi oběma zaměstnavateli.",
+    "who_for": "Zaměstnanci firem ze státního programu podpory hornictví, na základě dohody mezi oběma zaměstnavateli.",
     "what_you_get": "Pokračující zaměstnání a započtení odpracované doby; nárok na odstupné při propuštění nevzniká.",
     "operator": "Zaměstnavatelé",
     "dates": "Běží",
@@ -607,8 +607,8 @@
     "what_you_get": "Důchod od ZUS s hornickými koeficienty",
     "how_to_apply": "Žádost na ZUS s potvrzeními o zaměstnání a o hornické práci.",
     "operator": "Fond sociálního pojištění (ZUS)",
-    "dates": "Trvale; běží",
-    "status_text": "Trvale; běží",
+    "dates": "Bez časového omezení; běží",
+    "status_text": "Bez časového omezení; běží",
     "legal_basis": "Čl. 50a–50e polského zákona ze dne 17. 12. 1998 o důchodech z Fondu sociálního pojištění.",
     "evidence_note": "Ověřeno",
     "source_note": "[8][9] · Ověřeno"
@@ -749,7 +749,7 @@
   "summary": {
    "en": "From 2015 to 2023, mines being closed were handed to the state company SRK, and their staff could take leave or severance there. No new mines can be handed over after 2023, so this is now a closing, legacy scheme.",
    "pl": "Świadczenia dla pracowników kopalń przekazanych do SRK do końca 2023 r. Nowych osób już się nie przyjmuje.",
-   "cs": "Dávky pro zaměstnance dolů převedených do SRK do konce roku 2023. Noví lidé se už nepřijímají."
+   "cs": "Dávky pro zaměstnance dolů převedených do SRK do konce roku 2023. Nové žádosti se už nepřijímají."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -763,8 +763,8 @@
     "legal_basis": "Kapitola 3a zákona (dřívější znění)",
     "take_up": "9 022 žádostí a 7 650 dávek do května 2017, z toho 4 962 na dovolené.",
     "known_problems": "Bez zákazu návratu si někteří lidé vzali odstupné a vrátili se do hornictví.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[15][52] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[15][52] · Podle médií"
    },
    "pl": {
     "intro": "W latach 2015–2023 zamykane kopalnie przekazywano państwowej spółce SRK, a ich pracownicy mogli tam skorzystać z urlopu lub odprawy. Po 2023 r. nie można przekazywać nowych kopalń, więc jest to wygasający, stary program.",
@@ -822,7 +822,7 @@
   "summary": {
    "en": "This is the equivalent package for people in coal power plants and lignite (brown-coal) mines. It matters for mining-related workers whose employer is a power company rather than a hard-coal mine.",
    "pl": "Osłony socjalne dla pracowników elektrowni i kopalń węgla brunatnego: urlop do 4 lat albo odprawa 12-krotności pensji.",
-   "cs": "Sociální ochrana pro zaměstnance elektráren a dolů na hnědé uhlí: dovolená až 4 roky, nebo odstupné ve výši 12 měsíčních mezd."
+   "cs": "Ochranný balíček pro zaměstnance elektráren a hnědouhelných dolů: dovolená až na 4 roky, nebo odstupné ve výši 12 měsíčních mezd."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -984,8 +984,8 @@
     "status_text": "Podepsána 28. 5. 2021; politická dohoda, kterou provádějí novely polského zákona o černouhelném hornictví (srpen 2021, prosinec 2025)",
     "legal_basis": "Není to zákon",
     "known_problems": "Podle vyjádření odborů nebyla nikdy notifikována Evropské komisi; ministr energetiky navrhl ji revidovat.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[14] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[14] · Podle médií"
    },
    "pl": {
     "intro": "Porozumienie między rządem, górniczymi związkami zawodowymi, gminami górniczymi i spółkami określa harmonogram zamykania kopalń węgla energetycznego do 2049 r. Obecnym górnikom obiecuje pracę do emerytury albo w zamian świadczenia osłonowe. Samo w sobie nie jest ustawą; nowelizacja z 2025 r. przeniosła dużą jego część do ustawy.",
@@ -1058,7 +1058,7 @@
     "intro": "Každý okresní úřad práce (PUP) nabízí standardní sadu nástrojů pro uchazeče o zaměstnání, kterou mohou bývalí horníci využít stejně jako kdokoli jiný. Od června 2025 se registrujete na úřadě podle místa, kde skutečně bydlíte, a věkové limity u nástrojů zmizely.",
     "who_for": "Nezaměstnaní a uchazeči o zaměstnání registrovaní na PUP podle skutečného bydliště; bez věkových limitů",
     "what_you_get": "Nabídky práce a kariérní poradenství, kurzy, stáže, dotace na zahájení podnikání, půjčka na rozjezd firmy, poukaz na přestěhování, pokud přijmete práci daleko od domova; výši částek stanoví každý úřad sám.",
-    "how_to_apply": "Zaregistrujte se na svém PUP jako nezaměstnaný nebo uchazeč o zaměstnání a pak o každý nástroj požádejte na jeho formuláři.",
+    "how_to_apply": "Zaregistrujte se na svém PUP jako nezaměstnaný nebo uchazeč o zaměstnání a pak o jednotlivé druhy pomoci žádejte na příslušných formulářích.",
     "operator": "Fond práce; okresní úřady práce",
     "dates": "Od 1. 6. 2025; běží",
     "status_text": "Od 1. 6. 2025; běží",
@@ -1130,8 +1130,8 @@
     "dates": "Každoroční výzvy; běží",
     "status_text": "Každoroční výzvy; běží",
     "legal_basis": "Zákon",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[16][36] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[16][36] · Podle médií"
    },
    "pl": {
     "intro": "Fundusz, z którego pracodawcy mogą pokryć większość kosztów szkolenia swoich pracowników. Firma, która zatrudnia byłych górników, może z niego skorzystać, by ich przekwalifikować.",
@@ -1195,11 +1195,11 @@
     "who_for": "Bývalí zaměstnanci dolů a dodavatelských firem pro hornictví, kteří jsou v důchodu",
     "what_you_get": "Peníze místo uhlí zdarma (výše nezjišťována)",
     "operator": "Státní rozpočet",
-    "dates": "Podrobně nezkoumáno",
-    "status_text": "Podrobně nezkoumáno",
+    "dates": "Zatím podrobně nezjištěno",
+    "status_text": "Zatím podrobně nezjištěno",
     "legal_basis": "V této rešerši nepotvrzeno",
-    "evidence_note": "Podle zpráv",
-    "source_note": "nepotvrzeno · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "nepotvrzeno · Podle médií"
    },
    "pl": {
     "intro": "Emerytowani górnicy tradycyjnie dostawali bezpłatny węgiel; teraz wypłaca się w zamian pieniądze. Obecnych zasad nie badano na tym etapie.",
@@ -1271,12 +1271,12 @@
   "summary": {
    "en": "Outplacement is a full package of help for someone who has lost, or is about to lose, a job: a personal plan, retraining and active help finding new work. In Silesia this action gives absolute priority to current and former mining and mining-related workers.",
    "pl": "Outplacement FST: plan działania z doradcą, szkolenia, pomoc prawna i psychologiczna, pośrednictwo pracy. Pierwszeństwo dla górników. Nowe projekty rekrutują od 2027 r.",
-   "cs": "Outplacement z FST: akční plán s poradcem, kurzy, právní a psychologická pomoc, zprostředkování práce. Přednost mají horníci. Nové projekty naberou účastníky od roku 2027."
+   "cs": "Outplacement z Fondu pro spravedlivou transformaci: individuální plán s poradcem, kurzy, právní a psychologická pomoc, zprostředkování práce. Horníci mají přednost. Nové projekty začnou přijímat účastníky v roce 2027."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Outplacement je ucelený balík pomoci pro člověka, který přišel nebo brzy přijde o práci: osobní plán, rekvalifikace a aktivní pomoc s hledáním nové práce. Ve Slezsku tato aktivita dává absolutní přednost současným i bývalým pracovníkům hornictví a firem navázaných na hornictví. Projekty mohou přijmout i nezaměstnaného člena rodiny účastníka.",
+    "intro": "Outplacement je ucelený balík pomoci pro člověka, který přišel nebo brzy přijde o práci: osobní plán, rekvalifikace a aktivní pomoc s hledáním nové práce. Ve Slezsku mají v tomto opatření jednoznačnou přednost současní i bývalí pracovníci hornictví a firem navázaných na hornictví. Projekty mohou přijmout i nezaměstnaného člena rodiny účastníka.",
     "who_for": "Lidé, kteří žijí nebo pracují v 7 slezských hornických podregionech (Bielsko, Bytom, Gliwice, Katovice, Rybnik, Sosnowiec, Tychy) a jsou ohroženi propuštěním, jejich propuštění je plánováno, nebo byli propuštěni po 28. 5. 2021 z důvodů, které nezavinili.",
     "who_excluded": "Lidé propuštění před 28. 5. 2021; lidé mimo těchto 7 podregionů.",
     "what_you_get": "Kariérní poradce a individuální akční plán (vždy první krok); kurzy a certifikační zkoušky, hlavně zelené a digitální dovednosti; právní a psychologické poradenství; zprostředkování práce; dotované pracovní místo nebo vybavení nového pracoviště; náklady na péči o děti a dopravu; stipendium během kurzu.",
@@ -1451,7 +1451,7 @@
   "i18n": {
    "cs": {
     "intro": "Každý dospělý v hornických podregionech může získat zaplacené kurzy, kvalifikace nebo studium; vybírá si je v celostátní databázi vzdělávacích služeb (BUR). Mnoho projektů dává lidem z hornictví body navíc.",
-    "who_for": "Dospělí, kteří žijí v 7 podregionech a chtějí si z vlastní iniciativy zvýšit kvalifikaci; některé projekty upřednostňují pracovníky hornictví, kteří odešli po 1. 1. 2021, lidi ve věku 55+ a nezaměstnané.",
+    "who_for": "Dospělí, kteří žijí v 7 podregionech a chtějí si z vlastní iniciativy zvýšit kvalifikaci; některé projekty upřednostňují pracovníky hornictví, kteří odešli po 1. 1. 2021, lidi ve věku 55 a více let a nezaměstnané.",
     "what_you_get": "Hrazené kurzy, studium nebo poplatky za zkoušky.",
     "how_to_apply": "Přihlaste se u provozovatele projektu 10.17 ve svém podregionu a pak si rezervujte kurzy v BUR.",
     "operator": "FST až 95 %; WUP Katowice",
@@ -1537,12 +1537,12 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Je to jediná regionální aktivita, která přímo jmenuje rodiny pracovníků hornictví. Hornické obce vedou místní projekty, které posilují komunity procházející uzavíráním dolů: společenské aktivity, debaty a mediace a práce s hornickým dědictvím.",
+    "intro": "Je to jediné regionální opatření, které výslovně zmiňuje rodiny pracovníků hornictví. Hornické obce vedou místní projekty, které posilují komunity procházející uzavíráním dolů: společenské aktivity, debaty a mediace a práce s hornickým dědictvím.",
     "who_for": "Obyvatelé hornických obcí, včetně rodin pracovníků hornictví a firem navázaných na hornictví.",
-    "what_you_get": "Záleží na projektu obce (gminy) (aktivity, podpora, akce).",
+    "what_you_get": "Záleží na konkrétním projektu obce (gminy): aktivity, podpora, akce.",
     "how_to_apply": "Zeptejte se na své obci (gmině) nebo v centru sociální pomoci, zda vede projekt 10.24.",
     "operator": "FST; odbor EFS maršálkovského úřadu",
-    "dates": "První výzva byla uzavřena 20. 11. 2023; nová výzva pro hornické obce byla ohlášena 15. 12. 2025. Celkový rozpočet aktivity 200,3 mil. PLN.",
+    "dates": "První výzva byla uzavřena 20. 11. 2023; nová výzva pro hornické obce byla ohlášena 15. 12. 2025. Celkový rozpočet opatření 200,3 mil. PLN.",
     "status_text": "Výzva 024/23 (průběžná, uzavřena 20. 11. 2023); nová výzva pro hornické obce ohlášena 15. 12. 2025",
     "legal_basis": "FESL.10.24-IZ.01-024/23",
     "evidence_note": "Ověřeno",
@@ -1613,7 +1613,7 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Navzdory názvu tato aktivita není pro horníky. Školí lidi, kteří horníkům pomáhají: zaměstnance center sociální pomoci a úřadů práce, aby mohli lépe radit a spolupracovat napříč institucemi.",
+    "intro": "Navzdory názvu toto opatření není pro horníky. Školí lidi, kteří horníkům pomáhají: zaměstnance center sociální pomoci a úřadů práce, aby mohli lépe radit a spolupracovat napříč institucemi.",
     "who_for": "Zaměstnanci institucí sociální pomoci a veřejných služeb zaměstnanosti v 7 podregionech (kromě samotného WUP).",
     "what_you_get": "Kurzy, postgraduální studium, studijní cesty, poradenské a právní služby.",
     "operator": "FST 85 %; WUP Katowice",
@@ -1688,7 +1688,7 @@
   "i18n": {
    "cs": {
     "intro": "Projekt maršálkovského úřadu, který sleduje, jak transformace probíhá, a zveřejňuje informace na transformacja.slaskie.pl. Je to zdroj informací, ne přímá pomoc.",
-    "who_for": "Zainteresované strany, rady, veřejnost",
+    "who_for": "Instituce, poradní orgány a veřejnost",
     "what_you_get": "Výzkum, workshopy, transformacja.slaskie.pl",
     "operator": "FST; maršálkovský úřad (transformacja@slaskie.pl)",
     "dates": "1. 4. 2024 – 31. 12. 2026, 11,4 mil. PLN. Kontakt: transformacja@slaskie.pl.",
@@ -1759,7 +1759,7 @@
   "summary": {
    "en": "Funding for small and medium firms in the mining subregions to develop their staff. Useful for supplier firms that need to retrain workers to new products.",
    "pl": "Usługi rozwojowe dla małych i średnich firm z podregionów górniczych, np. firm okołogórniczych przekwalifikowujących pracowników.",
-   "cs": "Rozvojové služby pro malé a střední firmy z hornických podregionů, např. firmy navázané na hornictví, které rekvalifikují zaměstnance."
+   "cs": "Podpora rozvoje pro malé a střední firmy z hornických podregionů, třeba pro dodavatele dolů, kteří rekvalifikují své zaměstnance."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -1771,8 +1771,8 @@
     "dates": "Běží",
     "status_text": "Běží",
     "legal_basis": "FESL 10.16",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[25] · Podle zpráv (podrobnosti neověřeny)"
+    "evidence_note": "Podle médií",
+    "source_note": "[25] · Podle médií (podrobnosti neověřeny)"
    },
    "pl": {
     "intro": "Środki dla małych i średnich firm z podregionów górniczych na rozwój ich pracowników. Przydatne dla firm okołogórniczych, które muszą przekwalifikować pracowników do nowych produktów.",
@@ -1835,12 +1835,12 @@
   "summary": {
    "en": "Funds vocational schools so they teach trades the region needs after coal. Relevant to miners' children rather than miners.",
    "pl": "Pieniądze dla szkół zawodowych, aby uczyły zawodów potrzebnych po węglu. Ważne dla dzieci górników.",
-   "cs": "Peníze pro odborné školy, aby učily obory potřebné po uhlí. Důležité pro děti horníků."
+   "cs": "Peníze pro odborné školy, aby učily obory, které budou potřeba po konci těžby. Důležité pro děti horníků."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Financuje odborné školy, aby učily řemesla, která region potřebuje po konci uhlí. Týká se spíš dětí horníků než samotných horníků. Rozpočet 271,8 mil. PLN.",
+    "intro": "Financuje odborné školy, aby učily řemesla, která bude region potřebovat po konci těžby uhlí. Týká se spíš dětí horníků než samotných horníků. Rozpočet 271,8 mil. PLN.",
     "who_for": "Odborné školy a žáci",
     "what_you_get": "Školní programy",
     "operator": "FST, 271,8 mil. PLN",
@@ -1917,7 +1917,7 @@
   "summary": {
    "en": "A WUP project aimed at mining workers, run before the Just Transition Fund started. It offered the same package that 10.19 now offers.",
    "pl": "Projekt outplacementowy \"Energia\" (2021-2022) dla ok. 310 pracowników górnictwa. Zakończony.",
-   "cs": "Outplacementový projekt \"Energia\" (2021-2022) pro asi 310 zaměstnanců hornictví. Ukončen."
+   "cs": "Outplacementový projekt „Energia“ (2021-2022) pro asi 310 zaměstnanců hornictví. Ukončen."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -1929,8 +1929,8 @@
     "dates": "Březen 2021 – prosinec 2022; výsledky nebyly zveřejněny.",
     "status_text": "Březen 2021 – prosinec 2022; ukončeno",
     "legal_basis": "RPO WSL 2014–2020",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[26] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[26] · Podle médií"
    },
    "pl": {
     "intro": "Projekt WUP skierowany do pracowników górnictwa, realizowany przed uruchomieniem Funduszu na rzecz Sprawiedliwej Transformacji. Oferował ten sam pakiet, który dziś oferuje 10.19.",
@@ -2147,12 +2147,12 @@
   "summary": {
    "en": "PGG, the regional rail operator Koleje Śląskie and the service firm Synercom signed an agreement to move miners leaving PGG into railway jobs. Participants get career advice and aptitude tests, are trained for a rail trade and are helped through recruitment, with the option of a subsidised first job.",
    "pl": "\"Nowa perspektywa\": PGG i Koleje Śląskie przyuczają odchodzących górników do pracy na kolei, np. jako maszynista, mechanik taboru, elektryk.",
-   "cs": "\"Nowa perspektywa\": PGG a Koleje Śląskie zaučují odcházející horníky pro práci na železnici, např. jako strojvedoucí, mechanik vozidel nebo elektrikář."
+   "cs": "„Nowa perspektywa“: PGG a Koleje Śląskie zaučují odcházející horníky pro práci na železnici, např. jako strojvedoucí, mechanik vozidel nebo elektrikář."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "PGG, regionální železniční dopravce Koleje Śląskie a servisní firma Synercom podepsali dohodu o přesunu horníků odcházejících z PGG do práce na železnici. Účastníci dostanou kariérní poradenství a testy předpokladů, vyškolí se na železniční profesi a pomůže se jim s náborem, s možností dotovaného prvního zaměstnání. Program je určen hlavně zaměstnancům uzavíraných úseků Wujek a Bielszowice.",
+    "intro": "PGG, regionální železniční dopravce Koleje Śląskie a servisní firma Synercom podepsali dohodu, podle které mohou horníci odcházející z PGG přejít do práce na železnici. Účastníci dostanou kariérní poradenství a testy předpokladů, vyškolí se na železniční profesi a pomůže se jim s nástupem do práce, s možností dotovaného prvního zaměstnání. Program je určen hlavně zaměstnancům uzavíraných úseků Wujek a Bielszowice.",
     "who_for": "Zaměstnanci PGG odcházející z hornictví.",
     "what_you_get": "Poradenství, testy předpokladů, školení na profese jako strojvedoucí, mechanik kolejových vozidel, elektrikář nebo revizní technik kolejových vozidel, pomoc s přijetím do práce, dotované zaměstnání.",
     "how_to_apply": "Přes informační setkání PGG (první 2. 4. 2026) a zaměstnanecký portál PGG.",
@@ -2222,20 +2222,20 @@
   "summary": {
    "en": "Since October 2025 every PGG plant has had a consultation point where staff can ask about leave, severance and the steps to apply. A module on the staff portal publishes updates and statistics on departures.",
    "pl": "Punkty konsultacyjne w każdym zakładzie PGG: porady o urlopach, odprawach i procedurach.",
-   "cs": "Konzultační místa v každém závodě PGG: rady o dovolené, odstupném a postupech."
+   "cs": "Poradny v každém závodě PGG: poradí s dovolenou, odstupným a celým postupem."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Od října 2025 má každý závod PGG konzultační místo, kde se zaměstnanci mohou zeptat na dovolenou, odstupné a kroky při podávání žádosti. Modul na zaměstnaneckém portálu zveřejňuje novinky a statistiky odchodů.",
+    "intro": "Od října 2025 má každý závod PGG poradnu, kde se zaměstnanci mohou zeptat na dovolenou, odstupné a kroky při podávání žádosti. Modul na zaměstnaneckém portálu zveřejňuje novinky a statistiky odchodů.",
     "who_for": "Zaměstnanci PGG",
     "what_you_get": "Rady k dovolené, odstupnému a postupům; asi 7 500 konzultací",
     "operator": "PGG",
     "dates": "Od října 2025; běží",
     "status_text": "Od října 2025; běží",
     "take_up": "Asi 7 500 konzultací, z toho přes 4 000 u dolu Ruda.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[30] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[30] · Podle médií"
    },
    "pl": {
     "intro": "Od października 2025 r. w każdym zakładzie PGG działa punkt konsultacyjny, w którym pracownicy mogą zapytać o urlopy, odprawy i kroki przy składaniu wniosku. Moduł na portalu pracowniczym publikuje aktualności i statystyki odejść.",
@@ -2296,19 +2296,19 @@
   "summary": {
    "en": "A free course funded by the energy company EDF that retrains miners as wind-turbine technicians. It covers work at heights, fire safety, first aid, and hydraulic and electrical systems, and ends with internationally recognised GWO certificates.",
    "pl": "\"Wiatr - Kopalnia Możliwości\": bezpłatny kurs technika turbin wiatrowych z certyfikatami GWO. Rekrutuje SRK.",
-   "cs": "\"Wiatr - Kopalnia Możliwości\": bezplatný kurz technika větrných turbín s certifikáty GWO. Nábor vede SRK."
+   "cs": "„Wiatr - Kopalnia Możliwości“: bezplatný kurz technika větrných turbín s certifikáty GWO. Nábor vede SRK."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
     "intro": "Bezplatný kurz financovaný energetickou společností EDF, který přeškoluje horníky na techniky větrných turbín. Zahrnuje práci ve výškách, požární bezpečnost, první pomoc a hydraulické a elektrické systémy a končí mezinárodně uznávanými certifikáty GWO. Nábor účastníků vede SRK.",
-    "who_for": "Horníci odcházející ze SRK a z odvětví.",
+    "who_for": "Horníci odcházející ze SRK a z hornictví.",
     "what_you_get": "Kurz na 2–4 týdny, certifikáty a setkání se zaměstnavateli; 60 míst v 6 bězích po 10 lidech.",
     "operator": "EDF; nábor zajišťuje SRK (Bytom)",
     "dates": "Od roku 2022; podle zpráv v závěrečné fázi; stav nejasný",
     "status_text": "Začal v roce 2022; podle zpráv je v závěrečné fázi; zájem byl asi 16krát vyšší než počet míst.",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[31] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[31] · Podle médií"
    },
    "pl": {
     "intro": "Bezpłatny kurs finansowany przez firmę energetyczną EDF, który przekwalifikowuje górników na techników turbin wiatrowych. Obejmuje pracę na wysokości, bezpieczeństwo pożarowe, pierwszą pomoc oraz układy hydrauliczne i elektryczne, a kończy się uznawanymi międzynarodowo certyfikatami GWO. Uczestników rekrutuje SRK.",
@@ -2372,14 +2372,14 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Podobný kurz větrného developera OX2 s Windhunter Academy, který školí horníky odcházející ze SRK na techniky a montéry turbín. Současný stav nebyl zjištěn.",
+    "intro": "Podobný kurz developera větrných elektráren OX2 s Windhunter Academy, který školí horníky odcházející ze SRK na techniky a montéry turbín. Současný stav nebyl zjištěn.",
     "who_for": "Horníci odcházející ze SRK",
     "what_you_get": "Školení na technika a montéra větrných elektráren",
     "operator": "OX2",
     "dates": "Stav nezjištěn",
     "status_text": "Stav nezjištěn",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[32] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[32] · Podle médií"
    },
    "pl": {
     "intro": "Podobny kurs dewelopera farm wiatrowych OX2 z Windhunter Academy, który szkoli górników odchodzących z SRK na techników i monterów turbin. Obecnego statusu nie ustalono.",
@@ -2436,18 +2436,18 @@
   "summary": {
    "en": "This is the programme the brief calls \"Jobs After Coal\". It was designed by the ZE PAK power group and its unions for lignite and power-plant workers in Eastern Wielkopolska, and is funded by the Just Transition Fund.",
    "pl": "\"Ścieżka zatrudnienia po węglu\" w Koninie: tylko dla pracowników ZE PAK we Wschodniej Wielkopolsce, nie dla górników ze Śląska.",
-   "cs": "\"Ścieżka zatrudnienia po węglu\" v Koninu: jen pro zaměstnance ZE PAK ve východním Velkopolsku, ne pro horníky ze Slezska."
+   "cs": "„Ścieżka zatrudnienia po węglu“ v Koninu: jen pro zaměstnance ZE PAK ve východním Velkopolsku, ne pro horníky ze Slezska."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Toto je program, kterému zadání rešerše říká „Jobs After Coal“. Navrhla ho energetická skupina ZE PAK a její odbory pro pracovníky hnědouhelných dolů a elektráren ve Východním Velkopolsku a financuje ho Fond pro spravedlivou transformaci. Jeho cílem je dostat 2 200 lidí do nové práce v místě.",
+    "intro": "V zadání rešerše se tento program jmenoval „Jobs After Coal“. Navrhla ho energetická skupina ZE PAK a její odbory pro pracovníky hnědouhelných dolů a elektráren ve Východním Velkopolsku a financuje ho Fond pro spravedlivou transformaci. Jeho cílem je dostat 2 200 lidí do nové práce v místě.",
     "who_for": "Jen pracovníci skupiny ZE PAK ve Východním Velkopolsku; ne slezští horníci z černouhelných dolů.",
-    "what_you_get": "Rekvalifikace a podpora při hledání práce pro 2 200 lidí; příspěvek zaměstnavatelům až 150 000 PLN uvádí jen jeden americký advokační web",
+    "what_you_get": "Rekvalifikace a podpora při hledání práce pro 2 200 lidí; příspěvek zaměstnavatelům až 150 000 PLN uvádí jen web jedné americké nevládní organizace",
     "operator": "WUP Poznań vede partnerství 10 subjektů včetně ZE PAK.",
     "dates": "Leden 2024 – červen 2029.",
     "status_text": "Leden 2024 – červen 2029; běží",
-    "known_problems": "Příspěvek zaměstnavatelům až 150 000 PLN se objevuje jen na americkém advokačním webu; oficiální zdroj nebyl nalezen. Pro Slezsko je to užitečný model, ne program, do kterého se slezští horníci mohou zapojit.",
+    "known_problems": "Příspěvek zaměstnavatelům až 150 000 PLN se objevuje jen na webu jedné americké nevládní organizace; oficiální zdroj nebyl nalezen. Pro Slezsko je to užitečný model, ne program, do kterého se slezští horníci mohou zapojit.",
     "evidence_note": "Ověřeno (projekt) / Neověřeno (příspěvek)",
     "source_note": "[33] · Ověřeno (projekt) / Neověřeno (příspěvek)"
    },
@@ -2510,7 +2510,7 @@
   "summary": {
    "en": "A foundation set up by the Bogdanka mine (Lubelskie) that gives case-by-case financial help to employees in hardship, for example after illness. It is outside the Silesian scope but is the only company welfare fund for miners found.",
    "pl": "Fundacja \"Solidarni Górnicy\" LW Bogdanka: indywidualna pomoc dla pracowników w trudnej sytuacji.",
-   "cs": "Nadace \"Solidarni Górnicy\" LW Bogdanka: individuální pomoc zaměstnancům v těžké situaci."
+   "cs": "Nadace „Solidarni Górnicy“ LW Bogdanka: individuální pomoc zaměstnancům v těžké situaci."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -2583,12 +2583,12 @@
   "summary": {
    "en": "The Rybnik county labour office ran its own outplacement project to help people facing dismissal adapt to changes in the local job market, with the goal of getting them into new jobs. It is an example of a PUP running EU outplacement directly.",
    "pl": "\"Kierunek Outplacement\" PUP Rybnik (2021-2023). Zakończony.",
-   "cs": "\"Kierunek Outplacement\" PUP Rybnik (2021-2023). Ukončen."
+   "cs": "„Kierunek Outplacement“ PUP Rybnik (2021-2023). Ukončen."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Okresní úřad práce v Rybniku vedl vlastní outplacementový projekt, který měl lidem ohroženým propuštěním pomoci přizpůsobit se změnám na místním trhu práce a dostat se do nové práce. Je to příklad toho, jak PUP přímo vede outplacement z EU.",
+    "intro": "Okresní úřad práce v Rybniku vedl vlastní outplacementový projekt, který měl lidem ohroženým propuštěním pomoci přizpůsobit se změnám na místním trhu práce a dostat se do nové práce. Ukazuje, že úřad práce může outplacement z peněz EU vést i sám.",
     "who_for": "Lidé ohrožení propuštěním nebo po propuštění",
     "what_you_get": "Kariérní podpora zaměřená na novou práci",
     "operator": "ESF, RPO WSL 2014–2020 7.4.2, 509 921 PLN; PUP Rybnik",
@@ -2661,7 +2661,7 @@
   "summary": {
    "en": "The Rybnik labour office holds information meetings on the new rules for start-up grants (registration was by 5 Mar 2026 at poradnictwo@rybnik.praca.gov.pl), online sessions on the training fund KFS for employers, and work, education and business fairs.",
    "pl": "PUP Rybnik: spotkania o dotacjach na firmę, sesje KFS dla pracodawców i targi pracy.",
-   "cs": "PUP Rybnik: setkání o dotacích na podnikání, setkání ke KFS pro zaměstnavatele a veletrhy práce."
+   "cs": "PUP Rybnik: setkání o dotacích na podnikání, setkání pro zaměstnavatele k Národnímu vzdělávacímu fondu (KFS) a veletrhy práce."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -2742,7 +2742,7 @@
   "summary": {
    "en": "Run by the Silesian Enterprise Incubator, this 10.20 project helped 70 people at risk of or after dismissal to set up a business in one of the 7 subregions. Participants wrote a business plan, had it reviewed, registered a firm and received a grant.",
    "pl": "\"Szansa na samozatrudnienie bis\": szkolenia i dotacje na firmę dla 70 osób. Zakończony 30.06.2026.",
-   "cs": "\"Szansa na samozatrudnienie bis\": kurzy a dotace na podnikání pro 70 lidí. Ukončen 30. 6. 2026."
+   "cs": "„Szansa na samozatrudnienie bis“: kurzy a dotace na podnikání pro 70 lidí. Ukončen 30. 6. 2026."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -2817,7 +2817,7 @@
   "summary": {
    "en": "A 10.20 project run by the Local Development Agency (ARL) and promoted by Gmina Suszec. People working in mining or mining-related firms, and those who had left them, had priority for training and start-up grants.",
    "pl": "\"Nowa szansa - transformacja\" (Suszec): dotacje na firmę z pierwszeństwem dla górników. Zakończony 31.08.2026.",
-   "cs": "\"Nowa szansa - transformacja\" (Suszec): dotace na podnikání s předností pro horníky. Ukončen 31. 8. 2026."
+   "cs": "„Nowa szansa - transformacja“ (Suszec): dotace na podnikání s předností pro horníky. Ukončen 31. 8. 2026."
   },
   "last_checked": "2026-11-14",
   "i18n": {
@@ -2892,17 +2892,17 @@
   "summary": {
    "en": "A 10.17 adult-learning project offering courses in green skills. Its target groups include people working in mining or mining-related firms (and those who left after 1 Jan 2021), people aged 55+, the unemployed and people with disabilities.",
    "pl": "\"Zielone kompetencje\" w Czerwionce-Leszczynach: kursy zielonych umiejętności, m.in. dla byłych pracowników górnictwa.",
-   "cs": "\"Zielone kompetencje\" v Czerwionce-Leszczynach: kurzy zelených dovedností, mimo jiné pro bývalé zaměstnance hornictví."
+   "cs": "„Zielone kompetencje“ v Czerwionce-Leszczynach: kurzy dovedností pro zelenou ekonomiku, mimo jiné pro bývalé zaměstnance hornictví."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Projekt vzdělávání dospělých 10.17 s kurzy zelených dovedností. Mezi jeho cílové skupiny patří lidé pracující v hornictví nebo ve firmách navázaných na hornictví (a ti, kdo odešli po 1. 1. 2021), lidé ve věku 55+, nezaměstnaní a lidé se zdravotním postižením.",
-    "who_for": "Pracovníci hornictví a firem navázaných na hornictví (včetně těch, kdo odešli po 1. 1. 2021), lidé 55+, nezaměstnaní, lidé se zdravotním postižením",
+    "intro": "Projekt vzdělávání dospělých 10.17 s kurzy zelených dovedností. Mezi jeho cílové skupiny patří lidé pracující v hornictví nebo ve firmách navázaných na hornictví (a ti, kdo odešli po 1. 1. 2021), lidé ve věku 55 a více let, nezaměstnaní a lidé se zdravotním postižením.",
+    "who_for": "Pracovníci hornictví a firem navázaných na hornictví (včetně těch, kdo odešli po 1. 1. 2021), lidé ve věku 55 a více let, nezaměstnaní, lidé se zdravotním postižením",
     "what_you_get": "Kurzy zelených dovedností",
-    "operator": "FST 10.17; partnerská nezisková organizace uvedená na portálu neziskovek obce",
+    "operator": "FST 10.17; partnerská nezisková organizace uvedená na obecním portálu neziskových organizací",
     "territory": "Czerwionka-Leszczyny",
-    "dates": "Nenalezeno.",
+    "dates": "Nepodařilo se zjistit.",
     "status_text": "Termíny nenalezeny",
     "evidence_note": "Ověřeno",
     "source_note": "[39] · Ověřeno"
@@ -3100,14 +3100,14 @@
   "summary": {
    "en": "The city, built around JSW's coking-coal mines, put a draft development strategy to public consultation in May 2026. With the county labour office it prepares a forecast of which occupations will be in demand.",
    "pl": "Strategia Jastrzębia-Zdroju 2035 i prognoza zawodów z PUP. Brak programu dla górników.",
-   "cs": "Strategie Jastrzębie-Zdroje 2035 a prognóza profesí od PUP. Žádný program pro horníky."
+   "cs": "Strategie města Jastrzębie-Zdrój do roku 2035 a výhled poptávaných profesí od úřadu práce. Program pro horníky neobsahuje."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Město, které vyrostlo kolem dolů JSW na koksovatelné uhlí, dalo v květnu 2026 návrh strategie rozvoje do veřejné konzultace. S okresním úřadem práce připravuje prognózu, které profese budou žádané. Městské zastupitelstvo také vyzvalo stát a JSW, aby zajistily budoucnost společnosti. Žádný samostatný program podpory pro horníky nebyl nalezen.",
+    "intro": "Město, které vyrostlo kolem dolů JSW na koksovatelné uhlí, v květnu 2026 předložilo návrh strategie rozvoje k veřejnému připomínkování. S okresním úřadem práce připravuje prognózu, které profese budou žádané. Městské zastupitelstvo také vyzvalo stát a JSW, aby zajistily budoucnost společnosti. Žádný samostatný program podpory pro horníky nebyl nalezen.",
     "who_for": "Obyvatelé",
-    "what_you_get": "Strategie v konzultaci (květen 2026); usnesení zastupitelstva o JSW (říjen 2025); program pro horníky nenalezen",
+    "what_you_get": "Strategie v připomínkovém řízení (květen 2026); usnesení zastupitelstva o JSW (říjen 2025); program pro horníky nenalezen",
     "operator": "Město; PUP Jastrzębie-Zdrój",
     "territory": "Jastrzębie-Zdrój",
     "dates": "2026; návrh",
@@ -3187,8 +3187,8 @@
     "territory": "Ruda Śląska",
     "dates": "Od října 2025; běží",
     "status_text": "Od října 2025; běží",
-    "evidence_note": "Podle zpráv",
-    "source_note": "[30] · Podle zpráv"
+    "evidence_note": "Podle médií",
+    "source_note": "[30] · Podle médií"
    },
    "pl": {
     "intro": "Najbardziej obłożony punkt doradczy PGG (zob. C02), obsługujący pracowników kopalni Ruda w Rudzie Śląskiej, gdzie zamykany jest ruch Bielszowice. Udzielono tam ponad 4000 konsultacji.",
@@ -3250,11 +3250,11 @@
    "cs": {
     "intro": "Ve Wałbrzychu ani ve Świdnici dnes neexistuje žádný program určený přímo horníkům; místní uhelná pánev se zavřela v 90. letech. Obyvatelé mohou využít obecné dolnoslezské projekty transformace (R11).",
     "who_for": "Obyvatelé",
-    "what_you_get": "Jen obecné projekty FEDS 9.1 (R11); pracovníci uhlí odešli v 90. letech",
+    "what_you_get": "Jen obecné projekty FEDS 9.1 (R11); horníci odešli už v 90. letech",
     "operator": "Dolnoslezské vojvodství",
     "territory": "Wałbrzych, Świdnica",
-    "dates": "Jen odkaz",
-    "status_text": "Jen odkaz",
+    "dates": "Uvedeno pro úplnost",
+    "status_text": "Uvedeno pro úplnost",
     "evidence_note": "Ověřeno",
     "source_note": "[28][55] · Ověřeno"
    },
@@ -3395,7 +3395,7 @@
   "url": "https://www.okd.cz",
   "summary": {
    "en": "This is the one-off payment OKD makes to every core employee whose job ends because the mine is closing. OKD and the miners' unions agreed it in 2022 so that people leaving early and those kept for the liquidation are treated the same way.",
-   "cs": "Odstupné OKD: 4 až 11 průměrných platů podle odpracovaných let. Vyplácí se automaticky s posledním platem.",
+   "cs": "Odstupné OKD: 4 až 11 průměrných měsíčních výdělků podle odpracovaných let. Vyplácí se automaticky s poslední výplatou.",
    "pl": "Odprawa OKD: od 4 do 11 średnich pensji zależnie od stażu pracy. Wypłacana automatycznie z ostatnią pensją."
   },
   "last_checked": "2026-11-14",
@@ -3411,7 +3411,7 @@
     "dates": "Dohodnuto s odbory v roce 2022; vyplácí se v každé vlně 2025–2026",
     "status_text": "Běží",
     "legal_basis": "Kolektivní smlouva + Sociální program OKD; zákoník práce § 67 (minimum)",
-    "take_up": "~900 lidí v lednu–únoru 2026, v průměru >0,5 mil. Kč",
+    "take_up": "asi 900 lidí v lednu–únoru 2026, v průměru přes 0,5 mil. Kč",
     "known_problems": "Odstupné se daní jako příjem, ale neodvádí se z něj sociální ani zdravotní pojištění, takže měsíce, které pokrývá, se nezapočítávají do důchodového pojištění. Od roku 2024 už neodkládá výplatu podpory v nezaměstnanosti.",
     "evidence_note": "Ověřeno"
    },
@@ -3496,7 +3496,7 @@
     "dates": "Od roku 2014; znovu otevřeno v květnu 2025",
     "status_text": "Běží (znovu otevřeno v květnu 2025)",
     "legal_basis": "Žádný (dobrovolný firemní program)",
-    "take_up": "~1 000 uživatelů 2014–2025; 330+ v roce 2017",
+    "take_up": "asi 1 000 uživatelů 2014–2025; přes 330 v roce 2017",
     "known_problems": "Lhůta 6 měsíců po odchodu je přísná. Výsledky za roky 2025–2026 nebyly zveřejněny.",
     "evidence_note": "Ověřeno"
    },
@@ -3570,7 +3570,7 @@
    "cs": {
     "intro": "OKD používá dva formáty „burzy práce“. V letech 2020–2021 provozovala aplikaci Burza práce, která propojovala odcházející zaměstnance se zaměstnavateli, kteří si s nimi pak domlouvali pohovory. Kvůli uzavření Dolu ČSM pořádala náborové dny přímo u jámy: v srpnu 2025 přijelo na ČSM-Sever deset regionálních firem a začátkem prosince 2025 přijelo znovu asi deset průmyslových firem.",
     "who_for": "Zaměstnanci OKD.",
-    "what_you_get": "Osobní setkání s firmami, které nabírají. Jmenovaní zaměstnavatelé: Škoda Group (vozidla) a Moravskoslezské drátovny (drát a ocel), které nabízely místa zámečníků, elektrikářů a pracovníků ve výrobě. Největší poptávka byla po pracovnících ve výrobě, které firmy zaučí přímo v práci.",
+    "what_you_get": "Osobní setkání s firmami, které hledají nové lidi. Jmenovaní zaměstnavatelé: Škoda Group (vozidla) a Moravskoslezské drátovny (drát a ocel), které nabízely místa zámečníků, elektrikářů a pracovníků ve výrobě. Největší poptávka byla po pracovnících ve výrobě, které firmy zaučí přímo v práci.",
     "how_to_apply": "Přes personální oddělení OKD nebo Novou šichtu; akce se ohlašují interně.",
     "operator": "Personální oddělení OKD",
     "funder": "OKD",
@@ -3578,9 +3578,9 @@
     "dates": "Aplikace 2020–21; akce v prosinci 2025",
     "status_text": "Běží, formou jednotlivých akcí",
     "legal_basis": "Žádný",
-    "take_up": "80+ partnerských firem (2021)",
+    "take_up": "přes 80 partnerských firem (2021)",
     "known_problems": "Úplný seznam firem není veřejný.",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "OKD stosuje dwie formy „giełdy pracy”. W latach 2020–2021 prowadziła aplikację Burza práce, która łączyła odchodzących pracowników z pracodawcami, a ci umawiali z nimi rozmowy. Przy zamykaniu kopalni ČSM organizowała dni rekrutacyjne przy szybie: w sierpniu 2025 r. do ČSM-Sever przyjechało dziesięć firm z regionu, a na początku grudnia 2025 r. ponownie ok. dziesięciu firm przemysłowych.",
@@ -3657,10 +3657,10 @@
     "operator": "OKD",
     "funder": "Likvidační rezerva OKD; 3,3 mld. Kč",
     "territory": "Stonava",
-    "dates": "Únor 2026 až ~konec roku 2028 (zasypávání jam do 4. čtvrtletí 2027)",
-    "status_text": "Běží do ~konce roku 2028",
+    "dates": "Únor 2026 až zhruba konec roku 2028 (zasypávání jam do 4. čtvrtletí 2027)",
+    "status_text": "Běží do zhruba konce roku 2028",
     "legal_basis": "Usnesení vlády č. 303 ze dne 7. 5. 2024",
-    "take_up": "Na začátku 670, postupně klesá na ~70",
+    "take_up": "Na začátku 670, postupně klesá na asi 70",
     "known_problems": "Tato skupina bude odcházet ve vlnách v letech 2027–2028 a bude v té době potřebovat stejnou podporu (příspěvek, Nová šichta, Úřad práce).",
     "evidence_note": "Ověřeno"
    },
@@ -3742,7 +3742,7 @@
     "dates": "Aktualizováno v říjnu 2025",
     "status_text": "Běží",
     "legal_basis": "Žádný",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Není veřejně online",
     "evidence_note": "Ověřeno"
    },
@@ -3809,7 +3809,7 @@
   "url": "",
   "summary": {
    "en": "This is a monthly state payment that bridges the period after a mine job ends, until the person finds new work or reaches pension age. The government created it in May 2016 when OKD was insolvent; it lapsed when the insolvency ended in 2018 and was restored for OKD leavers in October 2020.",
-   "cs": "Státní příspěvek 8 000 Kč (hlavně pod zemí) nebo 5 300 Kč (povrch) měsíčně na 3 až 60 měsíců. Žádost přes Diamo do 6 měsíců od odchodu.",
+   "cs": "Státní příspěvek 8 000 Kč (práce převážně v podzemí) nebo 5 300 Kč (na povrchu) měsíčně na 3 až 60 měsíců. Žádá se přes Diamo do 6 měsíců od odchodu.",
    "pl": "Zasiłek państwowy 8000 CZK (głównie pod ziemią) lub 5300 CZK (na powierzchni) miesięcznie przez 3 do 60 miesięcy. Wniosek przez Diamo w ciągu 6 miesięcy od odejścia."
   },
   "last_checked": "2026-11-14",
@@ -3817,11 +3817,11 @@
    "cs": {
     "intro": "Jde o měsíční státní příspěvek, který překlenuje období po skončení práce na dole, dokud si člověk nenajde novou práci nebo nedosáhne důchodového věku. Vláda ho zavedla v květnu 2016, kdy byla OKD v insolvenci; po skončení insolvence v roce 2018 přestal platit a pro odcházející z OKD byl obnoven v říjnu 2020. Vyplácí ho Ministerstvo průmyslu a obchodu (MPO) ze státního rozpočtu a žádosti přijímá a kontroluje státní podnik Diamo. Starší pracovníci s dlouhou praxí, kteří mají nejmenší šanci najít novou práci, ho dostávají déle.",
     "who_for": "Zaměstnanci OKD (a odštěpného závodu Diamo, který převzal zaměstnance OKD), jejichž pracovní poměr skončil výpovědí nebo dohodou z organizačních důvodů, po nejméně 2 letech nepřetržitého zaměstnání. Míra nezaměstnanosti v regionu musela být v předchozím pololetí stejná nebo vyšší než celostátní průměr, což platí pro Karvinou.",
-    "what_you_get": "8 000 Kč měsíčně, pokud jste pracovali převážně v podzemí, 5 300 Kč, pokud převážně na povrchu. Doba: 3 měsíce při praxi kratší než 5 let; při 5 a více letech 6 měsíců plus 3 měsíce za každý další celý rok, nejvýše 36 měsíců. Pracovníci v podzemí ve věku 50+ s 25 lety praxe a 3 300 směnami v podzemí a pracovníci na povrchu ve věku 55+ s 25 lety praxe dostávají 60 měsíců.",
+    "what_you_get": "8 000 Kč měsíčně, pokud jste pracovali převážně v podzemí, 5 300 Kč, pokud převážně na povrchu. Doba: 3 měsíce při praxi kratší než 5 let; při 5 a více letech 6 měsíců plus 3 měsíce za každý další celý rok, nejvýše 36 měsíců. Pracovníci v podzemí ve věku 50 a více let s 25 lety praxe a 3 300 směnami v podzemí a pracovníci na povrchu ve věku 55 a více let s 25 lety praxe dostávají 60 měsíců.",
     "how_to_apply": "Vyplňte formulář v příloze č. 2 nařízení a podejte ho přes Diamo do 6 měsíců od skončení pracovního poměru. Diamo ho do 10 dnů předá MPO; výplata začíná měsíc po schválení a vyplácí se měsíčně zpětně.",
     "operator": "Sociální centrum Diamo (úsek ODRA, Sirotčí, Ostrava-Vítkovice – údaj z roku 2017); rozhoduje MPO",
     "funder": "Státní rozpočet, Ministerstvo průmyslu a obchodu (MPO); odhad nákladů až 820 mil. Kč (2020–2031)",
-    "territory": "Region, kde je nezaměstnanost ≥ celostátní průměr",
+    "territory": "Region s nezaměstnaností aspoň na úrovni celostátního průměru",
     "dates": "Platí od 1. 6. 2016; novelizováno 2020",
     "status_text": "Platí; využití v roce 2026 neověřeno",
     "legal_basis": "NV 167/2016 Sb., NV 415/2020 Sb.",
@@ -3971,7 +3971,7 @@
   "url": "https://www.cssz.cz",
   "summary": {
    "en": "Underground work in deep mines is recognised as too hard to do until the standard pension age. Since a 2016 amendment, a deep miner who has worked enough shifts underground can retire 7 years earlier than the general pension age, without any reduction of the pension.",
-   "cs": "Horníci s 3 300 směnami pod zemí mohou do důchodu o 7 let dříve, bez krácení.",
+   "cs": "Horníci, kteří odpracovali 3 300 směn v podzemí, mohou jít do důchodu o 7 let dříve, a to bez krácení.",
    "pl": "Górnicy z 3300 zmianami pod ziemią mogą przejść na emeryturę 7 lat wcześniej, bez obniżenia świadczenia."
   },
   "last_checked": "2026-11-14",
@@ -3987,7 +3987,7 @@
     "dates": "Podle pravidel platných od 1. 10. 2016",
     "status_text": "Běží",
     "legal_basis": "Zákon 155/1995 Sb. § 37b–37c; NV 363/2009 Sb. pro starší případy",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Nárok nemají pracovníci na povrchu ani lidé, kteří začali pracovat v podzemí po 1. 10. 2016.",
     "evidence_note": "Ověřeno"
    },
@@ -4056,7 +4056,7 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Protože Důl ČSM skončil dřív, než by skončila kariéra některých horníků, někteří lidé se ocitli několik směn pod hranicí 3 300 směn potřebnou pro P08. Dne 4. 2. 2026 na slavnosti posledního vozíku uhlí ve Stonavě oznámil ministr práce Aleš Juchelka, že zmocní ČSSZ, aby u nich odstranila tuto „tvrdost zákona“ a prominula podmínku počtu směn.",
+    "intro": "Protože Důl ČSM skončil dřív, než by skončila kariéra některých horníků, někteří lidé se ocitli několik směn pod hranicí 3 300 směn potřebnou pro P08. Dne 4. 2. 2026 při slavnostním vyvezení posledního vozíku uhlí ve Stonavě oznámil ministr práce Aleš Juchelka, že zmocní ČSSZ, aby u nich odstranila tuto „tvrdost zákona“ a prominula podmínku počtu směn.",
     "who_for": "Bývalí horníci z hlubinných dolů, kterým do hranice chybí jen několik směn.",
     "what_you_get": "Přístup k důchodu o 7 let dříve (P08).",
     "how_to_apply": "Žádost o odstranění tvrdosti zákona na ČSSZ; přesný postup nenalezen.",
@@ -4066,9 +4066,9 @@
     "dates": "Oznámeno 4. 2. 2026",
     "status_text": "Oznámeno v únoru 2026",
     "legal_basis": "Zmocnění ministra pro ČSSZ (text nenalezen)",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Kolik směn smí chybět a kolika lidí se to týká, nebylo zveřejněno.",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Ponieważ kopalnię ČSM zamknięto wcześniej, niż trwałaby kariera niektórych górników, części osób zabrakło kilku zmian do 3300 wymaganych w P08. 4 lutego 2026 r., na uroczystości ostatniego wózka węgla w Stonawie, minister pracy Aleš Juchelka ogłosił, że upoważni ČSSZ do usunięcia wobec nich tej „surowości prawa” i odstąpienia od warunku liczby zmian.",
@@ -4137,14 +4137,14 @@
     "intro": "Tato starší dávka vznikla v roce 1987, aby odškodnila dlouholeté horníky z podzemí, kteří museli přejít na méně rizikovou nebo jinou práci. Zákon stále platí a nařízení o příspěvku z roku 2016 se na něj odvolávají: pokud ji někdo dostává, vyplácí se podle P06/P07 jen rozdíl do 8 000 nebo 5 300 Kč.",
     "who_for": "Dlouholetí horníci z podzemí, kteří mění práci (starý zákon)",
     "what_you_get": "Měsíční dávka; odečítá se od P06/P07",
-    "how_to_apply": "Nenalezeno",
-    "operator": "Nenalezeno",
+    "how_to_apply": "Nepodařilo se zjistit",
+    "operator": "Nepodařilo se zjistit",
     "funder": "Bývalé těžební organizace / stát",
     "territory": "Celostátní",
     "dates": "Od roku 1988",
     "status_text": "Nebyly nalezeny žádné aktuální informace o tom, kdo na ni ještě má nárok a kdo ji vyplácí. Berte to jako nejasné.",
     "legal_basis": "Zákon 98/1987 Sb.",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Není jasné, zda na ni dnes ještě někdo nově získává nárok",
     "evidence_note": "Ověřeno (zákon) / současné využití neověřeno"
    },
@@ -4218,7 +4218,7 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Outplacement II je projekt Úřadu práce pro lidi, kteří brzy přijdou o práci při hromadném propouštění, aby přešli „z práce do práce“ bez dlouhé pauzy. Platí také zaměstnavatelům, kteří takové lidi přijmou. Běží po celé republice od července 2024 do října 2028 a financuje ho EU (ESF+) a český stát.",
+    "intro": "Outplacement II je projekt Úřadu práce pro lidi, kteří brzy přijdou o práci při hromadném propouštění, aby přešli „z práce do práce“ bez dlouhé pauzy. Přispívá také zaměstnavatelům, kteří tyto lidi přijmou. Běží po celé republice od července 2024 do října 2028 a financuje ho EU (ESF+) a český stát.",
     "who_for": "Zaměstnanci v hromadném propouštění nebo ve výpovědní době; ti, kdo pravděpodobně odejdou do 6 měsíců (dohodou nebo skončením pracovního poměru na dobu určitou); zaměstnanci firem, které přecházejí na nový podnikatelský program; a noví zaměstnavatelé, kteří je přijmou.",
     "what_you_get": "Individuální a skupinové poradenství; diagnostika dovedností; rekvalifikace a profesní kvalifikace; zprostředkování práce; proplacení cestovních nákladů a vstupní lékařské prohlídky; v odůvodněných případech péče o děti nebo o závislou osobu. Nový zaměstnavatel může dostat až 15 000 Kč měsíčně po dobu 9 měsíců na mzdu daného člověka. Současný zaměstnavatel může dostat příspěvek na mzdu, zatímco se zaměstnanec rekvalifikuje.",
     "how_to_apply": "Zaregistrujte se na Úřadu práce jako zájemce o zaměstnání a pak přijďte na vstupní pohovor, kde podepíšete projektové dokumenty. Bezplatná linka call centra: 800 77 99 00.",
@@ -4311,9 +4311,9 @@
     "dates": "2025–2026",
     "status_text": "Běží 2025–2026",
     "legal_basis": "Zákon 435/2004 Sb.",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Přesné termíny a úřední hodiny nebyly zveřejněny",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Od 2025 r. doradcy czeskiego urzędu pracy pracowali bezpośrednio na terenie kopalni ČSM, więc górnicy mogli wstąpić do nich w drodze na zmianę, zamiast jeździć do Hawierzowa czy Karwiny. Wyjaśniają, jak prawidłowo się zarejestrować, jak ubiegać się o zasiłek dla bezrobotnych i jakie przekwalifikowania są dostępne. Pomagają też z CV i przygotowaniem do rozmowy kwalifikacyjnej oraz pokazują wolne miejsca pracy w regionie. Biuletyn OKD z kwietnia 2026 r. nadal wymienia mobilne stanowisko obok Nová šichta.",
@@ -4380,7 +4380,7 @@
   "url": "https://up.gov.cz",
   "summary": {
    "en": "These are the Labour Office's standard ways to help any job seeker back into work, available alongside Outplacement II. In the Moravian-Silesian Region the most requested retraining courses for miners have been driving licences (groups C, D and T and professional licences), social-care work, welding and accounting.",
-   "cs": "Rekvalifikace placené Úřadem práce (i zvolená rekvalifikace), dotovaná pracovní místa a další nástroje pro uchazeče.",
+   "cs": "Rekvalifikace placené úřadem práce (i ty, které si vyberete sami), dotovaná pracovní místa a další pomoc pro uchazeče o zaměstnání.",
    "pl": "Przekwalifikowanie opłacane przez Urząd Pracy (także wybrane samodzielnie), dotowane miejsca pracy i inne narzędzia dla osób szukających pracy."
   },
   "last_checked": "2026-11-14",
@@ -4471,9 +4471,9 @@
     "dates": "Pravidla v14 ze dne 19. 4. 2023",
     "status_text": "Nejnovější nalezená pravidla jsou z dubna 2023; zda je projekt v roce 2026 stále otevřený, se nezjistilo.",
     "legal_basis": "Zákon 435/2004 Sb. § 106",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Stav v roce 2026 nezjištěn",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "POVEZ II to projekt czeskiego urzędu pracy dla pracodawców, a nie dla osób prywatnych. Pokrywa część kosztów zewnętrznych lub wewnętrznych szkoleń pracowników oraz koszty wynagrodzeń za czas, gdy pracownicy są na szkoleniu. Ma znaczenie dla byłych górników, gdy nowy pracodawca musi ich przeszkolić.",
@@ -4555,9 +4555,9 @@
     "dates": "Pravidla 2026 (flexinovela)",
     "status_text": "Běží",
     "legal_basis": "Zákon 435/2004 Sb.",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Lidé, kteří se nezaregistrují, si musí sami platit zdravotní pojištění a doba se jim nemusí započítat do důchodu.",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Każdy, kto zarejestruje się w czeskim urzędzie pracy i spełnia warunki ubezpieczeniowe, otrzymuje zasiłek dla bezrobotnych. Według zasad na 2026 r. zasiłek jest wyższy w pierwszych dwóch miesiącach (według doniesień do 80% wynagrodzenia netto), a potem spada. Od 2024 r. jest wypłacany od pierwszego miesiąca, nawet jeśli wypłacono odprawę; wcześniej odprawa przesuwała początek wypłaty. Rejestracja oznacza też, że składkę na ubezpieczenie zdrowotne za tę osobę opłaca państwo.",
@@ -4629,7 +4629,7 @@
     "who_for": "Organizace ve třech krajích; jednotlivci jen jako žadatelé OSVČ v některých výzvách.",
     "what_you_get": "Granty, vouchery a bezúročné úvěry, podle výzvy.",
     "how_to_apply": "Přes výzvy uvedené na opst.cz a na krajských webech (hrajemskrajem.msk.cz pro Moravskoslezský kraj). Mnoho výzev jde nejprve kraji, který pak o měsíce později vyhlásí vlastní výzvu pro konečné žadatele.",
-    "operator": "Ministerstvo životního prostředí (MZP); SFZP; spravedlivatransformace@mzp.cz",
+    "operator": "Ministerstvo životního prostředí (MŽP); SFŽP; spravedlivatransformace@mzp.cz",
     "funder": "Fond pro spravedlivou transformaci (FST) + stát; 39–42,7 mld. Kč (zdroje se liší)",
     "territory": "Moravskoslezský, Ústecký a Karlovarský kraj",
     "dates": "2021–2027",
@@ -4723,7 +4723,7 @@
     "dates": "Pilot 2023; spuštěno v červnu 2024",
     "status_text": "Běží od června 2024",
     "legal_basis": "Strategický projekt OPST",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Údaje o tom, kolik bývalých horníků ho využilo, nebyly nalezeny.",
     "evidence_note": "Ověřeno"
    },
@@ -4796,15 +4796,15 @@
     "who_for": "Zaměstnavatelé, ne jednotlivci; bývalí horníci z ní mají prospěch, pokud ji využije jejich nový zaměstnavatel.",
     "what_you_get": "Až 2 mil. EUR na projekt",
     "how_to_apply": "Žádá firma s pomocí TRAUTOM",
-    "operator": "MZP / SFZP",
+    "operator": "MŽP / SFŽP",
     "funder": "FST",
     "territory": "Uhelné regiony",
-    "dates": "Nenalezeno",
+    "dates": "Nepodařilo se zjistit",
     "status_text": "Zda je výzva stále otevřená, se nepotvrdilo.",
     "legal_basis": "Výzva OPST 33",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Není otevřená jednotlivcům",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Ten nabór finansuje firmy w regionach węglowych, które szkolą lub przekwalifikowują pracowników do nowych dziedzin, np. umiejętności technicznych, IT i języków. Jeden projekt może dostać do 2 mln EUR, a zespół TRAUTOM pomaga firmom go przygotować.",
@@ -4964,15 +4964,15 @@
     "who_for": "Kraje, potom koneční žadatelé",
     "what_you_get": "Granty přes navazující krajské výzvy",
     "how_to_apply": "Přes navazující krajské výzvy",
-    "operator": "MZP, potom kraje",
+    "operator": "MŽP, potom kraje",
     "funder": "FST",
     "territory": "Uhelné regiony",
     "dates": "Uzávěrka 30. 4. 2026",
     "status_text": "Zastřešující výzvy jsou uzavřené; navazující krajské výzvy se ještě mohou otevřít – sledujte hrajemskrajem.msk.cz.",
     "legal_basis": "Výzvy OPST",
-    "take_up": "Nenalezeno",
-    "known_problems": "Nenalezeno",
-    "evidence_note": "Podle zpráv"
+    "take_up": "Nepodařilo se zjistit",
+    "known_problems": "Nepodařilo se zjistit",
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Kilka naborów OPST z terminem 30.04.2026 skierowano do krajów jako projekty parasolowe. Należały do nich inkubatory rzemiosła (Řemeslné inkubátory), „wzmocnienie stabilności społecznej” (Posílení sociální stability) i edukacja społeczna (Zájmové vzdělávání a osvěta). Kraje ogłaszają potem własne nabory dla wnioskodawców końcowych, takich jak firmy, szkoły i organizacje pozarządowe.",
@@ -5039,15 +5039,15 @@
   "url": "https://mobilita.msk.cz",
   "summary": {
    "en": "The Moravian-Silesian Region started this project to stop people moving away from Havířov, Karviná and Orlová. Eligible people get a free 365-day ODISka public-transport card for commuting to work and to Ostrava.",
-   "cs": "Zaměstnanecká mobilita: bezplatná roční ODISka pro dojíždění za prací (Havířov, Karviná, Orlová). Pravidla z roku 2017.",
+   "cs": "Zaměstnanecká mobilita: bezplatná roční jízdenka ODIS na dojíždění za prací (Havířov, Karviná, Orlová). Pravidla z roku 2017.",
    "pl": "Mobilność pracowników: bezpłatny roczny bilet ODISka na dojazdy do pracy (Hawierzów, Karwina, Orłowa). Zasady z 2017 r."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "Moravskoslezský kraj zahájil tento projekt, aby zastavil odchod lidí z Havířova, Karviné a Orlové. Oprávnění lidé dostanou zdarma 365denní ODISku na veřejnou dopravu pro dojíždění do práce a do Ostravy. Žádosti vyřizuje a karty vydává krajská rozvojová agentura ARR.",
+    "intro": "Moravskoslezský kraj zahájil tento projekt, aby zastavil odchod lidí z Havířova, Karviné a Orlové. Oprávnění lidé dostanou zdarma roční jízdenku ODIS na veřejnou dopravu pro dojíždění do práce a do Ostravy. Žádosti vyřizuje a karty vydává krajská rozvojová agentura ARR.",
     "who_for": "Zaměstnaní lidé s trvalým pobytem v Havířově, Karviné nebo Orlové, kteří se tam buď přestěhovali po vyhlášení projektu, nebo jsou absolventy středních či vysokých škol.",
-    "what_you_get": "Bezplatná 365denní ODISka",
+    "what_you_get": "Bezplatná roční jízdenka ODIS",
     "how_to_apply": "Žádost u ARR (mobilita@arr.cz) s potvrzením od zaměstnavatele.",
     "operator": "ARR, Na Jízdárně 7/1245, Ostrava; mobilita@arr.cz",
     "funder": "Moravskoslezský kraj",
@@ -5055,7 +5055,7 @@
     "dates": "Pravidla z roku 2017; současný stav nenalezen",
     "status_text": "Nejasné (pravidla z roku 2017)",
     "legal_basis": "Krajský projekt",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Nebyl navržen pro bývalé horníky, kteří tam už bydlí, a jeho současný stav se nepodařilo zjistit.",
     "evidence_note": "Ověřeno (2017)"
    },
@@ -5124,7 +5124,7 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "RE:START je dlouhodobá vládní strategie hospodářské restrukturalizace tří uhelných krajů, kterou od roku 2017 vede Ministerstvo pro místní rozvoj. Funguje přes akční plány (6. pokrývá roky 2025–2026), které směřují národní a evropské peníze do těchto krajů, například vyhrazením výzev nebo bonusovými body pro tamní projekty. Byla základem plánu OPST. Do začátku 20. let se přes ni podpořily projekty v hodnotě asi 10 mld. Kč.",
+    "intro": "RE:START je dlouhodobá vládní strategie hospodářské restrukturalizace tří uhelných krajů, kterou od roku 2017 vede Ministerstvo pro místní rozvoj. Funguje přes akční plány (6. pokrývá roky 2025–2026), které směřují národní a evropské peníze do těchto krajů, například vyhrazením výzev nebo bonusovými body pro tamní projekty. Byla základem plánu OPST. Do začátku tohoto desetiletí se přes ni podpořily projekty v hodnotě asi 10 mld. Kč.",
     "who_for": "Tři uhelné kraje",
     "what_you_get": "Žádný přímý prospěch; ovlivňuje, které výzvy a investice se do krajů dostanou.",
     "how_to_apply": "Není pro jednotlivce",
@@ -5134,7 +5134,7 @@
     "dates": "Od roku 2017",
     "status_text": "Běží (6. akční plán 2025–26)",
     "legal_basis": "Usnesení vlády",
-    "take_up": "Projekty v hodnotě ~10 mld. Kč od roku 2017",
+    "take_up": "Projekty v hodnotě asi 10 mld. Kč od roku 2017",
     "known_problems": "Žádná přímá pomoc pracovníkům",
     "evidence_note": "Ověřeno"
    },
@@ -5216,7 +5216,7 @@
     "dates": "Od roku 2024",
     "status_text": "Běží",
     "legal_basis": "Strategický projekt OPST",
-    "take_up": "Nenalezeno",
+    "take_up": "Nepodařilo se zjistit",
     "known_problems": "Jen výzkum",
     "evidence_note": "Ověřeno"
    },
@@ -5284,7 +5284,7 @@
   "url": "",
   "summary": {
    "en": "Under a Recovery Plan project (March 2024 – December 2025, CZK 38.2 million), VŠB-TUO created five new reskilling courses. They cover ESG and modern management, pilot training for sustainable aviation, circular audit, smart infrastructure and energy geotechnics.",
-   "cs": "Bezplatné kurzy celoživotního vzdělávání VŠB-TUO, např. energetická geotechnika. Financovaný běh skončil.",
+   "cs": "Bezplatné kurzy celoživotního vzdělávání na VŠB-TUO, např. energetická geotechnika. Bezplatný běh už skončil.",
    "pl": "Bezpłatne kursy kształcenia ustawicznego VŠB-TUO, np. geotechnika energetyczna. Finansowana edycja się zakończyła."
   },
   "last_checked": "2026-11-14",
@@ -5292,7 +5292,7 @@
    "cs": {
     "intro": "V projektu z Národního plánu obnovy (březen 2024 – prosinec 2025, 38,2 mil. Kč) vytvořila VŠB-TUO pět nových rekvalifikačních kurzů. Týkají se ESG a moderního managementu, výcviku pilotů pro udržitelné letectví, cirkulárního auditu, chytré infrastruktury a energetické geotechniky. Kurz energetické geotechniky běžel zdarma v zimním semestru 2025/26 pro nejvýše 15 účastníků.",
     "who_for": "Dospělí (ne specificky horníci)",
-    "what_you_get": "Kurzy byly otevřené dospělým, ale nebyly zaměřené na horníky, a financovaný běh skončil. Dřívější programátorský kurz VŠB-TUO pro horníky („Razíme cestu“, 2017) je popsán v historické části.",
+    "what_you_get": "Kurzy byly otevřené dospělým, ale nebyly zaměřené na horníky, a bezplatný běh už skončil. Dřívější programátorský kurz VŠB-TUO pro horníky („Razíme cestu“, 2017) je popsán v historické části.",
     "how_to_apply": "Online přihláška",
     "operator": "Centrum celoživotního vzdělávání VŠB-TUO",
     "funder": "Národní plán obnovy (NPO), 38,2 mil. Kč (celý projekt)",
@@ -5368,7 +5368,7 @@
   "url": "",
   "summary": {
    "en": "Sokolovská uhelná, the brown-coal miner near Sokolov, has been shrinking since 2020. About 700 people left in 2020 when the Vřesová plant closed; they received severance under the collective agreement and the state allowance (P07).",
-   "cs": "Odstupné podle kolektivní smlouvy Sokolovské uhelné, plus státní příspěvek a přesuny do dceřiných firem.",
+   "cs": "Odstupné podle kolektivní smlouvy Sokolovské uhelné, k tomu státní příspěvek a možnost přejít do dceřiných firem.",
    "pl": "Odprawa według układu zbiorowego Sokolovská uhelná, do tego zasiłek państwowy i przeniesienia do spółek zależnych."
   },
   "last_checked": "2026-11-14",
@@ -5384,9 +5384,9 @@
     "dates": "Průběžně",
     "status_text": "Běží",
     "legal_basis": "Kolektivní smlouva",
-    "take_up": "~700 odešlo v roce 2020; 90 + 120 v letech 2025–26",
+    "take_up": "asi 700 odešlo v roce 2020; 90 + 120 v letech 2025–26",
     "known_problems": "Skupina je ve ztrátě, takže dceřiné firmy nemohou přijmout všechny.",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Sokolovská uhelná, firma wydobywająca węgiel brunatny koło Sokolova, kurczy się od 2020 r. Ok. 700 osób odeszło w 2020 r., gdy zamknięto zakład Vřesová; dostały odprawę według układu zbiorowego i zasiłek państwowy (P07). Firma próbowała też przenosić ludzi do spółek zależnych, dziś zgrupowanych w SUAS Group. Ok. 90 osób odeszło na przełomie 2025 r., a ok. 120 kolejnych w 2026 r., z zachowaniem warunków obecnego układu zbiorowego.",
@@ -5468,9 +5468,9 @@
     "dates": "2022",
     "status_text": "Ukončeno; lom Vršany zůstává v provozu a datum jeho uzavření není stanoveno.",
     "legal_basis": "Žádný",
-    "take_up": "~500 propuštěných",
-    "known_problems": "Nenalezeno",
-    "evidence_note": "Podle zpráv"
+    "take_up": "asi 500 propuštěných",
+    "known_problems": "Nepodařilo se zjistit",
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Gdy w 2022 r. zatrzymano odkrywkę ČSA koło Mostu, Severní energetická zorganizowała giełdy pracy dla ok. 500 zwolnionych osób. Mniej więcej jedna czwarta od razu znalazła pracę; wielu przeszło na emeryturę lub czekało na nią, pobierając zasiłek państwowy (wniosek złożyło 271 osób).",
@@ -5539,14 +5539,14 @@
     "who_for": "Projekty v Ústeckém kraji",
     "what_you_get": "Výzva za 150 mil. Kč",
     "how_to_apply": "Projektové žádosti",
-    "operator": "Ústecký kraj / MZP",
+    "operator": "Ústecký kraj / MŽP",
     "funder": "FST",
     "territory": "Ústecký kraj",
     "dates": "29. 2. – 31. 5. 2024",
     "status_text": "Uzavřeno (29. 2. – 31. 5. 2024)",
     "legal_basis": "Výzva OPST 51",
     "take_up": "1 projekt, 127,5 mil. Kč",
-    "known_problems": "Nenalezeno",
+    "known_problems": "Nepodařilo se zjistit",
     "evidence_note": "Ověřeno"
    },
    "pl": {
@@ -5679,12 +5679,12 @@
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "OKD a město Karviná podepsaly memorandum, ve kterém deklarují záměr spolupracovat na rozvoji města a transformaci regionu po konci uhlí. Obsahuje jen záměry; žádná opatření pro bývalé horníky nebyla zveřejněna.",
+    "intro": "OKD a město Karviná podepsaly memorandum, ve kterém deklarují záměr spolupracovat na rozvoji města a transformaci regionu po konci těžby. Obsahuje jen záměry; žádná opatření pro bývalé horníky nebyla zveřejněna.",
     "who_for": "Obyvatelé města obecně; žádný individuální prospěch",
     "operator": "Magistrát města Karviné, OKD",
     "dates": "Podepsáno v době uzavírání dolu (přesné datum nenalezeno)",
     "status_text": "Podepsáno v době uzavírání dolu (přesné datum nenalezeno)",
-    "evidence_note": "Podle zpráv"
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "OKD i miasto Karwina podpisały memorandum, w którym deklarują zamiar współpracy przy rozwoju miasta i transformacji regionu po węglu. Zawiera tylko zamiary; nie opublikowano żadnych działań dla byłych górników.",
@@ -5746,7 +5746,7 @@
   "url": "",
   "summary": {
    "en": "The Social Department of Karviná City Hall runs this programme to show residents what social services exist. It added a \"Day for carers\" event offering practical help, counselling and sharing of experience for people caring for relatives at home.",
-   "cs": "Sociální služby na dlani: přehled sociálních služeb v Karviné a Den pro pečující. Pro všechny obyvatele, i rodiny horníků.",
+   "cs": "„Sociální služby na dlani“: přehled sociálních služeb v Karviné a Den pro pečující. Pro všechny obyvatele včetně rodin horníků.",
    "pl": "\"Sociální služby na dlani\": przegląd usług społecznych w Karwinie i Dzień dla opiekunów. Dla wszystkich mieszkańców, także rodzin górników."
   },
   "last_checked": "2026-11-14",
@@ -5811,7 +5811,7 @@
   "url": "",
   "summary": {
    "en": "When Sokolovská uhelná announced about 1,000 job cuts in 2020, the mayor of Chodov, the town nearest the mines, said the town would work with the unions to help people who had to change jobs. What the town actually offered was not found.",
-   "cs": "Příslib města Chodova pomoci propuštěným ze Sokolovské uhelné (2020). Co město nabídlo, nebylo zjištěno.",
+   "cs": "Město Chodov v roce 2020 slíbilo pomoc lidem propuštěným ze Sokolovské uhelné. Co konkrétně nabídlo, se nepodařilo zjistit.",
    "pl": "Obietnica miasta Chodov, że pomoże zwolnionym z Sokolovská uhelná (2020). Nie ustalono, co miasto zaoferowało."
   },
   "last_checked": "2026-11-14",
@@ -5820,9 +5820,9 @@
     "intro": "Když Sokolovská uhelná v roce 2020 oznámila zrušení asi 1 000 pracovních míst, starosta Chodova, města nejblíže dolům, řekl, že město bude s odbory spolupracovat na pomoci lidem, kteří musí změnit práci. Co město skutečně nabídlo, se nepodařilo zjistit.",
     "who_for": "Lidé odcházející ze Sokolovské uhelné",
     "operator": "Město Chodov",
-    "dates": "2020; výsledek nenalezen",
-    "status_text": "2020; výsledek nenalezen",
-    "evidence_note": "Podle zpráv"
+    "dates": "2020; výsledek se nepodařilo zjistit",
+    "status_text": "2020; výsledek se nepodařilo zjistit",
+    "evidence_note": "Podle médií"
    },
    "pl": {
     "intro": "Gdy Sokolovská uhelná ogłosiła w 2020 r. likwidację ok. 1000 miejsc pracy, burmistrz Chodova, miasta położonego najbliżej kopalń, zapowiedział, że miasto będzie współpracować ze związkami, by pomóc osobom, które muszą zmienić pracę. Nie ustalono, co miasto faktycznie zaoferowało.",
@@ -5881,16 +5881,16 @@
   "url": "https://eures.europa.eu",
   "summary": {
    "en": "The EU job portal and EURES advisers help people find work across the border between Poland and Czechia.",
-   "cs": "Evropský portál práce EURES a poradci EURES na úřadech práce pomáhají najít práci za hranicí, v Polsku i v Česku.",
+   "cs": "Evropský portál práce EURES a poradci EURES na úřadech práce pomáhají najít práci za hranicemi, v Polsku i v Česku.",
    "pl": "Europejski portal pracy EURES i doradcy EURES w urzędach pracy pomagają znaleźć pracę za granicą, w Polsce i w Czechach."
   },
   "last_checked": "2026-11-14",
   "i18n": {
    "cs": {
-    "intro": "EURES je síť EU pro pracovní mobilitu. Její portál zveřejňuje volná místa v celé EU včetně Polska a Česka a poradci EURES na úřadech práce pomáhají lidem, kteří chtějí pracovat za hranicí.",
+    "intro": "EURES je síť EU pro pracovní mobilitu. Její portál zveřejňuje volná místa v celé EU včetně Polska a Česka a poradci EURES na úřadech práce pomáhají lidem, kteří chtějí pracovat za hranicemi.",
     "who_for": "Každý, kdo hledá práci v jiné zemi EU, včetně lidí, kteří dojíždějí za prací přes hranici mezi Českem a Polskem.",
     "what_you_get": "Volná pracovní místa, databáze životopisů, ve které mohou hledat zaměstnavatelé, a bezplatné poradenství od poradců EURES na úřadech práce.",
-    "how_to_apply": "Založte si účet na eures.europa.eu nebo požádejte o poradce EURES na svém úřadu práce (Úřad práce nebo PUP/WUP).",
+    "how_to_apply": "Založte si účet na eures.europa.eu nebo požádejte o schůzku s poradcem EURES na úřadu práce (v Česku Úřad práce, v Polsku PUP nebo WUP).",
     "operator": "Evropský orgán pro pracovní záležitosti; národní úřady práce",
     "territory": "EU",
     "dates": "Trvale",
