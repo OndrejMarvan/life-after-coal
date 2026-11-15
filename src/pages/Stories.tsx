@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Field, PageHeader, SafetyBox, Section, useLang } from '../components/ui'
+import { FactCard, Field, PageHeader, SafetyBox, Section, useLang } from '../components/ui'
 import site from '../data/site.json'
+import { FACTS } from '../data/facts'
 import { insert, list, type Row } from '../lib/store'
 import { useAuth } from '../lib/auth'
 import { fmtDate, localize } from '../lib/content'
@@ -33,7 +34,7 @@ export default function Stories() {
 
   return (
     <>
-      <PageHeader title={t('stories.title')} intro={t('stories.intro')} />
+      <PageHeader title={t('stories.title')} intro={t('stories.intro')} photo="chains" />
       <Section title={t('stories.lessons')}>
         <div className="grid gap-4 md:grid-cols-2">
           {(['CZ', 'PL'] as const).map((c) => (
@@ -84,6 +85,14 @@ export default function Stories() {
             )
           })}
         </ol>
+      </Section>
+
+      <Section title={t('stories.factsTitle')} id="facts">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {FACTS.map((fact) => (
+            <FactCard key={fact.id} fact={fact} />
+          ))}
+        </div>
       </Section>
 
       {stories.length > 0 && (

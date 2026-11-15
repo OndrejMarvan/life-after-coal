@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import type { Evidence, Lang, Programme, Status } from '../data/types'
 import { displayName, pickSummary } from '../lib/content'
+import { usePageTitle } from '../lib/pageTitle'
+import { PHOTOS, srcSet, type Photo, type PhotoKey } from '../data/photos'
+import type { Fact } from '../data/facts'
 
 export function useLang(): Lang {
   const { i18n } = useTranslation()
@@ -12,17 +15,94 @@ export function useLang(): Lang {
 
 export { Headframe } from './Headframe'
 
-export function PageHeader({ title, intro, children }: { title: string; intro?: string; children?: ReactNode }) {
+
+/** A Commons photo with srcset and alt text in the reader's language. */
+export function PhotoImg({
+  photo,
+  sizes,
+  className = '',
+  decorative = false,
+  priority = false,
+}: {
+  photo: Photo
+  sizes: string
+  className?: string
+  decorative?: boolean
+  priority?: boolean
+}) {
+  const lang = useLang()
   return (
-    <section className="kit-stripes-soft text-white">
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:py-12">
+    <img
+      src={photo.srcs[photo.srcs.length - 1].src}
+      srcSet={srcSet(photo)}
+      sizes={sizes}
+      alt={decorative ? '' : photo.alt[lang]}
+      className={className}
+      style={{ objectPosition: photo.position }}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : undefined}
+      decoding="async"
+    />
+  )
+}
+
+/** Attribution line required by the photo's CC licence; full list on /credits. */
+export function PhotoCredit({ photo, className = '' }: { photo: Photo; className?: string }) {
+  const { t } = useTranslation()
+  return (
+    <a href={photo.credit.page} target="_blank" rel="noreferrer" className={`no-print text-xs hover:underline underline-offset-2 ${className}`}>
+      {t('common.photo')}: {photo.credit.author} · {photo.credit.license}
+    </a>
+  )
+}
+
+export function PageHeader({ title, intro, photo, children }: { title: string; intro?: string; photo?: PhotoKey; children?: ReactNode }) {
+  usePageTitle(title)
+  const p: Photo | undefined = photo ? PHOTOS[photo] : undefined
+  return (
+    <section className={`relative overflow-hidden text-white ${p ? 'bg-coal' : 'kit-stripes-soft'}`}>
+      {p && (
+        <>
+          <PhotoImg photo={p} sizes="100vw" decorative priority className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-coal/45 md:bg-transparent md:bg-linear-to-r md:from-coal/80 md:via-coal/40 md:to-transparent" aria-hidden="true" />
+        </>
+      )}
+      <div className={`relative mx-auto max-w-6xl px-4 ${p ? 'pt-12 pb-14 sm:py-20' : 'py-10 sm:py-12'}`}>
         <div className="inline-block bg-coal/90 px-4 py-3 rounded-lg border-l-8 border-orange">
-          <h1 className="text-3xl sm:text-5xl font-bold">{title}</h1>
+          <h1 className={`${title.length > 28 ? 'text-2xl' : 'text-3xl'} sm:text-5xl font-bold`}>{title}</h1>
         </div>
         {intro && <p className="mt-4 max-w-3xl text-lg text-white/90 bg-coal/70 rounded-lg px-4 py-2">{intro}</p>}
         {children}
       </div>
+      {p && <PhotoCredit photo={p} className="absolute bottom-1.5 right-3 text-white/80 hover:text-white" />}
     </section>
+  )
+}
+
+/** One "Did you know?" fact with its photo (if any) and source link. */
+export function FactCard({ fact }: { fact: Fact }) {
+  const { t } = useTranslation()
+  const lang = useLang()
+  const p: Photo | undefined = fact.photo ? PHOTOS[fact.photo] : undefined
+  return (
+    <figure className="card overflow-hidden flex flex-col">
+      {p ? (
+        <PhotoImg photo={p} sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw" className="aspect-[16/9] w-full object-cover" />
+      ) : fact.highlight ? (
+        <div className="kit-stripes-soft flex aspect-[16/9] items-center justify-center p-4" aria-hidden="true">
+          <span className="display rounded-lg bg-coal/90 px-4 py-2 text-center text-4xl font-bold text-orange sm:text-5xl">{fact.highlight[lang]}</span>
+        </div>
+      ) : null}
+      <figcaption className="p-5 flex flex-1 flex-col gap-3">
+        <p className="text-lg leading-relaxed">{fact.text[lang]}</p>
+        <p className="mt-auto flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm">
+          <a href={fact.source} target="_blank" rel="noreferrer" className="font-semibold text-orange-deep underline underline-offset-4">
+            {t('common.source')} ↗
+          </a>
+          {p && <PhotoCredit photo={p} className="text-coal/60" />}
+        </p>
+      </figcaption>
+    </figure>
   )
 }
 
@@ -160,9 +240,9 @@ export function Choice({ selected, onClick, children }: { selected: boolean; onC
   )
 }
 
-export function Section({ title, children, className = '' }: { title?: string; children: ReactNode; className?: string }) {
+export function Section({ title, children, className = '', id }: { title?: string; children: ReactNode; className?: string; id?: string }) {
   return (
-    <section className={`mx-auto max-w-6xl px-4 py-8 ${className}`}>
+    <section id={id} className={`mx-auto max-w-6xl px-4 py-8 scroll-mt-24 ${className}`}>
       {title && <h2 className="text-2xl sm:text-3xl font-bold mb-4">{title}</h2>}
       {children}
     </section>

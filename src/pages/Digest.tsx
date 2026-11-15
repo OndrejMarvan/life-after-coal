@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Headframe, useLang } from '../components/ui'
+import { usePageTitle } from '../lib/pageTitle'
 import { displayName, fmtDate, pickSummary, t3, useEvents, useProgrammes } from '../lib/content'
 import type { Lang, Programme } from '../data/types'
 import type { CalEvent } from '../data/events'
@@ -35,6 +36,7 @@ export function digestHtml(d: ReturnType<typeof buildDigest>, lang: Lang, labels
 
 export default function Digest() {
   const { t } = useTranslation()
+  usePageTitle(t('nav.newsletter'))
   const lang = useLang()
   const { programmes } = useProgrammes()
   const events = useEvents()

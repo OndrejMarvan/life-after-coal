@@ -12,6 +12,7 @@ const cs: Dict = {
     support: 'Kupte nám kafe',
   },
   common: {
+    photo: 'Foto',
     print: 'Tisk', back: 'Zpět', next: 'Dále', save: 'Uložit', saved: 'Uloženo', cancel: 'Zrušit', send: 'Odeslat', search: 'Hledat',
     close: 'Zavřít', loading: 'Načítám...', open: 'Otevřít', all: 'Vše', none: 'Nic', yes: 'Ano', no: 'Ne', unknown: 'Nevím',
     applyOnline: 'Požádat online', helpInPerson: 'Pomoc osobně', addToCalendar: 'Přidat do kalendáře', details: 'Podrobnosti',
@@ -57,6 +58,7 @@ const cs: Dict = {
     usti: 'Ústecký kraj (Most, Chomutov, Litvínov)', kv: 'Karlovarský kraj (Sokolov)', elsewhere_cz: 'Jinde v Česku',
   },
   home: {
+    factsTitle: 'Víte, že…?', factsMore: 'Další zajímavosti z hornictví',
     heroTitle: 'Vaše další šichta začíná tady',
     heroText: 'Všechny programy pomoci pro horníky a jejich rodiny na obou stranách hranice. Odpovězte na pár otázek a uvidíte, co se vás týká, co ne a proč, a co udělat dál.',
     heroCta: 'Zjistit, na co mám nárok',
@@ -302,6 +304,7 @@ const cs: Dict = {
     },
   },
   stories: {
+    factsTitle: 'Zajímavosti z hornictví',
     title: 'Příběhy a historie', intro: 'Dřívější uzavírání dolů na obou stranách hranice, co fungovalo a co ne, a příběhy lidí, kteří to zažili.',
     timeline: 'Časová osa uzavírání a programů', lessons: 'Co fungovalo a co ne', results: 'Výsledky', outcome: 'Co následovalo',
     submitTitle: 'Podělte se o svůj příběh', submitText: 'Váš příběh může pomoci někomu, kdo z dolu odchází teď. Každý příběh si před zveřejněním přečte moderátor.',
@@ -319,6 +322,10 @@ const cs: Dict = {
     examples: 'Zkuste se zeptat',
     ex1: 'Co dostanu, když odejdu z JSW?', ex2: 'Pracuji na dole pro dodavatele. Je tu něco pro mě?', ex3: 'Jak požádám o státní příspěvek?',
   },
+  credits: {
+    title: 'Autoři fotografií', intro: 'Fotografie pocházejí z Wikimedia Commons. Zmenšili jsme je a některé ořízli; upravené verze sdílíme pod stejnou licencí jako originály.',
+    author: 'Autor', license: 'Licence', edits: 'Úpravy', original: 'Originál na Wikimedia Commons', logo: 'Logo s těžní věží bylo nakresleno pro tento web.',
+  },
   account: {
     title: 'Můj účet', login: 'Přihlásit se', register: 'Vytvořit účet', email: 'E-mail', password: 'Heslo', name: 'Vaše jméno',
     magic: 'Poslat přihlašovací odkaz e-mailem', magicSent: 'Přihlašovací odkaz najdete v e-mailu.', logout: 'Odhlásit se',
@@ -327,6 +334,8 @@ const cs: Dict = {
     emptySaved: 'Zatím nic uloženého.', emptyRoute: 'Zatím žádná cesta.', makeRoute: 'Zjistit, na co mám nárok',
     addApp: 'Sledovat žádost', appProgramme: 'Program', appStatus: 'Stav', appNote: 'Poznámka',
     st_planned: 'Plánuji', st_applied: 'Podáno', st_approved: 'Schváleno', st_refused: 'Zamítnuto',
+    tryDemo: 'Vyzkoušet ukázkový účet', tryDemoText: 'Podívejte se na přehled s ukázkovou cestou, termínem a žádostmi.',
+    wrongPassword: 'Nesprávný e-mail nebo heslo.', accountExists: 'Účet s tímto e-mailem už existuje. Přihlaste se.', magicUnavailable: 'Přihlašovací odkazy teď nejsou k dispozici. Použijte heslo.',
   },
   admin: {
     englishFields: 'Anglická pole',

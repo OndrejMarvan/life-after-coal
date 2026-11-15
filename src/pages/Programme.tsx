@@ -2,6 +2,7 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { CountryTag, EvidenceBadge, Headframe, SafetyBox, Section, StatusBadge, useLang } from '../components/ui'
+import { usePageTitle } from '../lib/pageTitle'
 import { displayName, downloadIcs, fmtDate, pickField, pickSummary, t3, useEvents, usePlaces, useProgrammes } from '../lib/content'
 import type { Programme } from '../data/types'
 import { useAuth } from '../lib/auth'
@@ -36,6 +37,7 @@ export default function ProgrammePage() {
       .catch(() => undefined)
   }, [user, p])
 
+  usePageTitle(p ? displayName(p, lang) : t('programme.notFound'))
   if (!p) {
     return (
       <Section>

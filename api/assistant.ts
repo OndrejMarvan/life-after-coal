@@ -1,7 +1,16 @@
 // Vercel serverless function: POST /api/assistant
 // Answers questions only from the programme database, using Claude.
 // Set ANTHROPIC_API_KEY (and optionally ANTHROPIC_MODEL) in the Vercel project settings.
-import type { VercelRequest, VercelResponse } from '@vercel/node'
+// The few request/response members this function uses. Vercel's Node runtime provides the real
+// objects; declaring them here avoids the @vercel/node dev dependency and its audit warnings.
+interface VercelRequest {
+  method?: string
+  body?: unknown
+}
+interface VercelResponse {
+  status(code: number): VercelResponse
+  json(body: unknown): VercelResponse
+}
 import programmes from '../src/data/programmes.json' with { type: 'json' }
 import type { Programme } from '../src/data/types.js'
 

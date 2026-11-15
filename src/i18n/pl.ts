@@ -12,6 +12,7 @@ const pl: Dict = {
     support: 'Postaw nam kawę',
   },
   common: {
+    photo: 'Fot.',
     print: 'Drukuj', back: 'Wstecz', next: 'Dalej', save: 'Zapisz', saved: 'Zapisano', cancel: 'Anuluj', send: 'Wyślij', search: 'Szukaj',
     close: 'Zamknij', loading: 'Ładowanie...', open: 'Otwórz', all: 'Wszystkie', none: 'Brak', yes: 'Tak', no: 'Nie', unknown: 'Nie wiem',
     applyOnline: 'Złóż wniosek online', helpInPerson: 'Pomoc na miejscu', addToCalendar: 'Dodaj do kalendarza', details: 'Szczegóły',
@@ -57,6 +58,7 @@ const pl: Dict = {
     usti: 'Kraj ustecki (Most, Chomutów, Litwinów)', kv: 'Kraj karlowarski (Sokolov)', elsewhere_cz: 'Gdzie indziej w Czechach',
   },
   home: {
+    factsTitle: 'Czy wiesz, że…?', factsMore: 'Więcej ciekawostek o górnictwie',
     heroTitle: 'Twoja następna szychta zaczyna się tutaj',
     heroText: 'Wszystkie programy wsparcia dla górników i ich rodzin po obu stronach granicy. Odpowiedz na kilka pytań i zobacz, co ci przysługuje, co nie i dlaczego, oraz co zrobić dalej.',
     heroCta: 'Sprawdź, co ci przysługuje',
@@ -302,6 +304,7 @@ const pl: Dict = {
     },
   },
   stories: {
+    factsTitle: 'Ciekawostki o górnictwie',
     title: 'Historie i przeszłość', intro: 'Wcześniejsze zamknięcia kopalń po obu stronach granicy, co działało, a co nie, oraz historie ludzi, którzy to przeżyli.',
     timeline: 'Oś czasu zamknięć i programów', lessons: 'Co działało, a co nie', results: 'Wyniki', outcome: 'Co było dalej',
     submitTitle: 'Podziel się swoją historią', submitText: 'Twoja historia może pomóc komuś, kto teraz odchodzi z kopalni. Moderator czyta każdą historię przed publikacją.',
@@ -319,6 +322,10 @@ const pl: Dict = {
     examples: 'Spróbuj zapytać',
     ex1: 'Co dostanę, jeśli odejdę z JSW?', ex2: 'Pracuję w kopalni dla firmy wykonawczej. Czy jest coś dla mnie?', ex3: 'Jak złożyć wniosek o czeski zasiłek?',
   },
+  credits: {
+    title: 'Autorzy zdjęć', intro: 'Zdjęcia pochodzą z Wikimedia Commons. Pomniejszyliśmy je, a niektóre przycięliśmy; zmienione wersje udostępniamy na tej samej licencji co oryginały.',
+    author: 'Autor', license: 'Licencja', edits: 'Zmiany', original: 'Oryginał w Wikimedia Commons', logo: 'Logo z wieżą wyciągową zostało narysowane dla tej strony.',
+  },
   account: {
     title: 'Moje konto', login: 'Zaloguj się', register: 'Załóż konto', email: 'E-mail', password: 'Hasło', name: 'Imię',
     magic: 'Wyślij link do logowania', magicSent: 'Link do logowania jest w twojej skrzynce.', logout: 'Wyloguj się',
@@ -327,6 +334,8 @@ const pl: Dict = {
     emptySaved: 'Nic jeszcze nie zapisano.', emptyRoute: 'Nie masz jeszcze drogi.', makeRoute: 'Sprawdź, co ci przysługuje',
     addApp: 'Śledź wniosek', appProgramme: 'Program', appStatus: 'Status', appNote: 'Notatka',
     st_planned: 'Planuję', st_applied: 'Złożony', st_approved: 'Przyznany', st_refused: 'Odrzucony',
+    tryDemo: 'Wypróbuj konto demo', tryDemoText: 'Zobacz panel z przykładową ścieżką, terminem i wnioskami.',
+    wrongPassword: 'Nieprawidłowy e-mail lub hasło.', accountExists: 'Konto z tym adresem e-mail już istnieje. Zaloguj się.', magicUnavailable: 'Linki do logowania są teraz niedostępne. Użyj hasła.',
   },
   admin: {
     englishFields: 'Pola w języku angielskim',

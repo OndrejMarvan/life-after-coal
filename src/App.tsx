@@ -18,6 +18,7 @@ import Assistant from './pages/Assistant'
 import Portals from './pages/Portals'
 import Gaps from './pages/Gaps'
 import About from './pages/About'
+import Credits from './pages/Credits'
 import Account from './pages/Account'
 import NotFound from './pages/NotFound'
 import Support from './pages/Support'
@@ -55,6 +56,7 @@ export default function App() {
               <Route path="portals" element={<Portals />} />
               <Route path="gaps" element={<Gaps />} />
               <Route path="about" element={<About />} />
+              <Route path="credits" element={<Credits />} />
               <Route path="support" element={<Support />} />
               <Route path="account" element={<Account />} />
               <Route path="admin" element={<Admin />} />

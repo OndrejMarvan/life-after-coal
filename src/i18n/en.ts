@@ -10,6 +10,7 @@ const en = {
     support: 'Buy us a coffee',
   },
   common: {
+    photo: 'Photo',
     print: 'Print', back: 'Back', next: 'Next', save: 'Save', saved: 'Saved', cancel: 'Cancel', send: 'Send', search: 'Search',
     close: 'Close', loading: 'Loading...', open: 'Open', all: 'All', none: 'None', yes: 'Yes', no: 'No', unknown: "I don't know",
     applyOnline: 'Apply online', helpInPerson: 'Get help in person', addToCalendar: 'Add to calendar', details: 'Details',
@@ -55,6 +56,7 @@ const en = {
     usti: 'Ústí Region (Most, Chomutov, Litvínov)', kv: 'Karlovy Vary Region (Sokolov)', elsewhere_cz: 'Elsewhere in Czechia',
   },
   home: {
+    factsTitle: 'Did you know?', factsMore: 'More mining facts',
     heroTitle: 'Your next shift starts here',
     heroText: 'Every support programme for miners and their families, on both sides of the border. Answer a few questions and see what applies to you, what does not and why, and what to do next.',
     heroCta: 'Check what you can get',
@@ -300,6 +302,7 @@ const en = {
     },
   },
   stories: {
+    factsTitle: 'Mining facts',
     title: 'Stories and history', intro: 'Past mine closures on both sides of the border, what worked and what did not, and stories from people who lived through it.',
     timeline: 'Timeline of closures and programmes', lessons: 'What worked and what did not', results: 'Results', outcome: 'What happened next',
     submitTitle: 'Share your story', submitText: 'Your story can help someone who is leaving the mine now. A moderator reads every story before it appears.',
@@ -317,6 +320,10 @@ const en = {
     examples: 'Try asking',
     ex1: 'What can I get if I leave JSW?', ex2: 'I am a contractor at a mine. Is there anything for me?', ex3: 'How do I claim the Czech allowance?',
   },
+  credits: {
+    title: 'Photo credits', intro: 'The photos come from Wikimedia Commons. We resized them and cropped some; the edited versions are shared under the same licence as the originals.',
+    author: 'Author', license: 'Licence', edits: 'Changes', original: 'Original on Wikimedia Commons', logo: 'The headframe logo was drawn for this site.',
+  },
   account: {
     title: 'My account', login: 'Sign in', register: 'Create account', email: 'Email', password: 'Password', name: 'Your name',
     magic: 'Email me a sign-in link', magicSent: 'Check your email for the sign-in link.', logout: 'Sign out',
@@ -325,6 +332,8 @@ const en = {
     emptySaved: 'Nothing saved yet.', emptyRoute: 'No route yet.', makeRoute: 'Check what you can get',
     addApp: 'Track an application', appProgramme: 'Programme', appStatus: 'Status', appNote: 'Note',
     st_planned: 'Planned', st_applied: 'Applied', st_approved: 'Approved', st_refused: 'Refused',
+    tryDemo: 'Try the demo account', tryDemoText: 'See the dashboard with a sample route, deadline and applications.',
+    wrongPassword: 'Wrong email or password.', accountExists: 'An account with this email already exists. Sign in instead.', magicUnavailable: 'Sign-in links are not available at the moment. Use your password.',
   },
   admin: {
     englishFields: 'English fields',

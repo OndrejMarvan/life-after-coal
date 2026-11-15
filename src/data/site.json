@@ -4,21 +4,21 @@
    "country": "PL",
    "years": "2026–",
    "title": "Act of 4 Dec 2025 package (N01–N03, N09)",
-   "what": "Leave up to 5/4 years, PLN 170,000 severance, paid by the companies themselves, for all staff of support-system companies",
+   "what": "Leave up to 5 years (underground) or 4 years (processing plant), or PLN 170,000 severance for other staff of support-system companies; paid out by the companies from a state budget subsidy",
    "funders": "State budget; about PLN 2bn in 2026",
    "results": "~1,750 PGG staff on benefits by mid-May 2026; 526 JSW severances by 28 May 2026",
    "outcome": "Current",
    "i18n": {
     "cs": {
      "title": "Balíček zákona ze dne 4. 12. 2025 (N01–N03, N09)",
-     "what": "Dovolená až 5/4 roky, odstupné 170 000 PLN, vyplácejí je samy společnosti, pro všechny zaměstnance společností zapojených do systému podpory",
+     "what": "Dovolená až 5 let (podzemí) nebo 4 roky (úpravna), nebo odstupné 170 000 PLN pro ostatní zaměstnance společností zapojených do systému podpory; vyplácejí je společnosti z dotace ze státního rozpočtu",
      "funders": "Státní rozpočet; asi 2 mld. PLN v roce 2026",
      "results": "~1 750 zaměstnanců PGG pobíralo dávky do poloviny května 2026; 526 odstupných v JSW do 28. 5. 2026",
      "outcome": "Aktuální"
     },
     "pl": {
      "title": "Pakiet ustawy z dnia 4 grudnia 2025 r. (N01–N03, N09)",
-     "what": "Urlop do 5/4 lat, odprawa 170 000 zł, wypłacane przez same spółki, dla wszystkich pracowników spółek objętych systemem wsparcia",
+     "what": "Urlop do 5 lat (pod ziemią) lub 4 lat (zakład przeróbki) albo odprawa 170 000 zł dla pozostałych pracowników spółek objętych systemem wsparcia; wypłacane przez spółki z dotacji z budżetu państwa",
      "funders": "Budżet państwa; ok. 2 mld zł w 2026 r.",
      "results": "~1750 pracowników PGG na świadczeniach do połowy maja 2026; 526 odpraw w JSW do 28.05.2026",
      "outcome": "Obowiązuje"
@@ -2294,24 +2294,6 @@
   },
   {
    "country": "PL",
-   "item": "Contents of FESL 10.21",
-   "why": "Resolved: it trains social-assistance and labour-office staff, not miners",
-   "confirm": "WUP Katowice",
-   "i18n": {
-    "cs": {
-     "item": "Obsah FESL 10.21",
-     "why": "Vyřešeno: školí pracovníky sociální pomoci a úřadů práce, ne horníky",
-     "confirm": "WUP Katowice"
-    },
-    "pl": {
-     "item": "Zawartość FESL 10.21",
-     "why": "Wyjaśnione: szkoli pracowników pomocy społecznej i urzędów pracy, nie górników",
-     "confirm": "WUP Katowice"
-    }
-   }
-  },
-  {
-   "country": "PL",
    "item": "\"Mosty współpracy\"",
    "why": "No project of that name found",
    "confirm": "Silesian Marshal's Office (transformacja@slaskie.pl)",
@@ -2726,19 +2708,19 @@
   },
   {
    "country": "CZ",
-   "item": "NÚK audits of OPST or of miner support",
+   "item": "NKÚ audits of OPST or of miner support",
    "why": "None found on these topics",
-   "confirm": "NÚK",
+   "confirm": "NKÚ",
    "i18n": {
     "cs": {
-     "item": "Audity NÚK k OPST nebo k podpoře horníků",
+     "item": "Audity NKÚ k OPST nebo k podpoře horníků",
      "why": "K těmto tématům nebyly nalezeny",
-     "confirm": "NÚK"
+     "confirm": "NKÚ"
     },
     "pl": {
-     "item": "Kontrole NÚK dotyczące OPST lub wsparcia górników",
+     "item": "Kontrole NKÚ dotyczące OPST lub wsparcia górników",
      "why": "Nie znaleziono żadnych w tych tematach",
-     "confirm": "NÚK"
+     "confirm": "NKÚ"
     }
    }
   },

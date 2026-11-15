@@ -11,7 +11,7 @@ const APP_STATUSES = ['planned', 'applied', 'approved', 'refused'] as const
 
 function Login() {
   const { t } = useTranslation()
-  const { signIn, signUp, magicLink } = useAuth()
+  const { signIn, signInDemo, signUp, magicLink } = useAuth()
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [f, setF] = useState({ email: '', password: '', name: '' })
   const [msg, setMsg] = useState('')
@@ -30,7 +30,8 @@ function Login() {
               if (mode === 'login') await signIn(f.email, f.password)
               else await signUp(f.email, f.password, f.name)
             } catch (x) {
-              setErr((x as Error).message || t('common.error'))
+              const m = (x as Error).message
+              setErr(t(`account.${m}`, { defaultValue: m || t('common.error') }))
             }
           }}
         >
@@ -44,9 +45,9 @@ function Login() {
           </Field>
           <Field label={t('account.password')}>
             <input
-              required={!isDemo}
+              required
               type="password"
-              minLength={isDemo ? 0 : 8}
+              minLength={mode === 'register' ? 8 : undefined}
               className="field"
               value={f.password}
               onChange={(e) => setF({ ...f, password: e.target.value })}
@@ -57,7 +58,7 @@ function Login() {
           {msg && <p className="font-bold text-ok">{msg}</p>}
           <button className="btn btn-primary w-full">{mode === 'login' ? t('account.login') : t('account.register')}</button>
         </form>
-        {mode === 'login' && (
+        {mode === 'login' && !isDemo && (
           <button
             type="button"
             className="btn btn-outline w-full"
@@ -73,6 +74,14 @@ function Login() {
           >
             ✉ {t('account.magic')}
           </button>
+        )}
+        {isDemo && mode === 'login' && (
+          <div className="rounded-xl border-2 border-dashed border-orange bg-orange-pale p-4">
+            <button type="button" className="btn btn-dark w-full" onClick={() => void signInDemo()}>
+              {t('account.tryDemo')}
+            </button>
+            <p className="mt-2 text-sm">{t('account.tryDemoText')}</p>
+          </div>
         )}
         <p>
           {mode === 'login' ? t('account.noAccount') : t('account.haveAccount')}{' '}

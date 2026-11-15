@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { supabase, isDemo } from './supabase'
 import { prefs } from './store'
+import { addAccount, DEMO_MINER_EMAIL, findAccount, hashPassword, isDemoMiner, seedDemoMiner, type DemoAccount } from './demoAccounts'
 
 export interface User {
   id: string
@@ -13,6 +14,8 @@ interface AuthCtx {
   user: User | null
   loading: boolean
   signIn: (email: string, password: string) => Promise<void>
+  /** Demo mode only: sign in as the built-in demo miner (README, "Demo accounts"). */
+  signInDemo: () => Promise<void>
   signUp: (email: string, password: string, name: string) => Promise<void>
   magicLink: (email: string) => Promise<void>
   signOut: () => Promise<void>
@@ -32,7 +35,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (isDemo || !supabase) {
-      setUser(prefs.get<User | null>('demoUser', null))
+      // Re-check the stored session against the accounts: only the built-in admin keeps admin rights.
+      const saved = prefs.get<User | null>('demoUser', null)
+      const account = saved ? findAccount(saved.email) : undefined
+      setUser(saved ? { ...saved, isAdmin: Boolean(account?.isAdmin) } : null)
       setLoading(false)
       return
     }
@@ -48,11 +54,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => sub.subscription.unsubscribe()
   }, [])
 
+  async function startDemoSession(account: DemoAccount) {
+    const u: User = { id: account.id, email: account.email, name: account.name, isAdmin: account.isAdmin }
+    if (isDemoMiner(u.id)) await seedDemoMiner(u.id)
+    prefs.set('demoUser', u)
+    setUser(u)
+  }
+
   async function signIn(email: string, password: string) {
     if (isDemo || !supabase) {
-      const u: User = { id: 'demo-' + email, email, name: email.split('@')[0], isAdmin: true }
-      prefs.set('demoUser', u)
-      setUser(u)
+      const account = findAccount(email)
+      if (!account || account.pwHash !== (await hashPassword(password))) throw new Error('wrongPassword')
+      await startDemoSession(account)
       return
     }
     const { error } = await supabase.auth.signInWithPassword({ email, password })
@@ -63,9 +76,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     user,
     loading,
     signIn,
+    async signInDemo() {
+      const account = findAccount(DEMO_MINER_EMAIL)
+      if (isDemo && account) await startDemoSession(account)
+    },
     async signUp(email, password, name) {
       if (isDemo || !supabase) {
-        const u: User = { id: 'demo-' + email, email, name: name || email.split('@')[0], isAdmin: true }
+        const e = email.trim().toLowerCase()
+        if (findAccount(e)) throw new Error('accountExists')
+        const u: User = { id: 'demo-' + e, email: e, name: name.trim() || e.split('@')[0], isAdmin: false }
+        addAccount({ ...u, pwHash: await hashPassword(password) })
         prefs.set('demoUser', u)
         setUser(u)
         return
@@ -74,7 +94,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (error) throw error
     },
     async magicLink(email) {
-      if (isDemo || !supabase) return signIn(email, '')
+      if (isDemo || !supabase) throw new Error('magicUnavailable')
       const { error } = await supabase.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.origin + import.meta.env.BASE_URL + 'account' } })
       if (error) throw error
     },

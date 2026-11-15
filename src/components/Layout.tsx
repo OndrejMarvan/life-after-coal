@@ -53,8 +53,11 @@ export default function Layout() {
   useEffect(() => {
     setOpen(false)
     setMoreOpen(false)
-    window.scrollTo(0, 0)
-  }, [loc.pathname])
+    // Links like /stories#facts land on that section; other page changes start at the top
+    const target = loc.hash ? document.getElementById(decodeURIComponent(loc.hash.slice(1))) : null
+    if (target) target.scrollIntoView()
+    else window.scrollTo(0, 0)
+  }, [loc.pathname, loc.hash])
 
   const linkCls = ({ isActive }: { isActive: boolean }) =>
     `display px-3 py-2 rounded-md text-[15px] font-semibold ${isActive ? 'bg-orange text-coal' : 'text-white hover:bg-white/10'}`
@@ -163,6 +166,11 @@ export default function Layout() {
           <div className="text-sm text-white/70 space-y-2">
             <p>{t('about.disclaimer')}</p>
             <p>{t('footer.sources')}</p>
+            <p>
+              <Link to="/credits" className="underline underline-offset-2 hover:text-orange">
+                {t('credits.title')}
+              </Link>
+            </p>
             <p>{t('hotline.emergency')}</p>
           </div>
         </div>

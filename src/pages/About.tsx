@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Headframe, PageHeader, Section } from '../components/ui'
+import { PageHeader, PhotoCredit, PhotoImg, Section } from '../components/ui'
+import { PHOTOS } from '../data/photos'
 
 export default function About() {
   const { t } = useTranslation()
   return (
     <>
-      <PageHeader title={t('about.title')} />
+      <PageHeader title={t('about.title')} photo="landek" />
       <Section>
         <div className="grid gap-8 md:grid-cols-[1fr_220px] items-start">
           <div className="space-y-4 text-lg">
@@ -23,10 +24,13 @@ export default function About() {
               </Link>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-72 rounded-3xl bg-coal p-4">
-            <Headframe className="block w-full" />
-            <p className="display mt-3 text-center font-bold text-orange">{t('greeting')}</p>
-          </div>
+          <figure className="mx-auto w-full max-w-72 overflow-hidden rounded-3xl bg-coal">
+            <PhotoImg photo={PHOTOS.lamps} sizes="288px" className="block aspect-[4/3] w-full object-cover" />
+            <figcaption className="p-4 text-center">
+              <p className="display font-bold text-orange">{t('greeting')}</p>
+              <PhotoCredit photo={PHOTOS.lamps} className="mt-1 block text-white/70" />
+            </figcaption>
+          </figure>
         </div>
       </Section>
     </>

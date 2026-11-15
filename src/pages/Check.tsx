@@ -124,7 +124,7 @@ export default function Check() {
 
   return (
     <>
-      <PageHeader title={t('check.title')} intro={t('check.intro')} />
+      <PageHeader title={t('check.title')} intro={t('check.intro')} photo="helmet" />
       <Section>
         <div className="mx-auto max-w-3xl">
           <div className="mb-6">
@@ -415,7 +415,7 @@ function Results({ profile, onEdit }: { profile: Profile; onEdit: () => void }) 
 
   return (
     <>
-      <PageHeader title={t('check.resultsTitle')} intro={t('common.guideNotDecision')}>
+      <PageHeader title={t('check.resultsTitle')} intro={t('common.guideNotDecision')} photo="helmet">
         <div className="mt-4 flex flex-wrap gap-3 no-print">
           <button type="button" className="btn btn-primary" onClick={onEdit}>
             {t('check.edit')}

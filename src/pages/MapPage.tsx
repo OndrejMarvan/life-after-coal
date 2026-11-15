@@ -48,7 +48,7 @@ export default function MapPage() {
 
   return (
     <>
-      <PageHeader title={t('map.title')} intro={t('map.intro')} />
+      <PageHeader title={t('map.title')} intro={t('map.intro')} photo="nikiszowiec" />
       <Section>
         <div className="mb-4 flex flex-wrap gap-3">
           {(

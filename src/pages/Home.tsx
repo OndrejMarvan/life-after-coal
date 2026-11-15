@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Headframe, Section, useLang } from '../components/ui'
+import { FactCard, PhotoCredit, PhotoImg, Section, useLang } from '../components/ui'
+import { usePageTitle } from '../lib/pageTitle'
 import { fmtDate, t3, useEvents, useProgrammes } from '../lib/content'
 import type { Need } from '../data/types'
+import { FACTS } from '../data/facts'
+import { PHOTOS } from '../data/photos'
 
 const DOORS: { need: Need; icon: string }[] = [
   { need: 'money', icon: '💰' },
@@ -16,6 +19,7 @@ const DOORS: { need: Need; icon: string }[] = [
 
 export default function Home() {
   const { t } = useTranslation()
+  usePageTitle()
   const lang = useLang()
   const { programmes } = useProgrammes()
   const events = useEvents()
@@ -23,14 +27,18 @@ export default function Home() {
   const next = events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 3)
   const nPL = programmes.filter((p) => p.country === 'PL').length
   const nCZ = programmes.filter((p) => p.country === 'CZ').length
+  // Three facts a day, rotating through the whole list
+  const day = Math.floor(Date.parse(today) / 86400000)
+  const facts = [0, 1, 2].map((i) => FACTS[(day * 3 + i) % FACTS.length])
 
   return (
     <>
       <section className="relative overflow-hidden bg-coal text-white">
-        <div className="absolute inset-0 kit-stripes opacity-25" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl px-4 py-14 sm:py-20 grid gap-10 md:grid-cols-[1.4fr_1fr] items-center">
-          <div>
-            <h1 className="text-5xl sm:text-7xl font-bold">
+        <PhotoImg photo={PHOTOS.karvina} sizes="100vw" decorative priority className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-coal/65 md:bg-transparent md:bg-linear-to-r md:from-coal md:via-coal/80 md:to-coal/5" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-4 py-16 sm:py-28">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl min-[420px]:text-5xl sm:text-7xl font-bold">
               {t('home.heroTitle').split(' ').slice(0, -1).join(' ')}{' '}
               <span className="text-orange">{t('home.heroTitle').split(' ').slice(-1)}</span>
             </h1>
@@ -44,8 +52,8 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Headframe className="mx-auto block w-64 sm:w-80 rotate-2 drop-shadow-2xl" />
         </div>
+        <PhotoCredit photo={PHOTOS.karvina} className="absolute bottom-1.5 right-3 text-white/80 hover:text-white" />
       </section>
 
       <section className="bg-charcoal text-white">
@@ -80,11 +88,14 @@ export default function Home() {
               <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{t(`needs.${d.need}`)}</span>
             </Link>
           ))}
-          <Link to="/portals" className="card flex items-center gap-3 p-5 text-lg font-bold hover:border-orange hover:bg-orange-pale border-2">
+          <Link
+            to="/portals"
+            className="card flex flex-col items-start gap-1 p-4 text-base sm:text-lg md:flex-row md:items-center md:gap-3 md:p-5 font-bold hover:border-orange hover:bg-orange-pale border-2"
+          >
             <span className="text-3xl" aria-hidden="true">
               📍
             </span>
-            {t('nav.portals')}
+            <span className="min-w-0 hyphens-auto [overflow-wrap:anywhere]">{t('nav.portals')}</span>
           </Link>
         </div>
       </Section>
@@ -100,6 +111,17 @@ export default function Home() {
         </ol>
         <Link to="/calendar" className="mt-4 inline-block font-semibold underline underline-offset-4">
           {t('home.allDates')} →
+        </Link>
+      </Section>
+
+      <Section title={t('home.factsTitle')}>
+        <div className="grid gap-4 md:grid-cols-3">
+          {facts.map((f) => (
+            <FactCard key={f.id} fact={f} />
+          ))}
+        </div>
+        <Link to="/stories#facts" className="mt-4 inline-block font-semibold underline underline-offset-4">
+          {t('home.factsMore')} →
         </Link>
       </Section>
 

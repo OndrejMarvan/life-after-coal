@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Section, useLang } from '../components/ui'
+import { usePageTitle } from '../lib/pageTitle'
 import { useAuth } from '../lib/auth'
 import { insert, list, remove, update, type Row } from '../lib/store'
 import { fmtDate } from '../lib/content'
@@ -42,6 +43,7 @@ export default function ForumPost() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
 
+  usePageTitle(post ? String(post.title) : t('nav.forum'))
   if (!post) {
     return (
       <Section>

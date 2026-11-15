@@ -77,7 +77,7 @@ export default function Programmes() {
 
   return (
     <>
-      <PageHeader title={t('programmes.title')} intro={t('programmes.intro', { count: programmes.length })} />
+      <PageHeader title={t('programmes.title')} intro={t('programmes.intro', { count: programmes.length })} photo="prezydent" />
       <Section>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[300px_1fr]">
           <aside className="space-y-4 no-print" aria-label={t('programmes.filters')}>

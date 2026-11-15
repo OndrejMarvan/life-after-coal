@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Headframe, Section } from '../components/ui'
+import { usePageTitle } from '../lib/pageTitle'
 
 export default function NotFound() {
   const { t } = useTranslation()
+  usePageTitle('404')
   return (
     <Section>
       <div className="mx-auto max-w-md text-center">
